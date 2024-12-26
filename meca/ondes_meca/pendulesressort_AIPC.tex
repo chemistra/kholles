@@ -1,0 +1,65 @@
+\begin{exercise}{Propagation dans une chaîne de pendules}{2}{Spé}
+{Propagation}{lelay, mines, X}
+
+\begin{questions}
+    \question On considère une chaîne infinie de pendules de masse $m$ et de longueur $R$ oscillant dans le même plan. Ces pendules sont écartés au repos d'une distance $a$. Les masses de deux pendules voisins sont reliées par un ressort de raideur $\kappa$ et de longueur à vide $a$ comme montré sur le schéma ci dessous. 
+    \begin{center}
+    \begin{tikzpicture}
+    
+    \draw[<->] (-2,0.2) -- (0,0.2);
+    \draw (-1,0.2) node[above=2pt] {$a$};
+    
+    \draw[<->] (0,0.2) -- (2,0.2);
+    \draw (1,0.2) node[above=2pt] {$a$};
+    
+    \draw[thick] (-2.5,0) -- (2.5,0);
+    \draw[thick, dotted] (-3,0) -- (-2.5,0);
+    \draw[thick, dotted] (2.5,0) -- (3,0);
+    
+    \node[circle,fill=black] (a) at (0+0.52,-2.95) {};
+    \draw[thick] (0,0) -- (a);
+    \draw[thick, dashed] (0,0) -- (0,-2.25);
+    \draw (0,-1.5) arc (-90:-80:1.5);
+    \draw (0,-0.75) node[anchor=east] {$\theta_n$};
+    
+    \node[circle,fill=black] (b) at (2+1.0,-2.82) {};
+    \draw[thick] (2,0) -- (b);
+    \draw[thick, dashed] (2,0) -- (2,-2.25);
+    \draw (2,-1.5) arc (-90:-70:1.5);
+    \draw (2,-0.75) node[anchor=east] {$\theta_{n+1}$};
+    
+    \node[circle,fill=black] (c) at (-2+0.76,-2.90) {};
+    \draw[thick] (-2,0) -- (c);
+    \draw[thick, dashed] (-2,0) -- (-2,-2.25);
+    \draw (-2,-1.5) arc (-90:-75:1.5);
+    \draw (-2,-0.75) node[anchor=east] {$\theta_{n-1}$};
+    
+    \draw[decoration={aspect=0.3, segment length=1.5mm, amplitude=2mm,coil},decorate] (a) -- (b);
+    \draw[decoration={aspect=0.3, segment length=1.2mm, amplitude=2mm,coil},decorate] (c) -- (a);
+    \draw[decoration={aspect=0.3, segment length=1.8mm, amplitude=2mm,coil},decorate] (-4,-3) -- (c);
+    \fill[white] (-4,-2) rectangle (-2.5,-3.5);
+    
+    \path (a) -- coordinate[midway](m) (b);
+    \draw (m) node[above=6pt] {$\kappa$};
+    
+    \path (a) -- coordinate[midway](n) (c);
+    \draw (n) node[above=6pt] {$\kappa$};
+    
+    \end{tikzpicture}
+    \end{center}
+    Établir alors l'équation du mouvement du $n$-ième pendule (d'angle $\theta_n$) en se plaçant dans l'approximation des petits angles.
+    \question On définit alors $\theta$ tel que $\theta_n(t) = \theta(x = na, t)$. En supposant $a$ petit devant la taille typique des variations spatiales de $\theta$, montrer que $\theta$ vérifie l'équation de Klein-Gordon :
+    \begin{align*}
+        \pdv[2]{\theta}{t} = c^2 \pdv[2]{\theta}{x} - \omega_0^2\theta
+    \end{align*}
+    où $c$ est une constante dont on précisera l'expression et la dimension.
+    \question On cherche à faire se propager une OPPH dans cette chaîne de pendules. Donnez la relation de dispersion obtenue. On utilisera les variables $\Omega = \omega / \omega_0$ et $K = c k / \omega_0$.
+    \question Esquisser l'allure de l'évolution selon $\Omega$ des parties réelles et imaginaires de $K$.
+    \question En supposant $\Omega > 1$
+    \begin{parts}
+        \part Exprimez les vitesses de phase et de groupe adimensionnalisées $V_\varphi$ et $V_g$ en fonction de $\Omega$
+        \part Représenter leur allure sur un graphique. Commenter.
+    \end{parts}
+\end{questions}
+
+\end{exercise}

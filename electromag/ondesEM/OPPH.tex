@@ -1,0 +1,26 @@
+\begin{exercise}{Onde électromagnétique}{0}{Spé}
+{Ondes électromagnétiques,Vide}{lelay}
+
+On étudie la propagation d'une onde électromagnétique dans le vide dont le champ électrique correspondant est de la forme $\vec{E} = E_0\cos(\omega t - kz)\vec{u}_x$.
+\begin{questions}
+    \questioncours Rappeler les équations aux dérivées partielles auxquelles sont soumis les champs électriques et magnétiques dans le vide.
+    \question Quelle est la direction, le sens et la vitesse de propagation de cette onde ? Quel type d'onde est-ce ? 
+    \question Exprimer le vecteur d'ondes $\vec{k}$, le champ magnétique $\vec{B}$ et le vecteur de Poynting associés à l'onde.
+    \question On suppose que cette onde rayonne à travers une surface effective $S = 4$ mm$^2$ une puissance moyenne $P = 10$ mW (valeur typique pour un laser de classe III.b). Calculer les amplitudes $E_0$ ey $B_0$ des champs électriques et magnétiques.
+    \question La longueur d'onde de ce rayonnement est de 632 nm dans l'air. Dans quel domaine du spectre électromagnétique se situe cette onde ?
+    \question Donner la fréquence correspondante en THz.
+\end{questions}
+
+\end{exercise}
+
+\begin{solution}
+
+\begin{questions}
+    \questioncours Eqn de Mxl sans les sources
+    \question direction $z$, sens propageant ($+z$), vitesse de propagation $c$ (on est dans le vide). OPPH (onde propageante plane harmonique) polarisée rectilignement
+    \question $\vec{k} = \frac{\omega}{c}\vec{u}_z$, $\vec{B} = \frac{E_0}{c}\cos(\omega t - kz) \vec{u}_y$, vecteur de Poyting $\vec{\Pi} = EB/\mu_0 = E_0^2/(c\mu_0) \cos^2(\omega t - kz)$
+    \question $\ev{\vec{\Pi}} = \frac12 \frac{E_0^2}{c\mu_0} = 2.5$ mW/mm$^2$. D'où $E_0$ et $B_0  =E_0 / c$
+    \question Visible (rouge)
+    \question $\nu = v_\phi / \lambda$, $v_\phi = c/n \approx c$ car $n_\text{air} \approx 1$
+\end{questions}
+\end{solution}

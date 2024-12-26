@@ -1,0 +1,62 @@
+\begin{exercise}{Calculs d'impédance}{1}{Sup}
+{\'Electrocinétique}{lelay}
+
+\begin{questions}
+    \questioncours Loi de composition des impédances et des admittances
+    \question Quelle est l'impédance équivalente du circuit suivant ?
+\begin{circuit}
+      \draw
+      (0,0) to [R, l^=$R$] (2,0) 
+            to [L, l^=$C$] (4,0)
+            to [C, l^=$C$] (6,0);
+\end{circuit}
+    \question Donner, pour chacun des circuits suivants, le rapport $s/e$
+\end{questions}
+
+\begin{circuit}
+      \draw
+      (0,0) to [open, v_=$e$, *-o] (0,2)
+      (0,2) to [R, l=$R$] (2,2) 
+      to [C, l^=$C$, *-*] (2,0)
+      (2,2) to [short] (4,2)
+      (4,0) to [open, v_=$s$, *-o] (4,2)
+      (0,0) to [short] (4,0);
+\end{circuit}
+
+\begin{circuit}
+      \draw
+      (0,0) to [open, v_=$e$, *-o] (0,2)
+      (0,2) to [R, l=$R$] (2,2) 
+      to [C, l^=$C$, *-*] (2,0)
+      (2,2) to [R, l=$R$] (4,2)
+      to [C, l^=$C$, *-*] (4,0)
+      (4,2) to [short] (6,2)
+      (6,0) to [open, v_=$s$, *-o] (6,2)
+      (0,0) to [short] (6,0);
+\end{circuit}
+
+\begin{circuit}
+      \draw
+      (0,0) to [open, v_=$e$, *-o] (0,2)
+      (0,2) to [R, l=$R$] (2,2) 
+      to [C, l^=$C$, *-*] (2,0)
+      (2,2) to [R, l=$R$] (4,2)
+      to [C, l^=$C$, *-*] (4,0)
+      (4,2) to [R, l=$R$] (6,2)
+      to [C, l^=$C$, *-*] (6,0)
+      (6,2) to [short] (8,2)
+      (8,0) to [open, v_=$s$, *-o] (8,2)
+      (0,0) to [short] (8,0);
+\end{circuit}
+
+\end{exercise}
+
+\begin{solution}
+
+avec $p = jRC\omega = j\frac{\omega}{\omega_0}$
+\begin{align*}
+    \frac{s}{e} &= \frac{1}{1+p} \\
+    \frac{s}{e} &= \frac{1}{(1+p)(2+p)-1} \\
+    \frac{s}{e} &= \frac{1}{(1+p)(2+p)^2-1} \\
+\end{align*}
+\end{solution}

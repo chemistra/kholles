@@ -1,0 +1,32 @@
+\begin{exercise}{Chaudière}{-1}{Spé}
+{Thermo, système ouvert}{lelay, centrale, CCP}
+
+On s’intéresse à un système pour chauffer l’eau. On fait rentrer de l’eau à une température $\theta_\text{e} = 30$~$^\circ$C dans un cylindre de rayon $R_\text{min}= 8$~cm creusé dans un plus grand cylindre de fonte de rayon $R_\text{max} = 40$~cm et de longueur $L = 60$~cm. Une source de chaleur (feu de bois par exemple) fournit une puissance thermique $\phi = 20$~kW à la fonte. L’eau circule avec un débit massique $D_\text{m} = 25$~kg/min. On suppose que la température dans la fonte ne varie que selon le rayon $r$.
+
+
+\paragraph{Questions :}
+\begin{questions}
+    \question Déterminer la température $\theta_\text{s}$ de l’eau en sortie
+    \question Déterminer la température de la fonte en $R_\text{max}$
+    \question Comment évolue le système si l’on arrête simultanément la chauffage ($\phi = 0$) et l’arrivée d’eau ($D_\text{m} = 0$) ?
+\end{questions}
+
+Données :
+\begin{itemize}
+    \item Conductivité thermique de la fonte : 36~W/m/K
+    \item Capacité thermique massique de la fonte : 0.45~J/g/K
+    \item Masse volumique de la fonte : 7800~kg/m$^3$
+    \item Température de fusion de la fonte : 1800~$^\circ$C
+    \item Capacité thermique massique de l'eau : 4.18~J/g/K
+\end{itemize}
+
+\end{exercise}
+
+\begin{solution}
+    
+\begin{questions}
+    \question ThermoD en système ouvert $D_m c_{eau}(\theta_s-\theta_a) = \phi$. On trouve une augmentation de température de 11 degrés : c'est ok, la température d'une douche
+    \question Diffusion dans un cylindre, il faut retrouver l'expression du laplacien en cylindrique $\Delta T = \frac1r \partial_r\qty(\frac1r\partial_rT)$. Il faut se mettre en régime permanent et prendre $T(R_{min}) = \theta_s$ par exemple. On trouve une temp ext de l'ordre de 150 degrés
+    \question Il faut dire que tout se stabilise à une température $\theta_f$ et écrire le premier principe entre le moment où on coupe et la fin, puis intégrer pour trouver $\theta_f$.
+\end{questions}
+\end{solution}

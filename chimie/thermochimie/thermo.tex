@@ -1,0 +1,150 @@
+% Niveau :      MP
+% Discipline :  Thermo
+% Mots clés :   Premier principe, second principe
+
+\begin{exercise}{Premier principe chimique}{1}{MP}
+{Chimie, Thermodynamique, Premier principe}{bermu}
+
+
+\begin{questions}
+    \questioncours Premier principe dans un système à composition variable. \\ Enthalpie standard de formation. Loi de Hess (démonstration).
+    
+\uplevel{Dans cet exercice, on étudie la réaction de combustion du méthane $CH_4$.}
+    
+    \question \'Equilibrer la réaction suivante et déterminer son enthalpie standard de réaction. Cette réaction est-elle exothermique ou endothermique ?
+    $$\mathrm{{CH_4}_{(g)} + {O_2}_{(g)} \longrightarrow {CO_2}_{(g)} + {H_2O}_{(\ell)}}$$
+    
+\uplevel{Pour un système adiabatique, la température de flamme $T_\text{f}$ est la température telle que toute la chaleur de réaction est utilisée pour chauffer le système.}
+    \question Déterminez la température de flemme de cette réaction.
+    
+\uplevel{En réalité, la combustion se fait dans l'air.}
+    \question Rappeler les trois composants majoritaires de l'air ainsi que la proportion $\beta$ de O$_{2(g)}$.
+    \question Si on appelle ${c^\circ_p}'$ la capacité thermique des gaz de l'air autres que O$_2$, quelle est la nouvelle expression de $T_\text{f}$ ?
+    \question Dans le cas le taux de réaction n'est pas complet $\alpha$, quelle est la nouvelle expression de $T_\text{f}$ ? 
+    
+\end{questions}
+
+\paragraph{Données :} enthalpies standard de formation et capacités thermiques isobares à 295K.
+
+\begin{table}[H]
+    \qquad\begin{tabular}{r|ccccc}
+        Espèce & $\mathrm{CH_{4 (g)}}$ & $\mathrm{O_{2 (g)}}$ & $\mathrm{CO_{2 (g)}}$ & $\mathrm{H_2O_{(\ell)}}$ & Autres gaz \\ \hline\hline
+        $\Delta_\text{f}H^\circ$ (kJ$\cdot$mol$^{-1}$) & $-74,4$ & --- & $-394$ & $-286$ & --- \\
+        $c_p^\circ$ (J$\cdot$mol$^{-1}\cdot$K$^{-1}$) & $36,0$ & $29,4$ & $46,7$ & $33,6$ & $29,3$ \\ \hline
+    \end{tabular}
+\end{table}
+\end{exercise}
+\begin{solution}
+
+\begin{questions}
+    \questioncours Premier principe dans un système à composition variable. \\ Enthalpie standard de formation. Loi de Hess (démonstration).
+    
+\uplevel{Dans cet exercice, on étudie la réaction de combustion du méthane $CH_4$.}
+    
+    \question exothermique
+    
+\uplevel{Pour un système adiabatique, la température de flamme $T_\text{f}$ est la température telle que toute la chaleur de réaction est utilisée pour chauffer le système.}
+    \question Hypothèse : tous les reactifs ont reagi
+    
+\uplevel{En réalité, la combustion se fait dans l'air.}
+    \question 20\% O2
+    \question zoom zoom zang
+    \question zim zim zoom
+    
+\end{questions}
+
+\end{solution}
+
+
+\begin{exercise}{Second principe chimique}{1}{MP}
+{Chimie, Thermodynamique, Second principe}{bermu}
+
+\begin{questions}
+    \questioncours Second principe dans un système à composition variable dans la formulation de De Donder.
+    
+\uplevel{Dans cet exercice, on étudie la réaction d'isomérisation de deux énantiomères R et S de l'acide aminé alanine.}
+    
+    \question Justifier qualitativement que les deux molécules ont des potentiels chimiques identiques : $\mu^\ast_\textsc{r} = \mu^\ast_\textsc{s} = \mu^\ast$. Donner en fonction du potentiel chimique standard de l'alanine $\mu^\circ$ le potentiel chimique de l'alanine en proportion $\alpha$.
+    
+    \question Initialement, on introduit $n_0$ moles d'un seul énantiomère pur (R par exemple). Il est observé une réation de racémisation :
+    $$\mathrm{R \leftrightharpoons S}.$$
+    Justifier qualitativement qu'un tel mélange est idéal.
+    
+    \question Exprimez la différence l'enthalpie libre molaire $\Delta G_\text{m}(\eta,T)$ du système par rapport à l'état initial en fonction de l'avancement relatif $\eta$ de la réaction, de la température $T$ et de $\mu^\circ(T)$.
+    
+    \question Quel est l'état d'équilibre final ? Donner $\Delta G_\text{m,tot}(T)$. En quoi cette expression est-elle universelle ?
+    
+\end{questions}
+
+\end{exercise}
+\begin{solution}
+
+\begin{questions}
+    \questioncours Second principe dans un système à composition variable dans la formulation de De Donder.
+    
+\uplevel{Dans cet exercice, on étudie la réaction d'isomérisation de deux énantiomères R et S de l'acide aminé alanine.}
+    
+    \question $\mu = \mu^0 + RT \ln(\alpha)$
+    
+    \question C LA MEME
+    
+    \question Puisque $G = G(R) + G(S)$,
+    \begin{align*}
+        \Delta G &= G_{final} &- G_{init} \\
+        &= \eta (\mu_0 + RT\ln(\eta)) + (1-\eta)(\mu_0 + RT\ln(1-\eta)) &- 1(\mu_0 + RT\ln(1)) \\
+        &= \eta RT\ln(\eta)  + (1-\eta) RT \ln(1-\eta)&
+    \end{align*}
+    
+    \question $G_\text{m,tot}(T) = -RT\ln(2)$ ($\eta= 1/2$ pour minimiser)
+    
+\end{questions}
+
+\end{solution}
+
+
+\begin{exercise}{Potentiel chimique}{1}{MP}
+{Chimie, Thermodynamique, Potentiel chimique}{bermu}
+
+
+\begin{questions}
+    \questioncours Potentiel chimique : définition et expression dans différent systèmes.
+    
+\uplevel{Dans cet exercice, on étudie le potentiel chimique de l'eau.}
+    \question Déterminer l'effet d'une augmentation de pression de $\Delta P = 100$ bar sur le potentiel chimique de l'eau.
+    
+    \question Déterminer l'effet d'une augmentation de température de $\Delta T = 100$ K sur le potentiel chimique de l'eau
+    \begin{parts}
+        \part En supposant constantes les grandeurs thermodynamiques en fonction de la température.
+        \part En prenant en compte de la dépendance des grandeurs thermodynamiques à la température avec la capacité thermique de l'eau.
+    \end{parts}
+    Comparer les deux résultats.
+
+\end{questions}
+
+\paragraph{Données :} la plupart est supposée connue pour l'eau, mais on pourra demander si besoin.
+
+\end{exercise}
+
+\begin{solution}
+    $V^\circ_m = 18 \cdot 10^{-6}$ m$^3\cdot$mol$^-1$, $\Delta\mu^\ast_P = 180$ J$\cdot$mol$^{-1}$ \\
+    $S^\circ_m = 70$ J$\cdot$K$^-1\cdot$mol$^-1$, $\Delta\mu^\ast_T = -7$ kJ$\cdot$mol$^{-1}$ \\
+    $c^\circ_{pm} = 75$ J$\cdot$K$^-1\cdot$mol$^-1$, ${\Delta\mu^\ast_T}' = -8,14$ kJ$\cdot$mol$^{-1}$
+    
+
+\begin{questions}
+    \questioncours Potentiel chimique : définition et expression dans différent systèmes.
+    
+\uplevel{Dans cet exercice, on étudie le potentiel chimique de l'eau.}
+    \question $\mu^* = \mu^0 + V_m^* (P-P^0)$
+    
+    \question Déterminer l'effet d'une augmentation de température de $\Delta T = 100$ K sur le potentiel chimique de l'eau
+    \begin{parts}
+        \part $\pdv{\mu}{T} = S_m^*$
+        \part $\dd{H} = T\dd{S}$ donc $\pdv{S}{T} = \frac{c_p}{T}$
+    \end{parts}
+    Comparer les deux résultats.
+    
+\end{questions}
+
+
+\end{solution}

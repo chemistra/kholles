@@ -1,0 +1,36 @@
+% Niveau :      PC *
+% Discipline :  Méca
+% Mots clés :   Lune
+
+\begin{exercise}{Autour de la Lune}{3}{Spé}
+{Mécanique,Mécanique céleste, Mécanique en référentiel non galiléen}{bermu}
+
+Considérons un satellite en orbite autour de la Terre, disons la Lune par exemple. Ce satellite est sous l'influence gravitaire de la Terre mais également du Soleil.
+
+\begin{questions}
+        \question (\emph{Culture sciences-physiques}) Que savez-vous du problème à 3 corps (c'est d'ailleurs le titre d'un roman de Cixin Liu) ?
+        \question Sans calcul, montrez que si un satellite est trop éloigné de la Terre, il peut sortir de son orbite sous l'effet du Soleil.
+        \question Soit un satellite de masse $\delta_m$ situé dans l'alignement Terre-Soleil. On se place dans le référentiel où le Soleil et la Terre sont fixes : ce référentiel est-il galiléen ? Si non, indiquer l'amplitude des forces d'inertie.
+        \question On appelle $D$ la distance Soleil--Terre et $d$ la distance Terre--satellite, $M_\odot$ la masse du Soleil et $m_\oplus$ la masse de la terre. Quelles sont les forces s'exerçant sur $\delta_m$ ? 
+        \question En supposant $\frac{d}{D} \ll \qty(\frac{m_\oplus}{M_\odot})^{\frac12}$, quelle est la valeur de $r$ pour laquelle ces forces sont à l'équilibre ? c'est la limite de Hill.
+        \question Calculer la limite de Hill pour la Terre et le Soleil, et montrer que la Lune n'est pas en danger immédiat de sortir de son orbite.
+\end{questions}
+
+\paragraph{Données}
+\begin{itemize}
+    \item Masse de la Terre : $m_\oplus$ à retrouver
+    \item Masse du Soleil : $M_\odot = 1,99\times 10^{30}$ kg.
+\end{itemize}
+
+\end{exercise}
+
+\begin{solution}
+\begin{questions}
+    \question C UN ROMAN
+    \question Zou
+    \question Non, $F_i = \delta m r\Omega^2 \vb{e_r}$
+    \question Si on prend le satellite entre le soleil et la Terre, $F_{\odot} = -\frac{GM_{\odot}\delta m}{(a-r)^2}\vb{e_r}$ et $F_{M} = \frac{GM\delta m}{r^2}\vb{e_r}$
+    \question On doit trouver $r_H = a\qty(\frac13\frac{m}{M})^{1/3}$
+    \question On trouve 1 500 000 km, la distance Terre-Lune est 380 000 km
+\end{questions}
+\end{solution}

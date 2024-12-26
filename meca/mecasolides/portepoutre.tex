@@ -1,0 +1,24 @@
+\begin{exercise}{La poutre}{2}{Sup}
+{Mécanique,Moment cinétique, Couple}{lelay}
+
+On considère une poutre de longueur $L$ et de masse $M$, qui est portée à l'horizontale par deux bûcherons. L'un d'eux se trouve à l'une des extrémités de la poutre, l'autre se trouve à une distance $\ell$ du premier. Les bûcherons ne peuvent exercer sur la poutre que des forces dirigées verticalement.
+
+\begin{questions}
+    \questioncours Moment d'une force en un point.
+    \question Sans calculs, quel est la force exercée par chacun des bûcherons sur la poutre dans le cas (a) $\ell = L$ et $\ell = L/2$ ?
+    \question Montrer que l'équilibre de la poutre en position horizontale se traduit par un système de deux équations.
+    \question Tracer la force exercée par chaque bûcheron pour la maintenir position horizontale en fonction de $\ell$. Que se passe-t-il pour $\ell \rightarrow 0$ ?
+    \question Le bûcheron situé à l'extrémité de la poutre se suspend à elle pour faire une farce à son collègue. Quel est le poids que celui-çi doit alors soulever ? Où doit-il se placer sur la poutre ?
+\end{questions}
+
+\end{exercise}
+
+\begin{solution}
+    \begin{questions}
+    \questioncours $M = OP x F$
+    \question $\ell = L$ : chacun soulève un poids $M/2$. $\ell = L/2$ : le bucheron au centre soulève toute la poutre, l'autre ne sert à rien.
+    \question Équilibre des forces (PFD sur la poutre) : $F_1 + F_2 = Mg$. Équilibre des moments (TMC sur la poutre) $F_1 \frac{L}{2} + F_2 \qty(\frac{L}{2}-\ell)$
+    \question $F_2 = Mg\frac{L}{2\ell}$ ; $F_1 = Mg\qty(1 - \frac{L}{2\ell})$
+    \question En notant $m$ la masse du bûcheron farceur, $F_1 = -mg$ et donc $F_2 = (M+m)g = Mg\frac{L}{2\ell}$ d'où $\ell = \frac{L}{2}\frac{M}{M+m}$. On a bien $\ell < L/2$ puisque $F_1 < 0$
+    \end{questions}
+\end{solution}

@@ -1,0 +1,68 @@
+\begin{exercise}{Pression de radiation}{2}{Spé}
+{Ondes électromagnétiques}{lelay}
+
+On considère une onde plane, monochromatique de fréquence $\nu$ se propageant dans la direction des $z$ croissant et dont le champ électrique s'exprime $\vec{E} = E_0\cos(\omega t - kz)\vec{u}_x$.
+\begin{questions}
+    \questioncours Rappeler l'équation aux dérivées partielles vérifiée par les champs $\vec{E}$ et $\vec{B}$ correspondant à cette onde.
+    \question exprimer le champ magnétique associé à cette onde, puis son vecteur de Poynting.
+    \question Exprimer l'éclairement $\mathcal{E}$, c'est-à-dire la puissance surfacique moyenne de l'onde dans la direction perpendiculaire à la propagation, en fonction de $E_0$, $c$ et $E_0$. 
+
+    \uplevel{D'après le principe de la dualité onde-particule de la physique quantique, on peut aussi considérer cette onde comme un flux de photons individuels.}
+    
+    \question Quelle serait alors l'énergie de chacun de ces photons ?
+    \question En déduire le flux surfacique de photons $\phi$ (nombre de photons traversant une surface du plan $x,y$ par unité de temps et de surface) correspondant à cette onde.
+    \question Quel est la quantité de mouvement porté par chacun des photons ? En déduire le flux de quantité de mouvement surfacique de l'onde.
+    
+    \uplevel{On suppose que cette onde arrive sur un objet de masse $m$ présentant une surface $S$, orthogonale à la direction de propagation.}
+    
+    \question Donner l'énergie et la quantité de mouvement fournies par unité de temps à l'objet dans les cas suivants :
+    \begin{parts}
+        \part La surface est noire (absorbant parfaitement le rayonnement électromagnétique)
+        \part La surface est un miroir
+        \part La surface est blanche
+    \end{parts}
+    \question Sachant que la puissance surfacique reçue au niveau de la Terre est de 1.2 kW/m$^2$, donner la puissance lumineuse du Soleil $P_0$
+    \question Quelle est la force de pression de radiation subie par une sphère absorbante (noire) de rayon $a$ située à une distance $r$ du Soleil ?
+    \question Comparer cette force à la gravité pour les cas suivants
+    \begin{parts}
+        \part Une météorite ($a = 1$ m, $m = 10$ tonnes)
+        \part Un grain de poussière stellaire ($a = 0.1$ $\mu$m, $m = 10^{-17}$ kg)
+    \end{parts}
+\end{questions}
+
+\end{exercise}
+
+\begin{solution}
+
+\begin{questions}
+    \questioncours Equation de d'alembert
+    \question $B_0 = E_0/c$, $\Pi =E_0 B_)0/\mu_0 \cos^2(\omega t - kz) = E_0^2 c \epsilon_0 \cos^2(\omega t - kz)$
+    \question $\mathcal{E} = \ev{\Pi} = \frac12 E_0^2 c \epsilon_0$,
+
+    \uplevel{D'après le principe de la dualité onde-particule de la physique quantique, on peut aussi considérer cette onde comme un flux de photons individuels.}
+    
+    \question $E = h\nu$
+    \question $ E\phi = \mathcal{E} $ d'où $\phi = c\epsilon_0 E_0^2/2h\nu$
+    \question $p = \hbar k = h\nu/c$ d'où le flux $\phi p = \epsilon_0 E_0^2 / 2 = \Pi/c = \mathcal{E}/2c$
+    
+    \uplevel{On suppose que cette onde arrive sur un objet de masse $m$ présentant une surface $S$, orthogonale à la direction de propagation.}
+    
+    \question ON FAIT SOIT AVEC UN BILAN DE PARTICULES SOIT JUSTE AVEC L'ONDE
+    \begin{parts}
+        \part Noire : energie absorbée $\mathcal{E} S$, qté de mvt absorbée $\mathcal{E}S/2c$
+        \part Miroir : Energie réféchie, qté de mvt absorbée double donc $\mathcal{E}S/c$
+        \part Blanche : Energie reflechie, qté de mouvement = $\mathcal{E}S/2c(1 +$ qté de mvt diffusée de manière isotrope dans un angle solide de $2\pi$ (demi-sphère) soit
+        $$
+        \frac{1}{2\pi}\int_0^{2\pi}\dd{\varphi} \int_0^{\pi/2}\sin(\theta)\dd{\theta} = (1 - \sqrt{2}/2)
+        $$
+        ) donc voilà.
+    \end{parts}
+    \question Puissance isotrope qui decroit comme $R^2$ (R = 8 min lumière = 150 M de km) d'où $P_0 \sim 2\times 10^{24}$ W
+    \question $dp/dt = \mathcal{E}S/2c = P_0 a^2 / 2cr^2$
+    \question Gravité $F = mM/r^2$ d'où competition entre $mM$ et $P_0a^2/2c$. masse du soleil $2 \times 10^{30}$
+    \begin{parts}
+        \part la gravité gagne
+        \part je sais pas
+    \end{parts}
+\end{questions}
+\end{solution}

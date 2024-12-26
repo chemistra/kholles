@@ -1,0 +1,40 @@
+% Niveau :      PCSI
+% Discipline :  Ondes
+%Mots clés :    
+
+\begin{exercise}{Modélisation du traffic}{2}{Sup, Spé}
+{Ondes}{lelay}
+
+\begin{questions}
+    \questioncours Soit une grandeur extensive de densité $\rho(\vx,t)$. Cette grandeur est mue par une densité de flux $\boldsymbol{\varphi}$. Donnez l'équation de conservation de cette grandeur puis comparez plusieurs exemples usuels en explicitant la forme de $\boldsymbol{\varphi}$.
+\begin{EnvUplevel}
+Nous allons par la suite modéliser le trafic routier 1D à l'aide d'une équation de conservation.
+\end{EnvUplevel}
+    \question Proposez une grandeur physique à laquelle on applique l'équation de conservation.
+    \question On suppose que le flux de voitures obéit se déplace localement à la vitesse suivante
+    $$u(\rho) = u_\text{max}\qty(1 - \dfrac{\rho}{\rho_\text{c}}).$$
+    Identifiez le sens physique de cette expression en considérant les cas limites. \question Quel est le flux $\varphi$ associé ? En déduire l'équation de la dynamique du système.
+    \question Adimensionnez ce modèle.
+\uplevel{Par la suite, les variables désignent les quantités adimensionnées.}
+    
+    \question On considère tout d'abord que le traffic est très fluide $\rho \ll 1$.
+    \begin{parts}
+        \part Donnez à l'ordre principal en $\rho$ l'équation de la dynamique du système et résolvez-là avec la situation générale
+        $$\rho(x, t=0) = \rho_0(x).$$
+        On pourra considérer le changement de variable $z = x - t$.
+        \part Faire un schéma pour une distribution gaussienne de voitures.
+        \part Représenter la relation de dispersion du milieu et considérez les cas limites que ne prennent pas en compte l'appoximation $\rho\ll 1$.
+    \end{parts}
+    
+    A finir !
+    
+\end{questions}
+
+\paragraph{Données :}
+\begin{itemize}
+    \item accélération de la pesanteur terrestre $g = 10$ m$^2\cdot$s$^{-1}$,
+    \item masse volumique de l'acier $\rho = 8\cdot 10^3$ $\mathrm{kg\cdot m^{-3}}$,
+    \item hauteur de la tour Eiffel $H = 300$ m,
+    \item largeur de la base de la tour Eiffel $L = 125$ m.
+\end{itemize}
+\end{exercise}

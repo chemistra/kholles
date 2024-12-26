@@ -1,0 +1,45 @@
+
+% Niveau :      PC
+% Discipline :  Thermo
+%Mots clés :    Rayonnement du corps noir
+
+\begin{exercise}{Vélo crevé}{2}{Sup}
+{Thermodynamique, Gaz parfait, Théorie cinétique des gaz}{bermu,bedo}
+
+On considère une chambre à air d'un pneu de vélo de volume $V$ gonflée à une pression $P_0$. L'air extérieur est sous pression normale atmosphérique $P_\text{a}$ et à température ambiante $T_\text{a}$. Initialement, à $t=0$, la chambre se perce d'un trou de section $s$.
+
+On supposera que la pression $P(t)$ et la température restent uniformes dans le pneu pendant son dégonflement. On supposera également le processus monobare et isotherme.
+
+\begin{questions}
+    \questioncours Vitesse quadratique thermique moyenne. On donnera le résultat en fonction des données du problème.
+    
+    \question Durant $\dd{t}$, estimer le nombre de moles $\dd{n}$ entrant et sortant du pneu par le trou $s$.
+    \question En déduire l'équation différentielle régissant la pression du pneu au cours du temps $P(t)$ en fonction de $P_\text{a}$ et d'un temps $\tau$ que l'on introduira et interprétera et la résoudre.
+    \question \textsf{Résolution de problème :} lors de la journée nationale de mobilisation contre la réforme des retraites, suite à un mouvement de grève des transports émanant des organisations intersyndicales représentatives de la RATP/SNCF, vous devez vous déplacer à vélo. Mais celui-ci est crevé à cause d'une aiguille de pin. Estimer le temps de dégonflement du pneu de votre vélo.
+
+\end{questions}
+
+\paragraph{Données :}
+\begin{itemize}
+    \item on modélise l'air comme un gaz parfait diatomique de masse volumique $M = \SI{29}{g\cdot mol^{-1}}$.
+    \item constante des gaz parfaits $R = \SI{8,314}{SI}$.
+    \item volume d'un tore $V = 2\pi^2 r^2 R$, $r$ est le petit rayon, $R$ le grand rayon.
+    \item recommandation de gonflage des pneus de vélo : entre 6 et 8 bar.
+\end{itemize}
+\end{exercise}
+
+\begin{solution}
+\begin{questions}
+    \questioncours $\dfrac{5}{2}k_\textsc{b}T = \dfrac{1}{2}mv_q^2\quad$ soit $\quad v_q = \sqrt{\dfrac{5RT}{M}}$.
+    \question On modélise la cinétique des gaz comme un mouvement des molécules à $v_q$ dans chacune des 6 directions de l'espace.
+    Ainsi, le nombre de particules qui sortent de l'enceinte par $s$ est \\
+    $\dd{N}_\text{s} = \dfrac{1}{6}v_q\dd{t} n_\text{int}(t)$ et entrant $\dd{N}_\text{e} = \dfrac{1}{6}v_q\dd{t} n_\text{a}$, $n_\text{int}(t)$ et $n_\text{a}$ étant les densités molaires à l'intérieur et à l'extérieur de l'enceinte.
+    \question Donc comme $P(t) = n_\text{int}(t)RT_\text{a}$ et $\dd{P} = RT_\text{a}\dd{N}$, on a 
+    $$\dv{P}{t} = - \dfrac{P - P_\text{a}}{\tau}$$
+    avec $\tau = \dfrac{6V}{s v_q} = \dfrac{6V}{s}\sqrt{\dfrac{M}{5RT_\text{a}}}$
+    \question $P(t) = P_0 + (P_\text{a} - P_0)e^{-t/\tau}$.
+    En odg, le diamètre d'un aiguille de pin 2 mm, soit $s \sim \SI{3}{mm^2}$.
+    Le volume du pneu : $r = \SI{10}{mm}$, $R=\SI{500}{mm}$, donc $V \sim \SI{1e6}{mm^3}$
+    $v_q = $
+\end{questions}
+\end{solution}

@@ -1,0 +1,39 @@
+% Niveau :      PC
+% Discipline :  Electromagnétisme
+%Mots clés :    Equations de Maxwell, Debye-Hückel
+
+\begin{exercise}{Cerceau -- Dipole}{3}{Spé}
+{\'Electromagnétisme,\'Electrostatique,Statique des fluides}{bermu}
+
+\begin{questions}
+    \questioncours Quelle est l'expression du potentiel $V(\vr)$ et du champ $\vE(\vr)$ électriques de deux charges ponctuelles de signes opposés $\pm q$ distantes de $d$. \\
+    Sans calcul, comment généraliser cela à une distribution continue ?
+\begin{EnvUplevel}
+
+On considère une distribution linéaire de charge électrique de forme circulaire, de rayon $R$ et de charge totale $q$. On appelle $O$ le centre du cercle. 
+
+On définit $Oz = (O, \ve_z)$ l'axe de symétrie de la distribution. On étudiera uniquement les effets de la distribution pour une charge test située en $Oz$.
+\end{EnvUplevel}
+    \question Faire un schéma de la situation et introduire un système de coordonnées pertinent.
+    \question Discuter les éléments de symétrie de la distribution et en déduire la forme attendue du champ $\vE(z)$ pour un observateur situé sur $Oz$.
+    \question Calculer la contribution au potentiel électrique $\dd{V}(z)$ d'un élément $\dd{q}$ de la distribution --- qu'on exprimera dans le système de coordonnées choisi --- pour un observateur situé en $z$ sur $Oz$.
+    \question En déduire le potentiel total $V(z)$ généré par le cercle en $z$, puis le champ électrique $\vE(z)$.
+    \question Soit une charge test $q'$ contrainte sur l'axe $Oz$. Etablir la dynamique de $q'$ proche de $z = 0$.
+\uplevel{On considère que cette charge $q' = -q$ est désormais fixée en $z = d$.}
+    \question Quel est le potentiel total $V'$ ressenti pour un observateur en $z$ ?
+    \question Montrez que la distribution totale se comporte comme un dipôle, dont on calculera le moment dipolaire $\vec{p}$.
+    \question Quid du cas $d = 0$ ?
+\end{questions}
+
+
+\end{exercise}
+
+\begin{solution}
+\begin{questions}
+    \questioncours 
+    \question
+    \question
+    \question $\dd{V} = \dfrac{q\dd{\theta}/2\pi}{4\pi\varepsilon_0 \sqrt{R^2 + z^2}}$
+    \question $V = \dfrac{q}{4\pi\varepsilon_0 \sqrt{R^2 + z^2}}$, $\vE = \dfrac{q z}{4\pi\varepsilon_0 (R^2 + z^2)^{3/2}}$
+\end{questions}
+\end{solution}

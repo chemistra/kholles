@@ -1,0 +1,58 @@
+% Niveau :      PCSI *
+% Discipline :  Méca
+% Mots clés :   Trajectoire particule chargée
+
+\begin{exercise}{Arc électrique : c'est disruptif !}{2}{Sup, Spé}
+{Mécanique,Mécanique particules chargées,Thermodynamique}{bermu}
+
+\begin{questions}
+\questioncours Quelle est la définition de l'électron-volt eV et dans quels cas l'utilise-t-on ?
+
+\begin{EnvUplevel}
+On se propose d'étudier une décharge électrique entre deux électrodes planes séparées d'une distance $d = 10$ mm et donc la différence de potentiel est $V_0 = 1$ kV. Le problème étant quasi 1D, on ne regardera que la variable d'espace $x$.
+\end{EnvUplevel}
+
+\question Quelle est l'expression du potentiel $V$ et du champ électrique $\vE$ entre les deux électrodes ?
+
+\question Quelle est la trajectoire d'un seul électron en fonction du temps ? Cela vous paraît-il réaliste ?
+
+\uplevel{La décharge électrique est créée par un phénomène d'\emph{avalanche électronique} : à chaque collision avec un atome d'air, un électron arrache un électron à l'atome qui lui-même arrache d'autres électrons \textit{etc}.}
+
+\question Entre deux collisions, l'électron parcours une distance $\ell$ correspondant au libre parcours moyen dans le gaz. Supposant qu'il soit réémis suivant $Ox$, quelle est la vitesse moyenne $v_m$ de l'électron ?
+
+%\question Et s'il était réémis dans des directions aléatoires ? (\emph{Vous pouvez seulement entamer la démarche sans faire les calculs.})
+
+\question Sachant qu'il faut un travail $W_\text{ion}$ pour arracher un électron, donner un critère sur $V_0$ et le libre parcours moyen $\ell$ du gaz pour qu'il y ait une avalanche électronique. \\
+Calculer $V_0$. Cela vous parait-il cohérent ?
+
+\question Combien d'électrons auront été émis après un temps $t$ ? En déduire que la loi de courant des électrons est exponentielle
+$$\vj_e = j_0 e^{\alpha x}\ve_x,$$
+$j_0$ et $\alpha$ étant des paramètres que vous identifierez.
+
+\uplevel{La décharge électrique étant aussi liée au courant des ions il faut également prendre en compte la dynamique des ions.}
+
+\question Comment se comportent les ions ? Donner l'énergie cinétique des ions lorsqu'ils arrivent en $z=0$ et comparer à $W_\text{ion}$.
+
+\uplevel{Cette vitesse étant très grande, cela signifie que les ions arrachent également des électrons à la cathode.}
+
+\question Estimer le nombre $\gamma$ d'électrons arrachés par  un ion.
+
+\question Justifier que
+$$j(0) = \gamma\qty(j(0) - j(d)),$$
+et en déduire la loi de Townsend
+$$j(d) = j(0) \dfrac{e^{\alpha d}}{1 + \gamma(1 - e^{\alpha d})}.$$
+
+\question Cette loi admet une singularité : donner la relation entre $\alpha$ et $\gamma$ à la singularité et interpréter physiquement la singularité.
+\question En déduire la loi de Paschen :
+$$V_\text{disruption} = U_\text{ion}\dfrac{d/\ell}{\ln{d/\ell} - \ln(1+\gamma^{-1})}.$$
+Quelle est la tension de disruption du système ?
+\end{questions}
+
+\paragraph{Données :}
+\begin{itemize}
+    \item charge élémentaire $e = 1,6\times 10^{-19}$ C,
+    \item masse le l'électron $m_e = 9,1\times 10^{-31}$ kg,
+    \item masse d'un ion $m_i = 2,6\times 10^{-26}$ kg,
+    \item dans l'air sec : $W_\text{ion} = 34$ V et $\ell = 70$ nm.
+\end{itemize}
+\end{exercise} 

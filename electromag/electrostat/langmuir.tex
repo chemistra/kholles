@@ -1,0 +1,28 @@
+% Niveau :      PC
+% Discipline :  Electromagnétisme
+%Mots clés :    Equations de Maxwell, Debye-Hückel
+
+\begin{exercise}{\'Eclatement Coulombien}{3}{Spé}
+{\'Electromagnétisme,\'Electrostatique,Plasmas}{bermu}
+
+On considère un faisceau cylindrique d'électrons de densité $n_0$. \`A l'instant $t=0$, le rayon est $R$.
+
+
+\begin{questions}
+    \question Donner le champ électrique $\vE$ généré par ce faisceau en $r > R$.
+    \question On considère un électron situé juste en surface du faisceau $r = R + \xi$. Donner l'équation de la dynamique vérifiée par $\xi$. On fera apparaître une pulsation caractéristique $\omega_\textsc{p}$ dont on interprétera le sens physique.
+    \question En déduire une relation entre $\dot{\xi}$,  $\xi$, $r$ et $\omega_\text{p}$.
+    \question Calculer le temps de doublement du rayon du faisceau en focntion de $\omega_\textsc{p}$ et d'une intégrale dont on ne calculera pas la valeur.
+\end{questions}
+
+
+\end{exercise}
+
+\begin{solution}
+    \begin{questions}
+        \question $E(r) = \dfrac{n q}{2\ep_0} \dfrac{R^2}{r}$
+        \question $\dv[2]{x}{t} = \dfrac{n q^2}{2\ep_0 m} \dfrac{R^2}{R + \xi}$
+        \question $\dot{\xi} = \omega_\textsc{p} R \sqrt{\log[\dfrac{R+\xi}{R}]}$
+        \question d'où avec $u = \xi/r$, $t = \dfrac1{\omega_\textsc{p}} \displaystyle\int_1^{2} \dfrac{\dd{u}}{\sqrt{\log u}} = \dfrac{2,14}{\omega_\textsc{p}}$
+    \end{questions}
+\end{solution}

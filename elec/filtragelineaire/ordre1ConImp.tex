@@ -1,0 +1,56 @@
+% Niveau :      PCSI
+% Discipline :  Elec
+% Mots clés :   Elec, Ordre 1
+
+\begin{exercise}{Condensateur réel}{1}{Sup}
+{\'Electrocinétique, Circuits d'ordre 1}{lelay}
+
+\begin{questions}
+    \questioncours Donne la loi reliant la tension aux bornes d'un condensateur au courant qui le traverse, sous forme différentielle et complexe. Unité et ordre de grandeur de la capacité d'un condensateur
+    \question Le condensateur "idéal" existe-t-il dans la vraie vie ? Justifie qu'on représente un condensateur "réel" par un condensateur idéal et une résistance $r$ en parallèle. Comment doit être $r$ afin de se rapproche le plus possible du condensateur idéal ?
+    \question On cherche maintenant à trouver la capcité $C$ d'un certain condensateur, en prenant en compte sa résistance interne. On considère le circuit ci-dessous, où $R$ vaut 50 k$\Omega$ :
+    \begin{circuit}
+          \draw
+          (0,0) to [open, v_=$\underline{e}$, *-o] (0,4)
+          (0,4) to [R, l=$R$] (2,4) 
+                to [short] (4,4)
+                to [short] (4,3)
+          (4,3) to [short] (5,3)
+                to [R, l=$r$] (5,1)
+                to [short] (4,1)
+          (4,3) to [short] (3,3)
+                to [C, l=$C$] (3,1)
+                to [short] (4,1)
+          (4,1) to [short] (4,0)
+          (4,4) to [short] (6,4)
+          (6,0) to [open, v_=$\underline{s}$, *-o] (6,4)
+          (0,0) to [short] (6,0);
+    \end{circuit}
+    Donner sa fonction de transfert $\underline{H} = \frac{\underline{s}}{\underline{e}}$
+    \question Tracer l'allure du graphe de $\abs{\underline{H}}$ et $\arg(\underline{H})$ en fonction de $\frac{\omega}{\omega_0}$ où $\omega_0$ est une pulsation caractéristique du système que l'on précisera.
+    \question Si on se place à très basse fréquence et que le signal d'entrée $\underline{e}$ a une amplitude de 5.25 V, le signal de sortie présente une amplitude de 5 V. En déduire $r$.
+    \question On constate qu'à $f = 16$ kHz, les deux signaux $\underline{s}$ et $\underline{e}$ sont en quadrature de phase. En déduire la valeur de la capacité $C$.
+\end{questions}
+\end{exercise}
+
+
+\begin{solution}
+
+
+\begin{questions}
+    \questioncours $i = C\dv{U}{t}$, $C\sim 1$ $\mu$H
+    \question Impossible ideal, un condensateur est fait d'un milieu isolant mais y a bien une fuite (resistivite non nulle). idéal : résistivite nulle de l'isolant, donc $r=\infty$.
+    \question On a un diviseur de tension : 
+    \begin{align*}
+        \underline{s} &= \frac{\frac{1}{\frac{1}{r} + jC\omega}}{R\,+\,\frac{1}{\frac{1}{r} + jC\omega}}\underline{e} \\
+        &= \frac{1}{\frac{R}{r} + jCR\omega + 1}\underline{e}
+    \end{align*}     
+    soit sous forme canonique
+    $$ H(\omega) = \frac{H_0}{1 + j\frac{\omega}{\omega_0}}$$
+    avec $H_0 = r/(r+R)$ et $\omega_0 = (R+r)/(rRC)$
+    \question On a un passe bas d'ordre 1, avec une phase qui va de 0 à $-\pi/2$
+    \question À très basse fréquence on $H = H_0 = 5/5.25$ d'où $r = 20 R = 1$ M$\Omega$
+    \question quadrature de phase : on a $\omega = \omega_0$. On en déduit $C = (R+r)/(r R 2\pi f)$ soit 10 $\mu$F.
+\end{questions}
+
+\end{solution}

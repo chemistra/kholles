@@ -1,0 +1,87 @@
+% Niveau :      PCSI - PC
+% Discipline :  Elec
+% Mots clés :   Elec, Ordre 2
+
+\begin{exercise}{Filtres en cascade}{3}{Sup,Spé}
+{\'Electrocinétique, Circuits d'ordre 2}{bermu}
+
+On considère le circuit suivant :
+
+\begin{circuit}
+      \draw
+      (0,0) to [short] (3,0)
+      to [open, v_=$u_1$, *-o] (3,2) 
+      to [short] (2,2)
+      (0,0) to [open, v^=$u_0$, *-o] (0,2)
+      to [R, l=$R$] (2,2) 
+      to [C, l^=$C$, *-*] (2,0);
+\end{circuit}
+
+On note $Y_1 = jC\omega$.
+
+\begin{questions}
+    \questioncours Rappeler les lois de composition d'impédances ou d'admittance pour des dipôles en série et en parallèle.
+    \question Donner la fonction de transfert $H_1(\omega)$ de ce filtre en fonction de $R$ et $Y_1$ puis de $\omega$ et tracer le diagramme de Bode associé. Quel est le comportement de ce filtre ?
+\uplevel{On met désormais ce filtre en cascade avec un autre filtre identique.}
+    \question Pourquoi la fonction de transfert de ce nouveau filtre n'est pas $H_2 = {H_1}^2$ ? \\
+        Comment pourrait-on obtenir un filtre avec une telle fonction de transfert ?
+    \question Montrer que la fonction de transfert $H_2(\omega)$ de ce filtre peut s'écrire
+    $$H_2 = \dfrac{H_1}{1+R Y_2},$$
+    avec $Y_2$, l'admittance d'un dipôle que l'on représentera et dont on donnera la  l'expression.
+    \question Représenter le diagramme de bode de $H_2$.
+\uplevel{On met désormais $n$ filtres de ce type en cascade.}
+    \question Montrer qu'on peut écrire le circuit comme suit :
+    \begin{circuit}
+      \draw
+      (0,0) to [R, l=$R$] (2,0)
+      to [R, l=$Y_n$] (4,0) ;
+      \draw (4,-.4) to [open, v^=$u_0$] (0,-.4) ;
+      \node [ocirc] at (0,0) {} ;
+      \node [circ] at (4,0) {} ;
+\end{circuit}
+et donner une relation de récurence entre $Y_n$, $Y_{n-1}$ et $Z_1$. \\ On ne demande pas de résoudre explicitement l'équation. La résolution de cette équation
+    \question En déduire une relation de récurrence sur $H_n(\omega)$.
+\uplevel{Prenons le cas $n=3$.}
+    \question Quel est le comportement de ce filtre ? Pourquoi l'appelle-t-on un déphaseur.
+\end{questions}
+\end{exercise}
+
+\begin{solution}
+\begin{questions}
+    \questioncours cf. cours
+    \question
+    $$H_1(\omega) = \dfrac{1}{1 + RY_1} = \dfrac{1}{1 + j\omega\tau_\textsc{rc}}, \qqtext{avec} \tau_\textsc{rc} = RC.$$
+    \question Le diviseur de tension ne marche plus car on débite du courant, pour cela il faudrait un suiveur de tension entre les deux filtres.
+    \question $Y_2$ est le composant
+    \begin{circuit}
+          \draw (-0.5,0) to [short, *-*] (0,0);
+          \draw (0,-1) to [short] (0,1)
+          to [R, l^=$R$] (2,1)
+          to [R, l^=$Y_1$] (4,1)
+          to [short] (4,-1)
+          to [R, l^=$Y_1$] (0,-1);
+          \draw (4,0) to [short, *-*] (4.5,0);
+    \end{circuit}
+    $$Y_2 = Y_1 + \dfrac{1}{R + 1/Y_1}$$
+    $$H_2 = \dfrac{1}{(1 + RY_1)\qty(1 + RY_1 + R\dfrac{1}{1 + 1/Y_1})} = \dfrac{1}{1 + 3 RY_1 + R^2Y_1^2} = \dfrac{1}{1 + 3j\omega\tau - \omega^2\tau^2}$$
+    \question 5
+    \question Ainsi on peut représenter le circuit avec $Y_n$
+    \begin{circuit}
+          \draw (-0.5,0) to [short, *-*] (0,0);
+          \draw (0,-1) to [short] (0,1)
+          to [R, l^=$R$] (2,1)
+          to [R, l^=$Y_{n-1}$] (4,1)
+          to [short] (4,-1)
+          to [R, l^=$Y_1$] (0,-1);
+          \draw (4,0) to [short, *-*] (4.5,0);
+    \end{circuit}
+    $$Y_n = Y_1 + \dfrac{1}{R + 1/Y_{n-1}}$$
+    \question Et on en déduit de proche en proche
+    $$H_n = H_1\times H_2 \times \ldots \times H_{n-1} \times \dfrac{1}{1 + RY_n}$$
+    \question 
+\end{questions}
+
+\paragraph{Annexe sans intéret}
+$$\dfrac{1}{1 + RY_n} = \dfrac{\lambda + \lambda^{2n}}{1 + \lambda^{2n + 1}} \qqtext{avec $\lambda$ la solution de module < 1 de l'équation} \lambda (2 + RY_1 - \lambda) = 1$$
+
+\end{solution}

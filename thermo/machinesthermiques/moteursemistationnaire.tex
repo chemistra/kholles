@@ -1,0 +1,58 @@
+\begin{exercise}{Machine thermique semi-stationnaire}{2}{Sup, spé}
+{Thermodynamique}{lelay}
+
+On considère un moteur ditherme $M$, en contact avec deux réservoirs : l'un est l'air ambiant à la température $T_a$, l'autre est un matériau chaud, à la température $T_c > T_a$, possédant une capacité thermique $c$.
+
+\begin{questions}
+    \questioncours Qu'est ce qu'une machine thermique ?
+    \question On considère ce moteur isentropique. Quelle est la puissance qu'il génère dans l'approximation $c \longrightarrow \infty$ ? La reconnaissez vous ?
+    \question Que va-t-il se passer si $c \neq \infty$ ? Vers quoi tendra $T_c$ la température de la source chaude ? En déduire le travail maximum théorique que l'on peut songer à extraire de ce moteur.
+    \uplevel{Les température initiale de la source chaude est notée $T_0$. On considère que le temps typique de variations de $T_c$ est grand devant le temps d'un cycle de la machine.}
+    \question On suppose d'abord que la puissance fournie par la source chaude $P_c$ est constante.
+    \begin{parts}
+        \part Donner l'expression de $T_c(t)$ et représenter graphiquement cette fonction. À partir de quel instant $t_{max}$ le moteur cessera-t-il de fonctionner ?
+        \part Exprimer $P(t)$ la puissance mécanique fournie par le moteur en fonction du temps. Que vaut $P(t=0)$ ? $P(t=t_{max})$ ? $P(t > t_{max})$ ?
+        \part Montrez que le travail total fourni par le moteur est
+        \begin{align*}
+            W &= c(T_0 - T_a) - cT_a \ln{\frac{T_0}{T_a}}
+        \end{align*}
+    \end{parts}
+    \question Cette fois, on cherche à ce que le moteur fournisse une puissance mécanique $P$ constante.
+    \begin{parts}
+        \part Quel est l'intérêt pratique de cette situation ?
+        \part Montrez que la quantité $x = \frac{T_c}{T_f}$ obéit à l'équation
+        \begin{align*}
+            \tau \dv{x}{t}  = \frac{x}{1-x}
+        \end{align*}
+        On précisera l'expression de $\tau$ et sa dimension.
+        \part En faisant une approximation que l'on justifiera, montrer que l'on peut écrire $T_c = T_0 - \frac{Pt}{c}$. À partir de quand le moteur cessera-t-il de fournir du travail ?
+        \part Montrez que le travail total fourni par le moteur est
+        \begin{align*}
+            W &= c(T_0 - T_a)
+        \end{align*}
+    \end{parts}
+\end{questions}
+
+\end{exercise}
+
+\begin{solution}
+\begin{questions}
+    \questioncours Qu'est ce qu'une machine thermique ?
+    \question Carnot $1 - T_c/T_f$
+    \question $T_c \longrightarrow T_f$, max is $c(T_c(0)-T_f)$
+    \uplevel{Les température initiale de la source chaude est notée $T_0$. On considère que le temps typique de variations de $T_c$ est grand devant le temps d'un cycle de la machine.}
+    \question On suppose d'abord que la puissance fournie par la source chaude $P_c$ est constante.
+    \begin{parts}
+        \part $T_c = T_0 - P_ct/c$, le moteur s'arrête lorsque $T_c=T_c$ i.e. $t = (T_0-T_f)c/P_c$
+        \part $P = P_c - P_f$, avec le second principe on a $P_f = f(P_c)$. 
+        \part Il faut juste intégrer
+    \end{parts}
+    \question Cette fois, on cherche à ce que le moteur fournisse une puissance mécanique $P$ constante.
+    \begin{parts}
+        \part On a tout le temps le meme travail c pratik
+        \part C'est la condition isentropique, $\tau = c T_f / P$
+        \part On résoud par séparation des variables et on trouve $\dd{\qty(x(1-\ln{x}/x))} = -\dd{t}/\tau$, on suppose que $\ln(x)/x \ll 1$ (c'est vrai en $1$, en $\infty$, et le max c'est $1/e$ donc ça passe), tout s'arrête à $\tau(\frac{T_0}{T_f}-1)$
+        \part Pareil il faut juste intégrer. On tombe sur l'optimum (merci l'approximation).
+    \end{parts}
+\end{questions}
+\end{solution}

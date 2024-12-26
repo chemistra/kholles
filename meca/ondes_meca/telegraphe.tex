@@ -1,0 +1,96 @@
+\begin{exercise}{Propagation dans un câble coaxial}{2}{Spé}
+{Propagation}{lelay, classique}
+
+\begin{questions}
+    \questioncours Propagation d'une OPPH dans un câble coaxial idéal
+    \question On considère une câble coaxial, dont la section de longueur $\dd{x}$ peut être modélisée comme suit :
+    \begin{circuit}
+          \draw
+          (0,0) to [open, v_=$\underline{u}(x\, t)$, *-o] (0,4)
+          (0,4) to [short, i^=$\underline{i}(x\, t)$] (2,4) 
+                to [L, l=$\Lambda \dd{x}$] (4,4) 
+                to [R, l=$\rho \dd{x}$] (6,4) 
+                to [short] (7,4)
+                to [short] (7,3)
+          (7,3) to [short] (8,3)
+                to [R, l=$\frac{1}{g \dd{x}}$] (8,1)
+                to [short] (7,1)
+          (7,3) to [short] (6,3)
+                to [C, l_=$\Gamma \dd{x}$] (6,1)
+                to [short] (7,1)
+          (7,1) to [short] (7,0)
+          (7,4) to [short] (8,4)
+                to [short, i^=$\underline{i}(x+\dd{x}\, t)$] (10,4)
+          (0,0) to [short] (10,0)
+                to [open, v_=$\underline{u}(x+\dd{x}\, t)$, *-o] (10,4);
+    \end{circuit}
+    Justifiez cette modélisation. Dans quelle limite se rapproche-t-on du câble idéal ?
+    \question Montrez que l'équation de propagation de la tension vérifiée par $x$ peut se mettre sous la forme 
+    \begin{align*}
+        \pdv[2]{\underline{u}}{x} = \frac{1}{c^2}\pdv[2]{\underline{u}}{t} + (g\Lambda + \rho \Gamma) \pdv{\underline{u}}{t} + g\rho \underline{u}
+    \end{align*}
+    Où $c$ est une constante dont l'expression, la dimension et le sens sera précisée.
+    \uplevel{On considère maintenant la propagation d'une onde plane progressive harmonique (OPPH) à la fréquence $\omega$ sous la forme $\displaystyle 
+        \underline{u} = \underline{u_0}e^{j(\omega t - \underline{k}x)}
+    $}
+    \question On écrit $\underline{k}$ sous la forme $k - j \alpha$. Donner une interprétation physique de $k$ et $\alpha$ et écrire le système de deux équations vérifié par $k$, $\omega$ et $\alpha$.
+    \question Dans un premier temps, on se place dans le cas de la transmission sans pertes.
+    \begin{parts}
+        \part Quelle condition sur $\rho$ et $g$ doit être remplie pour avoir $\alpha = 0$ ?
+        \part En supposant cette condition vérifiée, donnez l'expression de $\omega$ en fonction de $k$ ainsi que l'expression des vitesses de phase $v_\varphi$ et de groupe $v_g$ associées.
+    \end{parts}
+    \question On se place maintenant dans le cas plus réaliste où $\alpha \neq 0$.
+    \begin{parts}
+        \part Montrer que si la propagation est non dispersive, c'est-à-dire que la vitesse de phase ne dépend pas de la fréquence, alors elle est aussi sans distorsion, c'est à dire que l'atténuation $\alpha$ ne dépend pas non plus de la fréquence.
+        \part Dans ce cas, quelle est la valeur de la vitesse de phase $v_\varphi$ ?
+        \part Montrer que ce type de propagation ne peut exister que sous l'existence d'une certaine condition, appelée condition de Heaviside, sur $g$, $\Lambda$, $\rho$ et $\Gamma$.
+    \end{parts}
+    \question Application numérique : On considère les valeurs données. Dans quelle approximation est-on ? Donner la distance au bout de laquelle l'amplitude du signal est divisée par 2.
+\end{questions}
+
+\paragraph{Données}
+$\Lambda = 2\vdot10^{-6}$ H/m ; $\Gamma = 5.5\vdot10^{-12}$ F/m ; $\rho = 10^{-2}$ $\Omega$/m ; $g = 2\vdot10^{-9}$ $\Omega^{-1}$/m.
+\end{exercise}
+
+
+\begin{solution}
+
+\begin{questions}
+    \questioncours Propagation d'une OPPH dans un câble coaxial idéal
+    \question $\rho \rightarrow 0$, $g\rightarrow 0$
+    \question $c = \frac{1}{\sqrt{\Lambda\Gamma}}$
+    \question $\alpha$ : atténuation en espace, $k$ vecteur d'onde. L'équation obtenue est
+    \begin{align*}
+        -k^2 + \alpha^2 + 2i\alpha k = -\frac{\omega^2}{c^2} + (g\Lambda + \rho\Gamma) i \omega + g\rho
+    \end{align*}
+    D'où en décomposant en partie imaginaire et en partie réelle :
+    \begin{align*}
+        -k^2 + \alpha^2 &= -\frac{\omega^2}{c^2} + g\rho\\
+        \alpha  &= \frac{g\Lambda + \rho\Gamma}{2} \frac{\omega}{k}
+    \end{align*}
+    \question Dans un premier temps, on se place dans le cas de la transmission sans pertes.
+    \begin{parts}
+        \part Il faut $\rho = 0$ et $g = 0$ : pas de pertes
+        \part $v_\varphi = v_g = c = \frac{1}{\sqrt{\Lambda\Gamma}}$
+    \end{parts}
+    \question On se place maintenant dans le cas plus réaliste où $\alpha \neq 0$. On cherche cette fois à minimiser la dispersion.
+    \begin{parts}
+        \part $\alpha = v_\varphi \frac{g\Lambda + \rho\Gamma}{2}$ donc si $v_\varphi$ est constant alors $\alpha$ aussi
+        \part On remplace $\alpha$ et on a 
+    \begin{align*}
+        -k^2 + {v_\varphi} ^2 \qty(\frac{g\Lambda + \rho\Gamma}{2})^2 &= -\frac{\omega^2}{c^2} + g\rho
+    \end{align*}
+    on en déduit que $k^2 = \frac{\omega^2}{c^2}$, d'où $v_\varphi = c = \frac{1}{\sqrt{\Lambda\Gamma}}$
+        
+        \part On a aussi 
+    \begin{align*}
+         {v_\varphi} ^2 \qty(\frac{g\Lambda + \rho\Gamma}{2})^2 &= g\rho \\
+         (g\Lambda)^2 + (\rho \Gamma)^2 + 2 g\Lambda\rho \Gamma = 4 g\Lambda\rho \Gamma \\
+         (g\Lambda - \rho \Gamma)^2 = 0
+    \end{align*}
+    D'où la condition de Heaviside : $g\Lambda = \rho \Gamma$
+    \end{parts}
+    \question J'ai eu la flemme de la faire mais les valeurs données viennent d'un bouquin de prépa classique donc je pense que c'est un truc raisonnable.
+\end{questions}
+
+\end{solution}

@@ -1,0 +1,99 @@
+% Niveau :      PCSI *
+% Discipline :  Chimie Orgam
+% Mots clés :   Ballistique, Mécanique du point, PFD, Chute libre
+
+\begin{exercise}{Réactivité du 2-chlorométhylfurane (II)}{2}{PCSI}
+{Chimie organique I, SN, SN'{}}{bermu}
+
+\begin{questions}
+\questioncours Aspects cinétiques et thermodynamiques de la concurrence entre les réactions de $\mathrm{S_N1}$, $\mathrm{S_N2}$, et E2. On listera dans un tableau, dans quels cas chaque mécanisme domine.
+
+\begin{EnvUplevel}
+    Par la suite, on étudie la réaction suivante :
+    
+    \begin{center}
+    \schemestart
+        \chemname{\chemfig{[:-18]*5((!\Cnum5)-O(!\Cnum1)-((!\Cnumo{1}2)-[:-24](!\Cnumo{-3}1'{})-[:36]C\ell)=(!\Cnum3)-(!\Cnum4)=(!\Cnum5))}}{\textbf{A}}
+        \+\chemfig{N~\chemabove{C}{\scriptstyle\hspace{3.5mm}\ominus}}\hspace{3.5mm}
+        \arrow(.mid east--.mid west)\hspace{3.5mm}
+        \chemname{\chemfig{C_6H_5NO}}{\textbf{B}}
+        \+\chemfig{\chemabove{C\ell}{\scriptstyle\hspace{5.5mm}\ominus}}
+    \schemestop\chemnameinit{}
+    \end{center}
+\end{EnvUplevel}
+\question Proposez une structure pour la molécule \textbf{B}. Quel$\cdot$s mécanisme$\cdot$s peut-on envisager ?
+
+\begin{EnvUplevel}
+    \vspace{-2em}
+    \paragraph{Données :} $\mathrm{pK_a}\Big($ \chemfig{N~\chemabove{C}{\scriptstyle\hspace{3.5mm}\ominus}} $\Big/$ \chemfig{N~C-H}$\Big) = 9,2$.
+    
+    \bigskip
+    
+        Une étude RMN montre qu'autre produit \textbf{C} isomère de \textbf{B} est formé en proportion 40:60.
+\end{EnvUplevel}
+    
+    \question \`A l'aide de la table ci-dessous, donner la structure de \textbf{C}.
+  
+\begin{EnvUplevel}
+
+\vspace{-2em}
+    
+\newcolumntype{d}{D{.}{.}{3.2}}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{rddddddd}
+\textbf{OM}                                       & \multicolumn{1}{c}{\textbf{1}} & \multicolumn{1}{c}{\textbf{2}} & \multicolumn{1}{c}{\textbf{3}} & \multicolumn{1}{c}{\textbf{4}} & \multicolumn{1}{c}{\textbf{5}} & \multicolumn{1}{c}{\textbf{6}} & \multicolumn{1}{c}{\textbf{7}} \\
+\textbf{\'Energie}                 & \multicolumn{1}{c}{$\alpha + 2,60\beta$}           & 
+\multicolumn{1}{c}{$\alpha + 1,78\beta$}           & \multicolumn{1}{c}{$\alpha + 1,39\beta$}           & \multicolumn{1}{c}{$\alpha + 0,88\beta$}           & \multicolumn{1}{c}{$\alpha - 0,15\beta$}           & \multicolumn{1}{c}{$\alpha - 1,17\beta$}           & \multicolumn{1}{c}{$\alpha - 1,75\beta$}           \\ \hline
+\multicolumn{1}{r|}{$\mathbf{O_1}$}      & -0,83                          & -0,26                          & -0,42                          & 0,02                           & 0,17                           & 0,20                           & -0,05                          \\
+\multicolumn{1}{r|}{$\mathbf{C_2}$}      & -0,35                          & 0,20                           & 0,24                           & -0,54                          & -0,05                          & -0,45                          & 0,53                           \\
+\multicolumn{1}{r|}{$\mathbf{C_3}$}      & -0,21                          & 0,13                           & 0,57                           & -0,13                          & 0,52                           & -0,05                          & -0,57                          \\
+\multicolumn{1}{r|}{$\mathbf{C_4}$}      & -0,19                          & 0,03                           & 0,55                           & 0,43                           & -0,03                          & 0,50                           & 0,47                           \\
+\multicolumn{1}{r|}{$\mathbf{C_5}$}      & -0,28                          & -0,08                          & 0,20                           & 0,50                           & -0,51                          & -0,54                          & -0,25                          \\
+\multicolumn{1}{r|}{$\mathbf{C_{1'{}}}$} & -0,16                          & 0,41                           & 0,04                           & -0,36                          & -0,62                          & 0,44                           & -0,32                          \\
+\multicolumn{1}{r|}{$\mathbf{C\ell}$}    & -0,09                          & 0,84                           & -0,30                          & 0,37                           & 0,23                           & -0,10                          & 0,06                           \\ \hline
+\end{tabular}
+\caption{Coefficients des orbitales moléculaires de \textbf{A}.}
+\end{table}
+
+\vspace{-1em}
+
+Proposer deux mécanismes pour expliquer ce résultat :
+\end{EnvUplevel}  
+    \question l'un s'apparentant à une $\mathrm{S_N1}$, nommé $\mathrm{S_N1}$' ;
+    \question l'autre s'apparentant à une $\mathrm{S_N2}$, nommé $\mathrm{S_N2}$'.
+    
+\uplevel{Il a été montré que la température n'avait que peu d'influence sur la proportion \textbf{B}/\textbf{C}.}
+    \question Proposer une hypothèse sur les deux mécanismes en concurrence.
+    
+\begin{EnvUplevel}
+    Une étude a été menée cette réaction en variant les substituants aux positions 3 et 4 sur \textbf{A} :
+    \begin{table}[H]
+    \centering
+    \begin{tabular}{ccccc}
+        & R$_3$ & R$_4$ & \textbf{B} (\%) & \textbf{C} (\%) \\ \hline\hline
+       (\textit{i}) & H     &  H    & 40              & 60              \\
+       (\textit{ii}) & H     &  C(CH$_3$)$_3$     & 25              & 75              \\           
+       (\textit{iv}) & H     &  CH(CH$_3$)$_2$     & 16              & 84              \\    
+       (\textit{v}) & C(CH$_3$)$_3$ & H       & 39              & 61              \\    
+       (\textit{vi}) & H     &  Br     & 17              & 83             \\    
+       (\textit{vii}) & H     &  CN     & 99              & 1           \\    \hline
+    \end{tabular}
+    \caption{Proportion des produits \textbf{B} et \textbf{C} formés par la réaction entre \textbf{A} et KCN.}
+    \end{table}
+    
+\vspace{-1em}
+\end{EnvUplevel}
+
+    \question Interprétez dans la mesure de vos connaissances ces résultats.
+\end{questions}
+
+\plusloin S. Divald \emph{et al.} Reaction of 2,4-chloromethylfurans with Aqueous Potassium Cyanide and Other Nucleophiles, \textit{J. Org. Chem.}, Vol. 41, No. 17, \textbf{1976},  2835--2846.
+
+\end{exercise}
+
+%\begin{center}
+%        \chemname{\chemfig{[:-18]**[0,360,dash pattern=on 3pt off 3pt,
+%       late options={name=arccenter,label=center:$\oplus$}]5((!\Cnum5)-O(!\Cnum1)-((!\Cnum2)-[:-24,,,,,lddbond](!\Cnum1'{}))-(!\Cnum3)-(!\Cnum4)-(!\Cnum5))}}{\textbf{A'}}
+%\end{center}

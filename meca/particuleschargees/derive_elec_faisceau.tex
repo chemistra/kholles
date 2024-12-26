@@ -1,0 +1,37 @@
+\begin{exercise}{Mouvement cyclotron avec dérive électrique}{2}{Sup}
+{Particules chargees}{bermudez}
+
+On s'intéresse au mouvement d'un électron dans un faisceau électronique cylindrique soumis à un champ magnétique $\vB = B_0\ve_z$.
+
+\begin{questions}
+    \questioncours Mouvement cyclotron. On fera la démonstration de la loi horaire du mouvement et on donnera l'expression de la pulsation cyclotron $\omega_c$.
+    \uplevel{\`A cause du faisceau électronique, l'électron est également soumis à un champ électrique
+    $$\vE = -\dfrac{n e}{2\ep_0} \vr,$$
+    $n$ étant la densité (par m$^3$) d'électrons.}
+    \question Écrire la nouvelle expression de la Force de Lorentz. \`A quelle force mécanique le terme électrique vous fait-il penser ?
+    \question Établir les équations du mouvement de la particule pour $x(t)$ et $y(t)$. On considérera que la particule n'a pas de mouvement suivant $z$.
+    \question Introduire la pulsation cyclotron $\omega_c$ ainsi qu'une autre puslation caractéristique, notée $\omega_p$, la pulsation plasma, pour simplifier l'expression précédente.
+    \question On introduit $\cal{Z}(t) = x(t) + i y(t)$. Donner l'équation temporelle vérifiée par $\cal{Z}(t)$.
+    \question Résoudre l'équation sous forme complexe et donner une condition sur $\dfrac{\omega_c}{\omega_p}$ afin que le mouvement soit borné.
+    \question Pour finir, donner la loi horaire $\cal{Z}(t)$ et caractériser le mouvement.
+\end{questions}
+
+\end{exercise}
+
+\begin{solution}
+    \begin{questions}
+        \questioncours $\omega_\text{c} = \dfrac{eB_0}{m}$.
+        \question Le terme électrique est une force centrale (répulsive car $q = -e$) : $\vF_\textsc{l} = q\vE + q\vv\wedge\vB = -\dfrac{nqe}{2\ep_0}(x\ve_x + y\ve_y) + q B (\dot{y}\ve_x - \dot{x}\ve_y)$
+        \question \begin{align*}
+            \ddot{x} &= \omega_p^2x - \omega_c \dot{y} \\
+            \ddot{y} &= \omega_p^2y + \omega_c \dot{x}
+        \end{align*}
+        \question avec $\omega_p = \dfrac{nq^2}{m\ep_0}$.
+        \question $\ddot{\cal{Z}} = \omega_p^2\cal{Z} -i\omega_c\dot{\cal{Z}}$.
+        \question Si $\cal{Z} = e^{i\omega t}$ :
+        $$\omega^2 + \omega_p^2 - \omega \omega_c = 0.$$
+
+        On a donc $\omega = \dfrac{\omega_c}{2}\qty(1 \pm \sqrt{1-4\omega_p^2/\omega_c^2})$. Il faut $\omega_p < \omega_c/2$ pour avoir $\omega$ imaginaire pur.
+        \question Donc $\cal{Z} = A e^{i\omega_+ t} + B e^{i\omega_- t}$ : c'est la combinaison de deux mouvements circulaires, soit une épicycle. Si $\omega_p = 0$ on retrouve un mouvement circulaire à la pulsation $\omega_c$. Si $\omega_p = \omega_c/2$ (cas limite), on trouve $\omega_{\pm} = \frac{\omega_c}{2}$ : Le mouvement est aussi circulaire, mais deux fois plus lent.
+    \end{questions}
+\end{solution}

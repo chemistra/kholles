@@ -1,0 +1,29 @@
+% Niveau :      PCSI - PC
+% Discipline :  Elec
+% Mots clés :   Elec, Ordre 2
+
+\begin{exercise}{Construction d'un passe bas}{1}{Sup,Spé}
+{\'Electrocinétique, Circuits d'ordre 2}{lelay}
+
+\begin{questions}
+    \questioncours Présentez brièvement les différents types de filtres au programme
+    \question À l'aide des composants électroniques usuels, construire un passe-bas d'ordre 2 simple. Vérifier son comportement par une analyse asymptotique.
+    \question Donner la fonction de transfert de ce filtre. Tracer le diagramme de Bode asymptotique associé. 
+    \question Comment choisir R, L et C pour avoir une fréquence de coupure de 1 kHz et une résonnance d'amplitude 20 dB ? 
+\end{questions}
+\end{exercise}
+
+\begin{solution}
+    \begin{circuit}
+      \draw
+      (0,0) to [short] (5,0)
+      to [open, v_=$s$, *-o] (5,2) 
+      to [short] (4,2)
+      (0,0) to [open, v^=$e$,*-o] (0,2)
+      to [R, l=$R$] (2,2)
+      to [L, l=$L$, -*] (4,2) 
+      to [C, l^=$C$] (4,0);
+    \end{circuit}
+    
+    Ensuite, $\omega_0 = \frac1{\sqrt{LC}} = 10$ et $G_{dB} = 20\log{H_{max}} = 20$ donc $H_{max} \simeq Q = \frac1R \sqrt{\frac{L}{C}}= 10$
+\end{solution}

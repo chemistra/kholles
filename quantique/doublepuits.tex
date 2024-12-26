@@ -1,0 +1,66 @@
+\begin{exercise}{Double puits}{3}{Spé}
+{Quantique}{lelay}
+
+On considère une particule dans le potentiel suivant, formé de deux puits infinis de taille $a$ ne communiquant pas.
+
+\begin{center}
+    \begin{tikzpicture}
+    
+    \draw (0,0) node[below=2pt] {$0$};
+    \draw[->] (-5, 0) -- (5, 0);
+    \draw (5,0) node[below=2pt] {$x$};
+    \draw[->] (0, 0) -- (0, 3);
+    \draw (0,3) node[left=2pt] {$y$};
+    \draw[>->] (-3, -0.2) -- (-1, -0.2);
+    \draw (-2,-0.2) node[below=2pt] {$a$};
+    \draw[>->] (1, -0.2) -- (3, -0.2);
+    \draw (2,-0.2) node[below=2pt] {$a$};
+    
+    \draw[thick, ->] (-3, 0) -- (-3, 3);
+    \draw[thick] (-3, 0) -- (-1, 0);
+    \draw[thick, ->] (-1, 0) -- (-1, 3);
+    \draw[thick, ->] (1, 0) -- (1, 3);
+    \draw[thick] (1, 0) -- (3, 0);
+    \draw[thick, ->] (3, 0) -- (3, 3);
+    
+    \end{tikzpicture}
+\end{center}
+
+\begin{questions}
+    \questioncours Puits de potentiel infini
+    \question Rappeler les niveaux d'énergie possibles pour un puits infini. Quels sont ceux possibles pour ce potentiel en comportant deux ?
+    \uplevel{On considère maintenant un potentiel suivant, où le potentiel entre les deux puits a une valeur finie $V$.}
+
+\begin{center}
+    \begin{tikzpicture}
+    
+    \draw (0,0) node[below=2pt] {$0$};
+    \draw[->] (-5, 0) -- (5, 0);
+    \draw (5,0) node[below=2pt] {$x$};
+    \draw[->] (0, 0) -- (0, 3);
+    \draw (0,3) node[left=2pt] {$y$};
+    \draw (-1,1) node[left=2pt] {$V$};
+    \draw (1,0) node[below=2pt] {$d$};
+    \draw (3,0) node[below=2pt] {$d+a$};
+    \draw (-1,0) node[below=2pt] {$-d$};
+    \draw (-3,0) node[below=2pt] {$-d-a$};
+    
+    \draw[thick, ->] (-3, 0) -- (-3, 3);
+    \draw[thick] (-3, 0) -- (-1, 0);
+    \draw[thick] (-1, 0) -- (-1, 1);
+    \draw[thick] (-1, 1) -- (1, 1);
+    \draw[thick] (1, 1) -- (1, 0);
+    \draw[thick] (1, 0) -- (3, 0);
+    \draw[thick, ->] (3, 0) -- (3, 3);
+    
+    \end{tikzpicture}
+\end{center}
+    \question Physiquement, qu'est ce qui va changer par rapport au cas précédent ? Donner la forme de la fonction d'onde pour les cas extrêmes ($V \rightarrow \infty$ et $V\rightarrow 0$).
+    \question Donner la forme de l'équation de Schrödinger dans trois zones I, II et III que l'on précisera et en donner les solutions (il est recommander de choisir astucieusement leur forme...).
+    \question Donner les conditions aux limites s'appliquant à ce système.
+    \question Résoudre le système et donner $\phi(x)$.
+    \question Discuter du cas limite $V \gg E$ et discuter du lien avec le puits semi-infini (autre exercice).
+
+\end{questions}
+
+\end{exercise}

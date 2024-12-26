@@ -1,0 +1,72 @@
+% Niveau :      PCSI - PC
+% Discipline :  Elec
+% Mots clés :   Elec, Ordre 2
+
+\begin{exercise}{Cavité laser}{1}{Sup,Spé}
+{\'Electrocinétique, Circuits d'ordre 2}{lelay,X}
+
+On cherche à décrire le circuit suivant :
+
+% \begin{circuit}
+%     \node [op amp](A1){} (0,0);
+%     \draw (A1.+) to [short] ++(0,-1) coordinate(tmp)
+%     to [R, l^=$R_2$, *-*] ++(-2.5,0) node[ground]{} coordinate(tmp2)
+%     to [R, l^=$R$, *-*] (A1.- -| tmp2)
+%     node[anchor=east]{$V_\textsc{a}$}
+%     to [short] (A1.-)
+%     (tmp) to [R, l_=$R_1$] (tmp -| A1.out)
+%     to [short, -*] (A1.out) node[anchor=west]{$V_\textsc{b}$}
+%     to [short] ++(0,2) coordinate (tmp3)
+%     to [C, l_=$C$] (tmp3 -| A1.-)
+%     to [L, l_=$L$] (tmp3 -| tmp2)
+%     to [short] (A1.- -| tmp2) ;
+%     \draw [red, dashed] (-3.2,-2.25) rectangle(1.8,1.3) ;
+%     \draw [blue, dashed] (-3.3,-1.2) to (-3.27,1.4) to (1.8,1.4) to (1.8,3.1) to (-4.4,3.1) to (-4.4,-1.2) to (-3.3,-1.2) ;
+%     \node [blue] at (-4,2.8) {\textsfbf{(A)}};
+%     \node [red] at (-2.8,0.9) {\textsfbf{(B)}};
+% \end{circuit}
+
+\begin{circuit}
+    \node [op amp](A1){} (0,0);
+    \draw (A1.+) to [short] ++(0,-1) coordinate(tmp)
+    to [R, l^=$R_2$, *-*] ++(-2.5,0) node[ground]{} coordinate(gnd)
+    to [R, l^=$R$, *-*] (A1.- -| gnd) node[anchor=south]{$V_\textsc{a}$} coordinate(Va)
+    to [short] (A1.-);
+    
+    \draw (tmp) to [R, l_=$R_1$] (tmp -| A1.out)
+    to [short, -*] (A1.out) node[anchor=west]{$V_\textsc{b}$}
+    to [short] ++(0,1.5) coordinate (tmp3);
+
+    
+    \draw (Va)  to [short] ++(-0.5,0)
+    to [L, l_=$L$] ++(-1.5,0)
+    to [C, l^=$C$] ++ (-1.5,0) coordinate(entreefiltre)
+    to [short] (tmp3 -| entreefiltre)
+    to [short] (tmp3 -| A1.out);
+
+    
+    \draw [red, dashed] (-3.2,-2.25) rectangle(1.8,1.3) ;
+    \draw [blue, dashed] (-3.3,-1.2) rectangle(-7,1.3) ;
+    % \draw [blue, dashed] (-3.3,-1.2) to (-3.27,1.4) to (1.8,1.4) to (1.8,3.1) to (-4.4,3.1) to (-4.4,-1.2) to (-3.3,-1.2) ;
+    \node [blue] at (-6.6,-0.8) {\textsfbf{(A)}};
+    \node [red] at (-2.8,0.9) {\textsfbf{(B)}};
+\end{circuit}
+
+\begin{questions}
+    \questioncours Caractéristique de l'amplificateur opérationnel (AO ou ALI) en régime linéaire
+    \question Identifier la partie \textsfbf{(A)} du circuit. Donner rapidement sa fonction de transfert et l'allure de son diagramme de Bode. Comment choisir $R$, $L$ et $C$ pour sélectionner un fréquence $\omega_0$ le plus finement possible ?
+    \question Identifier la partie \textsfbf{(B)} du circuit. Quel rôle remplit-elle ?
+    \question Remarquer que les deux parties \textsfbf{(A)} et \textsfbf{(B)} sont reliées de manière circulaire. Que va-t-il se passer ? Ce phénomène vous rappelle-t-il un dispositif optique bien connu ?
+\end{questions}
+\end{exercise}
+
+\begin{solution}
+
+\begin{questions}
+    \questioncours La baz
+    \question C UN PASSE BANDE
+    \question C UN AMPLI
+    \question C UN LASER
+\end{questions}
+
+\end{solution}

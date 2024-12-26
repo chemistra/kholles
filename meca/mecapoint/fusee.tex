@@ -1,0 +1,30 @@
+\begin{exercise}{La fusée}{2}{Sup, Spé}
+{Mécanique,PFD}{lelay}
+
+\begin{questions}
+    \questioncours Rappeler la seconde loi de Newton.
+    \question Soit une fusée qui est propulsée en évacuant en permanence vers le bas du carburant (avec un débit $Q$)  à la vitesse $v_\text{e}$. Faire un schéma de la fusée à $t$ et $t+\dd{t}$
+    \question Appliquer le second principe de Newton à la fusée, en déduire une expression de $\dv{v}{t}$.
+    \question Proposer une modélisation de la masse de la fusée $m(t)$
+    \question Donner $v(t)$. Quelle est la vitesse atteinte par la fusée une fois tout son carburant largué ? Comment optimiser cette vitesse ?
+    \question Donner $x(t)$. Quelle est la hauteur finale atteinte par la fusée ?
+    \question Faire des applications numériques sachant qu'une fusée Ariane 5 pèse 750 tonnes au décollage, que 97.5\% de cette masse consiste en du carburant, et que sa phase d'accélération dure environ 500s.
+    \question Une de nos approximations est-elle remise en cause ? Proposer un moyen de résoudre ce problème.
+\end{questions}
+\end{exercise}
+
+\begin{solution}
+
+
+\begin{questions}
+    \questioncours $F=ma$
+    \question F F 
+    \question $p(t) = m(t) v(t)$ et $p(t+\dd{t}) = m(t+\dd{t})v(t+\dd{t}) + (-\dd{m})(v(t)-v_e)$ (car la petite masse éjectée est $\delta m = - \dd{m}$ d'où $\dv{p}{t} = \dv{mv}{t} - \dv{m}{t}(v-v_e) = m\dv{v}{t} + v_e\dv{m}{t}$ or $\dv{p}{t} = -m(t)g$ (PFD) d'où $\dv{v}{t} = \qty( - g - \frac{v_e}{m}\dv{m}{t})$
+    \question $m(t) = m_0 - Qt$ puis $m = m_f$ à partir de $t_f = \frac{m_0-m_f}{Q}$
+    \question $\dv{v}{t} = \qty( -g + \frac{Qv_e}{m_0 - Qt})$. On intègre pour trouver $v(t_f) = -\frac{g m_0}{Q}\qty(1-\frac{m_f}{m_0}) + v_e\ln(\frac{m_0}{m_f})$ (à contre-checker)
+    \question La primitive de $\ln(x+a)$ est $(x+a)\ln(x+a) - x$ (changement de variable)
+    \question On trouve une hauteur où la gravité est faible ? Ai pas fait le calcul lol.
+    \question On a supposé $g$ constant...
+\end{questions}
+
+\end{solution}

@@ -1,0 +1,39 @@
+\begin{exercise}{Mouvement cyclotron avec dérive magnétique}{2}{Sup}
+{Particules chargees}{bermudez}
+
+On s'intéresse au mouvement d'une particule chargée dans un champ magnétique.
+
+\begin{questions}
+    \questioncours Mouvement cyclotron. On fera la démonstration de la loi horaire du mouvement et on donnera l'expression de la pulsation cyclotron.
+    \uplevel{Dans la vie réelle, les champs magnétiques uniformes+ n'existent pas... Typiquement, pour avoir des dispositifs type cyclotron, on a un champ dans une direction fixe, axisymétrique, qui est maximal sur cet axe et nul loin de l'axe. On modélise la situation comme suit, en géométrie cylindrique, $\vB = B(r) \ve_z$.}
+    \question Donner une fonction $B$ qui telle qu'elle décroît continûment de $B(r=0) = B_0$ à $B(r\rightarrow +\infty)= 0$.
+    \question \'Etablir les équations du mouvement de la particule. Ces équations peuvent-elles être résolues comme précédemment ?
+    \question La force de Lorrentz magnétique travaille-t-elle ? Par conséquent, donner une grandeur $V$, homogène à une vitesse, qui est conservée lors du mouvement. Justifier qu'on puisse considérer qu'il n'y a pas de mouvement suivant $z$.
+    \question On introduit une autre grandeur $w =r\dot{\theta} + g(r)$. Que doit valoir $g(r)$ afin que $w$ soit également une constante du mouvement ? On prendra $w(r=0) = 0$.
+    \question À l'aide des deux questions précédentes, donner l'expression de $\dot{r}^2$ en fonction de $r$ uniquement, et des deux constantes du mouvement $V$ et $w$.
+    \question Montrer que le mouvement de la particule est borné.
+    \question Déduire que tout se passe comme si on avait une particule de masse $m$ dans un potentiel $V(r)$.
+\end{questions}
+
+\end{exercise}
+
+\begin{solution}
+    \begin{questions}
+        \questioncours $\omega_\text{c} = \dfrac{eB}{m}$.
+        \question Exemples : $B(r) = B_0 e^{-r/\lambda}$, $B(r) = B_0 e^{-r^2/2\lambda^2}$, $B(r) = \dfrac{B_0}{1+(r/\lambda)^2}$... \`A ce niveau, prendre une fonction qui s'intègre bien (pas la gaussienne).
+        \question \begin{align*}
+            \ddot{r} - r \dot{\theta}^2 &= \omega_c \dot{\theta} r b(r) \\
+            r\ddot{\theta} + \dot{r}\dot{\theta} &= -\omega_c \dot{r} b(r) \\
+            \ddot{z} &= 0
+        \end{align*}
+        \question Travail nul donc énergie cinétique conservée donc $V^2 = \dot{r}^2 + r^2\dot{\theta}^2$ conservée. ($\dot{z}$ étant également un invariant mais on n'a pas besoin de se le trainer).
+        \question $\dv{t} \qty\Big(r\dot{\theta} + g(r)) = \dot{r}\qty\Big( -\omega_c b(r) + g'(r))$ donc on prend $g(r) = \omega_c \int_0^r b(\rho)\dd{\rho}$. $w = r\dot{\theta} + g(r)$ est ainsi conservée.
+        \question Ainsi,
+        $$\dot{r}^2 = V^2 - (w - g(r))^2.$$
+        \question
+        Et donc  $\abs{w - g(r)} < V$
+        \question On dérive la Q6 :
+        $$\ddot{r} = g'(r)\times(w-g(r))$$
+        On retrouve la considération précédente (comme $g'(r)>0$).
+    \end{questions}
+\end{solution}

@@ -1,0 +1,29 @@
+% Niveau :      PCSI
+% Discipline :  Méca
+
+\begin{exercise}{Dynamique proie-prédateur}{3}{Sup}
+{Oscillateur harmonique}{lelay}
+
+L'exercise utilise un des modèles développés par Lotka et Volterra en 1925 pour modéliser les systèmes avec des proies et des prédateurs en interaction.
+
+On considère une île au large de la Bretagne sur laquelle vivent des sardines et des goélands :
+\begin{itemize}
+    \item les sardines se reproduisent entre elles,
+    \item les goélands se battent entre eux,
+    \item les goélands mangent les sardines et se reproduisent si ils se sont suffisamment bien nourris.
+\end{itemize}
+On note $s(t)$ la population de sardines et $g(t)$ la population de goélands, et on considère la modélisation suivante :
+\begin{align*}
+    \dv{s}{t} &= a\:s(t) - b\:s(t)\:g(t) \\
+    \dv{g}{t} &= -c\:g(t) + d\:s(t)\:g(t)
+\end{align*}
+\begin{questions}
+    \question Justifier chacun des termes de la modélisation ci-dessus.
+\uplevel{Faire un rictus de douleur à la vue de ce système d'équations, car il est non-linéaire : il n'a pas de solution analytique ! Mais cela ne nous empêchera pas de l'étudier.}
+    \question Montrer que ce système admet deux \emph{points fixes}.\\
+    Des points fixes sont des points d'équilibre $(s_0, g_0)$ tels que si pour un $t_0$ donné on a $s(t_0) = s_0$ et $g(t_0) = g_0$, alors $\forall t > t_0$, $s(t) = s_0$ et $g(t) = g_0$.
+    \question On se place au voisinage du point fixe intéressant et on prend $s(t) = s_0 + x(t)$ et $g(t) = g_0 + y(t)$. Écrire les équations au premier ordre en $x$ et en $y$ (\emph{i.e.} les termes comme $x^2$, $y^2$ et $xy$ sont négligés devant les autres).
+    \question Montrer qu'alors $x$ et $y$ obéissent à une équation d'oscillateur harmonique dont on exprimera la pulsation $\omega$ en fonction des paramètres du problème.
+    \question Les sardines et les goélands peuvent-elles coexister ?
+\end{questions}
+\end{exercise}

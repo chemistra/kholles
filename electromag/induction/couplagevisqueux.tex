@@ -1,0 +1,40 @@
+\begin{exercise}{Couplage visqueux}{2}{Sup}
+{Induction}{lelay}
+
+On considère deux rails conducteurs parallèles écartés d'une distance $a$. Perpendiculairement à ces rails on place deux barres, chacune de résistance $R/2$. Les barres sont chacune reliées à un bâti isolant par un ressort. On plonge le tout dans un champ constant $B_0$ orthogonal à la fois aux rails et aux barres.
+
+\begin{questions}
+    \questioncours Force de Laplace
+    \question Exprimer $\Phi$ le flux du champ magnétique entre les deux barres en fonction de $B_0$, $a$ et les positions $x_1$ et $x_2$ des deux barres.
+    \question En déduire une expression de l'intensité $I(t)$ parcourant le circuit
+    \question Exprimer les forces de Laplace s'appliquant sur les barres et en déduire l'équation de la dynamique pour chacune des deux barres.
+    \question Initialement chaque barre est fixée à la position de repos du ressort auquel elle est attaché. Une des barres est lancée avec une vitesse $v_0$. Décrire l'évolution du système au long terme.
+\end{questions}
+
+\end{exercise}
+
+\begin{solution}
+    \begin{questions}
+        \questioncours $\dd{\vec{F}} = I\dd{\vec{\ell}}\cross\vec{B}$
+        \question $\Phi = a B(x_2 - x_1 + \ell_0)$
+        \question Resistance totale $R$. $e = RI = \dv{\Phi}{t} = \dfrac{B_0 a}{R}(\dot{x}_2-\dot{x}_1)$
+        \question $F_1 = -IaB_0$, $F_2 = IaB_0$, d'où :
+        \begin{align*}
+            m\ddot{x}_1 &= -kx_1-\gamma(\dot{x}_1-\dot{x}_2) &
+            m\ddot{x}_2 &= -kx_2+\gamma(\dot{x}_1-\dot{x}_2) &
+            \gamma &= \dfrac{(B_0 a)^2}{R}
+        \end{align*}
+        \question On pose le changement de variable : $\sigma = x_1 + x_2$, $\delta = x_1 - x_2$.
+        \begin{align*}
+            m\ddot{\sigma} &= -k\sigma &
+            m\ddot{\delta} &= -k\delta-\gamma\dot{\delta}
+        \end{align*}
+        d'où
+        \begin{align*}
+            \sigma &= \dfrac{v_0}{\omega}\sin\omega_0 t &
+            \delta &= \dfrac{v_0}{\omega}\sin\omega_1 t e^{-t/\tau_1} &
+            \omega_0 &= \sqrt{\dfrac{k}{m}} & \omega_1 + i\tau_1 &= \dfrac{1}{2}\qty(\omega_0 \pm \sqrt{(\omega_0)^2 - 4\dfrac{\gamma}{m}})
+        \end{align*}
+    \end{questions}
+\end{solution}
+

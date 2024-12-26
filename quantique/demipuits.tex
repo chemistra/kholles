@@ -1,0 +1,60 @@
+\begin{exercise}{Puits semi-infini}{2}{Spé}
+{Quantique}{lelay}
+
+On considère une particule dans le potentiel suivant (potentiel `puits semi-infini' de hauteur $V$)
+
+\begin{center}
+    \begin{tikzpicture}
+    
+    \draw (0,0) node[below=2pt] {$0$};
+    \draw[->] (0, 0) -- (5, 0);
+    \draw (5,0) node[below=2pt] {$x$};
+    \draw[->] (0, 0) -- (0, 3);
+    \draw (0,3) node[left=2pt] {$y$};
+    \draw (0,1) node[left=2pt] {$V$};
+    \draw (2,0) node[below=2pt] {$a$};
+    
+    \draw[thick, ->] (0, 0) -- (0, 3);
+    \draw[thick] (0, 0) -- (2, 0);
+    \draw[thick] (2, 0) -- (2, 1);
+    \draw[thick] (2, 1) -- (5, 1);
+    
+    \end{tikzpicture}
+\end{center}
+
+\begin{questions}
+    \questioncours Équation de Schrödinger, solutions stationnaires
+    \question Qualitativement, pourquoi appelle-t-on ce puits `semi-infini' ?
+    \question Sans calculs (en vous aidant du cas $V = \infty$), quelle sera à votre avis l'allure de la fonction d'onde ?
+    \question Donner la forme de l'équation de Schrödinger dans deux zones I et II que l'on précisera et en donner les solutions. 
+    \question Donner les conditions aux limites s'appliquant à ce système.
+    \question Résoudre le système et donner $\phi(x)$.
+    \question Montrer qu'on retrouve le puits infini lorsque $V \rightarrow \infty$.
+    \uplevel{On considère maintenant un potentiel suivant, où l'obstacle a une taille finie.}
+\begin{center}
+    \begin{tikzpicture}
+    
+    \draw (0,0) node[below=2pt] {$0$};
+    \draw[->] (0, 0) -- (5, 0);
+    \draw (5,0) node[below=2pt] {$x$};
+    \draw[->] (0, 0) -- (0, 3);
+    \draw (0,3) node[left=2pt] {$y$};
+    \draw (0,1) node[left=2pt] {$V$};
+    \draw (2,0) node[below=2pt] {$a$};
+    \draw (3,0) node[below=2pt] {$a+b$};
+    
+    \draw[thick, ->] (0, 0) -- (0, 3);
+    \draw[thick] (0, 0) -- (2, 0);
+    \draw[thick] (2, 0) -- (2, 1);
+    \draw[thick] (2, 1) -- (3, 1);
+    \draw[thick] (3, 1) -- (3, 0);
+    \draw[thick] (3, 0) -- (5, 0);
+    
+    \end{tikzpicture}
+\end{center}
+    \question Physiquement, qu'est ce qui va changer par rapport au cas précédent ?
+    % \question Donner le coefficient de transmission de l'onde (on pourra prendre l'approximation $V \gg E$).
+
+\end{questions}
+
+\end{exercise}

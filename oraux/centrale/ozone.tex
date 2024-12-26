@@ -1,0 +1,47 @@
+\begin{exercise}{Atmosphère et couche d'Ozone}{-1}{Spé}
+{Thermo}{centrale}
+
+\textsl{Extrait adapté de Wikipédia, l'encyclopédie libre.}
+
+\begin{center}\begin{minipage}{.9\textwidth}
+L'ozone est un gaz de formule chimique O$_3$. C'est une molécule triatomique dont un des atomes d'oxygène est lié aux deux autres. L'ozone est une variété allotropique de l'oxygène, mais bien moins stable que le dioxygène O$_2$, en lequel il tend naturellement à se décomposer à température ambiante. La rapidité de la réaction dépend de la température, de l'humidité de l'air ou de la présence de catalyseurs.
+
+L'ozone est naturellement présent dans l'atmosphère terrestre, formant dans la stratosphère une couche d'ozone entre 13 et 40 km d'altitude qui intercepte plus de 97 \% des rayons ultraviolets du Soleil, mais est un polluant dans les basses couches de l'atmosphère (la troposphère) où il est toxique pour les être vivants.
+
+\`A 20 km d'altitude, les densités en O$_2$ et en O$_3$ sont respectivement de $4\times 10^{17}$ cm$^{-3}$ et de $2\times 10^{12}$ cm$^{-3}$.
+\end{minipage}\end{center}
+
+\paragraph{Données :}~\\
+Mécanisme réactionnel du cycle de Chapman de formation et de décomposition de l'ozone :
+\begin{align}
+    \mathrm{O_3} & \underset{k_{-1}}{\overset{k_1}{\resizebox{4em}{1.5ex}{~$\rightleftharpoons$~}}} \mathrm{O_2 + O^{\bullet\bullet}} \tag{R1} \ \\
+    \mathrm{O_2} & \overset{k_2}{\resizebox{4em}{.8ex}{~$\rightarrow$~}} \mathrm{2O^{\bullet\bullet}} \tag{R2}
+    \\
+    \mathrm{O_3 + O^{\bullet\bullet}} & \overset{k_3}{\resizebox{4em}{.8ex}{~$\rightarrow$~}} \mathrm{2O_2} \tag{R3}
+\end{align}
+On considérera que les concentrations des gaz et non leur pression partielle pour effectuer les calculs cinétiques et thermodynamiques chimiques.
+
+On peut considérer que la réaction (R1) est un équilibre rapide et que la concentration en [O$^{\bullet\bullet}$] est négligeable devant les autres.
+
+Données thermodynamiques à $300$ K :
+\begin{center}\begin{tabular}{l|cc}
+    & O$_2$ & O$_3$ \\ \hline
+    $\Delta_\text{f}H^\circ$ ($\mathrm{kJ\cdot mol^{-1}}$) & --- & 142,12  \\
+    $S_\text{m}$ ($\mathrm{J\cdot mol^{-1}\cdot K^{-1}}$) & 204,82 & 237,42 \\
+    Energie de première ionisation (eV) & 12,07 & 12,43 \\ \hline\hline
+\end{tabular}\end{center}
+
+\paragraph{Résolution de problème :}~\\
+Nous allons dans cet exercice justifier que l’ozone se forme dans les hautes couches de l’atmosphère.
+
+\begin{questions}
+    \question Donner la formule de Lewis de l'Ozone.
+    \question\textsf{Modèle cinétique :} On appelle [Ox] = [O$^{\bullet\bullet}$] + [O$_3$].  Interpréter cette quantité.
+    \question En utilisant les approximations adéquates, montrer que l'équation cinétique des Ox peut s'écrire
+    $$\dv{\mathrm{[Ox]}}{t} = 2 k_2 \mathrm{[O_2]} - k\dfrac{\mathrm{[Ox]^2}}{\mathrm{[O_2]^2}},$$
+    avec $k$ dont on précisera l'expression. Commenter ce taux en fonction de la température.
+    \question\textsf{Modèle thermodynamique :} Quelle est l'équation globale de la transformation de O$_3$ et O$_2$ ? Dans quel cas peut-on considérer que l'on a atteint l'équilibre thermodynamique ?
+    \question Le cas échéant, donner une relation entre [O$_3$], [O$_2$] et la température $T$. En déduire la tendance du O$_3$ a être détruit dans la basse atmosphère et produit dans la haute atmosphère.
+\end{questions}
+
+\end{exercise}

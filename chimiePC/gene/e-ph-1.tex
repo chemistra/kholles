@@ -1,0 +1,74 @@
+% Niveau :      PCSI *
+% Discipline :  Géné
+% Mots clés :   Diagrammes E-pH
+
+\begin{exercise}{Diagrammes de Pourbaix}{2}{PCSI}
+{Chimie générale, Réactions acidobasiques, Oxydoréduction, Diagrammes E-pH}{bermu}
+
+\paragraph{Consignes}~\\
+\textsl{Vous tracerez les diagrammes ...}
+
+\paragraph{Convention de tracé :}
+\begin{itemize}
+    \item les espèces en solution ont pour activité $c_\text{tr}/c^\circ = 10^{-5}$,
+    \item les espèces gazeuses ont pour activité $p_\text{tr}/p^\circ = 10^{-2}$,
+    \item les espèces solides ont pour activité $1$.
+\end{itemize}
+
+\begin{questions}
+\questioncours Tracer le diagramme $E$-pH de l'eau.
+
+\end{questions}
+
+\plusloin
+Dash, R.K. \emph{et al, Ann Biomed Eng} \textbf{32}, 1676--1693 (2004).
+
+\end{exercise}
+
+\begin{solution}
+\begin{questions}
+    \questioncours
+    \begin{itemize}
+        \item Analogies : ces réactions de dissociation sont de manière générale
+        $$\mathrm{XL_\textit{n} \leftrightharpoons X L_\textit{n-1} + L},$$
+        et dont la constante est
+        $$K_d = \mathrm{\dfrac{[XL_\textit{n-1}][L]}{[X L_\textit{n}]}} \quad \Longleftrightarrow \text{p}K_d = -\log K_d = \text{pL} + \log\mathrm{\dfrac{[XL_\textit{n-1}]}{[X L_\textit{n}]}}.$$
+        \begin{center}\begin{tabular}{c|cc}
+             & \textbf{Réactions acido-basiques} & \textbf{Réactions de coordination} \\ \hline\hline
+            L & H$^+$ & Ligand \\
+            XL$_n$ & Acide & Complexe \\
+            XL$_{n-1}$ & Base & Complexe \\
+        \end{tabular}\end{center}  
+        
+        \item La principale différence entre les réactions acide-base et de complexation est que les complexes peuvent dismuter ce qui n'est pas le cas pour les ampholytes car on a toujours
+        $$\text{p}K_{a1} > \text{p}K_{a2} > \ldots,$$
+        ce qui n'est pas le cas pour les complexes.
+    \end{itemize}
+    
+    \question \hfill $K_d = \mathrm{\dfrac{[HmNH_2][O_2]}{[O_2\cdot HmNH_2]}}.$ \hfill ~
+    
+    \question Et de même \hfill $K_a = \mathrm{\dfrac{[HmNH_2][H^+]}{[HmNH_3^+]}}.$ \hfill ~
+    
+    \question La constante de la réaction $\mathrm{HmNH_2 \longrightarrow O_2\cdot HmNH_3^+}$ étant $\gamma K_a K_d$, la constante de la réaction $\mathrm{HmNH_3^+ \longrightarrow O_2\cdot HmNH_3^+}$ est $\gamma K_a$. \\
+    $1/\gamma$ est donc le facteur indiquant à quel point la coordination du dioxygène O$_2$ par l'hème est moins efficace lorsque celle-ci est protonée.
+    
+    \question Et comme $\gamma < 1$, une augmentation de $\mathrm{[H^+]}$ / diminution de pH défavorise la coordination de O$_2$ par l'hème (souvent, H$^+$ défavorise les réactions de coordination).
+    
+    \question $K_\text{eff} = \mathrm{[O_2] \times \dfrac{[HmNH_2] + [HmNH_3^+]}{[O_2\cdot HmNH_2] + [O_2\cdot HmNH_3^+]}}
+    = K_d \times \mathrm{\dfrac{[O_2\cdot HmNH_2] + \gamma [O_2\cdot HmNH_3^+]}{[O_2\cdot HmNH_2] + [O_2\cdot HmNH_3^+]}}$
+    $$\text{d'où} \qquad K_\text{eff} = K_d \dfrac{1 + \dfrac{[H^+]}{K_a}}{1 + \dfrac{1}{\gamma}\,\dfrac{[H^+]}{K_a}}$$
+    
+    \question La S$_{\text{O}_2}$ représente la fraction d'hémoglobine qui transporte effectivement du O$_2$. C'est le marqueur biologique de l'efficacité de la respiration.
+    
+    \question $$\mathrm{S_{O_2}} = \dfrac{\mathrm{[O_2]}/K_\text{eff}}{1 + \mathrm{[O_2]}/K_\text{eff}} = \dfrac{P_{\text{O}_2}/P_{50}}{1 + P_{\text{O}_2}/P_{50}},$$
+    avec $P_{50} = K_\text{eff} / \kappa_\textsc{h}$, la pression partielle en O$_2$ nécessaire à avoir une S$_{\text{O}_2}$ à 50\%.
+    
+    \question L'hème peut également complexer le CO$_2$ et CN$^-$ et va donc faire diminuer la S$_{\text{O}_2}$.
+    
+    Notons de manière générale L le ligand qui interfère et $K_\textsc{l}$ sa constante de dissociation, alors S$_{\text{O}_2}$ devient :
+    $$\mathrm{S_{O_2}} = \dfrac{P_{\text{O}_2}/P_{50}}{1 + P_{\text{O}_2}/P_{50} + \mathrm{\dfrac{[L\cdot HmNH_2]}{[HmNH_2]}}} = \dfrac{P_{\text{O}_2}/P_{50}}{1 + P_{\text{O}_2}/P_{50} + \dfrac{a_\textsc{l}}{K_\textsc{l}}},$$
+    $a_\textsc{l}$ étant l'activité de L en solution, $\mathrm{[CN^-]}$ pour le cynaure ou $P_\mathrm{CO_2}/\kappa_\mathrm{CO_2}$ pour le CO$_2$.
+    
+    On peut ensuite décliner un modèle analogue à celui de O$_2$ pour l'influence du pH sur la coordination de L.
+\end{questions}
+\end{solution}

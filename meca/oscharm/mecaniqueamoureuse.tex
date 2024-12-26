@@ -1,0 +1,53 @@
+% Niveau :      PCSI 
+% Discipline :  Méca
+
+\begin{exercise}{\textit{L’amour est enfant de bohème}}{1}{Sup}
+{Oscillateur harmonique}{strogatz}
+
+Soit un couple canonique, Roméo et Juliette. On note $R$ l'affection que Roméo porte à Juliette et $J$ l'affection que Juliette porte à Roméo.
+
+\newcommand{\heart}{\ensuremath\heartsuit}
+\begin{questions}
+    \question \textbf{The story of love and hate.} On considère que plus Roméo aime Juliette, plus celle-ci l'aime en retour. En revanche, plus Juliette s'attache à Roméo, moins il est attiré par elle. On modélise cette situation par
+    \begin{align*}
+        \dot J &= \alpha R, \\
+        \dot R &= -\beta J,
+    \end{align*} où $\alpha > 0$ et $\beta >0$.
+    \begin{parts}
+        \part Justifier le signe de $\alpha$ et $\beta$.
+        \part Montrer que $R$ et $J$ vérifient chacun une équation d'oscillateur harmonique de pulsation $\omega_0$. Exprimer $\omega_0$ en fonction de $\alpha$ et $\beta$.
+        \part En considérant la situation initiale $R(t=0) = R_0$ et $J(t=0)=0$, résoudre cette équation pour tout $t>0$.
+        \part Montrer que la quantité
+        $$\heart = \frac12 \alpha R^2+\frac12 \beta J^2$$
+        est conservée. À quoi cette quantité vous fait-elle penser ?
+        \part Portrait de phase : tracer la trajectoire du vecteur $(J(t), R(t))$ dans le plan $(J, R)$. Expliquer ce qu'il se passe. Donner une interprétation géométrique de $\heart$.
+        \part Montrer que Roméo et Juliette ne sont jamais en phase pour le plus grand plaisir des dramaturges shakespeariens.
+    \end{parts}
+    \question \textbf{Roméo le robot.} On considère maintenant que Roméo aime tout le temps Juliette de la même manière : $\dot R = 0$.
+    \begin{parts}
+        \part Réécrire le système d'équation et le résoudre.
+        \part Que se passe-t-il si $R(t=0) > 0$ ? Si $R(t=0) < 0$ ? 
+        \part Celle fois-ci, {\heart} est-elle conservée ?
+    \end{parts}
+    \question \textbf{Juliette se méfie.} On considère maintenant que Juliette se méfie de cette relation : plus elle aime, plus elle doute. On modélise cela par $$\dot J = \alpha R - \gamma J,$$ avec $\gamma > 0$. 
+    \begin{parts}
+        \part Comment évolue $\heart$ avec le temps ? A priori, que vaut cette quantité lorsque $t \rightarrow \infty$ ?
+        \part Écrivez l'équation vérifiée par $J(t)$, puis celle vérifiée par $R(t)$
+        \part (\emph{Si vous avez fait les oscillateurs harmoniques amortis}) Résolvez cette équation et tracez la trajectoire de $(J,R)$ dans le portrait de phase.
+    \end{parts}
+\end{questions}
+
+\vspace{15mm}
+
+\begin{center}
+
+\begin{minipage}{6cm}
+    \itshape L'amour est enfant de bohème \\
+    Il n'a jamais, jamais, connu de loi \\
+    Si tu ne m'aimes pas, je t'aime \\
+    Et si je t'aime, prends garde à toi
+    
+    \flushright Carmen, \normalfont Georges Bizet, 1875
+\end{minipage}
+\end{center}
+\end{exercise}

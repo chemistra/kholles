@@ -1,0 +1,28 @@
+\begin{exercise}{Vitesse de phase, vitesse de groupe}{1}{Spé}
+{Ondes électromagnétiques}{lelay}
+
+On étudie la propagation d'une onde électromagnétique dans un milieu transparent d'indice $n$ régit par la loi de Cauchy : 
+$$
+n = A + \frac{B}{\lambda^2}
+$$
+où $A$ et $B$ sont des constantes dépendant du matériau.
+\begin{questions}
+    \questioncours Donner la définition de la vitesse de phase et de la vitesse de groupe ainsi que leur interprétation.
+    \question Quelle est la vitesse de phase de l'onde considérée ?
+    \question Quelle est sa vitesse de groupe $v_g$ ?
+    \question En considérant que $B/\lambda^2 \ll A$, exprimer $v_g$ au premier ordre non nul en $k$
+    \question Comment varie cette vitesse avec la fréquence de la lumière étudiée ? Comment évolue une impulsion lumineuse initialement blanche au fur et à mesure qu'elle progresse dans le milieu ?
+\end{questions}
+
+\end{exercise}
+
+\begin{solution}
+
+\begin{questions}
+    \questioncours --
+    \question $v_\phi = c/n$
+    \question $v_g=\dv{\omega}{k}$ mais $\omega = ck/n$ d'où $c\dv{k/n}{k} = c/n\qty(1 -k \dv{n}{k}) = c/n\qty(1-k^2\frac{B}{2\pi^2 n})$
+    \question $ v_g= c/A\qty(1-k^2\frac{3B}{4\pi^2 A})$
+    \question augmente avec lambda, diminue avec $f$. Le rouge va plus vite et va à l'avant, le bleu plus lentement et va à l'arrière, le paquet d'onde s'étale et est soumis à de la dispersion chromatique
+\end{questions}
+\end{solution}

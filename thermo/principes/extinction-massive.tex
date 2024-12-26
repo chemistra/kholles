@@ -1,0 +1,52 @@
+\begin{exercise}{Extinction massive du Crétacé--Paléogène}{2}{Sup, Spé}
+{Thermodynamique,Premier principe,Enthalpie,Changement d'état}{bermudez,bedo}
+
+Il y a 66 millions d'année, une comète de 5 km de rayon s'est écrasée sur Terre, formant l'actuel Golfe du Mexique et causant une extinction massive qui a fait disparaître environ 50\% des espèces présentes sur Terres, notamment les dinosaures.
+
+\begin{questions}
+    \questioncours Gaz parfait. Hypothèses. Expressions des lois de Joule et de Laplace.
+    \uplevel{Lorsqu'elle s'est écrasée, la comète à provoqué un réchauffement planétaire global.}
+    \question Interpréter cette affirmation d'un point de vue énergétique.
+    \question Par conservation de l'énergie mécanique avant l'impact, évaluer la vitesse et l'énergie cinétique de la comète avant l'impact. On notera $M$ la masse de la comète.
+    \uplevel{On peut estimer qu'une part de cette énergie a vaporisé l'océan qui se trouvait sur le lieu de l'impact.}
+    \question \'Evaluer cette énergie. Conclure quant aux ordres de grandeurs de cette énergie et de celle initiale de la comète.
+    \uplevel{Il est estimé que les roches de la comète ont été instantanément liquéfiées vaporisées et que l'énergie restante à été convertie sous forme de rayonnement thermique.}
+    \question \'Evaluer ces énergies.
+    \question Tout le rayonnement a-t-il pu être converti sous forme de transfert thermique pour réchauffer l'atmosphère ?
+    \question Estimer enfin l'élévation en température atmosphérique causée par ce cataclysme.
+    \question Commenter le résultat. Quelles autres causes pourraient avoir contribué au réchauffement global suite à l'impact de la comète ?
+\end{questions}
+
+\paragraph{Données}~(toutes ne sont pas utiles)
+\begin{itemize}
+    \item la comète est constituée principalement de roches et d'iridium de densité 3 ;
+    \item enthalpie massique de vaporisation de l'eau à 100$^\circ$ C, $\Delta_\text{vap}\cal{h} = 2300\ \mathrm{kJ\cdot kg^{-1}}$ ;
+    \item enthalpie massique de liquéfaction des roches à 1500 K, $\Delta_\text{fus}\cal{h} ~ 10^3\ \mathrm{kJ\cdot kg^{-1}}$ ;
+    \item enthalpie massique de liquéfaction des roches à 3000 K, $\Delta_\text{fus}\cal{h} ~ 10^4\ \mathrm{kJ\cdot kg^{-1}}$ ;
+    \item capacité thermique massique de l'eau à 300 K : définition de la calorie ;
+    \item capacité thermique massique des roches à 300 K, $\cal{c} = 300\ \mathrm{J\cdot kg^{-1}\cdot K^{-1}}$ ;
+    \item rayon de la terre $R_\textsc{t} = 6400$ km ;
+    \item accélération normale de la pesanteur terrestre $g$ : à connaître ;
+    \item indice adiabatique de l'air $\gamma = 1.4$ ;
+    \item constante des gaz parfaits $R$ : à connaître ;
+    \item pression atmosphérique $P_0$ : à connaître ;
+\end{itemize}
+
+\end{exercise}
+
+\begin{solution}
+Le système $\scr{S}$ : $\{$ glace $+$ eau $+$ seau $\}$. On a par hypothèse $\Delta H(\scr{S}) = 0$ ainsi que la conservation de la masse $N_\text{g} m_\text{g} + \rho_\ell V_\ell = M = 1$ kg.
+
+\begin{questions}
+    \questioncours
+    \question Energie cinétique => énergie utile à chauffer l'atmosphère + pertes
+    \question $E_\text{pp}(r) = -\dfrac{G M M_\textsc{t}}{r} = -M g \dfrac{R_\textsc{t}^2}{r}$. D'où $E_\text{c,f} = M g R_\textsc{t} = 10^{23}$ J.
+    \question Si on suppose une vaporisation de la taille de la comète environ $E = 10^{19}$ J : négligeable
+    \question Cette fois-ci avec les ODG des roches on trouve plus normalement
+    \question La moitié du rayonnement est convertie : 1/2 du rayonnement par vers le haut (atmosphère), 1/2 vers le bas. Donc $Q \sim 10^{23}$ J
+    \question On a donc $\Delta U = Q = m c\Delta T$. $c = \dfrac{R}{\gamma - 1}$.
+    Masse de l'atmosphère à estimer avec $P_0$. On trouve $\Delta T = 42$ K !
+    \question Effet de serre...
+\end{questions}
+
+\end{solution}

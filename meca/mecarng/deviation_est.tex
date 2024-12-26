@@ -1,0 +1,115 @@
+% Niveau :      Spé
+% Discipline :  Méca
+% Mots clés :   Chaine, caténaire
+
+\begin{exercise}{Gravimétrie terrestre}{3}{Spé}
+{Mécanique,Mécanique en référentiel non galiléen,Pesanteur,Gravité,Forces d'inertie}{bermu}
+
+\begin{questions}
+    \questioncours Caractère conservatif de la force d'inertie d’entraînement et champ de pesanteur dans un référentiel non galiléen. 
+    
+\begin{EnvUplevel}
+On considère le référentiel terrestre qui se situe en surface de la Terre à la latitude $\lambda$.
+
+\end{EnvUplevel}
+    \question \textsf{Question ouverte :} le champ de pesanteur $g$ varie plus significativement si on se déplace de $h = \SI{1}{m}$ vers le nord, vers l'est, ou en altitude ? \`A quelle conditions peut-on estimer que $g$ est constant ?
+\end{questions}
+\paragraph{Notations :} 
+On note $\Omega_\textsc{t}$ la pulsation associée à la rotation de la Terre, et $R_\textsc{t}$ son rayon.
+
+\hspace{4.3em}
+On note $\lambda$ la latitude qui est l'angle entre l'équateur et point le étudié ($\lambda = 49^\circ$ à Paris).
+\end{exercise}
+
+\begin{solution}
+\begin{questions}
+    \questioncours $$\vec{g} = \vec{g}_0 + \vec{a}_\text{ie} = -\dfrac{GM}{(R_\textsc{t}+z)^2}\vec{e}_z + \Omega^2_\textsc{t} R_\textsc{t} \cos\lambda \vec{e}_h = -\grad\qty(\dfrac{GM}{R_\textsc{t}+h} + \dfrac{1}{2}\Omega^2_\textsc{t} R_\textsc{t}^2 \cos\lambda^2),$$
+$\vec{e}_z$ étant la verticale locale (depuis le centre de la Terre) et $\vec{e}_h$ le projeté orthogonal depuis l'axe de rotation de la Terre.
+    \question
+    \begin{itemize}
+        \item \textsf{Variation selon $y$ :} nulle
+        \item \textsf{Variation selon $z$ :}
+        $$\delta g \simeq \delta\qty(-\dfrac{GM}{(R_\textsc{t}+h)^2}) = g_0 \dfrac{2 \delta z}{R_\textsc{t}} \qquad \dfrac{\delta  g}{g_0} \simeq \SI{3e-7}{}$$
+        Raisonnable donc pour $\delta z \ll R_\textsc{t}$.
+        \item \textsf{Variation selon $x$ :}
+        $$\delta g \simeq \delta\qty(\Omega^2_\textsc{t} R_\textsc{t} \cos\lambda) = \Omega^2_\textsc{t} R_\textsc{t} \sin\lambda \delta\lambda = \Omega^2_\textsc{t} \sin\lambda \delta x \qquad \dfrac{\delta  g}{g_0} \simeq \SI{4e-10}{}$$
+        Toujours raisonnable car $a_\text{ie}/g_0 \simeq \SI{5e-3}{}$ au max.
+    \end{itemize}
+\end{questions}
+\end{solution}
+
+% Niveau :      Spé
+% Discipline :  Méca
+% Mots clés :   Chaine, caténaire
+
+\begin{exercise}{Expérience de Cassini}{3}{Spé}
+{Mécanique,Mécanique en référentiel non galiléen,Chute libre,Déviation vers l'est}{bermu}
+
+\begin{questions}
+    \questioncours Caractère galiléen approché du référentiel terrestre. \\
+    On appuiera la démonstration d'ordres de grandeur et on estimera la contribution des forces d'inertie dans un problème de dynamique terrestre.
+    
+
+\begin{EnvUplevel}
+On se propose d'étudier l'expérience effectuée par Cassini en 1679 à l'observatoire de Paris sur les effets du caractère non galiléen du référentiel terrestre sur la chute libre d'un corps de masse $m$, supposé ponctuel, lâché sans vitesse dans un puits de profondeur $h$, et situé à la latitude $\lambda$.
+
+On se placera dans le repère $(O,x,y,z)$ placé à la surface de la Terre, $Ox$ pointant vers le nord et $Oy$ vers l'ouest.
+
+\end{EnvUplevel}
+    \question Donner les équations de la dynamique de la particule, projetées sur chaque axe.
+    \question Considérant que les effets non-galiléens son faibles, simplifier l'équation de sorte à ce qu'il n'y ait qu'un terme de force suivant chaque composante et résoudre l'équation.
+    \question \`A l'observatoire de Paris (lattitude $\lambda = 49^\circ$), dans un puits de $h = \SI{158}{m}$ de profondeur,\linebreak Cassini a mesuré une déviation vers l'est de $y = 28$ mm vers l'est. Interpréter.
+    \questionbonus Montrer également qu'on devrait observer une faible déviation vers le sud.
+\end{questions}
+\paragraph{Notations :} 
+On note $\Omega_\textsc{t}$ la pulsation associée à la rotation de la Terre, et $R_\textsc{t}$ son rayon.
+
+\hspace{4.3em}
+On note $\lambda$ la latitude qui est l'angle entre l'équateur et point le étudié ($\lambda = 49^\circ$ à Paris).\end{exercise}
+
+\begin{solution}
+\begin{questions}
+    \questioncours Dynamique inférieure à 24 heures.
+    \question 
+    $$\dv{\vv}{t} = -g\vec{e}_z - 2\vec{\Omega}_\textsc{t}\cross\vv = -g\mqty(0,0,1) - 2\Omega_\textsc{t} \mqty(\cos\lambda\\0\\-\sin\lambda)\cross\mqty(\dot{x}\\\dot{y}\\\dot{z}).$$
+
+    $$\left\lbrace\begin{array}{l}
+        \ddot{x} = 2\Omega_\textsc{t} \sin\lambda \dot{y}  \\
+        \ddot{y} = 2\Omega_\textsc{t} (\sin\lambda \dot{x} + \cos\lambda \dot{z})  \\
+        \ddot{z} = -g - 2\Omega_\textsc{t} \cos\lambda \dot{y}
+    \end{array}\right.$$
+    \question Or on a $\dot{x}$ et $\dot{y}$ négligeables, donc :
+    $$\left\lbrace\begin{array}{l}
+        \ddot{x} = 2\Omega_\textsc{t} \sin\lambda \dot{y}  \\
+        \ddot{y} = 2\Omega_\textsc{t} \cos\lambda \dot{z}  \\
+        \ddot{z} = -g
+    \end{array}\right.$$
+    d'où
+    \begin{align*}
+        \ddot{z} &= -g &
+        \dot{z} &= -gt &
+        z &= -\dfrac{1}{2}gt^2 \\
+        \ddot{y} &= -2\Omega_\textsc{t} \cos\lambda g t &
+        \dot{y} &= -\Omega_\textsc{t} \cos\lambda g t^2 &
+        y &= - \dfrac{1}{3}\Omega_\textsc{t} \cos\lambda g t^3 \\
+        \ddot{x} &= -2\Omega_\textsc{t}^2 \cos\lambda \sin\lambda g t^2 &
+        \dot{x} &= -\dfrac{2}{3}\Omega_\textsc{t}^2 \cos\lambda \sin\lambda g t^3 &
+        x &= -\dfrac{1}{6}\Omega_\textsc{t}^2 \cos\lambda \sin\lambda g t^4
+    \end{align*}
+    or $t = \sqrt{\dfrac{2h}{g}}$ d'où
+    $$\left\lbrace\begin{array}{l}
+        x =  -\dfrac{2}{3}\Omega_\textsc{t}^2 \cos\lambda \sin\lambda \dfrac{h^2}{g} \\
+        y = - \dfrac{1}{3}\Omega_\textsc{t} \cos\lambda g \qty(\dfrac{2h}{g})^{3/2} \\
+        z = - h
+    \end{array}\right.$$
+    \question On introduit une longueur typique :
+    $$\ell = \dfrac{g}{\Omega_\textsc{t}^2} \simeq \SI{1,8e9}{m}$$
+    $$\left\lbrace\begin{array}{l}
+        x =  -\dfrac{2}{3} \cos\lambda \sin\lambda \dfrac{h^2}{\ell} \\
+        y = - \dfrac{2\sqrt{2}}{3} \cos\lambda h \sqrt{\dfrac{h}{\ell}} \\
+        z = - h
+    \end{array}\right.$$
+    On retrouve bien l'ODG.
+    \question Pour $x$ on trouve une déviation vers le sud de $x = \SI{0,13}{um}$
+\end{questions}
+\end{solution}

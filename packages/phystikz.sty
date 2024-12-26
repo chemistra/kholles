@@ -1,0 +1,42 @@
+\ProvidesPackage{phystikz}[Extension contenant des commandes utiles pour les schémas et la physique v 22.06.21]
+
+%% Tikz
+\RequirePackage{tikz}
+\usetikzlibrary{babel} %Compatibilité babel
+
+%% Méca
+\usetikzlibrary{decorations.pathmorphing} % Ressorts exos méca
+\usetikzlibrary{patterns}
+
+%% Circuits
+\RequirePackage{pgf}
+\RequirePackage[european,american inductors,straightvoltages]{circuitikz}
+\RequirePackage{pgfplots}
+
+
+%% Environement schéma
+\RequirePackage{morefloats}
+\RequirePackage{xparse}
+
+\DeclareFloatingEnvironment[fileext=frm,
+                            placement={H},
+                            name=Circuit]{@circuit}
+
+\let\thecircuit\the@circuit
+\captionsetup[@circuit]{labelsep=none}
+
+\renewcommand{\the@circuit}{\arabic{exercise}.\arabic{@circuit}}
+\@addtoreset{@circuit}{exercise}
+
+\NewDocumentEnvironment{circuit}{o}
+    {
+    \begin{@circuit}
+    \centering
+    \begin{circuitikz}
+    }
+    { 
+    \end{circuitikz}
+    \caption{\IfNoValueTF{#1}{}{~--~#1}}
+    \label{circuit:\the@circuit}
+    \end{@circuit}
+    }

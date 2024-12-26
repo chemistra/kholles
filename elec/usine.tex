@@ -1,0 +1,50 @@
+\begin{exercise}{Usine alimentée par un courant sinusoïdal}{1}{Sup}{\'Electrocinétique,Régime sinusoidal forcé}{correge}
+
+\begin{questions}
+    \questioncours Montrer le lien entre valeur efficace et amplitude pour un signal sinusoïdal.
+
+    \uplevel{Une usine, alimentée sous la tension sinusoïdale de valeur efficace $U=\SI{220}{V}$ et de fréquence $f=\SI{50}{Hz}$, consomme une puissance moyenne $P=\SI{100}{kW}$; son facteur de puissance est $\cos \phi=0.8$.}
+    
+    \question Calculer l'intensité efficace $I$. \\ On pourra montrer que $P$ ne dépend que de $U$ et $I$ et $\cos\phi$, $\phi$ étant le déphasage entre $u(t)$ et $i(t)$.
+
+    \uplevel{Souvent, les installations industrielles et domestriques ont un caractère inductif (\emph{i.e.} se comportent comme une inductance résistive), lié à la présence de fils et de bobinages (moteurs, transformateurs~\emph{etc.}).}
+
+    \question Représenter qualitativement dans le plan complexe $\ubar{u}$ et $\ubar{i}$ en prenant comme référence la phase de $\ubar{u}$, ainsi que l'argument $\varphi$ de l'impédance équivalente $\ubar{Z}$ de l'usine.
+
+    \question EDF facture à l'usine la puissance moyenne consommée $P$. Sachant que le réseau pour acheminer l'électricité possède une résistance $R_\textsc{edf}$, quelle puissance $P_\text{f}$ doit fournir EDF en fonction de $P$, $R_\textsc{edf}$ et $I$ ? Que doit valoir $\phi$ pour réduire la charge sur le réseau ?
+    
+    \uplevel{EDF met en parallèle avec l'usine un condensateur de capacité $C$ de sorte que le facteur de puissance $\cos\phi_\text{tot}$ de l'ensemble soit maximal.}
+
+    \question Compléter la figure de la question 3 en y représentant les amplitudes complexes de $\ubar{i}_C$ et $\ubar{i}_\text{tot}$.
+
+    \question Que doit valoir $C$ pour que le facteur de puissance $\cos\phi = 1$ ? Calculer en pourcentage l'économie réalisée par le fournisseur de l'énergie électrique, l'industriel consommant toujours la même puissance.
+\end{questions}
+\end{exercise}
+
+\begin{solution}
+    \begin{questions}
+        \question La valeur efficace est telle que :
+        $$U^2 = \ev{u(t)^2} = {u_0}^2 \ev{\cos^2(\omega t)} = \dfrac{1}{2}{u_0}^2 \ev{1 + \cos(2\omega t)} = \dfrac{{u_0}^2}{2}.$$
+        D'où $U = u_0/\sqrt{2}$.
+
+        \question $P = \ev{u(t) i(t)} = 2 UI\ev{\cos(\omega t)\cos(\omega t + \phi)} = UI\ev{\cos\phi + \cos(2\omega t + \phi)} = UI\cos\phi$.
+
+        AN. : $I = 568$ A.
+
+        \question $\ubar{u} = \ubar{Z}\, \ubar{i}$, donc $u_0 = Z_0 i_0 e^{j(\phi + \varphi)}$, ce qui indique que $\varphi = -\phi$, l'angle entre $(Ox)$ et $\ubar{i}$. Comme $\ubar{Z} = R + jL\omega$, $0 < \varphi < \pi/2$ et donc $0 > \phi > -\pi/2$, quart bas droite du plan complexe.
+
+        Ainsi $\cos\phi \ll 1$ : on diminue la puissance consommée.
+
+        \question $$P_\text{f} = R_\textsc{edf} I^2 + \abs{Z}\cos\phi I^2 = \dfrac{R_\textsc{edf} I^2 + \abs{Z}\cos\phi}{\cos^2\phi}\dfrac{P^2}{U^2}.$$
+        Ainsi pour une même puissance, la charge sur réseau diverge quand $\cos\phi = 0$, EDF tente donc d'optimiser en prenant $\phi = 0$.
+
+        \question $\ubar{i}_C = jC\omega \ubar{u}$ sera donc dans l'axe $Oy$.
+        
+        $\ubar{i}_\text{tot} = \ubar{i} + \ubar{i}_C = j\qty(C\omega - \dfrac{1}{Z_0}\sin\varphi) + \dfrac{1}{Z_0}\cos\varphi\ubar{u}$ sera entre les deux.
+
+        Pour que $\phi_\text{tot} = 0$, il faut que $\text{Im }\ubar{i}_C = - \text{Im }\ubar{i}$ soit $I_C = I \sin\varphi$ ou encore $C\omega = \dfrac{1}{Z_0}\sin\varphi$.
+
+        \question Ainsi $C = \dfrac{\sin\varphi}{Z_0\omega}$. L'industriel économise donc d'un facteur $\dfrac{1 - \cos\phi}{\cos\phi} = 25\%$.
+        
+    \end{questions}
+\end{solution}

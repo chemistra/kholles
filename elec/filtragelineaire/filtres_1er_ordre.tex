@@ -1,0 +1,156 @@
+% RC passe bas
+\begin{exercise}{Filtres linéaires du premier ordre}{0}{Sup}
+{\'Electrocinétique,Filtrage linéaire, Premier ordre}{bermudez}
+
+\begin{minipage}[t]{.3\linewidth}
+\vspace{-1.5em}
+\begin{circuitikz}
+      \draw
+      (0,0) to [open, v^=$\underline{e}$, *-o] (0,2)
+      (0,2) to [R, l=$R$] (2,2) 
+      to [C, l^=$C$, *-*] (2,0)
+      (2,2) to [short] (3,2)
+      (3,0) to [open, v_=$\underline{s}$, *-o] (3,2)
+      (0,0) to [short] (3,0);
+\end{circuitikz}
+\vspace{1em}
+\end{minipage}\begin{minipage}[t]{.7\linewidth}
+    \textsf{Question de cours : } Déterminez la nature et le diagramme de Bode de ce filtre, en précisant sa fréquence de coupure et son gain statique.
+\end{minipage}
+\end{exercise}
+
+
+% RL passe haut
+\begin{exercise}{Filtres linéaires du premier ordre}{0}{Sup}
+{\'Electrocinétique,Filtrage linéaire, Premier ordre}{bermudez}
+
+\begin{minipage}[t]{.3\linewidth}
+\vspace{-1.5em}
+\begin{circuitikz}
+      \draw
+      (0,0) to [open, v^=$\underline{e}$, *-o] (0,2)
+      (0,2) to [R, l=$R$] (2,2) 
+      to [L, l^=$L$, *-*] (2,0)
+      (2,2) to [short] (3,2)
+      (3,0) to [open, v_=$\underline{s}$, *-o] (3,2)
+      (0,0) to [short] (3,0);
+\end{circuitikz}
+\vspace{1em}
+\end{minipage}\begin{minipage}[t]{.7\linewidth}
+    \textsf{Question de cours : } Déterminez la nature et le diagramme de Bode de ce filtre, en précisant sa fréquence de coupure et son gain statique.
+\end{minipage}
+\end{exercise}
+
+
+% RC passe bas
+\begin{exercise}{Filtres linéaires du premier ordre}{0}{Sup}
+{\'Electrocinétique,Filtrage linéaire, Premier ordre}{bermudez}
+
+\begin{minipage}[t]{.3\linewidth}
+\vspace{-1.5em}
+\begin{circuitikz}
+      \draw
+      (0,0) to [open, v^=$\underline{e}$, *-o] (0,2)
+      (0,2) to [C, l=$C$] (2,2) 
+      to [R, l^=$R$, *-*] (2,0)
+      (2,2) to [short] (3,2)
+      (3,0) to [open, v_=$\underline{s}$, *-o] (3,2)
+      (0,0) to [short] (3,0);
+\end{circuitikz}
+\vspace{1em}
+\end{minipage}\begin{minipage}[t]{.7\linewidth}
+    \textsf{Question de cours : } Déterminez la nature et le diagramme de Bode de ce filtre, en précisant sa fréquence de coupure et son gain statique.
+\end{minipage}
+\end{exercise}
+
+
+% RL passe haut
+\begin{exercise}{Filtres linéaires du premier ordre}{0}{Sup}
+{\'Electrocinétique,Filtrage linéaire, Premier ordre}{bermudez}
+
+\begin{minipage}[t]{.3\linewidth}
+\vspace{-1.5em}
+\begin{circuitikz}
+      \draw
+      (0,0) to [open, v^=$\underline{e}$, *-o] (0,2)
+      (0,2) to [L, l=$L$] (2,2) 
+      to [R, l^=$R$, *-*] (2,0)
+      (2,2) to [short] (3,2)
+      (3,0) to [open, v_=$\underline{s}$, *-o] (3,2)
+      (0,0) to [short] (3,0);
+\end{circuitikz}
+\vspace{1em}
+\end{minipage}\begin{minipage}[t]{.7\linewidth}
+    \textsf{Question de cours : } Déterminez la nature et le diagramme de Bode de ce filtre, en précisant sa fréquence de coupure et son gain statique.
+\end{minipage}
+\end{exercise}
+
+
+% Tableau des solutions
+
+{
+\def\thesolution{Solutions \arabicAlph{part}\arabicAlph{section}\hspace{2pt}01--\twodigits{exercise}\quad---\quad}
+\begin{solution}
+
+\newcounter{subsol}
+\newcommand{\parti}{\large\bfseries\sffamily\stepcounter{subsol}\arabicAlph{part}\arabicAlph{section}\hspace{2pt}\twodigits{subsol}\quad}
+
+\noindent\begin{tabularx}{\linewidth}{@{\parti}C@{\vspace{1em}}Ccp{5em}}
+
+\begin{circuitikz}[baseline={(0,2)}]
+      \draw
+      (0,0) to [open, v^=$\underline{e}$, *-o] (0,2)
+      (0,2) to [R, l=$R$] (2,2) 
+      to [C, l^=$C$, *-*] (2,0)
+      (2,2) to [short] (3,2)
+      (3,0) to [open, v_=$\underline{s}$, *-o] (3,2)
+      (0,0) to [short] (3,0);
+\end{circuitikz} &
+$ \underline{H}(\omega) = \dfrac{1}{1+j RC\omega}$ &
+Passe-bas &
+$H_0 = 1$, \newline $\omega_\text{c} = \dfrac{1}{RC}$ \\
+
+\begin{circuitikz}[baseline={(0,2)}]
+      \draw
+      (0,0) to [open, v^=$\underline{e}$, *-o] (0,2)
+      (0,2) to [R, l=$R$] (2,2) 
+      to [L, l^=$L$, *-*] (2,0)
+      (2,2) to [short] (3,2)
+      (3,0) to [open, v_=$\underline{s}$, *-o] (3,2)
+      (0,0) to [short] (3,0);
+\end{circuitikz} &
+$ \underline{H}(\omega) = \dfrac{j L/R\omega}{1+j L/R\omega}$ &
+Passe-haut &
+$H_0 = 1$, \newline $\omega_\text{c} = \dfrac{R}{L}$ \\
+
+\begin{circuitikz}[baseline={(0,2)}]
+      \draw
+      (0,0) to [open, v^=$\underline{e}$, *-o] (0,2)
+      (0,2) to [C, l=$C$] (2,2) 
+      to [R, l^=$R$, *-*] (2,0)
+      (2,2) to [short] (3,2)
+      (3,0) to [open, v_=$\underline{s}$, *-o] (3,2)
+      (0,0) to [short] (3,0);
+\end{circuitikz} &
+$ \underline{H}(\omega) = \dfrac{jRC\omega}{1+j RC\omega}$ &
+Passe-haut &
+$H_0 = 1$, \newline $\omega_\text{c} = \dfrac{1}{RC}$ \\
+
+\begin{circuitikz}[baseline={(0,2)}]
+      \draw
+      (0,0) to [open, v^=$\underline{e}$, *-o] (0,2)
+      (0,2) to [L, l=$L$] (2,2) 
+      to [R, l^=$R$, *-*] (2,0)
+      (2,2) to [short] (3,2)
+      (3,0) to [open, v_=$\underline{s}$, *-o] (3,2)
+      (0,0) to [short] (3,0);
+\end{circuitikz} &
+$ \underline{H}(\omega) = \dfrac{1}{1+j L/R\omega}$ &
+Passe-bas &
+$H_0 = 1$, \newline $\omega_\text{c} = \dfrac{R}{L}$ \\
+
+\end{tabularx}
+
+\end{solution}
+
+}

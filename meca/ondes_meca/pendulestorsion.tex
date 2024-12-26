@@ -1,0 +1,20 @@
+\begin{exercise}{Propagation non-linéaire dans une chaîne de pendules}{3}{Spé}
+{Propagation}{lelay, X}
+
+\begin{questions}
+    \questioncours Propagation des OPPH, vitesse de phase, vitesse de groupe, dispersion.
+    \uplevel{On considère une chaîne infinie de  pendules de masse $m$ et de longueur $R$ oscillant dans des plans parallèles séparés d'une distance $a$ avec des angles $\theta_n$, avec $n \in \mathbb{Z}$. Les centres des pendules sont reliés par des ressorts de torsion de constante de raideur $C$ (un tel ressort, si il est soumis à un angle de torsion d'amplitude $\Delta \theta$, exerce un couple $C\Delta \theta$).}
+    \question Montrez que le mouvement du $n$ ième pendule obéit à l'équation
+    \begin{align*}
+        \pdv[2]{\theta_n}{t} = \omega_C^2 (\theta_{n+1} - 2\theta_n + \theta_{n-1}) - \omega_0^2 \sin(\theta)
+    \end{align*}
+    \question On définit alors $\theta$ tel que $\theta_n(t) = \theta(x = na, t)$. En supposant $a$ petit devant la taille typique des variations spatiales de $\theta$, montrer que $\theta$ vérifie l'équation de Sine-Gordon :
+    \begin{align*}
+        \partial[2]{\theta}{t} = c^2 \partial[2]{\theta}{x} - \omega_0^2\sin(\theta)
+    \end{align*}
+    où $c$ est une constante dont on précisera l'expression et la dimension.
+    
+    \question Ensuite des questions sur les solitions (X MP 2015). Bon c'est surtout calculatoire donc j'ai pas poussé plus).
+\end{questions}
+
+\end{exercise}

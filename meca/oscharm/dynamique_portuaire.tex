@@ -1,0 +1,22 @@
+% Niveau :      PCSI
+% Discipline :  Méca
+
+
+\begin{exercise}{Dynamique portuaire à Ploudalmézeau}{2}{Sup}
+{Oscillateur harmonique}{lelay}
+
+On considère le port breton de Ploudalmézeau dans le Finistère (29). Les principaux habitants en sont de fiers marins bretons, des goélands et des sardines dont les goélands sont friands.
+
+On note $s(t)$ le nombre de sardines et $g(t)$ le nombre de goélands dans le port. Il y a en permanence de nouvelles sardines qui arrivent dans le port, attirées par le charme naturel des côtes bretonnes. De plus les goélands ont tendance à migrer vers l'intérieur des terres et à ne pas rester dans les environs du port. On modélise la situation comme suit :
+\begin{align*}
+    \dv{g}{t} &= b\:s(t) - \alpha \\
+    \dv{s}{t} &= -c\:g(t) + \beta 
+\end{align*}
+\begin{questions}
+    \question Justifier chacun des termes de la modélisation ci-dessus.
+    \question Montrer que $g(t)$ et $s(t)$ obéissent chacun à une équation d'oscillateur harmonique de même pulsation.
+    \question Trouver $g(t)$ et $s(t)$ sachant que à $t = 0$ jour, il y a 7 goélands et 250 sardines.
+    \question Quel est le déphasage entre $g(t)$ et $s(t)$ ? Justifier qu'elles ne peuvent pas être en phase.
+\end{questions}
+\textbf{Données :} On pourra supposer que à l'équilibre la population de sardines est de 250 individus et celle de goélands de 5 individus, que chaque goéland mange 10 sardines par jour et qu'un nouveau goéland migre vers l'intérieur des terres chaque jour. 
+\end{exercise}

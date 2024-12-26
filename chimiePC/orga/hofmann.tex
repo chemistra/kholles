@@ -1,0 +1,81 @@
+% Niveau :      PCSI *
+% Discipline :  Chimie Orgam
+% Mots clés :   Ballistique, Mécanique du point, PFD, Chute libre
+
+\begin{exercise}{\'Elimination de Hofmann}{2}{PCSI}
+{Chimie organique I, SN, E}{bermu}
+
+\noindent\textsl{On s'intéresse à la sélectivité de différentes réactions sur le 2-bromo-2-méthylbutane.} \\
+\textsl{Pour chaque question, on précisera bien le rôle de chaque composé et des conditions expérimentales.}
+
+\begin{questions}
+\questioncours Sélectivité$\cdot$s et spécificité$\cdot$s de la réaction d'élimination sur les halogénoalcanes. On illustrera la question de cours entre autres par les résultats expérimentaux suivants :
+\begin{center}
+    \schemestart
+        \chemfig{-[1]-[-1](-[-3]Br)(<:[2])-[1]}
+        \arrow{->[NaOEt][EtOH]}
+        \chemname{\chemfig{-[1]=[-1](-[-3])-[1]}}{71\%}
+        \arrow{0}[,0]\+\arrow{0}[,0]
+        \chemname{\chemfig{-[1]-[-1](-[-3])=[1]}}{29\%}
+    \schemestop\chemnameinit{}
+    
+    \schemestart
+        \chemfig{-[1]-[-1](-[-3]Br)(<:[2])-[1]}
+        \arrow(.mid east--.mid west){->[NaO$^\textit{t}$Bu][$^\textit{t}$BuOH]}
+        \chemname{\chemfig{-[1]=[-1](-[-3])-[1]}}{28\%}
+        \arrow{0}[,0]\+\arrow{0}[,0]
+        \chemname{\chemfig{-[1]-[-1](-[-3])=[1]}}{72\%}
+    \schemestop\chemnameinit{}
+    \end{center}
+    \noindent--$^\textit{t}$Bu (\emph{tert}-butyle) désigne --$\mathrm{(CH_3)_3}$.
+    
+    \bigskip
+
+\begin{EnvUplevel}
+    Une variante du mécanisme précédent consiste à remplacer le brome par une amine tertiaire à l'aide d'une amidure pour augmenter la sélectivité :
+    
+    \quad\textbf{\'Etape 1 :}\hspace{2em}\schemestart[][-6]
+        \chemfig{-[1]-[-1](-[-3]Br)(<:[2])-[1]}
+        \arrow{->[NaNH$_2$][THF, $-70^\circ$C]}[,2.2]
+        \textbf{A}
+    \schemestop\chemnameinit{}\hspace{1.9em}puis lavage sur Büchner et séchage.
+    
+    \quad\textbf{\'Etape 2 :}\hspace{1.9em}\schemestart[][base west]
+        \textbf{A}
+        \arrow{->[MeI (3 eq.)][NaHCO$_3$]}[,1.9]
+        \textbf{B}
+        \arrow{->[AgOH, H$_2$O][$80^\circ$C]}[,2.1]
+        \chemname{\chemfig{-[1]=[-1](-[-3])-[1]}}{5\%}
+        \arrow{0}[,0]\+\arrow{0}[,0]
+        \chemname{\chemfig{-[1]-[-1](-[-3])=[1]}}{95\%}
+    \schemestop\chemnameinit{}
+    
+    THF (tétrahydrofurane) désigne le solvant \chemfig{[:-198,.7]*5(-O----)}\,.
+\end{EnvUplevel}
+    \question Quelle est la nature de la première étape ? Donner la structure de \textbf{A}. \\
+        Justifier le choix de température et de solvant.
+    \question Quelle est la nature de la réaction \textbf{A} $\longrightarrow$ \textbf{B} ? Donner la structure de \textbf{B}.
+    \question Préciser le rôle de NaHCO$_3$. Quel est l'intérêt de NaHCO$_3$ en particulier ?
+    \question Que se passe-t-il lors de la dernière étape ?  Interpréter la sélectivité finale.
+    \question Discuter du choix de $\mathrm{I}^\ominus$ et $\mathrm{Ag}^\oplus$.
+    
+    \question Conclure quant à l'effet des chaînes carbonées sur la sélectivité des réactions des questions précédentes.
+\end{questions}
+
+\vfill
+
+\plusloin A. W. von Hofmann,Beiträge zur Kenntniss der flüchtigen organischen Basen, \textit{Annalen der Chemie und Pharmacie}, Vol. 78, No. 3, \textbf{1851},  253--286.
+
+\end{exercise}
+
+\begin{solution}
+\begin{center}\small\schemestart
+        \chemfig{-[1]-[-1](-[-3]Br)(<:[2])-[1]}
+        \arrow{->[NaNH$_2$]}
+        \chemname{\chemfig{-[1]-[-1](-[-3]NH_2)(<[2])-[1]}}{\textbf{A}}
+        \arrow{->[MeI]}
+        \chemname{\chemfig{-[1]-[-1](-[-3]\chemabove{N}{\scriptstyle\hspace{3.5mm}\oplus}(-[0,1.4]\chemabove{\ ,\ I}{\scriptstyle\hspace{5.5mm}\ominus})(-[-3])-[6])(<[2])-[1]}}{\textbf{B}}
+        \arrow{->[AgOH]}
+        ...
+    \schemestop\chemnameinit{}\end{center}
+\end{solution}

@@ -1,0 +1,89 @@
+\begin{exercise}{Tube fluorescent}{-1}{Spé}
+{\'Electrocinétique}{centrale}
+
+Un tube fluorescent est une lampe électrique de forme tubulaire, de la famille des lampes à décharge à basse pression. Il contient du mercure à l'état gazeux, dont les atomes sont ionisés sous l'effet d'un courant électrique appliqué entre les électrodes placées à chaque extrémité du tube ; ils émettent alors par luminescence un rayonnement essentiellement ultraviolet, qui est converti en lumière visible par la poudre fluorescente déposée sur les parois du tube. La couleur de la lumière émise dépend de la nature de la poudre fluorescente utilisée.
+
+Le tube fluorescent est souvent désigné à tort par l'expression tube au néon, alors que le tube néon est un autre type de lampe à décharge, de couleur rouge, qui n'utilise pas la fluorescence.
+
+Un tube fluorescent peut se comporter de deux façons :
+\begin{itemize}
+    \item Éteint : Lorsque le tube est éteint, il n'émet pas de lumière et il se comporte électriquement comme un interrupteur ouvert et le courant ne peut pas passer.
+    \item Allumé : Lorsque le tube est allumé, il émet de la lumière et il se comporte électriquement comme une résistance de valeur $R_t$.
+\end{itemize}
+Un tube fluorescent s'allume quand la tension à ses bornes dépasse une certaine tension d'allumage $U_a$. Un fois allumé, le tube ne s'éteint que lorsque la tension descend en dessous de $U_e$, la tension d'extinction.
+
+\paragraph{Résolution de problème :}~\\
+Le but de la démarche est de déterminer les caractéristiques d'un tube fluorescent inconnu.
+
+On adopte le montage suivant: Un générateur de tension de f.e.m. $E = 100$~V associé à une résistance $R$ alimente un tube fluorescent $T$. Un condensateur de capacité $C = 2200$~$\mu$F est branché en parallèle du tube.
+
+\begin{circuit}[Schéma du montage utilisé.]
+
+      \draw (0,0)
+      to [vsource, v^>=$E$] (0,1.5)
+      to [R, l=$R$] (0,3)
+      to [short] (2, 3)
+      to [short, *-*] (2,0)
+      to [short] (0,0) node [ground] at (0,0) {};
+      
+      \draw (2,3) to [short] (4,3)
+      to [C, l^=$C$] (4,0)
+      to [short] (2,0) {};
+      % \draw (5.3,0) [open, v_=Voltmètre] to (5.3,3) {} ;
+      % \draw [red, dashed] (1.4,-0.2) rectangle(2.6,3.2) ;
+      % \node [red] at (2.0,3.5) {Tube fluorescent};
+
+      \filldraw[fill=white](2, 1.5) circle(0.4);
+      \node [black] at (2.0,1.5) {$T$};
+\end{circuit}
+
+À $t<0$, le condensateur est déchargé et le tube est éteint. On allume le générateur à $t=0$.
+
+Pour faire des mesures, on ne dispose que d'un chronomètre et d'un voltmètre branché aux bornes du tube.
+
+On réalise deux expériences en utilisant deux résistances $R$ différentes
+\begin{itemize}
+    \item Lors de la première expérience ($R = 5$~$\Omega$) le tube s'allume presque immédiatement. Il reste allumé et très rapidement le tension à ses bornes se stabilise à 90 $V$.
+    \item Lors de la seconde expérience ($R = 500$~$\Omega$) le tube s'allume à $t=1.8$~s, puis oscille de manière régulière entre l'état éteint et allumé. La durée de 10 cycles est de 7.6~s.
+\end{itemize}
+
+
+\begin{questions}
+    \question Reproduire le circuit équivalent dans le cas où le tube est allumé et dans le cas où il est éteint. 
+    
+    \question Montrer qu'il existe différents régimes possibles en fonction des valeurs du paramètre sans dimensions $\displaystyle k = \frac{R_t}{R+R_t}$. Expliquer qualitativement les phénomènes observés.
+    
+    \question Déterminer les valeurs $U_a$, $U_e$ et $R_t$ pour le tube utilisé.
+\end{questions}
+
+
+
+% \paragraph{Données :} $E = 100$ V, $R_g = 500$ $\Omega$, $C = 2000$ $\mu$F, $U_a$ = 80 V, $U_e$ = 40 V
+
+\end{exercise}
+
+\begin{solution}
+
+À chaque fois on utilise la loi du condensateur + la loi des mailles. Pour le tube allumé, on peut passer par la représentation de thévenin équivalente si on est rapide.
+\begin{itemize}
+    \item \textbf{TUBE ETEINT :} On a $RC \dot{u} + u = E$, la tension tend vers $E$ avec un temps caractéristique $\tau = RC$
+    \item \textbf{TUBE ALLUME :} On a $kRC \dot{u} + u = kE$, la tension tend vers $kE < E$ avec un temps caractéristique $\tau = kRC < RC$
+\end{itemize}
+
+\textbf{Explications des observations: }
+
+Dans la premières expérience le tube reste allumé, donc $kE > U_e$. 
+
+Dans la seconde expérience, le tube s'éteint donc $kE < U_e$. Une fois éteint la tension monte à nouveau, le tube s'allume etc, d'où les oscillations.
+
+\textbf{Détermination de $R_t$: } D'après l'expérience 1, on a $k_1E = 90$~V, d'où l'on déduit $R_t = R_1\frac{u_\infty}{E-u_\infty} = 45$~$\Omega$.
+
+\textbf{Détermination de $U_a$: } Le temps d'allumage $t_{all}$ est tel que $U_a = E(1-e^{-t/RC})$. Dans l'expérience 1 on a $RC = 11$~ms donc on n'a le temps de rien voir. Dans l'expérience 2, $RC = 1.1$~s, d'où $U_a = 80$~V
+
+\textbf{Détermination de $U_e$: } Il faut utiliser l'expérience 2. On a $k_2 \approx 0.08 \ll 1$ donc en première approximation le temps d'oscillation est le temps de montée (le tube est le plus souvent éteint). On a alors la condition $U_a = U_e + (E-U_e)(1-e^{-T/RC})$. On en déduit 
+$$
+U_e = \frac{U_a - E (1-e^{-T/RC})}{e^{-T/RC}}
+$$
+ici $e^{-T/RC} \approx 0.5$ d'où $U_e = 60$~V
+
+\end{solution}

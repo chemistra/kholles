@@ -1,0 +1,139 @@
+
+\begin{exercise}{Dissociation du dibrome}{1}{PCSI}
+{cinetique}{lelay}
+
+Le dibrome Br$_2$ a tendance à se dissocier en deux molécules de brome Br selon la réaction
+
+$$ \text{Br}_2 \longrightarrow 2\, \text{Br} $$
+
+Qui suit une cinétique d'ordre 1 en Br$_2$.
+
+\begin{questions}
+
+    \question Donner l'expression de la concentration en dibrome au cours du temps.
+    
+\end{questions}
+\end{exercise}
+
+\begin{solution}
+\begin{questions}
+
+    \question La loi est d'ordre 1, d'où
+    $$ v = - \dv{\qty[\text{Br}_2]}{t} = k \qty[\text{Br}_2]$$
+    d'où
+    $$ \qty[\text{Br}_2](t) = \qty[\text{Br}_2]_0 e^{-kt}$$
+    
+\end{questions}
+\end{solution}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{exercise}{Détemination de l'âge d'une roche}{1}{PCSI}
+{cinetique}{lelay}
+
+Lors de sa formation, une roche contenait initialement $7.22\cdot 10^{18}$~noyaux de potassium~40, un isotope du potassium de demie vie $\tau_{1/2} = 1.25\cdot 10^9$~ans.
+
+Aujourd'hui, la même roche ne contient plus que $7.60\cdot 10^{17}$~noyaux de potassium~40.
+
+\begin{questions}
+
+    \question Déterminer l'âge de cette roche
+    
+\end{questions}
+\end{exercise}
+
+\begin{solution}
+\begin{questions}
+
+    \question Le nombre de noyaux radioactifs décroit exponentiellement (cinétique d'ordre 1)
+    $$ N(t) = N_0 e^{-\lambda t}$$
+    avec $\lambda = \ln 2 / \tau_{1/2} = 5.55\cdot 10^{9}$~ans ; d'où
+    $$ t = -\frac1\lambda \ln\qty(\frac{N(t)}{N_0}) = 4.06 \time 10^9\text{ ans}$$
+    donc 4 milliards d'année.
+    
+\end{questions}
+\end{solution}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{exercise}{Décomposition du bromure de nitrosyle}{1}{PCSI}
+{cinetique}{lelay}
+
+Le bromure de nitrosyle se décompose selon la réaction suivante :
+$$
+\text{NOBr}_\text{(g)} = \text{NO}_\text{(g)} + \frac12\, {\text{Br}_2}_\text{(g)}.
+$$
+La concentration en bromure de nitrosyle a été mesuré à différentes dates :
+\begin{table}[H]
+    \centering
+    \begin{tabular}{l|c|c|c|c|c|c}
+        Temps $t$ (min)             &  0    & 6.2   & 10.8    & 14.7  & 20    & 24.6   \\
+        \hline
+        Concentration $c$ (mol/L)   & 0.0250    & 0.0191  & 0.0162    & 0.0144    & 0.0125    & 0.0112
+    \end{tabular}
+    % \caption{Caption}
+    % \label{tab:my_label}
+\end{table}
+
+\begin{questions}
+
+    \question Déterminer par la méthode intégrale l'ordre de la réaction
+    
+\end{questions}
+\end{exercise}
+
+\begin{solution}
+\begin{questions}
+
+    \question Il faut tracer $c = f(t)$ (ordre 0), $\ln c = f(t)$ (ordre 1) et $1/c = f(t)$ (ordre 2) et faire des régressions linéaires.
+    
+    On trouve des coefficients $r^2$ respectivement de 0.94089, 0.98482 et 0.99999 donc la réaction est d'ordre 2
+    
+\end{questions}
+\end{solution}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{exercise}{Dégradation de l'eau oxygénée}{1}{PCSI}
+{cinetique}{lelay}
+
+Une solution d'eau oxygénée contient du peroxyde d'hydrogène H$_2$O$_2$, un produit que se décompose au cours du temps selon la réaction
+$$
+\text{H}_2\text{O}_2 \longrightarrow \text{H}_2 \text{O} + \frac12\, \text{O}_2
+$$
+qui suit une loi de vitesse d'ordre 1.
+
+La constante cinétique $k_\text{obs}$ de cette reáction a été mesurée à différentes températures. Les résultats sont présentés dans le tableau ci dessous
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{c|c}
+        Température & $k_\text{obs}$ (heures$^{-1}$) \\
+        20 $^o$C &  0.0065 \\
+        30 $^o$C &  0.0144 \\
+        40 $^o$C &  0.0276 
+    \end{tabular}
+    % \caption{Caption}
+    % \label{tab:my_label}
+\end{table}
+
+\begin{questions}
+
+    \question En utilisant la loi d'Arrhenius, déterminer l'énergie d'activation de la décomposition de l'eau oxygénée. 
+    
+\end{questions}
+\end{exercise}
+
+\begin{solution}
+\begin{questions}
+
+    \question Il faut partir de $$k_\text{obs} = A e^{-E_a/RT}$$ pour écrire
+    $$
+    \ln k_\text{obs} = \ln A - \frac{E_a}{R} \frac{1}{T}
+    $$ et faire une régression linéaire en $\ln k_\text{obs}$ et $1/T$.
+    
+    On trouve $A = 1.7 \cdot 10^7$ h$^{-1}$ et $E_a = 53$~kJ/mol.
+    
+\end{questions}
+Les données sont extraites du mémoire d'Émilie Savage, IMPACT DE LA TEMPÉRATURE SUR LA DÉGRADATION DU PEROXYDE D’HYDROGÈNE LORS DE LA RÉHABILITATION IN SITU D’AQUIFÈRES CONTAMINÉS.
+\end{solution}

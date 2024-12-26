@@ -1,0 +1,33 @@
+\begin{exercise}{Quelques (pré) filtres (2)}{1}{Sup}
+{\'Electrocinétique}{lelay}
+
+\begin{questions}
+    \questioncours Passage en complexe : signification, limitations
+    \question Donner le déphasage entre $\underline{s}$ et $\underline{e}$ dans le circuit suivant en fonction de la fréquence $\omega$ de $\underline{e}$
+\begin{circuit}
+      \draw
+      (0,0) to [open, v_=$\underline{e}$, *-o] (0,2)
+      (0,2) to [C, l=$C$] (2,2) 
+      to [R, l^=$R$, *-*] (2,0)
+      (2,2) to [short] (4,2)
+      (4,0) to [open, v_=$\underline{s}$, *-o] (4,2)
+      (0,0) to [short] (4,0);
+\end{circuit}
+    \question Pour quelle valeur de $\omega$ a-t-on un déphasage de $\pi/3$ ?
+    \question Tracer la courbe $\Delta\varphi = f(\omega)$
+    \question Donner le déphasage entre $\underline{s}$ et $\underline{e}$ dans le circuit suivant en fonction de la fréquence $\omega$ de $\underline{e}$
+\begin{circuit}
+      \draw
+      (0,0) to [open, v_=$\underline{e}$, *-o] (0,2)
+      (0,2) to [L, l=$L$] (2,2) 
+      to [R, l^=$R$, *-*] (2,0)
+      (2,2) to [short] (4,2)
+      (4,0) to [open, v_=$\underline{s}$, *-o] (4,2)
+      (0,0) to [short] (4,0);
+\end{circuit}
+    \question Pour quelle valeur de $\omega$ a-t-on un déphasage de $-\pi/3$ ?
+    \question Tracer la courbe $\Delta\varphi = f(\omega)$
+    \question Que remarquez-vous ?
+\end{questions}
+
+\end{exercise}

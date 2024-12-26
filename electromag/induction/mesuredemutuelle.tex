@@ -1,0 +1,23 @@
+\begin{exercise}{Mesure de mutuelle}{2}{Sup}
+{Induction,Bobines}{lelay}
+
+On dispose de deux bobines d'inductance propre $L = 10$~mH et d'inductance mutuelle $M$. On cherche à mesure cette inductance propre. Pour ce faire, une des bobines est mise en série avec une résistance $R = 100$~$\Omega$ et un GBF fournissant une tension $e(t)$. On mesure la tension $u(t)$ aux bornes de la seconde bobine à l'aide d'un  voltmètre.
+
+\begin{questions}
+    \questioncours Loi de Faraday pour les bobines
+    \question Exprimer $u(t)$ en fonction du courant $i(t)$ passant à travers la résistance et de l'inductance mutuelle entre les deux bobines $M$.
+    \question Comment doit-on choisir la fréquence d'oscillation $f$ pour que le courant $i(t)$ soit proportionnel à $e(t)$ ?
+    \question Le GBF délivre une tension triangulaire oscillant entre $-10$~V et $+10$~V à la fréquence $f = 100$~Hz. La tension mesurée $u(t)$ a une valeur efficace de $40\pm 5$~mV. En déduire une estimation de l'inductance mutuelle $M$.
+\end{questions}
+
+\end{exercise}
+
+\begin{solution}
+    
+\begin{questions}
+    \questioncours Loi de Faraday pour les bobines
+    \question $u = M\dv{i}{t}$
+    \question Dans le circuit avec le GBF on a (loi des mailles) $e = Ri + L\dv{i}{t}$. On veut $i\propto e$ donc $R i \gg L\dv{i}{t}$ i.e. $R\gg L\omega$ soit $f \ll R/(2\pi L)$
+    \question En combinant les deux relations on a $u = \frac{M}{R}\dv{e}{t}$. La tension $e$ change de 20~V en une demie période soit 5~ms, d'où $\dv{e}{t} = 4$~kV/s. Le signal $u$ est la dérivée d'un signal triangle, donc un signal rectangulaire (en créneau), donc sa valeur efficace est égale à son amplitude. On en déduit $M = Ru \dv{t}{e} = 1.0 \pm 0.1$~mH.
+\end{questions}
+\end{solution}

@@ -1,0 +1,62 @@
+\begin{exercise}{Piège de Penning}{2}{Spé}
+{Magnétostatique}{lelay}
+
+On souhaite réaliser un champ électrostatique permettant de confiner des particules de charge $q > 0$ et de masse $m$ au voisinage d'un point $O$ dans le vide.
+
+\begin{questions}
+    \questioncours Équation de Maxwell--Gauss, équation de Poisson pour le potentiel.
+    \uplevel{On envisage dans un premier temps de réaliser ce confinement en créant un champ électrostatique approprié. On admet qu'il est toujours possible de choisir un système d'axes $(Oxyz)$ pour que le développement limité du potentiel près de $O$ puisse s'écrire}
+    $$
+    V(x, y, z) = V_0 + a_1 x + a_2 y + a_3 z + b_1 x^2+ b_2y^2 + b_3z^2 + \order{\abs{\vr}^2}
+    $$
+    \question Comment doivent être les coefficients $b_i$ pour que le point $O$ soit un point d'équilibre ? Quid des $a_i$ et de $V_0$ ?
+    \question Quelle équation locale est vérifiée par le potentiel, et qu'implique-t-elle quant aux coefficients $b_i$ ? Montrer qu'en conséquence de l'équation de Maxwell-Gauss, il est impossible de confiner une charge au voisinage d'un point en utilisant le seul champ électrique.
+    \uplevel{On suppose qu'un arrive à réaliser à l'aide du système d'électrodes approprié le champ électrique $\vec{E}$ dérivant du potentiel $V$ si dessous}
+    $$
+    V(x, y, z) = -\frac{E_0}{2d}(x^2+y^2-2z^2)
+    $$
+    \question Une particule chargée positivement soumise à ce potentiel est confinée sur le plan $z = 0$. En déduire le signe de $E_0$. Qu'en est-il du mouvement de la particule dans le plan $xy$ ?
+    \question On ajoute à l'installation un dispositif générant un champ $\vec{B} = B_0 \ve_z$ (Bonus : comment réaliser un tel champ expérimentalement ?). Établir l'équation différentielle vérifiée par $u = x+  iy$.
+    \question Montrer que si le champ magnétique dépasse une valeur critique $B_c$, il est possible de confiner la particule.
+    \question Déterminer $x(t)$ et $y(t)$ pour $B_0 \gg B_c$ en prenant comme condition initiale $\vec{OM} = x_0 \ve_x$ et $\vec{v}(0) = \vec{0}$. On fera apparaître deux pulsations caractéristiques.
+    
+\end{questions}
+
+\paragraph{Données :} 
+% Rotationnel en coordonées cartésiennes
+% $$\rot\vA = \qty(\pdv{A_z}{y} - \pdv{A_y}{z}) \ve_x
+% + \qty(\pdv{A_x}{z} - \pdv{A_z}{x}) \ve_y
+% + \qty(\pdv{A_y}{x} - \pdv{A_x}{y}) \ve_z$$ 
+Rotationnel en coordonnées cylindriques
+$$\rot\vA = \qty(\dfrac{1}{r}\pdv{A_z}{\theta} - \pdv{A_\theta}{z}) \ve_r
++ \qty(\pdv{A_r}{z} - \pdv{A_z}{r}) \ve_\theta
++ \qty(\dfrac{1}{r}\pdv{}{r} (r A_\theta) - \dfrac{1}{r}\pdv{A_r}{\theta}) \ve_z$$ 
+
+\end{exercise}
+
+\begin{solution}
+\begin{questions}
+    \questioncours --
+    \uplevel{On envisage dans un premier temps de réaliser ce confinement en créant un champ électrostatique approprié. On admet qu'il est toujours possible de choisir un système d'axes $(Oxyz)$ pour que le développement limité du potentiel près de $O$ puisse s'écrire}
+    $$
+    V(x, y, z) = V_0 + a_1 x + a_2 y + a_3 z + b_1 x^2+ b_2y^2 + b_3z^2 + \order{\abs{\vr}^2}
+    $$
+    \question Les $b_i$ doivent être positifs (Il faut un minimum global de potentiel), les $a_i$ doivent être nuls (0 est le minimum, pas un autre point) et $V_0$ peut importe, invariance de jauge le potentiel est défini à une constante près.
+    \question Équation de Poisson, $\triangle V = 0$ donc au moins un des $b_i$ est positif : on ne peut pas faire de piège électrostatique.
+    \uplevel{On suppose qu'un arrive à réaliser à l'aide du système d'électrodes approprié le champ électrique $\vec{E}$ dérivant du potentiel $V$ si dessous}
+    $$
+    V(x, y, z) = \frac{E_0}{2d}(x^2+y^2-2z^2)
+    $$
+    \question On a le long de l'axe $z$ $F_z = -eE_0 \frac{z}{d}$, qui est une force de rappel élastique ssi  $E_0 > 0$. Par contre en $z=0$ (dans le plan $xy$) on a $F_{xy} = qE = e -\grad_{xy} V = eE_0 \frac{x+y}{2d}$ : ça diverge exponentiellement !
+    \question On a $$ \ddot u - i \omega_B \dot u - \frac{1}{\tau^2}u = 0 $$
+    avec $\omega_B = \frac{qB}{m}$ la pulsation cyclotron et $\tau = \sqrt{md/q E_0}$ le temps typique d'éloignement de la particule.
+    \question Le déterminant de l'équation caractéristique est $(-i\omega_b)^2 - 4(-1/\tau^2) = 4/\tau^2 - \omega_B^2$ qui est négatif (racine imaginaires pures, solutions purement oscillantes donc système stable) pour $\omega_B > 2/\tau$ soit $B_0 > 2\sqrt{E_0 m/ dq}$
+    \question Les pulsations d'oscillations sont 
+    \begin{align*}
+        \omega_\pm &= \frac{\omega_B}{2}\qty(1 + \sqrt{1 - \frac{1}{\tau^2\omega_B^2}}) \\
+        &\approx \omega_B \qqtext{ou bien} 1/2\tau^2\omega_B
+    \end{align*} 
+    soit une pulsation ra[ide et une pulsation lente.
+    
+\end{questions}
+\end{solution}

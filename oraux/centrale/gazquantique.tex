@@ -1,0 +1,38 @@
+\begin{exercise}{Gaz quantique d'électrons}{-1}{Spé}
+{Quantique,Boltzmann}{lelay}
+
+On considère un puits infini unidimensionnel de taille $L$ dans lequel se trouve un gaz parfait de $N$ particules quantiques de masse $m$.
+
+\begin{questions}
+    \question \textbf{Cas $N = 1$ :} Donner les énergies accessibles $\varepsilon_n$, en fonction de $m$, $L$, la constante de Planck $h$ et $n\in\mbb{N}^\ast$ un entier. \\
+    Quelle est l'énergie minimale $\varepsilon^\ast$ de cette particule ?
+    \question \textbf{Cas $N > 1$ :} Rappeler la définition d'un gaz parfait. En déduire que l'énergie totale du système est
+    $$\En = \varepsilon^\ast\sum_{i=1}^{N} n_i^2, \qquad n_i\in\mbb{N}^\ast.$$
+    \uplevel{On suppose que le gaz est à l'équilibre à la température $T$.}
+    \question Donner la probabilité que l'énergie du système soit égale à $\En$ en fonction de $\beta = \frac{1}{k_\textsc{b}T}$ et d'une constante de normalisation $\cal{Z}(\beta)$ dont on donnera l'expression sous forme d'une somme.
+    
+    \question Exprimer l'expression de l'énergie moyenne du système $U$ du système. Montrer que
+    $$U = -\pdv{\ln\cal{Z}}{\beta}.$$
+    
+    \question Montrer qu'en supposant la taille du système $L$ très grande devant une longueur $\Lambda$ que l'on précisera, on peut approximer la somme $\cal{Z}(\beta)$ sous la forme continue suivante :
+    $$\cal{Z} = \qty(\dfrac{L}{\Lambda})^{N}\times \underset{1}{\underbrace{\dfrac{1}{\pi^{N}}\int_{\mbb{R}^{N}} e^{-\norm{\vec{x}}^2} \dd[N]{\vec{x}}}} = \qty(\dfrac{L}{\Lambda})^{N}.$$
+    
+    \uplevel{Si les particules quantiques considérées sont des fermions (par exemple, des électrons), il ne peut y avoir deux particules coexistant dans le même état.}
+    
+    \question Quel est le nom de ce principe dans le cas des électrons ? Peut-on encore supposer le gaz parfait ?
+    
+    \question Montrer qu'il faut donc modifier l'expression précédente sous la forme
+    $$\cal{Z} = \qty(\dfrac{L}{\Lambda})^{N}\times \dfrac{1}{\pi^{N}}\int_{\mbb{R}^{N}} e^{-\norm{\vec{x}}^2} f(\vx) \dd[N]{\vec{x}},$$
+    où on précisera l'expression de $f$.
+    
+    \question Cas $N=2$. Exprimez $\cal{Z}$. On pourra considérer, puisque les particules sont indiscernables, que $n_1 < n_2$.
+    
+    On pourra s'aider des intégrales gaussiennes suivantes :
+    $$\forall k\in\mbb{N}^\ast : \int_0^y \text{Erf }^{k-1}(x) e^{- x^2}\dd{x} = \dfrac{\sqrt{\pi}}{2k}\text{Erf }^k(y), \qqtext{et} \lim_{y\rightarrow\infty}\text{Erf }^k(y) = 1.$$
+    
+    \question Généralisation pour $N$ ?
+
+    
+\end{questions}
+
+\end{exercise}

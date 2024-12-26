@@ -1,0 +1,34 @@
+\begin{exercise}{Bilan entropique}{2}{Sup, Spé}
+{Thermodynamique}{lelay, X}
+
+On considère un récipient calorifugé de volume $V_0$ et de section $\Sigma$. Dans ce récipient est placé une paroi mobile.
+
+\begin{questions}
+    \questioncours Principes de la thermodynamique.
+    \uplevel{On place dans la partie gauche du récipient $n$ moles d'un gaz diatomique à la température $T_1 = T_0$ et dans la partie droite $n$ moles de ce même gaz à la température $T_2 = 3T_0$. On relâche la paroi.}
+    \question Rappeler la différence entre équilibre mécanique et équilibre thermodynamique. Lequel est le plus rapide à s'établir ?
+    \question Peu de temps après avoir relâché la paroi, quels sont les volumes $V_1$ et $V_2$ occupées par gaz à gauche et à droite de la paroi ? Les pressions $P_1$ et $P_2$ ?
+    \question Même question après avoir attendu un temps long.
+    \question Faire un bilan entropique pour chacun des gaz. Quelle est l'entropie totale créée par cette opération ?
+\end{questions}
+
+\end{exercise}
+
+\begin{solution}
+
+\begin{questions}
+    \questioncours 0 1 2 3 4
+    \uplevel{On place dans la partie gauche du récipient $n$ moles d'un gaz diatomique à la température $T_1 = T_0$ et dans la partie droite $n$ moles de ce même gaz à la température $T_2 = 3T_0$. On relâche la paroi.}
+    \question Équilibre méca plus rapide, sauf chelouterie
+    \question Les températures sont tj $T_1$ et $T_2$, à l'équilibre méca les pressions s'égalisent : $P = nRT_1/V_1 = nRT_2/V_2$ d'où $V_1 = V_0/4$ et $V_2 = 3V_0/4$
+    \question Ce coup ci les températures se sont équilibrées, $T_1=T_2 = 2T_0$, $V = V_0/2$ et $T = 2T_0$
+    \question $\dd{U}= C_v \dd{T} = T\dd{S} -P\dd{V}$ hence $\dd{S} = C_v \dd{T}/T + nR\dd{V}/V$. 
+
+    À gauche : $\Delta S_1 = C_v \ln(2T_0/T_0) + nR\ln(\frac{V_0/2}{V_0/4}) = (C_v+nR)\ln(2)$
+
+    À droite : $\Delta S_2 = C_v \ln(2T_0/3T_0) + nR\ln(\frac{V_0/2}{3V_0/4}) = (C_v+nR)\ln(2/3)$
+
+    En tout $\Delta S = \Delta S_1 + \Delta S_2 = (C_v + nR)(\ln(2)+\ln(2/3)) = C_p \ln(4/3)$
+\end{questions}
+
+\end{solution}

@@ -1,0 +1,130 @@
+% Niveau :      PCSI *
+% Discipline :  Chimie Orgam
+% Mots clés :   Ballistique, Mécanique du point, PFD, Chute libre
+
+\begin{exercise}{Réarrangement de Wagner--Meerwein}{3}{PCSI}
+{Chimie organique I, SN, E, Réarrangement, Activation}{bermu}
+
+\begin{questions}
+\questioncours Intérêt synthétiques et méthodes d'activation électrophile des alcools.
+
+\begin{EnvUplevel}
+    L'activation électrophile des alcools en milieu acide peut être suivie d'un mécanisme de d'élimination monomoléculaire E1 en deux étapes :
+    \begin{itemize}
+        \item la première analogue à celle d'une $\mathrm{S_N1}$,
+        \item la seconde analogue à une E2.
+    \end{itemize}
+\end{EnvUplevel}
+
+\question \`A l'aide de vos connaissances et de la question précédente proposer un mécanisme d'une E1 sur le 2-méthylpropan-2-ol dans la l'acide sulfurique concentré. \\
+On pretera bien attention au fait qu'on se trouve en milieu acide.
+
+\question Quel est le critère cinétique ou thermodynamique qui détermine si une E1 se fait spontanément ?
+
+\begin{EnvUplevel}
+    On s'intéresse à présent à la réaction des alcools dérivés du bornane
+    \begin{center}
+        \chemfig{?[a](!\Cnumo{6}2)-[:10]?[b,1,over line](!\Cnumo{-3}1)(-[:-140](!\Cnumo{:-140}1'{}))-[:-10](!\Cnumo{0}6)-[:50](!\Cnum5)-[:170](!\Cnumo{1}4)(-[:120,1.1]?[b](!\Cnumo{3}7)(-[1](!\Cnum7''{}))-[5](!\Cnumo{6}7'{}))-[:-170,.55]-[:-170,.2,,,draw=none]-[:-170,.25]?[a](!\Cnumo{6}3)}
+    \end{center}
+    dans l'acide sulfurique concentré.
+\end{EnvUplevel}
+
+%\question Combien y a-t-il de monoalcools dérivés du bornane (en prenannt en compte les stéréoisomères) ? Ne pas les représenter.
+
+\question Justifier les résultats expérimentaux suivants :
+\begin{parts}
+    \part L'alcool substitué sur le carbone 4 ne réagit pas du tout.
+    \part Les alcools substitués sur les carbones 1', 7' et 7'' réagissent peu.
+\end{parts}
+
+\question Quel est le produit formé par la réaction de l'alcool substitué sur le carbone 2 (ou 6) ?
+
+\begin{EnvUplevel}
+Le produit formé par cette réaction est en fait le camphène :
+    \begin{center}
+        \chemfig{?[a]-[:10]?[b,1,over line]-[:-10](=[-2])-[:50](-[-3])(-[:10])-[:170](-[:120,1.1]?[b])-[:-170,.55]-[:-170,.2,,,draw=none]-[:-170,.25]?[a]}
+    \end{center}
+\end{EnvUplevel}
+    \question Proposez un mécanisme pour expliquer cette réaction.\\
+    Justifiez la nomenclature de réarrangement 1,2 pour cette réaction.
+\end{questions}
+
+\end{exercise}
+
+\begin{solution}
+\begin{questions}
+\questioncours Les alcools ne sont pas de bons nucléofuges. Pour les transformer en bon groupe partants (activation électrophile), on peut :
+    \begin{itemize}
+        \item ajouter un H$^+$ dans un acide fort : R-OH + H$^+$ = R-H$_2$O$^+$
+        \item remplacer le OH par un OR très encombré, par exemple avec des sulfonyles (tosylate, mésylate), qui ont l'avantage d'être des bases faibles et des mauvais nucléophiles.
+    \end{itemize}
+
+\question En milieu acide, il y a tout d'abord une activation électrophile du brome (Q1) : \\[1ex]
+
+\hfill\schemestart
+        \chemfig{-[1](-[:-109])(-[-1])-[3]@{br}\lewis{024,Br}}
+        \arrow{->[\chemfig{@{h}\lewis{4|,H}^\oplus}][]}
+        \chemfig{-[1](-[:-109])(-[-1])-[3]\lewis{24,Br}^\oplus-[0,1.3]H}
+        \chemmove[red,-stealth,red,shorten <= 2pt, shorten >= 4pt]{
+            \draw(br)..controls +(up:10mm) and +(west:10mm).. (h);}
+\schemestop\hfill~
+
+Puis la E1 :\hfill\schemestart
+        \chemfig{-[1](-[:-109])(-[-1])-[@{a1}3,,,,red]@{b1}\lewis{24,Br}^\oplus-[0,1.3]H}
+        \arrow{->[][$-$ HBr]}
+        \chemfig{-[2](-[6,0.2,,,draw=none]@{b2}\chemabove{\lewis{4|,}}{\quad\scriptsize\oplus})(-[4])-[0]-[@{a2}-2,,,,red]H}
+        \chemmove[red,-stealth,red,shorten >= 5pt]{
+            \draw(a1)..controls +(west:3mm) and +(south west:3mm).. (b1);
+            \draw(a2)..controls +(west:3mm) and +(south east:3mm).. (b2);}
+        \arrow{->}
+        \chemfig{-[2](-[4])=[0]}
+    \schemestop\chemnameinit{}\hfill~
+
+\question ~
+\begin{parts}
+    \part La formation du carbocation en C$_4$ est impossible à cause des contraintes angulaires cycle.
+    \part Les carbocations 1' et 7' sont peu stables car primaires.
+\end{parts}
+
+\question Si on suit le mécanisme précédent on obtient la structure (peu stable) suivante
+
+\hfill\schemestart
+        \chemfig{?[a](-[:170]@{oh}O-[6,.4,,,draw=none]H)-[:10]?[b,1,over line](-[:-140])-[:-10]-[:50]-[:170](-[:120,1.1]?[b](-[1])-[5])-[:-170,.55]-[:-170,.2,,,draw=none]-[:-170,.25]?[a]}
+        \arrow{->[\chemfig{@{h}\lewis{4|,H}^\oplus}][]}
+        \chemmove[red,-stealth,red,shorten <= 2pt, shorten >= 4pt]{
+            \draw(oh)..controls +(south east:20mm) and +(west:10mm).. (h);}
+        \chemfig{?[a](-[6,0.2,,,draw=none]@{b1}\chemabove{\lewis{4|,}}{\quad\scriptsize\oplus})-[:10]?[b,1,over line](-[:-140])-[:-10]-[:50]-[:170](-[:120,1.1]?[b](-[1])-[5])-[:-170,.55]-[:-170,.2,,,draw=none]-[:-170,.25]?[a]-[@{a1}:170,,,,red]H}
+        \chemmove[red,-stealth,red,shorten >= 3pt]{
+            \draw(a1)..controls +(south west:2mm) and +(west:2mm).. (b1);}
+        \arrow{->[][$-$ H$^\oplus$]}
+        \chemfig{(=[:50]?[a])-[:10]?[b,1,over line](-[:-140])-[:-10]-[:50]-[:170](-[:120,1.1]?[b](-[1])-[5])-[:-170,.55]-[:-170,.2,,,draw=none]?[a]}
+\schemestop\hfill~
+
+    \question Il y a une délocatisation électronique (ce qu'on appelle un réarrangement) :
+    
+\hfill\schemestart
+        \chemfig{?[a](-[:170]@{oh}O-[6,.4,,,draw=none]H)-[:10]?[b,1,over line](-[:-140])-[:-10]-[:50]-[:170](-[:120,1.1]?[b](-[1])-[5])-[:-170,.55]-[:-170,.2,,,draw=none]-[:-170,.25]?[a]}
+        \arrow{->[\chemfig{@{h}\lewis{4|,H}^\oplus}][]}
+        \chemmove[red,-stealth,red,shorten <= 2pt, shorten >= 4pt]{
+            \draw(oh)..controls +(south east:20mm) and +(west:10mm).. (h);}
+        \chemfig{?[a](-[6,0.2,,,draw=none]@{b1}\chemabove{\lewis{4|,}}{\quad\scriptsize\oplus})-[:10]?[b,1,over line](-[:-140])-[@{a1}:-10,,,,red]-[:50]-[:170](-[:120,1.1]?[b](-[1])-[5])-[:-170,.55]-[:-170,.2,,,draw=none]-[:-170,.25]?[a]}
+        \chemmove[red,-stealth,red, shorten >= 3pt]{
+            \draw(a1)..controls +(south west:2mm) and +(south:2mm).. (b1);}
+        \arrow{->[][réa$^\text{t}$]}
+        \chemfig{?[a]?[c]-[:10]?[b,1,over line](-[:-140])(-[0,0.3,,,draw=none]@{b1}\chemabove{\lewis{4|,}}{\quad\scriptsize\oplus})-[:-10,,,,draw=none]?[c]-[:50]-[:170](-[:120,1.1]?[b](-[1])-[5])-[:-170,.55]-[:-170,.2,,,draw=none]-[:-170,.25]?[a]}
+\schemestop\hfill~
+
+Formant le carbocation plus stable
+        \chemfig{?[a]?[c]-[:10]?[b,1,over line](-[:-140])(-[0,0.3,,,draw=none]@{b1}\chemabove{\lewis{4|,}}{\quad\scriptsize\oplus})-[:-10,,,,draw=none]?[c]-[:50]-[:170](-[:120,1.1]?[b](-[1])-[5])-[:-170,.55]-[:-170,.2,,,draw=none]-[:-170,.25]?[a]} qui est identique à \chemfig{?[a]-[:10]?[b,1,over line]-[:-10](-[0,0.3,,,draw=none]@{b1}\chemabove{\lewis{4|,}}{\quad\scriptsize\oplus})(-[-2])-[:50](-[-3])(-[:10])-[:170](-[:120,1.1]?[b])-[:-170,.55]-[:-170,.2,,,draw=none]-[:-170,.25]?[a]},
+  
+\hfill\schemestart
+        \chemfig{?[a]-[:10]?[b,1,over line]-[:-10](-[0,0.3,,,draw=none]@{b1}\chemabove{\lewis{4|,}}{\quad\scriptsize\oplus})(-[-2]-[@{a1}0,,,,red]H)-[:50](-[-3])(-[:10])-[:170](-[:120,1.1]?[b])-[:-170,.55]-[:-170,.2,,,draw=none]-[:-170,.25]?[a]}
+        \arrow{->[][$-$ H$^\oplus$]}
+        \chemfig{?[a]-[:10]?[b,1,over line]-[:-10](=[-2])-[:50](-[-3])(-[:10])-[:170](-[:120,1.1]?[b])-[:-170,.55]-[:-170,.2,,,draw=none]-[:-170,.25]?[a]}
+        \chemmove[red,-stealth,red, shorten >= 3pt]{
+            \draw(a1)..controls +(south west:2mm) and +(south:2mm).. (b1);}
+\schemestop\hfill~      
+
+\end{questions}
+
+\end{solution}

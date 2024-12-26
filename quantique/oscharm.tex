@@ -1,0 +1,30 @@
+\begin{exercise}{Oscillateur harmonique quantique}{2}{Spé}
+{Quantique}{lelay}
+
+On considère une particule quantique de masse $m$ dans le potentiel $V = \frac12 m \omega^2x^2$. On considère un état stationnaire de cette particule de la forme $\Psi(x,t) = \varphi(x)e^{-i E t/\hbar}$.
+
+\begin{questions}
+    \questioncours Mécanique quantique : États liés, états de diffusion
+    % \question On considère pour cette question que la particule est classique. Pour une condition initiale donnée, quelle est son énergie cinétique moyenne ? Son énergie potentielle moyenne ?
+    \uplevel{On considère par la suite que la particule est dans son état fondamental, pour lequel $\varphi(x) = A e^{-x^2/a^2}$.}
+    \question Montrer que l'expression de $\varphi$ donnée est bien solution de l'équation de Schrödinger indépendante du temps et en déduire l'énergie cinétique $E$ de la particule.
+    \question Déterminer la valeur de la constante de normalisation $A$.
+    \question Quelle est la position moyenne de la particule $\ev{x}$ ? 
+    \question Calculer $\ev{x^2}$ et en déduire l'énergie potentielle moyenne de la particule. Conclure.
+\end{questions}
+
+On donne : $\int_{-\infty}^{+\infty} e^{-\alpha u^2}\dd{u} = \sqrt{\pi/\alpha}$
+
+\end{exercise}
+
+\begin{solution}
+
+\begin{questions}
+    \questioncours États liés, énergie quantifiée, fonction d'onde normalisée. États de diffusion, il faut utiliser un paquet d'onde.
+    % \question Viriel : $\ev{E_c} = \ev{E_p} = \frac12 \ev{E_m}$
+    \question On trouve $a^2 = 2\hbar/m\omega$ et $E = \frac12 \hbar \omega$. Il y a une énergie minimale !!
+    \question On a $N a \sqrt{\pi} = 1$ d'où $N = 1/(a\sqrt{\pi})$...
+    \question La position moyenne est $\int x \varphi(x) = 0$ car l'intégrante est antisymétrique
+    \question \textbf{ATTENTION ASTUCE} Il faut remarquer que $\int_{-\infty}^{+\infty} u^2e^{-\alpha u^2}\dd{u} = -\dv{\alpha} \int_{-\infty}^{+\infty} e^{-\alpha u^2}\dd{u}$. Ca donne $\int x^2e^{-x^2/a^2} = a^3\sqrt{\pi}/2$. Oc $\ev{V} = \frac12 \hbar \omega$
+\end{questions}
+\end{solution}

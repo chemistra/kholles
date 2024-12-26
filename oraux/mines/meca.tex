@@ -1,0 +1,41 @@
+\begin{exercise}{Tube tournant}{-1}{Spé}
+{}{mines}
+
+\paragraph{Question de cours} \textsf{(15 minutes préparation, 10 minutes de passage) \textbf{:}}
+
+Équations de Maxwell, forme locale et intégrale.
+
+\paragraph{Exercice} \textsf{(15 minutes préparation, 15 minutes de passage) \textbf{:}}
+
+On considère un tube de section circulaire formant un demi cercle de rayon $R$. Une bille de masse $m$ est placée dans ce tube et peut s'y mouvoir sans frottement. Le tube est mis en rotation autour de son axe de symétrie vertical à la pulsation $\omega$.
+
+
+\begin{center}
+    \begin{tikzpicture}
+    
+    \draw[->, black!30] (0, -1) -- (0, 3);
+    \draw (0,3) node[right=2pt] {$z$};
+    
+    \draw (-2.5,2) arc(-180:0:2.5);
+    \draw (-2.2,2) arc(-180:0:2.2);
+    
+    \fill[black] (0.5*2.35,2-0.866*2.35) circle (0.15);
+    \draw (0.5*2.35,2-0.866*2.35) node[below right=2pt] {$m$};
+    
+    \draw [xshift=0.3cm,rotate around={180:(-0.4,2.2)},line width=1pt,-stealth] (-0.25,2) arc (-30:210:0.3cm and 0.2cm) node[below right=0.1cm] {$\omega$};
+    
+    \draw[->, thick] (4, 1.5) -- (4, 0.5);
+    \draw (4,1) node[right=2pt] {$\vec{g}$};
+    
+    \end{tikzpicture}
+\end{center}
+
+\begin{questions}
+\question Trouver la (ou les) position(s) d'équilibre de la bille en fonction des paramètres du problème.
+
+\question En partant d'une position d'équilibre, quelle quantité minimale d'énergie faut-il fournir à la bille pour qu'elle soit éjectée du tube ?
+
+\question Que se passe-t-il si l'on incline le dispositif par rapport à la verticale ?
+\end{questions}
+
+\end{exercise}

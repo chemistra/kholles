@@ -1,0 +1,134 @@
+% RLC passe bas 
+\begin{exercise}{RLC série}{0}{Sup}
+{\'Electrocinétique,Filtrage linéaire, Second ordre}{bermudez}
+
+\begin{minipage}[t]{.4\linewidth}
+\vspace{-1.5em}
+\begin{circuitikz}
+      \draw
+      (0,0) to [open, v^=$\underline{e}$, *-o] (0,2)
+      (0,2) to [R, l=$R$] (2,2)
+      to [L, l=$L$] (4,2) 
+      to [C, l^=$C$, *-*] (4,0)
+      (4,2) to [short] (5,2)
+      (5,0) to [open, v_=$\underline{s}$, *-o] (5,2)
+      (0,0) to [short] (5,0);
+\end{circuitikz}
+\vspace{1em}
+\end{minipage}\begin{minipage}[t]{.6\linewidth}
+    \textsf{Question de cours : } Déterminez la nature et le diagramme de Bode de ce filtre, en précisant sa fréquence propre, sa fréquence de de résonance, son gain statique / à la résonance, et son facteur de qualité.
+\end{minipage}
+\end{exercise}
+
+
+
+% RLC passe bande 
+\begin{exercise}{RLC série}{0}{Sup}
+{\'Electrocinétique,Filtrage linéaire, Second ordre}{bermudez}
+
+\begin{minipage}[t]{.4\linewidth}
+\vspace{-1.5em}
+\begin{circuitikz}
+      \draw
+      (0,0) to [open, v^=$\underline{e}$, *-o] (0,2)
+      (0,2) to [L, l=$L$] (2,2)
+      to [C, l=$C$] (4,2) 
+      to [R, l^=$R$, *-*] (4,0)
+      (4,2) to [short] (5,2)
+      (5,0) to [open, v_=$\underline{s}$, *-o] (5,2)
+      (0,0) to [short] (5,0);
+\end{circuitikz}
+\vspace{1em}
+\end{minipage}\begin{minipage}[t]{.6\linewidth}
+    \textsf{Question de cours : } Déterminez la nature et le diagramme de Bode de ce filtre, en précisant sa fréquence propre, sa fréquence de de résonance, son gain statique / à la résonance, et son facteur de qualité.
+\end{minipage}
+\end{exercise}
+
+
+
+% RLC passe haut 
+\begin{exercise}{RLC série}{0}{Sup}
+{\'Electrocinétique,Filtrage linéaire, Second ordre}{bermudez}
+
+\begin{minipage}[t]{.4\linewidth}
+\vspace{-1.5em}
+\begin{circuitikz}
+      \draw
+      (0,0) to [open, v^=$\underline{e}$, *-o] (0,2)
+      (0,2) to [R, l=$R$] (2,2)
+      to [C, l=$C$] (4,2) 
+      to [L, l^=$L$, *-*] (4,0)
+      (4,2) to [short] (5,2)
+      (5,0) to [open, v_=$\underline{s}$, *-o] (5,2)
+      (0,0) to [short] (5,0);
+\end{circuitikz}
+\vspace{1em}
+\end{minipage}\begin{minipage}[t]{.6\linewidth}
+    \textsf{Question de cours : } Déterminez la nature et le diagramme de Bode de ce filtre, en précisant sa fréquence propre, sa fréquence de de résonance, son gain statique / à la résonance, et son facteur de qualité.
+\end{minipage}
+\end{exercise}
+
+
+
+
+% Tableau des solutions
+
+{
+\def\thesolution{Solutions \arabicAlph{part}\arabicAlph{section}\hspace{2pt}01--\twodigits{exercise}\quad---\quad}
+\begin{solution}
+\ifx\thesubsol\undefined
+    \newcounter{subsol}
+ \else
+    \setcounter{subsol}{-1}
+ \fi
+\def\parti{\large\bfseries\sffamily\stepcounter{subsol}\arabicAlph{part}\arabicAlph{section}\hspace{2pt}\twodigits{subsol}\quad}
+
+\noindent\begin{tabularx}{\linewidth}{@{\parti}C@{\vspace{1em}}Cp{11em}}
+
+\begin{circuitikz}[baseline={(0,2)}]
+      \draw
+      (0,0) to [open, v^=$\underline{e}$, *-o] (0,2)
+      (0,2) to [R, l=$R$] (2,2)
+      to [L, l=$L$] (4,2) 
+      to [C, l^=$C$, *-*] (4,0)
+      (4,2) to [short] (5,2)
+      (5,0) to [open, v_=$\underline{s}$, *-o] (5,2)
+      (0,0) to [short] (5,0);
+\end{circuitikz}  &
+$ \underline{H}(\omega) = \dfrac{1}{1+j RC\omega - LC\omega^2}$ &
+Passe-bas du 2\textsuperscript{nd} ordre \newline
+$H_0 = 1$, \newline $\omega_\text{c} = \dfrac{1}{\sqrt{LC}}$ \newline $Q = \dfrac{1}{R}\sqrt{\dfrac{L}{C}}$ \\
+
+\begin{circuitikz}[baseline={(0,2)}]
+      \draw
+      (0,0) to [open, v^=$\underline{e}$, *-o] (0,2)
+      (0,2) to [L, l=$L$] (2,2)
+      to [C, l=$C$] (4,2) 
+      to [R, l^=$R$, *-*] (4,0)
+      (4,2) to [short] (5,2)
+      (5,0) to [open, v_=$\underline{s}$, *-o] (5,2)
+      (0,0) to [short] (5,0);
+\end{circuitikz}  &
+$ \underline{H}(\omega) = \dfrac{jRC\omega}{1+j RC\omega - LC\omega^2}$ &
+Passe-bande du 2\textsuperscript{nd} ordre \newline
+$H_0 = 1$, \newline $\omega_\text{c} = \dfrac{1}{\sqrt{LC}}$ \newline $Q = \dfrac{1}{R}\sqrt{\dfrac{L}{C}}$ \\
+
+\begin{circuitikz}[baseline={(0,2)}]
+      \draw
+      (0,0) to [open, v^=$\underline{e}$, *-o] (0,2)
+      (0,2) to [R, l=$R$] (2,2)
+      to [C, l=$C$] (4,2) 
+      to [L, l^=$L$, *-*] (4,0)
+      (4,2) to [short] (5,2)
+      (5,0) to [open, v_=$\underline{s}$, *-o] (5,2)
+      (0,0) to [short] (5,0);
+\end{circuitikz}  &
+$ \underline{H}(\omega) = \dfrac{-LC\omega^2}{1+j RC\omega - LC\omega^2}$ &
+Passe-haut du 2\textsuperscript{nd} ordre \newline
+$H_0 = 1$, \newline $\omega_\text{c} = \dfrac{1}{\sqrt{LC}}$ \newline $Q = \dfrac{1}{R}\sqrt{\dfrac{L}{C}}$ \\
+
+\end{tabularx}
+
+\end{solution}
+
+}

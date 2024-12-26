@@ -1,0 +1,63 @@
+% Niveau :      PCSI
+% Discipline :  Mécanique
+%Mots clés :    Météorite, pénétration
+
+\begin{exercise}{Profondeur d'impact}{1}{Sup}
+{Mécanique}{lelay}
+
+On s'intéresse à la profondeur maximale de pénétration d'un objet lancé avec une vitesse initiale dans un milieu, comme par exemple dans le cas d'une météorite qui tomberait sur Terre.
+\begin{questions}
+    \question \textbf{Approche naïve.} On considère d'abord une approche naïve (appelée sur wikipédia "approche de Newton", cette approche a en fait été développée par Gamov en 1961 -- comme quoi il ne faut pas croire tout ce qu'on lit sur internet). On considère une objet de masse $m$ et de densité $\mu_m$ pénétrant dans un milieu de densité $\mu$ avec une vitesse initiale $v_0$. L'objet est supposé être de section $A$ et de longueur $\ell$.
+        \begin{parts}
+            \part Cette approche considère la pénétration dans les solides et les fluides de la même manière. Cela vous paraît-il raisonnable ? En fait ce n'est pas aberrant, car à partir d'une certaine vitesse d'impact les solides se comportent comme des fluides. Quelle est à votre avis cette vitesse ? En donner des ordres de grandeur dans différents milieux.
+            \part En ne considérant que la quantité de mouvement, Gamov suppose que l'objet déplace le milieu à la vitesse à laquelle il se déplace, et que l'objet s'arrête après avoir transmis toute sa quantité de mouvement au milieu. Montrer que le profondeur de pénétration (la distance au bout de laquelle l'objet s'arrête) est alors $L = \ell \frac{\mu_m}{\mu}$
+            \part Interpréter les termes de l'équation obtenue. Cela vous parait-il logique ? Quelles sont les limites de cette approximation ?
+            \part En utilisant cette approximation, donner la portée d'une balle de .22 LR (15 mm de long, c'est le calibre de beaucoup de petites armes au poing dont celle utilisée par James Bond) dans l'air, puis dans l'eau. Justifier qu'on puisse arrêter une balle de ce pistolet en tirant dans un verre d'eau. Disserter longuement sur le fait que les adversaires de James Bond auraient gagné à se placer derrière un aquarium. 
+            \part L'astéroïde de Chicxulub, au Mexique (celui qui a tué les dinosaures), avait une taille estimée entre 11 et 80 km. Le cratère de Chicxulub est large de plus de 150 km mais n'est profond que de 20 km. Est-ce cohérent avec l'analyse développée ci-dessus ?
+        \end{parts}
+    \question \textbf{Cas des fluides} Ici on considère la véritable approche de Newton dans les \textit{Principia} (livre 2, section 7), qui traitait du cas spécifique des fluides. Newton a conclu de ses expérience sur l'amortissement des oscillations d'un pendule que les deux principales forces ralentissant un objet passant dans un fluide étaient linéaires et quadratiques en la vitesse de l'objet.
+        \begin{parts}
+            \part Que savez-vous de ces forces de frottement fluide ? Quelle est celle qui prévaut à grande vitesse ? A faible vitesse ? Bonus : comment quantifier "faible vitesse" et "grande vitesse" dans ce cas ?
+            \part En considérant un solide de masse $m$ et de vitesse initiale $v_0$ soumis uniquement à une force quadratique en la vitesse $F_Q = -\beta v^2$, montrez que cette force ne suffit pas pour que le solide s'arrête. Astuce : écrivez la PFD en utilisant $\dv{v}{x}$.
+            \part En considérant cette fois la force quadratique précédente et une force linéaire en la vitesse $F_L = - \alpha v$, montrez que la distance d'arrêt est $L = \frac{m}{\beta}\ln{1+\frac{\beta}{\alpha}v_0}$.
+            \part Sans intégrer ou dériver d'équation, donner la distance d'arrêt pour la force linéaire seule.
+            \part En considérant comme on le fait classiquement que $\beta$ dépend linéairement de la surface frontale du l'objet et de la densité du milieu, montrer qu'on retrouve le résultat de la section précédente à un facteur sans dimension près.
+        \end{parts}
+    
+    \pagebreak
+    
+    \question \textbf{Cas des solides} On s'intéresse maintenant au cas de l'impact d'objets dans des solides, tel qu'étudié par Young, ingénieur américain dans les années 60.
+        \begin{parts}
+            \part Young considère dans un premier temps qu'un objet s'enfonçant dans un milieu solide (comme la terre ou l'argile) est soumis à une force $F = F_0 + k v^2$. En intégrant le PFD, montrez qu'on obtient une profondeur de pénétration $L = \frac{m}{2k}\ln{1+\frac{k}{F_0}v_0^2}$
+            \part Young trouvait son modèle peu fiable, il a donc fait beaucoup d'expériences et a trouvé que la profondeur était en fait donnée par $L = \sqrt{\frac{m}{A}}v_0\ln{1+jv_0^2}S$, où $A$ est la surface en coupe de l'objet, $j$ un facteur numérique et $S$ une constante dépendant du type de sol. Quelle est la dimension de $S$ ?
+        \end{parts}
+    
+\end{questions}
+
+\end{exercise}
+
+\begin{solution}
+
+% \question \textbf{Approche naïve.}
+%     \begin{parts}
+%         \part Vitesse du son.
+%         \part qté de mvt de initiale : $\ell A \rho_m v_0$ (l'objet), qté de mvt finale : $L A \rho v_0$ (le milieu)
+%         \part Là il faut dire que c'est bizarre parce qu'il n'y a pas la vitesse, donc ça ne doit pas marcher pour tous les régimes.
+%         \part On trouve une dizaine de centimètres. Aux US Mythbusters on fait l'expérience, en tirant dans un verre d'eau plein depuis le dessus, et ils ne l'ont pas cassé.
+%         \part Oui, la profondeur est de l'ordre de la taille de l'astéroïde. La taille du cratère montre que son énergie s'est dissipée latéralement et pas en profondeur
+%     \end{parts}
+% \question \textbf{Cas des fluides}
+%     \begin{parts}
+%         \part linéaire, quadratique. Pour le bonus : c'est le nombre de Reynolds bien sûr
+%         \part Là il faut juste qu'il trouvent que $\dv{v}{t} = v\dv{v}{x}$, le reste est trivial.
+%         \part Pareil, trivial
+%         \part On fait tendre $\beta$ vers 0 et on fait un DL
+%         \part prout. Si ils écrivent $\beta = A \rho k$ avec $k$ une constante, demander quelle est la dimension de $k$
+%     \end{parts}
+% \question \textbf{Cas des solides} 
+%     \begin{parts}
+%         \part C'est comme dans la partie d'avant
+%         \part C'est chiant, les ingénieurs sont des relous avec leurs racines de $m$ à la mord-moi-le-noeud
+%     \end{parts}
+
+\end{solution}

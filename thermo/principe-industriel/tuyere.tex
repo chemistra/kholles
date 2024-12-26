@@ -1,0 +1,40 @@
+\begin{exercise}{Tuyère de De Laval}{3}{Sup, spé}
+{Thermodynamique, Premier principe industriel}{lelay,centrale}
+
+\begin{questions}
+    \questioncours Premier principe de la thermodynamique en régime ouvert
+    \uplevel{On considère une tuyère (ex : réacteur d'avion, de fusée) dans laquelle le fluide se déplace de manière unidimensionnelle avec une vitesse $V(x)$.}
+    \question Écrire le premier principe industriel et montrer qu'entre deux abscisses $x_\textsc{a}$ et $x_\textsc{b}$ on a 
+    \begin{align*}
+        \frac12 ( V_\textsc{b}^2 - V_\textsc{a}^2) + c_p (T_\textsc{b}-T_\textsc{a}) &= 0
+    \end{align*}
+    En déduire une relation entre $\dd{V}$ et $\dd{T}$
+    \question En supposant que la transformation est réversible et adiabatique (justifier), montrez que l'on peut écrire
+    \begin{align*}
+        \frac{\dd{\rho}}{\rho} = \frac{1}{\gamma - 1}\frac{\dd{T}}{T}
+    \end{align*}
+    Où $\rho$ est la masse volumique
+    \question On note $\Sigma(x)$ la surface de la section de la tuyère en $x$. Montrez que la conservation de la masse peut s'exprimer sous la forme
+    \begin{align*}
+        \frac{\dd{\rho}}{\rho} + \frac{\dd{V}}{V} + \frac{\dd{\Sigma}}{\Sigma} = 0
+    \end{align*}
+    \question En combinant les équations précédentes, montrez qu'on a 
+    \begin{align*}
+        \frac{\dd{\Sigma}}{\Sigma} &= \frac{\dd{V}}{V} ( M^2 - 1 )
+    \end{align*}
+    Où $M$ est le nombre de Mach. On explicitera l'expression de $M$ et on précisera sa signification physique. Une application numérique est bienvenue.
+    \question Quelle forme doit avoir la tuyère si on veut que le fluide accélère ?
+\end{questions}
+
+\end{exercise}
+
+\begin{solution}
+\begin{questions}
+    \questioncours Premier principe de la thermodynamique en régime ouvert
+    \uplevel{On considère une tuyère (ex : réacteur d'avion, de fusée) dans laquelle le fluide se déplace de manière unidimensionnelle avec une vitesse $V(x)$.}
+    \question $\Delta { e_c + h } = 0$, $e_c = \frac12 V^2$, $\Delta h = c_p \Delta T$
+    \question Loi de Laplace + gaz parfait. Dérivée logarithmique.
+    \question $\rho V \Sigma = C$ constante. Dérvée logarithmique.
+    \question $M = V / c$ avec $c$ la vitesse du son isentropique $c = \sqrt{ \frac{\gamma R T}{M}}$. En cas de besoin, $c_p = \frac{\gamma}{\gamma - 1} \frac{R}{M}$
+\end{questions}
+\end{solution}

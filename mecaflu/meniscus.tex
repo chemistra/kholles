@@ -1,0 +1,38 @@
+% Niveau :      PC
+% Discipline :  Mécaflu
+%Mots clés :    Tension superficielle
+
+\begin{exercise}{Ménisque et chimie}{3}{Spé}
+{Statique des fluides, Tension superficielle, Capillarité}{bermu}
+
+\begin{questions}
+    \questioncours Rappeler ce que sont les effets de tension de surface et les modéliser rapidement. On définira le coefficient de tension de surface $\gamma$.
+\begin{EnvUplevel}
+\paragraph{Rappel :} loi de Laplace \\
+\`A l'interface entre deux fluides $a$ et $b$ non miscibles, la tension de surface (dont le coefficient est $\gamma_{ab}$) créée une surpression telle que
+$$P_b - P_a = \dfrac{2\gamma_{ab}}{R_c},$$
+$R_c$ étant le rayon de courbure de l'interface.
+
+\bigskip
+
+On considère un fluide au repos en contact avec une surface solide verticale. On note $\theta$ l'angle de contact entre le fluide et la paroi.
+
+\end{EnvUplevel}
+    \question \`A l'aide de la loi de Laplace, donner l'équation de la surface libre air--fluide $z(x)$. \\
+    On pourra adimensionner l'équation avec la longueur capillaire $\ell_c$ dont on donnera l'expression et le sens physique.
+    \question Simplifier l'équation précédente en estimant la valeur du nombre de Bond
+$$\cal{B}o = \dfrac{L}{\ell_c},$$
+$L$ étant la taille typique du système.
+    \question Résoudre l'équation et déduire que l'ascension de fluide typique est
+$$h = \ell_c \cot\theta.$$
+\end{questions}
+
+\plusloin
+
+En chimie, la capillarité pose souvent des problèmes pour la mesure du volume. Modéliser les erreurs typiques de mesure de volumes en chimie. Faut-il lire le volume en haut ou en bas du ménisque ?
+
+\paragraph{Données :} rayon de courbure d'une courbe 1D $z(x)$
+$$\dfrac{1}{R_c} = \dfrac{z''(x)}{\qty(1 + z'(x)^2)^{3/2}}.$$
+Dans le cas d'une surface 2D ayant une symétrie de révolution $z(r)$
+$$\dfrac{1}{R_c} = \dfrac{z''(r) + \frac{1}{r}\qty(1 + z'(r)^2)z'(r)}{\qty(1 + z'(r)^2)^{3/2}}.$$
+\end{exercise}

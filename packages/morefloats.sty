@@ -1,0 +1,21 @@
+\ProvidesPackage{morefloats}[Provides useful things for making floats, figures, lists and tables
+v 24.10.20]
+
+\RequirePackage{float}
+\RequirePackage{newfloat}
+\RequirePackage{caption}
+\RequirePackage{wrapfig}
+\RequirePackage{multirow}
+\RequirePackage{multicol}
+\RequirePackage{makecell}
+\RequirePackage{array}
+\RequirePackage{tabularx}
+\RequirePackage{dcolumn}
+\RequirePackage{enumitem}
+
+
+
+%New column types
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}

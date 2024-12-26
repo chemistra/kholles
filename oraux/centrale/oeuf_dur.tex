@@ -1,0 +1,61 @@
+\begin{exercise}{Cuisson des oeufs}{-1}{Spé}
+{Thermo}{centrale}
+
+La cuisson des oeufs est un art subtil ancré dans la tradition gastronomique française. De nos jours, les restaurateurs ont des autocuiseurs qui permettent d'avoir une température bien homogène.
+
+Il existe trois principales cuissons des oeufs à l'eau bouillante dans leur coquille 
+\begin{itemize}
+    \item la cuisson \emph{à la coque}, pour laquelle l'extérieur du blanc est solide, mais pas l'intérieur ni le jaune ;
+    \item la cuisson \emph{mollet}, pour laquelle le blanc est solide, mais pas le jaune ;
+    \item la cuisson \emph{dure}, pour laquelle le blanc et le jaune sont solides.
+\end{itemize}
+
+\`A cela s'ajoute la question sanitaire de l'élimination des salmonelles.
+
+\paragraph{Données :}~\\
+L'oeuf peut être considéré en première approximation comme une sphère de rayon $R$ avec :
+\begin{itemize}
+    \item température de cuisson du blanc : $T_\text{b} = 62^\circ$C ;
+    \item température d'élimination des salmonelles : $T_\text{s} = 64^\circ$C pendant 5 minutes ;
+    \item température de cuisson du jaune : $T_\text{j} = 68^\circ$C ;
+    \item chaleur latente de cuisson des protéines : $L = 1,7$ J$\cdot$kg$^{-1}$ ;
+    \item un oeuf d'autruche pèse 1,5 kg environ.
+\end{itemize}
+Pour les autres données, on pourra considérer que l'oeuf est constitué d'eau liquide.
+
+Pour l'eau :
+\begin{itemize}
+    \item capacité calorifique de l'eau $c = 4,2$ $\mathrm{J\cdot kg^{-1}\cdot K^{-1}}$ ;
+    \item conductivité thermique de l'eau $\lambda = 0,60$ $\mathrm{W\cdot m^{-1}\cdot K^{-1}}$ ;
+\end{itemize}
+
+Les réfrigérateurs de la restauration sont généralement maintenus à $T_\text{0} = 4^\circ$C.
+
+\paragraph{Résolution de problème :}~\\
+Le restaurateur sort un oeuf du réfrigérateur et le met dans un bain marie maintenu au point d'ébullition de l'eau $T_\text{e}$ (à pression atmosphérique).
+
+\begin{questions}
+    \question Représenter qualitativement et à différents instants le profil de température $T(t,r)$ de l'intérieur de l'oeuf.
+    \question Par analyse dimensionnelle et avec un bilan énergétique sommaire, évaluer le temps caractéristique $\tau$ de cuisson d'un oeuf dur pour une poule et pour une autruche.
+    \question Justifier que l'on puisse négliger l'énergie de solidification des protéines pendant la cuisson.
+    \question Retrouver l'équation de la chaleur vérifiée par $T(t,r)$ dans le système de coordonnées adaptées au système. On fera appaitre du temps caractéristique de cuisson $\tau$ dans l'expression et on indiquera les conditions initiales et aux bords vérifiées par $T(t,r)$.
+    \question Adimensionner l'équation en introduisant le changement de variable suivant :
+        \begin{align*}
+            \Theta(s,z) &= \dfrac{T(t,r) - T_\text{e}}{T_\text{0} - T_\text{e}}, &
+            z &= r/R, & s = t/T,
+        \end{align*}
+    \question Trouver l'équation vérifiée par $F(s,z) = z\Theta(s,z)$. Commenter.
+%    \question Résoudre cette équation par séparation des variables $F(s,z) = S(s) Z(z)$. Montrer que l'on peut exprimer $\Theta$ sous la forme :
+%        $$\Theta(s,z) = \sum_{n=1}^{\infty} \theta_n \dfrac{\sin (n \pi z)}{n \pi z} e^{-n\pi s},$$
+%        $\theta_n$ étant des coefficients associés.
+%    \question Retrouver les coefficients $\theta_n$ à partir des conditions initiales et donner la solution $T(t,r)$. \\
+%        On utilisera que la fonction porte peut s'écrire comme suit :
+%        $$\Pi(z) = \left\lbrace \begin{array}{ll}
+%            1 & \text{si } -1 < z < 1 \\
+%            0 & \text{sinon}
+%        \end{array}\right. = -2\sum_{n=1}^{\infty} (-1)^n \dfrac{\sin (n \pi z)}{n \pi z}.$$
+%   \question Conclure quant aux différents critères de cuisson de l'oeuf en fonction de $T_\text{e}$ et $T_0$ (considérer $r=0$).
+    
+\end{questions}
+
+\end{exercise}

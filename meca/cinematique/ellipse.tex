@@ -1,0 +1,74 @@
+\begin{exercise}{Mouvement sur une ellipse}{1}{Sup}
+{Cinématique}{lelay}
+
+On considère un mobile $M$ se déplaçant sur une ellipse de demi grand axe $a$ et de demi petit axe $b$ en suivant les équations horaires suivantes
+\begin{align*}
+    \left\{
+    \begin{array}{ccc}
+         x(t) &=& \alpha \cos(\omega t + \phi) \\
+         y(t) &=& \beta \sin(\omega t + \psi)
+    \end{array}
+    \right.
+\end{align*}
+
+\begin{center}
+    \begin{tikzpicture}
+    
+    % x
+    \draw[gray, thick, ->] (-5,0) -- (6,0);
+    \draw (6,0) node[below=2pt] {$x$};
+    
+    % y
+    \draw[gray, thick, ->] (0,-2.5) -- (0,3);
+    \draw (0,3) node[left=2pt] {$y$};
+    
+    % centre, ellipse
+    \node (C) at (0,0) {};
+    \draw (0,0) ellipse (4 and 2);
+    \path (C) -- coordinate[midway](A) (3,0);
+    \draw (A) node[below=2pt] {$a$};
+    \path (C) -- coordinate[midway](B) (0,2);
+    \draw (B) node[left=2pt] {$b$};
+    
+    % Point
+    \node (L) at (4,0) {};
+    \filldraw[black,thick] (L) circle [radius=3pt] ;
+    \draw (L) node[above right=2pt] {$L$};
+    
+    % Point quelconque
+    \node (M) at (1.41*2,1.41) {};
+    \filldraw[black,thick] (M) circle [radius=3pt] ;
+    \draw (M) node[above right=2pt] {$M$};
+    
+    \draw[gray, thick, dotted] (C) -- (M);
+    \draw[black] (2,0) arc (0:25:2);
+    \draw (1.41,0.707) node[below right=2pt] {$\theta$};
+    
+    \end{tikzpicture}
+\end{center}
+
+\begin{questions}
+    \questioncours Définir les coordonnées polaires et donner la correspondance entre ce système de coordonnées et le système cartésien.
+    \question On indique qu'à $t = 0$, le mobile est situé sur le point $L$. En déduire les valeurs de $\alpha$, $\phi$ et $\psi$
+    \question Des autres données, déduire la valeur du coefficient $\beta$
+    \question Déterminer les composantes de la vitesse $(\dot x , \dot y)$ et de l'accélération $(\ddot x, \ddot y)$
+    \question Montrez que l'accélération est de la forme $\vec{a} = - K \vec{OM}$. Déterminer la valeur de la constante $K$.
+    \question Donner les équations horaires du mouvement en utilisant les coordonnées polaires.
+    \question Que donnent les expressions précédentes pour $b = a$ ?
+\end{questions}
+
+\end{exercise}
+
+\begin{solution}
+
+\begin{questions}
+    \questioncours Définir les coordonnées polaires et donner la correspondance entre ce système de coordonnées et le système cartésien.
+    \question $\alpha = a$, $\phi = 0$, $\psi = 0$
+    \question $\beta = b$
+    \question Calcul de dérivées par rapport au temps
+    \question $K = \omega^2$. Remarque sur l'analyse dimensionnelle.
+    \question $r = \sqrt{x^2 + y^2}$, $\tan\theta = \frac{b}a \tan\omega t$
+    \question Cercle, $r=r_0$ $\dot\theta = \omega$
+\end{questions}
+
+\end{solution}

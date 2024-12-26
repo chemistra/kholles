@@ -1,0 +1,50 @@
+% Niveau :      PCSI - PC
+% Discipline :  Elec
+% Mots clés :   Elec, Ordre 3
+
+\begin{exercise}{Méthode des crénaux}{2}{Sup,Spé}
+{Mutuelle inductance,Induction,Filtrage linéaire,Analyse de Fourier}{bermudez}
+
+On considère deux circuits $LC$ mutuellement couplés :
+
+\begin{center}
+    \begin{circuitikz} 
+\draw (0,0) to [V,v=$\underline{e}$] (0,2) to [R=$R$,i=$\underline{i_1}$] (2,2) -| (2,2) to [L,l_=$L$] (2,0) -- (0,0);
+\draw (3,2) to [short,i<=$\underline{i_2}$] (4,2) to [R=$R$] (4,0) -- (3,0) to [L,l_=$L$] (3,2) ;
+\draw (5,0) to [open,v_=$\underline{s}$] (5,2);
+\draw [<->,>=stealth] (1.75,1.5) to [bend left] node[pos=0.5,fill=white] {$M$} ++(1.5,0);
+\end{circuitikz}
+\end{center}
+
+
+\begin{questions}
+    \questioncours On considère pour signal électrique d'entrée $e(t)$ un créneau de valeur moyenne nulle, d'amplitude $U$, et de fréquence $f_1 = \dfrac{\omega_1}{2\pi}$. Son développement en série de Fourier est :
+    $$e(t) = \dfrac{4U}{\pi}\sum_{k=0}^{+\infty}\dfrac{\sin\qty\big((2k+1)\omega t)}{2k+1}.$$
+    Tracer le signal ainsi que son spectre et les commenter.
+    \question \'Etablir le système d'équations régissant les quantités complexes du circuit $\underline{i_1}$ et $\underline{s}$.
+    \question Montrer que la fonction de transfert $\underline{H} = \dfrac{\underline{s}}{\underline{e}}$ peut s'écrire sous la forme
+    $$\underline{H}(\omega) = \dfrac{Q}{1+jQ\qty(\dfrac{\omega}{\omega_0} - \dfrac{\omega_0}{\omega})}.$$
+    On donnera les expressions de $Q$ et $\omega_0$ et on commentera ce résultat.
+    \question Dans le cas asympotique $\omega \gg \omega_0$, comment se simplifie l'expression précédente ? Quel est alors le comportement de la fonction de transfert d'un point de vue de la fonction $e(t)$ ?
+    \question On suppose donc que $\omega_1 \gg \omega_0$. En déduire et tracer $s(t)$. Quelle est son amplitude $S$ ? Quel est le développement en série de Fourier d'une fonction triangle ?
+    \question On prend une résistance de $R = 100$ $\Omega$, et un signal d'amplitude $U = 1$ V et de fréquence $f_1 = 1$~kHz. On mesure en retour un signal de sortie d'amplitude $S = 0.2$ V. Combien vaut la mutuelle inductance $M$ ? Comparer avec la valeur de l'inductance propre $L = 120$ mH.
+\end{questions}
+
+\paragraph{Données :}
+$$\sum_{k=0}^{+\infty}\dfrac{\sin\qty\big((2k+1)p)}{2k+1} = \dfrac{\pi}{4}\text{signe}(\sin p) \qquad \sum_{k=0}^{+\infty}\dfrac{1}{(2k+1)^2} = \dfrac{\pi^2}{8}.$$
+\end{exercise}
+
+\begin{solution}
+   \begin{questions}
+       \questioncours ~
+       \question \begin{align*}
+           \underline{e} &= R\underline{i_1} + jL\omega\underline{i_1} + jM\omega\underline{i_2} \\
+           \underline{s} &= R\underline{i_2} = jL\omega\underline{i_2} + jM\omega\underline{i_1}
+       \end{align*}
+       \question $Q = \dfrac{M}{L}$, $\omega_0 = \dfrac{M}{R}$
+       \question Asymptotiquement $\underline{H} \sim \dfrac{\omega_0}{j\omega}$ comportement intégrateur.
+       \question $$s(t) = -\underset{8S/\pi^2}{\underbrace{\dfrac{4U\omega_0}{\pi\omega_1}}}\sum_{k=0}^{+\infty}\dfrac{\cos\qty\big((2k+1)\omega t)}{(2k+1)^2}.$$
+       Donc $S = \dfrac{\pi\omega_0}{2\omega_1}U$
+       \question $M = \dfrac{4 f_1}{R}\dfrac{S}{U} = 80$ mH.
+   \end{questions}
+\end{solution}

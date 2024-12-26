@@ -1,0 +1,33 @@
+\begin{exercise}{Les trois chiens}{3}{Sup}
+{Cinématique}{lelay}
+
+À l'instant $t = 0$, trois chiens $A$, $B$ et $C$ initialement situés aux trois sommets d'un triangle équilatéral de côté $\ell_0$ se mettent en mouvement l'un vers l'autre. $A$ se dirige vers $B$ qui se dirige vers $C$ qui lui-même se dirige vers $A$. Les trois chiens se déplacent à la même vitesse $v$.
+\begin{questions}
+    \questioncours Donner la définition d'un repère et d'un système de coordonnées. Citer ceux que vous connaissez en expliquant leur fonctionnement.
+    \question Faire un schéma. Représenter les positions des trois chiens ainsi que leurs vecteurs vitesse à $t = 0$, pour $t > 0$ et pour $t = \infty$.
+    \question Argumenter que le triangle $ABC$ reste équilatéral, de côté $\ell(t)$ (on pourra invoquer les symétries de la situation). $\ell(t)$ est-elle une fonction croissante ou décroissante du temps ?
+    \question Montrer que $\dv{\ell}{t} = \dfrac{\vec{v_A} \vdot \vec{v_B}}{v} - v$. 
+    \question En déduire la durée $t_f$ de la poursuite.
+    \question Quelle est la distance $D$ parcourue par chaque chien ?
+    \question Déterminer, en coordonnées polaires, l'équation horaire de la trajectoire d'un chien dans un repère à l'origine bien choisie.
+    \questionbonus Comment généraliser ceci à $N$ chiens ?
+\end{questions}
+
+\end{exercise}
+
+\begin{solution}
+\begin{questions}
+    \questioncours Donner la définition d'un repère et d'un système de coordonnées. Citer ceux que vous connaissez en expliquant leur fonctionnement.
+    \question Sa toune
+    \question Symétrie SO3, $\ell$ diminue.
+    \question Y a plein de manières, On peut écrire $\ell^2 = (\vec{OB} - \vec{OA})^2$, et dériver. 
+    \question On a $\dot \ell = -3/2 v$ d'où $t_f = 2/3 \ell_0 / v$, 
+    \question Les chiens se déplacent à la vitesse $v$, donc $D = v t_f = 2 / 3 \ell_0$
+    \question On met le centre au centre. On écrit le vecteur déplacement $\vec{\dd{\ell}}$ de norme $v \dd{t}$ que l'on décompose en deux composantes ($\dd{r}$ sur $\vec{e_r}$ et $r\dd{\theta}$ sur $e_\theta$), d'où $\dot r = \cos \pi/6 v$ et $r\dot\theta = \cos \pi/3 v$ et donc $r(t) = \ell_0 - \frac{\sqrt{3}}{2} vt$ et $\theta(t) =  \int_0^t \frac{v}{2r(t)}\dd{t}$
+\end{questions}
+
+
+
+$t_f = 2/3 \ell_0 / v$, $D = 2 / 3 \ell_0$, en polaire $r = r_0 - \sqrt{3}/2 v t$ et $\theta = V/(2r)$
+\end{solution}
+,

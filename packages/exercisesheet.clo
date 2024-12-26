@@ -1,0 +1,54 @@
+%% Option Kholles class v 27.09.20
+
+\AtBeginDocument{
+
+%Supression des tags
+    \ifprintanswers\else{
+        \gdef\level#1{}
+        \gdef\tags#1{}
+        \gdef\reflabel#1{\vspace{-2em}}
+    }
+    \fi
+
+%Nouveau input
+    \let\oldinput\input
+    \DeclareDocumentCommand\input{m o}
+    {
+	    \IfNoValueTF{#2}{}{
+	        \setcounter{exercise}{#2}
+	        \addtocounter{exercise}{-1}
+	    }
+	\oldinput{#1}
+    }
+
+}
+
+%Paramètre headers footenrs
+\pagestyle{empty}
+
+\let\exerciseheader\relax
+\let\exercisefooter\relax
+
+\makeatletter
+\def\exerciseheader{\@title\hfill\@date\hfill\@author}
+\def\exercisefooter{\CCBY\hfill\@mail}
+\makeatother
+
+\renewcommand{\printexerciseheader}{
+\noindent\exerciseheader\vspace{-2ex}
+
+\noindent\hrulefill\vspace{1ex}\newline
+}
+
+\renewcommand{\printexercisefooter}{\par
+\noindent\exercisefooter\vspace{5mm}
+    
+\noindent\textcolor{gray}{\hdashrule{\linewidth}{1pt}{4pt}}\vspace{-5mm}
+}
+
+
+% titres invisibles
+\titleformat{\part}[leftmargin]
+  {}{}{0em}{\color{white}}
+\titleformat{\section}[leftmargin]
+  {}{}{0em}{\color{white}}

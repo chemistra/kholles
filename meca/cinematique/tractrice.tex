@@ -1,0 +1,50 @@
+\begin{exercise}{La tractrice}{3}{Sup}
+{Cinématique}{lelay}
+
+Claude Perrault (architecte français du XVIIe siècle) pose sa montre sur la table. Il la tient par le bout d'une chaînette de longueur $a$. Il avance alors sa main à une vitesse $v$ dans la direction orthogonale à la position initiale de la montre (à l'origine, la montre est en $(0,a)$ et le doigt de Charles est à tout instant $t$ à la position $(vt, 0)$). On dénote par $(x(t), y(t))$ la position de la montre.
+\begin{questions}
+    \question Faire un schéma. Que vaut $y(t)$ lorsque $t$ tend vers l'infini ? Même question pour $vt-x$.
+    \question La distance entre la montre et le doigt est constante (c'est la longueur $a$ de la chaînette). Ecrire l'équation mathématique qui en découle.
+    
+    \question Dériver l'équation précédente par le temps pour obtenir la relation (1) :
+    $$ y\dot y  + (x-vt)(\dot x - v) = 0$$
+    
+    \question Le vecteur vitesse de la montre est à tout instant dirigé de la montre vers le doigt. En déduire la relation (2) :
+    $$ \dot y (x- vt) + \dot x y = 0$$
+    
+    \question En combinant les deux équations précédentes, obtenir la relation (3) :
+    $$ \dot x = \frac{v}{a^2}(x-vt)^2$$
+    \question Vérifier que la fonction $x_0(t) = vt-a$ est solution de (3). Quelle situation cela représente-t-il ?
+    \question On va chercher une solution générale en s'aidant de la solution particulière. On utilisant la fonction $z$ telle que $x(t) = x_0(t) + \frac1{z(t)}$, Montrer que $z$ vérifie l'équation différentielle (4) :
+    $$
+    \dot z = \frac{2v}{a}z - \frac{v}{a^2}
+    $$
+    \question Montrer que $z(t) = Ae^{2vt/a} + \frac{1}{2a}$, où $A$ est une constante dépendant des conditions initiales,
+    est solution  de (4). On admettra que toutes les solutions de (4) peuvent se mettre sous cette forme.
+    \question En déduire $x(t)$ et $y(t)$.
+\end{questions}
+La courbe qui décrit la trajectoire de la montre s'appelle la tractrice. Elle fait partie avec ses consoeurs la chaînette et la brachistochrone des grandes questions mathématiques des XVII et XVIII e siècle qui ont été résolues avec l'émergence du calcul différentiel.
+
+\end{exercise}
+
+\begin{solution}
+
+\begin{questions}
+    \question vers l'infini, $y\rightarrow 0$ et $vt-x \rightarrow a$
+    \question $a^2 = y^2 + (x - vt)^2$
+    \question Dériver l'équation précédente par le temps pour obtenir la relation (1) :
+    $$ y\dot y  + (x-vt)(\dot x - v) = 0$$
+    
+    \question Le vecteur vitesse $\mqty( \dot x \\ \dot y)$ est colinéaire à $\mqty(vt - x, y)$. On peut donc faire le produit vectoriel entre les 2 pour obtenir 0 
+    
+    \question On peut par ex écrire $y (2)$, remplacer $y \dot y$ en utilisant (1) et $y^2$ par $a^2 - (x - vt)^2$ pour obtenir le résultat
+    
+    \question C'est la situation ou la chainette est initialement alignée avec le doigt
+    
+    \question Il faut écrire $\dot x$ de deux manières et les égaler.
+    
+    \question (4) étant une equadiff d'ordre 1, tout va bien
+    
+    \question En déduire $x(t)$ et $y(t)$.
+\end{questions}
+\end{solution}

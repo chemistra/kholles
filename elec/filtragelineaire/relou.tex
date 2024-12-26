@@ -1,0 +1,33 @@
+% Niveau :      PCSI - PC
+% Discipline :  Elec
+% Mots clés :   Elec, Ordre 2
+
+\begin{exercise}{Filtre déphaseur}{2}{Sup,Spé}
+{\'Electrocinétique, Circuits d'ordre 3}{lelay, X}
+
+\begin{questions}
+    \questioncours Rappeler le montage suiveur avec un A.O. et discuter de son intérêt pour construire des filtres d'ordre $n$.
+    \question Donner la fonction de transfert du filtre ci dessous. Pourquoi l'appelle-t-on filtre déphaseur ?
+\end{questions}
+
+\begin{circuit}
+      \draw
+      %node [ground] at (4,0) {}
+      (0,0) to [open, v_=$e$, *-o] (0,2)
+      (0,2) to [R, l=$R$] (2,2) 
+      to [C, l^=$C$, *-*] (2,0)
+      (2,2) to [R, l=$R$] (4,2)
+      to [C, l^=$C$, *-*] (4,0)
+      (4,2) to [R, l=$R$] (6,2)
+      to [C, l^=$C$, *-*] (6,0)
+      (6,2) to [short] (8,2)
+      (8,0) to [open, v_=$s$, *-o] (8,2)
+      (0,0) to [short] (8,0);
+\end{circuit}
+\end{exercise}
+
+\begin{solution}
+
+$$H = \frac{1}{q(2+p)-(1+p)} \qq{avec} q=(2+p)(1+p)-1$$
+
+\end{solution}

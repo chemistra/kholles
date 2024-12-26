@@ -1,0 +1,50 @@
+\begin{exercise}{Mesure d'ondes gravitationnelles}{2}{Spé}
+{Interference, Michelson}{lelay}
+
+Les détecteurs d’ondes gravitationnelles LIGO (USA) et VIRGO (Italie) sont des interféromètres à division d'amplitude. Leur structure est celle d’un interféromètre de Michelson dont les bras ont des longueurs effectives notées $L_1$ et $L_2$ de l'ordre de 300~km. . La source de lumière est un laser à $\lambda=1064$~nm d'intensité $I_0 = 125$~W. On note $A_1$ (resp $A_2$) l'amplitude de l'onde lumineuse passant par le bras 1 (resp. 2) au niveau du détecteur.
+\begin{questions}
+    \questioncours Expliquer le principe de fonctionnement d'un interféromètre de Michelson
+    \question Dans chacun des bras de l'interféromètre on maintient un vide poussé ($10^{-6}$~Pa). Pourquoi à votre avis ?
+    \question Exprimer la différence de phase $\Delta \phi$ entre $A_1$ et $A_2$ en fonction de $L_1$, $L_2$ et $\lambda$.
+    \uplevel{Lorsqu’une onde gravitationnelle traverse l’interféromètre, elle distord l'espace ce qui allonge ou rétrécit légèrement les bras de l'interféromètre. On note donc $L_{1,2} = L^0_{1,2}+\delta L_{1,2}$ où $L_1^0$ et $L_2^0$ sont les longueurs au repos (en l'absence d'ondes gravitationnelles) et $\delta L_1$ et $\delta L_{2}$ reprśentent le changement de longueur des bras. On note $x_0 = L_1^0-L_2^0$ et $\delta x =\delta L_1-\delta L_2$.}
+    \question La déformation relative $\delta x / L_1$ est de l'ordre de $10^{-21}$. Quel est l’ordre de grandeur de la variation de $\Delta \phi$ due à une onde gravitationnelle ? Peut–on observer un décalage de franges à l'oeil nu dans ces conditions ?
+    \question L'intensité optique $I$ mesurée sur le détecteur est la moyenne temporelle du carré de l'onde lumineuse au niveau du détecteur $A=A_1+A_2$. Montrer que l'on peut exprimer $I$ sous la forme
+    $$2 I_0\cos^2(\Delta\phi/2)$$
+    \question En supposant $\delta x \ll \lambda$, montrer que l'on peut linéariser la variation d'intensité $\delta I$ sous la forme
+    $$
+    \delta I = -I_0\frac{4\pi \delta x}{\lambda}\sin(4\pi x_0 /\lambda)
+    $$
+    \question Pour quelles valeurs de $x$ cette variation intensité est-elle maximale ? En déduire comment est réglé l'interféromètre au repos.
+    \question Quelle est l'intensité relative que le détecteur doit résoudre afin de détecter des ondes gravitationnelles ? Est-ce réaliste ?
+    \question En réalité on place le détecteur sur une frange sombre. En déduire une nouvelle expression de la variation d'intensité.
+    \question Comment faire pour maximiser la variation d'intensité mesurée ?
+    
+\end{questions}
+
+\end{exercise}
+
+\begin{solution}
+
+\begin{questions}
+    \questioncours Expliquer le fonctionnement d'un interféromètre de Michelson
+    \question Variations faible pression indice = variation faible indice = cool. On prend donc $n=1$ dans la suite de l'exo   
+    \question Trajet dans les deux bras, aller-retour donc $\delta = 2(L_1-L_2)/\lambda$. $\Delta \phi = 2\pi \delta = 4\pi(L_1-L_2)/\lambda$
+    \uplevel{Lorsqu’une onde gravitationnelle traverse l’interféromètre, elle distord l'espace ce qui allonge ou rétrécit légèrement les bras de l'interféromètre. On note donc $L_{1,2} = L^0_{1,2}+\delta L_{1,2}$ où $L_1^0$ et $L_2^0$ sont les longueurs au repos (en l'absence d'ondes gravitationnelles) et $\delta L_1$ et $\delta L_{2}$ reprśentent le changement de longueur des bras. On note $x_0 = L_1^0-L_2^0$ et $\delta x =\delta L_1-\delta L_2$.}
+    \question $\Delta \phi = 4\pi x_0 /\lambda + 4\pi \delta x/\lambda$. La contribution de l'onde gravitationnelle est le terme en $\delta x$, soit de l'ordre de $10\delta x/\lambda = 10^{-6}$ rad $\ll 1$. À l'oeil nu on peut résoudre le passage d'une frange brillante à une frange sombre, soit une différence de phase de $\pi$. On ne peut donc pas regarder ce décalage des franges directement : c'est un millionnième de ce qu'on mesure en TP.
+    \question Interférences à 2 ondes (formule de Fresnel) : $I = A^2= I_0(1+\cos(\Delta \phi)) = I_0(1+ (2\cos^2(\Delta\phi/2)- 1)) = 2I_0\cos^2(\Delta\phi/2)$
+    \question Il faut faire un DL à l'ordre 1, puisque $\qty(cos(x)^2)'= -\sin (2x)$, EN SUPPOSANT QUE $x_0$ EST NON NUL (modulo $\pi$)
+    \begin{align*}
+    \delta I &= -I_0\frac{4\pi \delta x}{\lambda}\sin(4\pi x_0 /\lambda)
+    \end{align*}
+    \question C'est maximal pour $\phi_0 = \frac{4\pi x_0}{\lambda} = \pi/2$ donc si les signaux sont au repos en quadrature de phase. C'est normal : faire un dessin de graphe de sinus, la plus grande variation est au moment où la dérivée est maximale, donc entre une frange sombre et une frange brillante.
+    \question L'écart relatif entre l'intensité mesurée au repos et celle pendant une onde gravitationnelle est $\delta I/2I_0 \sim \delta x/\lambda = 10^{-7}$ : impossible de détecter 0.01 milliwatts de différence sur 100~W... Et en plus on crame le détecteur en lui envoyant 125 W dans la tronche.
+    \question Sur une frange sombre, $\sin(4\pi x_0 /\lambda) = 0$ donc il faut pousser à l'ordre 2 le DL. On a
+    \begin{align*}
+    \delta I &=  -2I_0 \qty(\frac{2\pi \delta x}{\lambda})^2\cos(4\pi x_0 /\lambda) \\
+    &=  - 8\pi^2 I_0 \qty(\frac{ \delta x}{\lambda})^2
+    \end{align*}
+    On est quadratique en $\frac{ \delta x}{\lambda}$ mais en même temps la variation relative d'intensité diverge donc c'est intéressant. Il me semble qu'en réalité c'est un compromis entre les deux qui est adopté.
+    \question  Il faut un grand $I_0$ mais pas trop grand pour qu'il soit stable. Il faut aussi un faible lambda mais il faut tout de même un laser puissant... C'est difficile.
+    
+\end{questions}
+\end{solution}

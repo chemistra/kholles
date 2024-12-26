@@ -1,0 +1,40 @@
+% Niveau :      PC
+% Discipline :  Electromagnétisme
+%Mots clés :    Equations de Maxwell, Drude
+
+\begin{exercise}{Modèle de Drude pour les isolants}{2}{Spé}
+{Ondes électromagnétiques,Plasma,Diélectrique}{bermu}
+
+\paragraph{Rappel :} le modèle de Drude décrit la dynamique des électrons dans un champ électrique $\vE$ de la manière suivante
+$$m\dv[2]{\vv}{t} = q\vE - m\gamma\pdv{\vr}{t}.$$
+où $\vr$ est la position de la particule, $m$ sa masse, $q$ sa charge.
+\begin{questions}
+    \questioncours Rappeler les conditions du modèle de Drude et la relation de dispersion des ondes dans un conducteur décrit par ce modèle.\\
+    On introduira et estimera un ordre de grandeur de la fréquence $\gamma$, la densité du plasma $n$, la pulsation plasma $\omega_\textsc{p}$ et de la conductivité $\sigma$.
+\begin{EnvUplevel}
+    Afin de généraliser ce modèle pour un isolant, Drude a également proposé le modèle suivant
+    $$m\dv[2]{\vv}{t} = q\vE -m{\omega_0}^2\vr - m\gamma\pdv{\vr}{t}.$$
+\end{EnvUplevel}
+    \question Rappeler ce qu'est un diélectrique. Quelle différence y a-t-il avec un conducteur ? En déduire le sens du terme en $\omega_0$. \\
+    Pour un diélectrique $\omega_0$ est dans le domaine visible.
+    \question Déduire du modèle précédent la polarisabilité $\alpha$ du diélectrique, telle que le moment dipolaire
+    $$\vp = \alpha\vE.$$
+    Quelle est l'unité de $\alpha$ ?
+    \question En utilisant le fait que la perméabilité $\varepsilon(\omega)$ d'un diélectrique s'écrit
+    $$\varepsilon(\omega) = 1 + n\alpha = \dfrac{k^2c^2}{\omega^2},$$
+    déduire de la question précédente la relation de dispersion des électrons.
+    \question Montrer que pour $\gamma$ faible (on dira devant quoi et on vérifiera si cela est vrai) que la relation de dispersion des ondes peut s'écrire
+    $$k^2 = \dfrac{\omega^2}{c^2}\:\dfrac{\omega^2 - {\omega_\infty}^2}{\omega^2 - {\omega_0}^2},$$
+    avec $\omega_\infty$ dont on donnera l'expression et le sens physique.
+    \question Tracer la relation de dispersion et montrer qu'il existe une bande interdite en fréquence et comparer au cas du simple conducteur.
+    \question Peut-on construire une cage de Faraday avec une bâche en plastique ?
+\end{questions}
+
+\paragraph{Données :}
+\begin{itemize}
+    \item charge élémentaire $e = 1,602\times 10^{-19}$ C,
+    \item masse le l'électron $m_e = 9,109\times 10^{-31}$ kg,
+    \item vitesse de la lumière dans le vide $c = 2,998 \times 10^8$ m$\cdot$s$^{-1}$,
+    \item permittivité du vide $\varepsilon_0 = 8,854\times 10^{-12}$ F$\cdot$m$^{-1}$,
+\end{itemize}
+\end{exercise}

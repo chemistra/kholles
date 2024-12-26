@@ -1,0 +1,182 @@
+% Niveau :      PCSI *
+% Discipline :  Chimie Orgam
+% Mots clés :   Ballistique, Mécanique du point, PFD, Chute libre
+
+\begin{exercise}{Synthèse du menthol}{2}{PCSI}
+{Chimie organique II, SN, E, Activation}{bermu}
+
+On s'intéresse à la synthèse du menthol \textsfbf{G} suivante : \\[-3em]
+
+\begin{center}
+    \schemestart
+        \chemname{\chemfig{(=[3]O)-[-1](-[-3])-[1]-[-1]-[1](-[3]=[1]O)-[-1](-[-3])-[1]}}{\textsfbf{A}}
+        \arrow{->[\resizebox{5em}{!}{\chemfig{HO-[2]-[0]-[-2]OH}} (1 eq.)][APTS, Chauffage]}[0,2.5]
+        \textsfbf{B} + \textsfbf{B'}
+        \arrow{->[NaBH$_4$]}[0,1.5]
+        \textsfbf{C} + \textsfbf{C'}
+        \arrow{->[H$^+$][H$_2$O]}[0,1.5]
+        \textsfbf{D} + \textsfbf{D'}
+    \schemestop\chemnameinit{}
+\end{center}
+
+\noindent Après séparation de \textsfbf{D} et \textsfbf{D'} on obtient : \\[-1.5em]
+\begin{center}
+    \schemestart
+        \chemname{\chemfig{(-[3]HO)-[-1](-[-3])-[1]-[-1]-[1](-[3]=[1]O)-[-1](-[-3])-[1]}}{\textsfbf{D}}
+        \arrow{->[HBr][]}[0,1.3]
+        \textsfbf{E}
+        \arrow{->[Mg][Et$_2$O]}
+        \textsfbf{F}
+        \arrow{->[Réac. spontanée][]}
+        \chemname{C$_{10}$H$_{20}$O}{\textsfbf{G}}
+    \schemestop\chemnameinit{}
+\end{center}
+
+\begin{questions}
+\questioncours \'Etape \textsfbf{A} $\longrightarrow$ \textsfbf{B} + \textsfbf{B'}.
+\begin{parts}
+    \part Quel est le nom de cette réaction ? Donner le mécanisme de cette réaction sur l'acétone.
+    \part Proposer succintement un montage permettant de faire cette réaction.
+    \part Quel role joue l'APTS ? Donner deux intérets d'utiliser l'APTS plutôt qu'un acide quelconque.
+    \part Quel est l'intérêt synthétique de cette réaction ici ?
+    \part Au vu des quantités respectives de réactifs, donner les deux produits formés \textsfbf{B} et \textsfbf{B'}.
+\end{parts}
+
+\bigskip
+
+\question \'Etape \textsfbf{B} + \textsfbf{B'} $\longrightarrow$ \textsfbf{C} + \textsfbf{C'}
+\begin{parts}
+    \part Quelle est la nature de cette réaction ?
+    \part Ecrire la demi-équation associée au couple aldéhyde / alcool.
+    \part Donner la structure des produits \textsfbf{C} et \textsfbf{C'}.
+\end{parts}
+
+\bigskip
+
+\question \'Etape \textsfbf{C} + \textsfbf{C'} $\longrightarrow$ \textsfbf{D} + \textsfbf{D'}
+\begin{parts}
+    \part Quel est le nom de cette réaction ? Résumer rapidement le mécanisme de cette réaction.
+    \part Quel est l'intérêt synthétique de cette réaction ici ?
+    \part Proposer une méthode pour séparer les molécules \textsfbf{D} et \textsfbf{D'}.
+\end{parts}
+
+\bigskip
+
+\question \'Etape \textsfbf{D} $\longrightarrow$ \textsfbf{E}
+\begin{parts}
+    \part Donner le mécanisme de cette réaction et la structure de \textsfbf{E}.
+    \part Quel est l'intérêt synthétique de HBr ici ?
+\end{parts}
+
+\bigskip
+
+\question \'Etape \textsfbf{E} $\longrightarrow$ \textsfbf{F} $\longrightarrow$ \textsfbf{G}
+\begin{parts}
+    \part Quel est le nom de cette réaction ? Donner le mécanisme de cette réaction et la structure de \textsfbf{F}.
+    \part Proposer des conditions expérimentales pour effectuer cette étape.
+    \part Donner la structure du menthol \textsfbf{G}.
+\end{parts}
+\end{questions}
+
+\paragraph{Données :}
+\begin{itemize}
+    \item APTS désigne l'acide paratoluènesulfonique : \chemfig{-[0]*6(-=-(-SO_3H)=-=)} ;
+
+\item NaBH$_4$ permet de passer d'un aldéhyde à un alcool : \schemestart\chemfig{R-CHO}
+        \arrow{->[NaBH$_4$]}[0,1.5]
+        \chemfig{R-CH_2-OH}
+    \schemestop\chemnameinit{}.
+
+\end{itemize}
+
+\end{exercise}
+
+\begin{solution}
+\begin{questions}
+\question ~
+\begin{parts}
+    \part C'est une acétalisation dont le mécanisme est :
+\begin{EnvUplevel}
+        \centering
+        \schemestart
+        \chemfig{-[1](-[-1])=[3]@{o}\lewis{13,O}}
+        \arrow{<=>[\chemfig{@{h}\lewis{4|,H}^\oplus}][a/b]}[0,1.3]
+        \chemmove[red,-stealth,red,shorten <= 2pt, shorten >= 4pt]{
+            \draw(o)..controls +(north east:20mm) and +(west:10mm).. (h);}
+        \chemfig{-[1]@{c}(-[-1])=[@{co}3]@{o}\chemabove{\lewis{1,O}}{\qquad\scriptsize\oplus}-[5]H}
+        \arrow{->[\resizebox{5em}{!}{\chemfig{H@{oh}\lewis{06,O}-[2]-[0]-[-2]\lewis{46,O}H}}][A$_\textsc{n}$]}[0,1.8]
+        \chemmove[red,-stealth,red,shorten <= 2pt, shorten >= 4pt]{
+            \draw(oh)..controls +(south:10mm) and +(south:10mm).. (c);
+            \draw(co)..controls +(west:4mm) and +(south west:2mm).. (o);}
+        \chemfig{-[1](-[-1])(-[4]@{oh}\lewis{02,O}-[6,.4,,,draw=none]H)-[2]\chemabove{\lewis{1,O}}{\qquad\scriptsize\oplus}(-[4]@{h}H)-[0]-[2]-[4]H\lewis{02,O}}
+        \chemmove[red,-stealth,red,shorten <= 2pt, shorten >= 2pt]{
+            \draw(oh)..controls +(north west:2mm) and +(west:5mm).. (h);}
+        \arrow{<=>[prototropie][a/b]}[0]
+        \chemfig{-[1](-[-1])(-[@{ohh}4]H_2@{o}\lewis{2,O}^\oplus)-[2]\lewis{24,O}-[0]-[2]-[4]H\lewis{02,O}}
+        \chemmove[red,-stealth,red,shorten <= 0pt, shorten >= 2pt]{
+            \draw(ohh)..controls +(south west:4mm) and +(south:4mm).. (o);}
+        \arrow{->[$-$ H$_2$O][E]}[-90,1.3]
+        \chemfig{-[1]@{c}(-[4,.2,,,draw=none]\lewis{3|,}^\oplus)(-[-1])-[2]\lewis{04,O}-[4]-[6]H@{oh}\lewis{26,O}}
+        \chemmove[red,-stealth,red,shorten <= 2pt, shorten >= 6pt]{
+            \draw(oh)..controls +(south:6mm) and +(north west:6mm).. (c);}
+        \arrow{->[][A$_\textsc{n}$]}[180,1.3]
+        \chemfig{-[1]([:90]*5(-\lewis{04,O}---\lewis{0,O}^\oplus(-[@{oh}6]@{h}H)-))-[-1]}
+        \arrow{<=>[$-$ H$^\oplus$][a/b]}[180,1.3]
+        \chemfig{-[1]([:90]*5(-\lewis{04,O}---\lewis{04,O}-))-[-1]}
+    \schemestop
+\end{EnvUplevel}
+
+    \part Montage : Dean Stark (cf. cours) ;
+    \part L'APTS joue le role de catalyseur acide qui à l'avantage d'être à la fois un acide bien soluble en phase organique (de l'acide sulfurique par exemple provoquerait l'hydrolyse de l'acétal) dont la base conjuguée est peu nucléophile (ce qui réduit les réactions parasites) ;
+    \part Cette réaction permet de protéger la fonction aldéhyde (et cétone également) ;
+    \part Comme il n'y a qu'un équivalent, un seul aldéhyde réagit (la cyclisation des deux aldéhydes est négligée car elle engenderait une trop forte tension de cycle) \\
+    \hfill \chemname{\chemfig{([:120]*5(-O---O-))-[-1](-[-3])-[1]-[-1]-[1](-[3]=[1]O)-[-1](-[-3])-[1]}}{\textsfbf{B}} \qquad et \qquad \chemname{\chemfig{(=[3]O)-[-1](-[-3])-[1]-[-1]-[1](-[3]([:90]*5(-O---O-)))-[-1](-[-3])-[1]}}{\textsfbf{B'}} \quad notés par la suite R--CHO. \hfill ~
+ \end{parts}
+
+\question ~
+\begin{parts}
+    \part C'est une réduction ;
+    \part La demi-équation associée est $\mathrm{R\text{--}CHO + 2 H^+ + 2 e^- = R\text{--}CH_2\text{--}OH}$ ;
+    \part \textsfbf{C} et \textsfbf{C'} sont donc R--CH$_2$--OH.
+\end{parts}
+
+\question ~
+\begin{parts}
+    \part Cette réaction est une rétroacétalisation qui est en fait le mécanisme de la \textsfbf{Q\,1.1} à l'envers ;
+    \part Il s'agit d'une déprotection ;
+    \part \textsfbf{D} et \textsfbf{D'} étant isomères, on peut les séparer par distillation fractionnée.
+\end{parts}
+\pagebreak
+
+\question ~
+\begin{parts}
+    \part Il s'agit d'une substitution par Br par activation électrophile de OH :
+    \begin{EnvUplevel}
+        \centering
+        \schemestart
+        \chemname{\chemfig{H@{o}\lewis{02,O}-[-2]-[0](-[2]R)-[-2]}}{\textsfbf{D}}
+        \arrow{<=>[\chemfig{@{h}\lewis{4|,H}^\oplus}][a/b]}[0,1.3]
+        \chemmove[red,-stealth,red,shorten <= 2pt, shorten >= 4pt]{
+            \draw(o)..controls +(north:10mm) and +(west:10mm).. (h);}
+        \chemfig{H_2@{o}\lewis{2,O}^\oplus-[@{co}-2]@{c}-[0](-[2]R)-[-2]}
+        \arrow{<=>[\chemfig{@{br}\lewis{0246,Br}^\ominus}][S$_\textsc{n}$2, \ $-$ H$_2$O]}[0,1.3]
+        \chemmove[red,-stealth,red,shorten <= 2pt, shorten >= 4pt]{
+            \draw(br)..controls +(west:10mm) and +(south:10mm).. (c);
+            \draw(co)..controls +(south west:2mm) and +(south:2mm).. (o);}
+        \chemname{\chemfig{(-[3]Br)-[-1](-[-3])-[1]-[-1]-[1](-[3]=[1]O)-[-1](-[-3])-[1]}}{\textsfbf{E}}
+    \schemestop
+\end{EnvUplevel}
+    \part HBr a l'avantage à la fois d'activer OH (H$^+$) et d'être nucléophile (Br$^-$). OH est substitué par Br qui est un meilleur nucléofuge.
+\end{parts}
+
+    \question ~
+\begin{parts}
+    \part C'est une réaction de Grignard (cf. cours) \chemname{\chemfig{(-[3]MgBr)-[-1](-[-3])-[1]-[-1]-[1](-[3]=[1]O)-[-1](-[-3])-[1]}}{\textsfbf{F}} ;
+    \part Elle se fait dans l'éther à reflux en milieu anhydre (garde à chlorure) et dilué (pour éviter le couplage de Wurtz) avec un bac à glace pour stopper la réaction dans le cas ou elle s'emballe ;
+    \part Vu la formule brute, il y a conservation du nombre de carbone, la réaction est intramoléculaire. C'est une addition nucléophile intramoléculaire de l'organomagnésien sur l'aldéhyde et donc le menthol \textsfbf{G} a pour structure \chemfig{*6(--(-[-1](-[-3])-[1])-(-[1]OH)--(-[5])-)}.
+    
+\end{parts}
+    
+\end{questions}
+
+\end{solution}

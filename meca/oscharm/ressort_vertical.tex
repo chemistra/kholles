@@ -1,0 +1,58 @@
+% Niveau :      PCSI
+% Discipline :  Méca
+
+\begin{exercise}{Balle rebondissante}{2}{Sup}
+{Mécanique, Oscillateur harmonique,Ressort}{lelay}
+
+On considère une balle de masse $m$ qui se mouvoir verticalement dans le champ de gravité et sa hauteur par rapport au sol est notée $h$. En dessous de cette balle est accroché un ressort de raideur $k$ et de longueur $\ell_0$. Initialement, la balle est une la hauteur $h_0 > \ell_0$ du sol, et on la laisse tomber à $t = 0$. Attention, le ressort est fixé \textbf{uniquement} à la balle : en particulier, à $t=0$, il ne touche pas le sol.
+\begin{questions}
+    \questioncours Caractéristiques du mouvement de chute libre : trajectoire, évolution de la position et de la vitesse.
+    \question Faire le bilan des forces sur la masse $m$ pour $h > \ell_0$.
+    \question Donner les équations du mouvement et leur solution pour $h > \ell_0$
+    \question  À quel temps $\tau_1$ la balle arrive-t-elle à une hauteur $\ell_0$ ? Que se passe-t-il alors ? 
+    \question Faire le bilan des forces sur la masse $m$ pour $h \leq \ell_0$.
+    \question En déduire les équations du mouvement. À quel temps $\tau_2$ la balle revient-elle à une hauteur $\ell_0$ ?
+    \question Que se passe-t-il alors ? À quel temps $T$ la balle revient-elle à une hauteur $h_0$ ?
+    \question Représenter graphiquement $h(t)$ en identifiant chaque phase du mouvement.
+\end{questions}
+
+\begin{solution}
+
+\begin{questions}
+    \questioncours Caractéristiques du mouvement de chute libre : trajectoire, évolution de la position et de la vitesse.
+    \question C'est une chute libre. $F = -mg$, Le ressort ne touche pas le sol.
+    \question $\ddot h = -g$, $\dot h  = -gt$, $h = h_0 - gt^2/2$
+    \question À $\tau_1 = \sqrt{2(h_0 - \ell_0)/g}$ le ressort sous la balle touche le sol : le mouvement devient celui d'un système masse-ressort vertical.
+    \question $F = -mg - k(h - \ell_0)$. deux forces.
+    \question $\ddot h + \frac{k}m h= -g + \frac{k}m \ell_0$. La solution est 
+    \begin{align*}
+    h (t) &= A\cos(\omega_0t) + B \sin(\omega_0t) + \ell_0 - mg/k \\ 
+    h (t) &= A'\cos(\omega_0(t - \tau_1)) + B' \sin(\omega_0(t - \tau_1)) + \ell_0 - mg/k
+    \end{align*}
+    Avec $\omega_0 = \sqrt{k/m}$. Peu importe le détail des constantes, dans tous les cas le temps mis pour revenir à $\ell_0$ est une période, donc $$\frac{\omega_0}{2\pi} = \frac{1}{2\pi}\sqrt{k/m} $$
+    
+    % Par ailleurs
+    % \begin{align*}
+    % h (\tau_1) = A' + \ell_0 - mg/k = \ell_0 \\
+    % \dot h (\tau_1) = \omega_0 B' = - g\tau_1
+    % \end{align*}
+    % D'où $A' = mg/k$ et $B'= -g\tau_1 / \omega_0$
+    
+    D'où $\tau_2 = \tau_1 + \frac{1}{2\pi}\sqrt{k/m}$
+    \question La balle refait une chute libre mais à l'envers, elle met donc encore $\tau_1$ à revenir à $h_0$ ?
+    \question Portion de parabole décroissante, portion de sinus, portion de parabole, etc...
+\end{questions}
+\end{solution}
+
+% VIEILLE VERSION
+% On considère un ressort de raideur $k$ et de longueur à vide $\ell_0$ posé verticalement sur une table, sur lequel est posé une masse $m$.
+% \begin{questions}
+%     \question Déterminer la position d'équilibre notée $z_0$ de la masse $m$ sur l'axe vertical $O_z$ dirigé vers le haut.
+%     \question On appuie sur la masse $m$ avec une force $F$ de manière à la déplacer à la position $z_1 < z_0$. Faire le bilan des forces sur la masse $m$ et sur la table.
+%     \question À $t=0$, on arrête soudainement d'appuyer sur le système ($F= 0$, $z = z_1$, $\dot{z} = 0$). Appliquer le PFD à la masse $m$ et donner $z(t)$ pour $t>0$.
+%     \question Donner la condition pour que le ressort décolle de la table.
+%     \question En supposant cette condition vérifiée, trouver l'instant $t_0$ où le ressort décolle. En déduire la vitesse $\dot{z}_0$ de la masse quand elle décolle.
+%     \question Donner $z(t)$ pour $t > t_0$. À quelle altitude considérer que le ressort touche de nouveau le sol ?
+%     \question Tracer le graphe de $z(t)$ pour $t\in\mbb{R}$ et expliquer chaque étape.
+% \end{questions}
+\end{exercise}

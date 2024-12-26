@@ -1,0 +1,101 @@
+% Niveau :      PCSI *
+% Discipline :  Méca
+% Mots clés :   Ballistique, Mécanique du point, PFD, Chute libre
+
+\begin{exercise}{Parabole de sureté}{2}{Sup, Spé}
+{Mécanique,Mécanique du point}{bedo,bermu}
+
+\begin{questions}
+\questioncours Conservation de l'énergie mécanique. Cas d'une chute libre.
+
+\uplevel{
+On considère un point matériel $m$ en chute libre dans un champ de pesanteur $g$ partant initialement de $(0,0)$ avec une vitesse initiale $$\vv_0 = v_0\cos\theta\ve_x + v_0\sin\theta\ve_z.$$
+}
+
+\question Quelle est l'altitude maximale $H$ que $m$ peut atteindre ? Pour quel angle de tir $\theta$ cette altitude est-elle atteinte ?
+
+\question Quelle est la trajectoire $z(x)$ de $m$ ? On exprimera $z$ uniquement en fonction de $x$, $\tan\theta$ et $H$.\\[-2em]
+\uplevel{\textbf{\sffamily Indication :} $\dfrac{1}{\cos^2 x} = 1 + \tan^2 x$.
+
+\bigskip
+
+Par la suite, on chercher à tirer sur une cible $M$ de coordonnées $(X,Z)$ avec la balle $m$.
+
+On appelle \emph{parabole de sûreté} la courbe qui enveloppe toutes les trajectoires possibles de $m$, la norme de sa vitesse initiale $v_0$ étant constante.}
+
+\question Déduire de la question précédente l'équation de la parabole de sûreté de ce tir balistique.
+
+\question Qu’en est-il lorsque l’on prend en compte les frottements de l’air ? Donner qualitativement le changement des résultats précédents.
+\end{questions}
+\end{exercise}
+
+\begin{solution}
+\begin{questions}
+    \questioncours $\vec{F} = m\vec{a}$
+    \question Par intégration : $\vr(t) = -\dfrac{1}{2}\vg t^2 + \vv_0 t$, d'où la parabole
+    $$z = -\dfrac{g}{2 {v_0}^2}(1 + \tan^2\theta)x^2 + \tan\theta x.$$
+    \question Une considération d'énergie mécanique permet d'obtenir que : $m g h = \dfrac{1}{2}m v_0^2$. L'altitude maximale est donc $h = \dfrac{{v_0}^2}{2g}$, pour $\theta = 0$.
+    \question 
+    $$z = -\dfrac{1}{4 h}(1 + \tan^2\theta)x^2 + \tan\theta x.$$
+     \questionIl faut que
+    $$z_0 = -\dfrac{1}{4 h}(1 + \tan^2\theta){x_0}^2 + \tan\theta x_0.$$
+    Donc le discriminant par rapport à $\tan\theta$ doit être positif ou nul
+    $$h - z_0 - \dfrac{{x_0}^2}{4 h} \geqslant 0.$$
+   \questionPour le cas limite on trouve l'équation de la parabole de sûreté
+    $$z = h - \dfrac{x^2}{4 h},$$
+    telle que si $(x_0,z_0)$ est à l'intérieur, il est touché.
+    \question Qualitativement, la parabole de sûreté est plus petite (le projectile va moins haut moins loin), il faut viser plus haut pour aller un peu plus loin (a priori le projectile sera aussi ralenti verticalement dans sa chute que la balle).
+\end{questions}
+\end{solution}
+
+%\section{Parabole de s\^uret\'e}
+%\tags{M\'ecanique du point} \\
+%\level{Sup} \\
+%\difficulty{1}
+
+%On cherche à tirer un projectile avec une vitesse $V_0$ sur un point $M$. Le but de l'exercice est de trouver un critère simple pour savoir si cela est ou non possible.
+%\begin{questions}
+%\question \'Ecrire l'\'equation cartésienne $z(x)$ de la parabole décrite par le projectile
+%\question Le point $M$ est-il toujours solution de cette équation ?
+%\question En déduire l'équation de la parabole de sûreté d'un tir balistique
+%\end{questions}
+
+%\section{Tir au pigeon}
+%\tags{M\'ecanique du point} \\
+%\level{Sup} \\
+%\difficulty{2}
+
+%À $t=0$, on tire avec un canon orienté avec un angle $\theta$ sur un objet lâché en chute libre.
+%\begin{questions}
+%\question On suppose dans un premier temps qu'il n'y a pas de frottements.
+%    \begin{parts}
+%        \part À quel temps $t$ le projectile atteindra-t-il l'abscisse de la cible ?
+%        \part En déduire $\theta$. La puissance du canon est-elle importante ?
+%    \end{parts}
+%\question On suppose maintenant que le problème prend en compte les frottements.
+%    \begin{parts}
+%        \part Quels changements attend-t-on par rapport à la situation précédente ?
+%        \part Proposer une modélisation des frottements.
+%        \part Dans quel cas la situation précédente est-elle toujours vérifiée ?
+%    \end{parts}
+%\end{questions}
+
+\begin{exercise}{Il touche à tous les coups}{2}{Sup, Spé}
+{Mécanique,Mécanique du point}{bedo,bermu}
+
+\begin{questions}
+\questioncours Principe fondamental de la dynamique
+
+\uplevel{
+On considère un point matériel $P$ en chute libre dans un champ de pesanteur $g$ partant initialement de $(x_0,z_0,0)$ sans vitesse. On cherche à tirer dessus avec une balle $M$ partant de $(0,0)$ avec une vitesse $$\vv_0 = v_0\cos\theta\ve_x + v_0\sin\theta\ve_z.$$
+}
+
+\question Quelle est la trajectoire $X(t)$ et $Z(t)$ du point $P$ ?
+
+\question Quelle est la trajectoire $x(t)$ et $z(t)$ de la balle $M$ ?
+
+\question À quel temps $t$ la balle atteindra sa cible ?
+
+\question En déduire la direction $\theta$ qu'il faut viser initialement pour qu’un tir balistique atteigne sa cible si elle est également en chute libre ? En quoi la puissance du canon intervient-elle ? Interpréter ces résultats.
+\end{questions}
+\end{exercise}

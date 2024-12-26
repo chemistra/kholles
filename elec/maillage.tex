@@ -1,0 +1,98 @@
+% Niveau :      PCSI - PC
+% Discipline :  Elec
+% Mots clés :   Elec, Ordre 2
+
+\begin{exercise}{Résistance d'un maillage}{2}{Sup,Spé}
+{\'Electrocinétique, Circuits d'ordre 2}{schlosser}
+
+On s'intéresse à la résistance d'un maillage pris entre deux points.
+
+\begin{questions}
+    \questioncours Dipôles actifs et passifs : caractéristique, résistance et conductance. Association de dipôles.
+    \question Quelle est la résistance d'une maille simple (Circuit \arabic{exercise}.1) ?
+    \question Quelle est la résistance d'une maille double (Circuit \arabic{exercise}.2) ?
+\begin{EnvUplevel}
+    Dans les figures ci-dessous, toutes les résistances valent $R$.
+\begin{multicols}{2}
+\begin{circuit}[Maille simple]
+    \draw (0,0)
+    to [R] (2,0)
+    to [R] (2,2)
+    to [R] (0,2)
+    to [R] (0,0) ;
+    \draw (-.4,2.4) to [short, *-*] (0,2);
+    \draw (2,0) to [short, *-*] (2.4,-.4);
+\end{circuit}
+\begin{circuit}[Maille double]
+    \draw (0,0)
+    to [R] (2,0)
+    to [R] (4,0)
+    to [R] (4,2)
+    to [R] (4,4)
+    to [R] (2,4)
+    to [R] (0,4)
+    to [R] (0,2)
+    to [R] (0,0);
+    \draw (2,4)
+    to [R, *-*] (2,2)
+    to [R, *-*] (2,0) ;
+    \draw (4,2)
+    to [R, *-*] (2,2)
+    to [R, *-*] (0,2) ;
+    \draw (-.4,4.4) to [short, *-*] (0,4);
+    \draw (4,0) to [short, *-*] (4.4,-.4);
+\end{circuit}
+\end{multicols}
+
+Et maintenant l'astuce !
+\end{EnvUplevel}
+    \question Monter que les courts-circuits coupant perpendiculairement les axes de symétrie et d'antisymétrie de la répartition des courants peuvent être supprimés sans modifier la répartition des courants.
+    
+    \question Retrouver par cette  méthode le résultat de la question 3.
+    
+    \question Donner le résultat pour la maille triple :
+\end{questions}
+    
+\begin{circuit}[Maille triple]
+    \draw (0,0)
+    to [R] (2,0)
+    to [R] (4,0)
+    to [R] (6,0)
+    to [R] (6,2)
+    to [R] (6,4)
+    to [R] (6,6)
+    to [R] (4,6)
+    to [R] (2,6)
+    to [R] (0,6)
+    to [R] (0,4)
+    to [R] (0,2)
+    to [R] (0,0);
+    \draw (2,0)
+    to [R, *-*] (2,2)
+    to [R, *-*] (2,4)
+    to [R, *-*] (2,6) ;
+    \draw (4,0)
+    to [R, *-*] (4,2)
+    to [R, *-*] (4,4)
+    to [R, *-*] (4,6) ;
+    \draw (0,2)
+    to [R, *-*] (2,2)
+    to [R, *-*] (4,2)
+    to [R, *-*] (6,2) ;
+    \draw (0,4)
+    to [R, *-*] (2,4)
+    to [R, *-*] (4,4)
+    to [R, *-*] (6,4) ;
+    \draw (-.4,6.4) to [short, *-*] (0,6);
+    \draw (6,0) to [short, *-*] (6.4,-.4);
+\end{circuit}
+
+C'est plus rapide comme ça, non ?
+
+%\plusloin Quid du cas de la $n$-maille ?
+
+\end{exercise}
+
+\begin{solution}
+    \url{https://fr.wikiversity.org/wiki/Signaux\_physiques\_(PCSI)/Exercices/Circuits\_\%C3\%A9lectriques\_dans\_l\%27ARQS\_:\_associations\_de\_conducteurs\_ohmiques}
+\end{solution}

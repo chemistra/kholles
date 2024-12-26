@@ -1,0 +1,76 @@
+\begin{exercise}{Propagation dans une chaîne de masses-ressorts}{2}{Spé}
+{Propagation}{lelay, mines, X}
+
+On s'intéresse à une chaîne infinie de masses $m$ écartées d'une distance $a$ reliées deux à deux par des ressorts de raideur $k$ et de longueur à vide $a$. On note $X_n$ le déplacement de la $n$-ième masse par rapport à sa position d'équilibre.
+
+\begin{center}
+\begin{tikzpicture}
+
+\newcommand\heighta{.75}
+\newcommand\heightarrow{.5}
+
+\draw[<->] (-2,\heighta) -- (0,\heighta);
+\draw (-1,1) node[above=2pt] {$a$};
+
+\draw[<->] (0,\heighta) -- (2,\heighta);
+\draw (1,1) node[above=2pt] {$a$};
+
+\node[circle,fill=black] (xn) at (0+0.4,0) {};
+\draw[thick, dotted] (0,\heightarrow) -- (0,-\heightarrow);
+\draw[->] (0,-\heighta) -- (0+0.4,-\heighta);
+\draw (0+0.2,-\heighta) node[below=2pt] {$x_{n}$};
+
+\node[circle,fill=black] (xnp) at (2+.8,0) {};
+\draw[thick, dotted] (2,\heightarrow) -- (2,-\heightarrow);
+\draw[->] (2,-\heighta) -- (2+.8,-\heighta);
+\draw (2+.4,-\heighta) node[below=2pt] {$x_{n+1}$};
+
+\node[circle,fill=black] (xnm) at (-2+0.6,0) {};
+\draw[thick, dotted] (-2,\heightarrow) -- (-2,-\heightarrow);
+\draw[->] (-2,-\heighta) -- (-2+.6,-\heighta);
+\draw (-2+.3,-\heighta) node[below=2pt] {$x_{n-1}$};
+
+
+\node[circle,fill=black] (xnmm) at (-3.6,0) {};
+\node[circle,fill=black] (xnpp) at (4,0) {};
+
+\draw[decoration={aspect=0.3, segment length=1.5mm, amplitude=2mm,coil},decorate] (xn) -- (xnp);
+\draw[decoration={aspect=0.3, segment length=1.2mm, amplitude=2mm,coil},decorate] (xnm) -- (xn);
+\draw[decoration={aspect=0.3, segment length=1.8mm, amplitude=2mm,coil},decorate] (xnmm) -- (xnm);
+\draw[decoration={aspect=0.3, segment length=1.5mm, amplitude=2mm,coil},decorate] (xnp) -- (xnpp);
+\fill[white] (-4.5,1) rectangle (-3.5,-1);
+\fill[white] (3.5,1) rectangle (4.5,-1);
+
+\path (xn) -- coordinate[midway](m) (xnp);
+\draw (m) node[above=6pt] {$k$};
+
+\path (xn) -- coordinate[midway](n) (xnm);
+\draw (n) node[above=6pt] {$k$};
+
+\end{tikzpicture}
+\end{center}
+
+\begin{questions}
+    \question Établir l'équation du mouvement de la $n$-ième masse en supposant que les déplacements des masses sont faibles par rapport à $a$.
+    \question On définit $X$ tel que $X_n(t) = X(x = na, t)$. En supposant $a$ petit devant la taille typique des variations spatiales de $X$, établir l'équation différentielle aux dérivées partielles vérifiée par $X$.
+    \question Donne la célérité $c$ des ondes de déplacement se propageant dans la chaîne. Que peut-on dire de cette propagation ?
+    \question Comment interpréter les quantités $m_l = m/a$ et $\kappa = k\ a$ ?
+    \question Interpréter la quantité $Z = \sqrt{\dfrac{m_l}{1/\kappa}}$
+\end{questions}
+
+
+On cherche maintenant à modéliser un matériau dense (un métal, par exemple) par un réseau cubique, d'arête $a$, avec aux sommets des atomes de masse $m$. On modélise la cohésion du cristal par des ressorts de raideur $k$ et de longueur à vide $a$ présents entre chaque couple d'atomes voisins. On note $(x, y, z)$ les trois directions principales de ce réseau et on considère que les atomes placés dans un même plan $(y, z)$ restent toujours coplanaires (déformation purement longitudinale). L'aire macroscopique d'un de ces plans est notée $S$.
+
+On s'intéresse à la déformation du matériau suivante : tous les atomes des plans initialement situés à des abscisses $x > x_0$ sont décalés d'une distance $\delta x$.
+
+\begin{questions}
+    \question Exprimer la contrainte exercée dans le matériau en fonction de $S$, $k$, $a$ et $\delta x$
+    \question Exprimer différemment cette contrainte en utilisdant cette fois une grandeur macroscopique, le module d'Young $E$ du matériau.
+    
+    \question En déduire une expression du module d'Young en fonction de $k$ et $a$. Estimer numériquement sa valeur en ordres de grandeur.
+    
+    \question Exprimer la vitesse des ondes sismiques longitudinales dans le matériau en fonction du module d'Young et d'une autre quantité qu'on interprétera. Estimer numériquement sa valeur en ordres de grandeur.
+
+\end{questions}
+
+\end{exercise}

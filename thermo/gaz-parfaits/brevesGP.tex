@@ -1,0 +1,108 @@
+
+% Niveau :      PCSI
+% Discipline :  Thermo
+%Mots clés :    Gaz parfaits
+
+\begin{exercise}{Pompe à vélo}{1}{Sup}
+{Thermodynamique, Gaz parfait, Théorie cinétique des gaz}{bermu,bedo}
+
+\begin{questions}
+    \questioncours Qu'est-ce qu'un gaz parfait ? Donner l'équation d'état du gaz parfait en variables extensives $(V,N)$, intensives $\rho$ (masse volumique) et $n^\ast$ la densité particulaire en $\SI{}{m^{-3}}$.
+    
+    \question En combien de coup de pompe pour gonfler un pneu de vélo ?
+    
+    On notera $V_\text{p}$ le volume du piston de la pompe, et $V_\text{c}$ celui de la chambre à air du pneu.
+
+\end{questions}
+
+\paragraph{Données :}
+\begin{itemize}
+    \item on modélise l'air comme un gaz parfait.
+    \item volume d'un tore $V_\text{c} = 2\pi^2 r^2 R$, $r$ est le petit rayon, $R$ le grand rayon.
+    \item recommandation de gonflage des pneus de vélo : entre 6 et 8 bar.
+\end{itemize}
+
+\end{exercise}
+
+\begin{solution}
+\begin{questions}
+    \questioncours $pV = nRT$. $pM = \rho R T$. $p = n^\ast k_\textsc{b} T$.
+    \question On modélise la situation comme isotherme. Notons $p_n$ la pression dans le pneu de vélo au $n^\text{ème}$ coup de pompe à vélo.
+
+    \textsf{Admission :} on rentre un volume $V_\text{p}$ d'air atmosphérique dans le piston. La quantité de matière correspondante est $n_0 = \dfrac{p_0 V_\text{p}}{R T}$. Elle est toujours la même.
+
+    \textsf{Gonflage :} supposons que la pression dans le pneu est $p_{n-1}$. Lorsqu'on vide les moles du piston dans le pneu, on a une quantité de matière totale est $n_\text{tot} = n_0 + \dfrac{p_{n-1}V_\text{c}}{RT}$. Soit une pression :
+    $$p_n = \dfrac{n_\text{tot}RT}{V_\text{c}} = \dfrac{p_0 V_\text{p} + p_{n-1} V_\text{c}}{V_\text{c}}.$$
+
+    \textsf{Conclusion :}
+
+    $$p_n = p_{n-1} + p_0 \dfrac{V_\text{p}}{V_\text{c}} = p_0 \qty(1 + n \dfrac{V_\text{p}}{V_\text{c}}).$$
+    donc
+    $$n = \dfrac{V_\text{c}}{V_\text{p}}\qty(\dfrac{p_n}{p_0} - 1)$$
+
+    En ODG : $V_\text{c} = 2\pi^2 r^2 R$, $r = \SI{10}{mm}$, $R = \SI {500}{mm}$ soit $V_\text{c} = \SI{1e-3}{m^3}$.
+    
+    $V_\text{p} =  \pi r^2 h$, $r = \SI{10}{mm}$, $h = \SI{300}{mm}$. $V_\text{p} = \SI{8e-5}{m^3}$.
+    
+    $\frac{p_n}{p_0} \sim 8$.
+
+    Il faudra donc $n = 60$ coups de pompe.
+    
+\end{questions}
+\end{solution}
+
+
+% Niveau :      PCSI
+% Discipline :  Thermo
+%Mots clés :    Gaz parfaits
+
+\begin{exercise}{Atmosphères planétaires}{1}{Sup}
+{Thermodynamique, Gaz parfait, Théorie cinétique des gaz}{bermu,perron}
+
+\begin{questions}
+    \questioncours Vitesse quadratique thermique moyenne.
+    
+    \question \`A quelle température l'atmosphère d'une planète s'échappe dans le vide interstellaire ? Quelles planètes du système solaire ne peuvent donc pas avoir d'atmosphère ?
+
+\end{questions}
+
+\paragraph{Données :}~\\[-1ex]
+\resizebox{\linewidth}{!}{
+\noindent\begin{tabular}{rllllllll}
+ & \textbf{Mercure} & \textbf{Venus} & \textbf{Terre} & \textbf{Mars} & \textbf{Jupiter} & \textbf{Saturne} & \textbf{Uranus} & \textbf{Neptune} \\
+{ \textbf{Masse $(\SI{1e24}{kg})$}}           & 0.330            & 4.87           & 5.97           & 0.642         & 1898             & 568             & 86.8            & 102              \\
+{ \textbf{Rayon ($\SI{}{km}$)}}           & 2440             & 6052         & 6378        & 3396          & 71 492          & 60 268         & 25 559         & 24 764           \\
+{ \textbf{Gravité ($\SI{}{m.s^{-2}}$)}}          & 3.7              & 8.9            & 9.8            & 3.7           & 23.1             & 9.0             & 8.7             & 11.0             \\
+{\textbf{Vitesse d'échappement ($\SI{}{km/s}$)}}         & 4,3& 10,4& 11,2& 5& 59,5& 35,5& 21,3& 23,5  \\
+{ \textbf{Température de surface ($\SI{}{K}$)}}    & 343              & 737            & 288             & 238           & 163           & 133            & 78            & 73             \\
+{ \textbf{Composition de l'atmosphère}}    & ??\% O$_2$             & 97\% CO$_2$           & 80\% N$_2$             & 96\% CO$_2$           & 86\% H$_2$          & 96\% H$_2$           & 83\% H$_2$          & 80\% H$_2$            \\
+\end{tabular}
+}
+
+\noindent\begin{tabular}{lccccc}
+ & \textbf{H} & \textbf{He} & \textbf{C} & \textbf{N} & \textbf{O} \\
+{ \textbf{Masse molaire $(\SI{}{g.mol^{-1}})$}} & 1 & 2 & 12 & 14 & 16  \\
+\end{tabular}
+
+\end{exercise}
+
+\begin{solution}
+\begin{questions}
+    \questioncours $\dfrac{5}{2}k_\textsc{b}T = \dfrac{1}{2}mv_q^2\quad$ soit $\quad v_q = \sqrt{\dfrac{5RT}{M}}$.
+    
+    \question Critère : la vitesse de libération est de l'ordre de la vitesse thermique.
+
+\resizebox{\linewidth}{!}{
+    \begin{tabular}{rllllllll}
+\textbf{Vitesses   thermiques  ($\SI{}{km/s}$)}  & \textbf{Mercure} & \textbf{Venus} & \textbf{Terre} & \textbf{Mars} & \textbf{Jupiter} & \textbf{Saturne} \\
+\textbf{N2}                    & 0,63                    & 0,81                     & 0,51                               & 0,43                              & 0,38                                 & 0,34                                 & 0,26                                & 0,26                                 \\
+\textbf{O2}                    & 0,59                    & 0,76                     & 0,47                               & 0,40                              & 0,36                                 & 0,32                                 & 0,25                                & 0,24                                 \\
+\textbf{CO2}                   & 0,50                    & 0,65                     & 0,40                               & 0,34                              & 0,30                                 & 0,27                                 & 0,21                                & 0,20                                 \\
+\textbf{He}                    & 1,17                    & 1,52                     & 0,95                               & 0,81                              & 0,71                                 & 0,64                                 & 0,49                                & 0,48                                 \\
+\textbf{H2}                    & 2,34                    & 3,03                     & 1,90                               & 1,61                              & 1,43                                 & 1,29                                 & 0,99                                & 0,96                                 \\
+{\textbf{Vitesse d'échappement ($\SI{}{km/s}$)}}         & 4,3& 10,4& 11,2& 5& 59,5& 35,5& 21,3& 23,5
+\end{tabular}
+}
+    
+\end{questions}
+\end{solution}

@@ -1,0 +1,42 @@
+\begin{exercise}{Onde électromagnétique longitudinale}{2}{Spé}
+{Ondes électromagnétiques,Plasma inertiel}{lelay}
+
+On étudie la propagation dans un plasma peu dense d'une onde électromagnétique dont le champ électrique s'exprime $\vec{E} = \vec{E_0}\cos(\omega t - \vec{k}\cdot\vec{r})$.
+\begin{questions}
+    \questioncours Structure d'une onde électromagnétique dans le vide.
+    \question Établir l'équation du mouvement d'un électron, de masse $m_e$ et associé à la densité $n_e$, en faisant les approximations qui sembleront nécessaires.
+
+    \question Que dire du mouvement des ions ?
+    
+    \question Montrer que la conductivité $\sigma$ du plasma pour cette onde est complexe et en donner une expression.
+
+    \uplevel{On considère que la densité locale du plasma $\rho$ est non nulle.}
+    
+    \question En utilisant l'équation locale de conservation de la charge, établir une nouvelle expression de la conductivité $\sigma$.
+    
+    \question En déduire la pulsation de l'onde obtenue.
+    
+    \question Montrer que le champ magnétique $\vec{B}$ associé à cette onde est nul dans tout le plasma. En déduire la direction de $\vec{k}$. Quel type d'onde est-ce ?
+\end{questions}
+
+\end{exercise}
+
+\begin{solution}
+
+\begin{questions}
+    \questioncours triedre EBk direct
+    \question $m \dot{v} = -e E$. force de lorentz magnetique negligeable
+
+    \question Ions lents osef
+    
+    \question $\sigma = e n_e v$ d'où $\sigma = -in_e e^2/m\omega$
+
+    \uplevel{On considère que la densité locale du mplasma $\rho$ est non nulle.}
+    
+    \question $\dot \rho = i\omega \rho$ et $\div j = \sigma \div E = \sigma \rho/\epsilon_0$ d'où $(i\omega + \sigma/\epsilon_0)\rho = 0$. $\rho \neq 0$ donc $\sigma = -i\omega \epsilon_0$
+    
+    \question $\omega = \omega_p = \sqrt{\frac{ne^2}{m\epsilon_0}}$
+    
+    \question $\rot B = 0$ or $\div B = 0$ donc $B = 0$. maxwell-faraday donne $E$ colineaire a $k$, d'où une onde LONGITUDINALE
+\end{questions}
+\end{solution}

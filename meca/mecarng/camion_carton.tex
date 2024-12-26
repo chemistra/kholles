@@ -1,0 +1,109 @@
+% Niveau :      Spé
+% Discipline :  Méca
+% Mots clés :   Chaine, caténaire
+
+\begin{exercise}{Attention fragile ! (dans le camion)}{2}{Spé}
+{Mécanique,Mécanique en référentiel non galiléen,Frottements}{bermu}
+
+
+\textsf{Question de cours :} Lois du frottement solide de Coulomb.
+
+Lors d'un déménagement, vous transportez vos cartons avec un camion.
+Vous craignez qu'une conduite brusque entraîne les cartons à se cogner contre les parois du camion.
+
+\textsf{Question ouverte :} Estimez l'accélération maximale du camion permettant de ne pas casser la vaisselle contenue dans un carton. (\textsl{On pourra s'aider des indications ci-après})
+
+\paragraph{Indications}
+
+\begin{enumerate}
+    \item Modéliser la situation de manière simple : un carton de masse $m$, dans un camion de longueur $L$ allant à une accélération constante $\gamma$ et estimer à quelle condition se produit le glissement du carton.
+    \item Estimer l'énergie nécessaire à briser la vaisselle dans le carton à partir de considérations simples.
+    \item Estimer l'énergie acquise par le carton avant le choc contre la paroi du camion.
+    \item Comparer à l'accélération typique d'un véhicule.
+\end{enumerate}
+
+On estimera par des ordres de grandeur pertinents les quantités physiques du problème.
+
+\end{exercise}
+
+\begin{solution}
+Dans le référentiel en accélération :
+    $$m\dv{\vec{v}}{t} = -mg\vec{e}_z + N\vec{e}_z + T\vec{e}_x - m\gamma\vec{e}_x$$
+Avec $N = mg$.
+
+Les lois de Coulomb donnent :
+\begin{itemize}
+    \item en statique : $v = 0$, $T = m\gamma < f_s N = f_s m g$ soit $\gamma < f_s g$ \\
+    \noindent il y a donc une première accélération critique qui est $\gamma_\text{c1} = f_s g$.
+    \item en dynamique : $T = f_d N$ donc $\ddot{x} = -\gamma + f_d g$
+\end{itemize}
+
+Donc on accumule une énergie $E = m L (\gamma - f_d g)$.
+
+On estime que l'énergie nécessaire à fracasser la vaisselle est celle donnée par une chute de $H = 1$~m.
+
+Donc $\gamma_\text{c2} = g\qty(f_sd + \dfrac{H}{L})$.
+
+ODG :
+
+
+L'angle de glissement limite pour un carton est de l'ordre de 10$^\circ$ donc $f \sim 0.2$ et $\gamma_\text{c1} \sim 0.2g$.
+
+$L = 5$ m. Donc $\gamma_\text{c2} = 0.4$.
+
+$\gamma = 0.3$ g pour un véhicule.
+
+Il faudra donc être prudent.
+
+
+\end{solution}
+
+% Niveau :      Spé
+% Discipline :  Méca
+% Mots clés :   Chaine, caténaire
+
+\begin{exercise}{Attention fragile ! (avec la brouette)}{2}{Spé}
+{Mécanique,Moment cinétique,Frottements}{bermu}
+
+
+\textsf{Question de cours :} Lois du frottement solide de Coulomb.
+
+Lors d'un déménagement, vous transportez vos cartons avec une brouette.
+Vous craignez que pencher trop la brouette fasse glisser ou se renverser le carton.
+
+\textsf{Question ouverte :} Estimez les angles à partir desquels le carton se renverse ou glisse.
+
+\paragraph{Indications}~\\
+
+On modélisere la situation de manière simple : un carton de masse $m$, de hauteur $H$ et de longueur de largeur identiques $L$, posé sur un plan incliné d'un angle $\theta$ en étudiant :
+\begin{enumerate}
+    \item Etudier la situation du glissement.
+    \item Etudier la situation du versage.
+\end{enumerate}
+
+On estimera par des ordres de grandeur pertinents les quantités physiques du problème.
+
+\end{exercise}
+
+\begin{solution}
+On a dans le référentiel penché :
+    $$m\dv{\vec{v}}{t} = m\vec{g} + N\vec{e}_y + T\vec{e}_x$$
+Avec $\vec{g} = -g(\cos\theta\vec{e}_y + \sin\theta\vec{e}_x)$
+
+Les lois de Coulomb donnent :
+\begin{itemize}
+    \item en statique : $v = 0$, $T = m g \sin\theta < f_s N = f_s m g \cos\theta$ soit $\tan\theta < f_s$ \\
+    \noindent il y a donc l'angle de glisement qui est $\theta_\text{g} = \tan^{-1}f_s$.
+\end{itemize}
+
+Pour le glissement, on applique le TMC au point inférieur du carton $A$.
+
+$$J = \dfrac{m}{HL^2} \iiint \dd{x}\dd{y}\dd{z} (x^2+y^2) = \dfrac{1}{3}m(L^2+H^2)$$
+
+$$\scr{M}^{Oz}_{T} = \scr{M}^{Oz}_{R} = \vec{0}$$
+
+$$\scr{M}^{Oz}_{m\vec{g}} = \dfrac{m}{HL^2z} \iiint \dd{x}\dd{y}\dd{z} \vec{r}\cross\vg = m\vec{\text{AG}}\cross\vec{g} = \dfrac{mg}{2}(L \cos\theta - H\sin\theta) =  -\dfrac{mg}{2}\sqrt{L^2+H^2}\sin(\theta-\theta_\text{b}),$$
+avec G le barycentre du système et $\theta_\text{b} = \tan^{-1}\dfrac{L}{H}$.
+
+Le système basculera donc si on passe l'angle de basculement $\theta_\text{b}$
+\end{solution}

@@ -1,0 +1,94 @@
+\begin{exercise}{Passage par un puits fini}{2}{Spé}
+{Quantique}{lelay}
+
+On considère une particule d'énergie $E > 0$ arrivant de $-\infty$ dans le potentiel suivant : Il s'agit d'une marche de potentiel descendante de profondeur $V$:
+
+\begin{center}
+    \begin{tikzpicture}
+    
+    \draw[->] (-5, 0) -- (5, 0);
+    \draw (5,0) node[below=2pt] {$x$};
+    \draw (-0.2,0) node[below=2pt] {$0$};
+    
+    \draw[->] (0, -3) -- (0, 1);
+    \draw (0,1) node[left=2pt] {$y$};
+    \draw (0,-2) node[left=2pt] {$-V$};
+    
+    
+    \draw[ultra thick] (-5, 0) -- (0, 0) -- (0, -2) -- (5 , -2);
+    
+    \end{tikzpicture}
+\end{center}
+
+\begin{questions}
+    \questioncours Ondes de matière, courant de probabilité
+    \question Discuter du comportement de la particule à l'arrivée sur la marche, dans le cas classique et dans le cas quantique.
+    \question On note $A_i$, $A_r$ et $A_t$ les amplitudes des ondes incidentes, réfléchies et transmises, respectivement. Exprimer $t = A_t/A_i$ et $r = A_r/A_i$ en fonction d'un nombre sans dimension que l'on appelera $n$.
+    \question Trouver $t'$ et $r'$, les coefficients de transmission et de réflexion pour le cas symétrique (particule arrivant de $+\infty$).
+
+    \uplevel{On considère maintenant que la particule arrive sur le potentiel suivant, qui est la succession de deux marches, l'une descendante et l'autre montante, de profondeur $V$, espacées de $L$.}
+    
+\begin{center}
+    % \begin{tikzpicture}
+    
+    % \draw[->] (-5, 0) -- (5, 0);
+    % \draw (5,0) node[below=2pt] {$x$};
+    % \draw (0,0) node[below=2pt] {$0$};
+    % \draw (-3,0) node[below=2pt] {$-L/2$};
+    % \draw (3,0) node[below=2pt] {$L/2$};
+    
+    % \draw[->] (0, 0) -- (0, 3);
+    % \draw (0,3) node[left=2pt] {$y$};
+    % \draw[] (-0.1, 2) -- (0.1, 2);
+    % \draw (0,2) node[left=2pt] {$V$};
+    
+    
+    % \draw[ultra thick] (-5, 2) -- (-3, 2) -- (-3, 0) -- (3 , 0) -- (3, 2) -- (5, 2);
+    
+    % \end{tikzpicture}
+    
+    \begin{tikzpicture}
+    
+    \draw[->] (-5, 0) -- (5, 0);
+    \draw (5,0) node[below=2pt] {$x$};
+    \draw (-0.2,0) node[below=2pt] {$0$};
+    \draw (3,0) node[above=2pt] {$L$};
+    
+    \draw[->] (0, -3) -- (0, 1);
+    \draw (0,1) node[left=2pt] {$y$};
+    \draw (0,-2) node[left=2pt] {$-V$};
+    
+    
+    \draw[ultra thick] (-5, 0) -- (0, 0) -- (0, -2) -- (3 , -2) -- (3, 0) -- (5, 0);
+    
+    \end{tikzpicture}
+\end{center}
+
+    \question En utilisant les résultats des questions précédentes, exprimer l'amplitude de l'onde transmise vers $+\infty$ à travers ce potentiel.
+
+    \question Établir l'expression du courant de probabilité pour $x > L$ en fonction de celui pour $x < 0$. Expliquer.
+    
+\end{questions}
+
+
+
+\end{exercise}
+
+\begin{solution}
+
+\begin{questions}
+    \questioncours Courant de probabilité : $\div J = -\partial_t \abs{\Psi}^2$ et $J = \frac{i\hbar}{2m}\qty(\Psi\grad\Psi^* - \Psi^* \grad \Psi)$
+    \question Classique : ca passe, quantique : proba d'être réfléchi.
+    \question En prenant $k$ à gauche et $q$ à droite, $n = k/q$, $t = 2n/(1+n)$ et $r = (n-1)(1+n)$
+    \question On remplace $n$ par $1/n$, $t = 2/(1+n)$ et $r = (1-n)(1+n)$
+    \question En appelant $A_c$ l'onde propageante dans la cavité et $A_c'$ l'onde contra propageante, on a les relations 
+    \begin{align}
+        A_c = t A_i + r' A_c' \qqtext{en $x=0$}\\
+        A_r = r A_i + t' A_c' \qqtext{en $x=0$} \\
+        A_t e^{ikL} = t' A_c e^{ikL} \qqtext{en $x=L$} \\
+        A_c' e^{-ikL}= r' A_c e^{ikL} \qqtext{en $x=L$}
+    \end{align}
+    On cherche $A_t$ et on  trouve $A_t = \frac{t't}{1 - r^2 e^{2ikL}}$
+    \question En notant $J_i$ le courant en $x < 0$, on a $J_t = J_i \frac{1}{1 + m\sin^2(kL)}$, c'est une fonction d'Airy. En effet, on a un Fabry-Pérot avec $m = 4r^2/(t t') = 4(1-n)^2/n$. Si pas de marche, $n\rightarrow 1$, $m\rightarrow 0$ et $J_t = J_i$. Sinon on a une transmission que quand ça résonne
+\end{questions}
+\end{solution}

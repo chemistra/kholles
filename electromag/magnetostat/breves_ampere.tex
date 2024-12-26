@@ -1,0 +1,77 @@
+\begin{exercise}{Héliosphère solaire}{0}{Spé}
+{Electromagnetisme, Magétostatique, Theoreme d'ampère, Plaque de courant}{bermudez}
+
+\begin{questions}
+    \questioncours Énoncé (succint) du théorème d'Ampère, version locale et intégrale. Comment passe-t-on de l'un à l'autre ?
+    \uplevel{Le soleil possède des structures apparentées à de très fines couches de courant dans lesquelles sont dissipées l'énergie issue de la fusion nucléaire de l'étoile. On se propose de les modéliser par un plan en $z = 0$, infiniment fin, ayant un courant surfacique $\vec{j}_s = j_s \ve_x$.}
+    \question Trouver l'expression du champ magnétique $\vec{B}$ engendré par le plan de courant.
+    \question On considère maintenant la quantité $u = \dfrac{\vec{B}^2}{2\mu_0}$, qui a la dimension d'une énergie par unité de volume. Quelle est l'énergie engendrée par le plan de courant ?
+\end{questions}
+
+\end{exercise}
+
+
+\begin{exercise}{Fil électrique}{0}{Spé}
+{Electromagnetisme, Theoreme d'Ampère}{bermudez}
+
+\begin{questions}
+    \questioncours Énoncé (succint) du théorème d'Ampère, version locale et intégrale. Comment passe-t-on de l'un à l'autre ?
+    \question On considère un cylindre de longueur infinie et de rayon $R$ parcouru par un courant $I$ uniformément réparti sur sa section. Trouver l'expression du champ magnétique $\vec{B}$ engendré par le fil, pour $r \leq R$ et $r \geq R$.
+    \question On considère maintenant la quantité $u = \dfrac{\vec{B}^2}{2\mu_0}$, qui a la dimension d'une énergie par unité de volume. Quelle est l'énergie contenue dans un cylindre de rayon $r \leq R$ et de hauteur $H$ ? Même question pour $r \geq R$.
+\end{questions}
+
+\end{exercise}
+
+
+\begin{exercise}{Bobine}{0}{Spé}
+{Electromagnetisme, Theoreme d'Ampère}{bermudez}
+
+\begin{questions}
+    \questioncours Énoncé (succint) du théorème d'Ampère, version locale et intégrale. Comment passe-t-on de l'un à l'autre ?
+    \uplevel{On considère un solénoïde modélisé comme un ensemble de boucles de courant de rayon $R$ parcourues d'un courant $I$ disposées sur un même axe de révolution avec une densité linéique $n_\ell$. On néglige les effets de bord.}
+    \question Trouver l'expression du champ magnétique $\vec{B}$ engendré par le solénoïde, pour $r \leq R$ et $r \geq R$.
+    
+    \question Rappeler la définition de l'inductance $L$ en électronique en termes du champ magnétique $\vB$ et du courant $I$ et déduire de la question précédente l'inductance $L$ du solénoide. La calculer pour une bobine typique de TP $n_\ell = 10^4$ tours/m.
+    \question On considère maintenant la quantité $u = \dfrac{\vec{B}^2}{2\mu_0}$, qui a la dimension d'une énergie par unité de volume. Quelle est l'énergie contenue dans un cylindre de rayon $r \leq R$ et de hauteur $H$ ? Même question pour $r \geq R$.
+    \question Retrouver l'expression usuelle de l'énergie emmagasinée par une inductance.
+\end{questions}
+
+\paragraph{Données}
+
+\begin{itemize}
+    \item susceptibilité magnétique du vide $\mu_0 \simeq 4\pi \times 10^{-7}$ H$\cdot\text{m}^{-1}$.
+\end{itemize}
+
+\end{exercise}
+
+\newpage
+
+\begin{exercise}{Câble coaxial}{2}{Spé}
+{Electromagnetisme, Theoreme d'Ampère}{bermudez}
+
+\begin{questions}
+    \questioncours Énoncé (succint) du théorème d'Ampère, version locale et intégrale. Comment passe-t-on de l'un à l'autre ?
+    \uplevel{On considère un câble coaxial constitué de deux cylindres concentriques de longueur infinie et de rayons $R_1$ et $R_2 > R_1$. La région intérieure $r < R_1$, l'âme, est conductrice et est parcourue par un courant $I$ réparti uniformément sur sa section. La région $R_1 < r < R_2$, la gaine, est isolante et un courant $-I$ est réparti à sa surface en $r = R_2$.}
+    \question  Trouver l'expression du champ magnétique $\vec{B}$ engendré par le courant $I$ dans la gaine, l'âme et à l'extérieur du câble coaxial.
+    \question Rappeler la définition de l'inductance $L$ en électronique en termes du champ magnétique $\vB$ et du courant $I$ et déduire de la question précédente l'inductance de ligne $\Lambda$ (par unité de longueur du câble). La calculer pour un câble BNC usuel.
+    \question On considère maintenant la quantité $u = \dfrac{\vec{B}^2}{2\mu_0}$, qui a la dimension d'une énergie par unité de volume. Quelle est l'énergie contenue dans  une longueur $H$ de câble coaxial ?
+    \question Retrouver l'expression usuelle de l'énergie emmagasinée par une inductance.
+\end{questions}
+
+\paragraph{Données}
+
+\begin{itemize}
+    \item susceptibilité magnétique du vide $\mu_0 \simeq 4\pi \times 10^{-7}$ H$\cdot\text{m}^{-1}$.
+\end{itemize}
+
+\end{exercise}
+
+\begin{solution}
+    \begin{questions}
+        \question ~
+        \question Âme : $B(r) = \dfrac{\mu_0 I}{2\pi}\dfrac{r}{R_1^2}$, Gaine : $B(r) = \dfrac{\mu_0 I}{2\pi}\dfrac{1}{r}$, Extérieur : $B = 0$.
+        \question $\cal{E}_\text{m} = \dfrac{\mu_0 I^2}{2\pi} L\qty(\dfrac{1}{4} + \ln\dfrac{R_2}{R_1})$
+        \question D'où $\Lambda = \dfrac{\mu_0}{2\pi}\qty(\dfrac{1}{4} + \ln\dfrac{R_2}{R_1})$ \\
+        AN : $R_1 = 2$ mm, $R_2 = 4$ mm, $\Lambda \sim 10^{-6}$ H$\cdot\text{m}^{-1}$.
+    \end{questions}
+\end{solution}

@@ -1,0 +1,46 @@
+\begin{exercise}{Effet Ramsauer-Townsend}{-1}{Spé}
+{}{mines}
+
+\paragraph{Question de cours} \textsf{(15 minutes préparation, 10 minutes de passage) \textbf{:}}
+
+Transfert de chaleur conductif : Principe et applications.
+
+\paragraph{Exercice} \textsf{(15 minutes préparation, 15 minutes de passage) \textbf{:}}
+
+On considère une particule quantique de masse $m$ et d'énergie $E > 0$ provenant de $-\infty$ et  se déplaçant dans le sens de $x$ croissants, arrivant sur un puits de potentiel de largeur $a$ et de profondeur $V_0$.
+
+
+\begin{center}
+    \begin{tikzpicture}
+    
+    % \draw (0,0) node[below=2pt] {$0$};
+    \draw[->, black!30] (-5, 0) -- (5, 0);
+    \draw (5,0) node[below=2pt] {$x$};
+    % \draw[->, black!30] (0, 0) -- (0, 3);
+    % \draw (0,3) node[right=2pt] {$V(x)$};
+    
+    \draw[thick, dashed] (-5, 0.5) -- (5, 0.5);
+    \draw (5,0.5) node[above=2pt] {$E$};
+    
+    \draw[thick] (-5,  0) -- (-1,  0);
+    \draw[thick] (-1,  0) -- (-1, -1);
+    \draw[thick] (-1, -1) -- ( 1, -1);
+    \draw[thick] (1 , -1) -- ( 1,  0);
+    \draw[thick] (1 ,  0) -- ( 5,  0);
+    
+    \draw[<->] (-1, -1.2) -- (1, -1.2);
+    \draw (0,-1.2) node[below=2pt] {$a$};
+    
+    \draw (1,-1) node[right=2pt] {$-V_0$};
+    
+    \end{tikzpicture}
+\end{center}
+
+\begin{questions}
+\question Justifier l'existence d'une probabilité de réflexion de la particule. Comparer à la situation correspondante en mécanique classique.
+
+\question Exprimer le coefficient de réflexion $R$ du puits en fonction de $a$, $E$, $V_0$. Pour quelles énergies a-t-on une résonance en réflexion ?
+\end{questions}
+
+
+\end{exercise}

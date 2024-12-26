@@ -1,0 +1,32 @@
+\begin{exercise}{Machine thermique non stationnaire}{2}{Sup, spé}
+{Thermodynamique}{lelay}
+
+On considère un moteur ditherme $M$, en contact avec deux réservoirs à la température $T_1$ et $T_2$ avec $T_1 > T_2$.
+
+\begin{questions}
+    \questioncours Qu'est ce qu'une machine thermique ?
+    \question Dans le cas présent quelle est la source chaude ? Froide ? Faire un schéma en précisant le sens des échanges.
+    \question On considère maintenant que les réservoirs sont \emph{finis}. Qu'est-ce que cela implique ? 
+    \uplevel{Les températures initiales des réservoirs sont notées $T_{10}$ et $T_{20}$. On considère que le temps de variations de température des réservoirs est grand devant le temps d'un cycle de la machine. On suppose que les réservoirs sont de même nature et ont une capacité thermique $c$.}
+    \question Le moteur peut-elle fonctionner un temps infini ? Pourquoi ?
+    \question Exprimer le travail total fourni par le moteur en fonction de $c$, $T_{10}$, $T_{20}$ et $T_f$.
+    \question Montrez que, dans le cas isentropique, on a l'identité $T_1T_2 = K$ avec $K$ une constante. Quel est alors le travail total fourni ?
+    \question Montrez que cette situation est la plus favorable.
+\end{questions}
+
+\end{exercise}
+
+\begin{solution}
+\begin{questions}
+    \questioncours Qu'est ce qu'une machine thermique ?
+    \question $T_1$ chaude, $T_2$ froide, $Q_1 > 0$, $Q_2 < 0$. Et évidemment $W < 0$ (moteur).
+    \question Capacité thermique $\neq \infty$ : la source froide va se réchauffer et la source chaude se refroidir
+    \uplevel{Les températures initiales des réservoirs sont notées $T_{10}$ et $T_{20}$. On considère que le temps de variations de température des réservoirs est grand devant le temps d'un cycle de la machine. On suppose que les réservoirs sont de même nature et ont une capacité thermique $c$.}
+    \question Non, $T_1$ décroît, $T_2$ croît et à la fin on aura $T_1 = T_2 = T_\text{f}$ und es gibt keine moteur monotherme.
+    \question D'après l'approximation, on a toujours $W = -Q_1-Q_2$ et donc $W_\text{tot} = \sum W = -\sum Q_1 - \sum Q_2$. Or d'après le premier principe appliqué à chaque réservoir, $Q_1 = -c\dd{T_1}$ et $Q_2 = -c\dd{T_2}$ d'où $W_\text{tot} = c\qty(\int \dd{T_1} + \int\dd{T_2}) = c(2T_\text{f} - T_{10} - T_{20})$
+    
+    Remarque : Dans le "meilleur" des cas on extrait un max de travail (en valeur absolue) quand $W$ est minimum, i.e. $T_\text{f} = T_{20}$, et alors $\abs{W_\text{tot}^\text{max}} = c(T_{10}-T_{20})$. Bien sûr c'est impossible, ça voudrait dire que la source froide ne se réchauffe pas alors que la source chaude se refroidit, i.e. $Q_2  =0$, c'est en fait un moteur monotherme déguisé ! Au contraire, dans le "pire" des cas on a $W_\text{tot} = 0$ i.e. $T_\text{f} = (T_{10}+T_{20})/2$ ce qui correspond à la situation où les deux réservoirs sont en contact thermique simple (et évidemment dans cette situation aucun travail n'est fourni). On a donc $T_\text{f}$ qui est plus proche de $T_{20}$ que de $T_{10}$ : nécessairement la source chaude se refroidit plus vite que la source froide ne se réchauffe.
+    \question Dans le cas isentropique, on écrit $\Delta S = -Q_1/T_1-Q_2/T_2 = 0$ (sur un cycle). On a alors $\dd{T_1}/T_1 + \dd{T_2}/T_2 = 0$ et donc $T_1T_2 = K$. On en déduit $T_\text{f} = \sqrt{T_{10}T_{20}}$. La moyenne géométrique étant toujours plus petite que la moyenne arithmétique, ça marche. On en déduit $\abs{W_\text{tot}} = \sqrt{T_{10}} - \sqrt{T_{20}}$
+    \question Si $S_\text{cree}$ sur un cycle est positive, alors $\dd{T_1}/T_1 + \dd{T_2}/T_2 > 0$, $T_1T_2$ croît et $T_\text{f} > \sqrt{T_{10}T_{20}}$.
+\end{questions}
+\end{solution}

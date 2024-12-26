@@ -1,0 +1,62 @@
+% Niveau :      PC
+% Discipline :  Electromagnétisme
+%Mots clés :    Equations de Maxwell, Debye-Hückel
+
+\begin{exercise}{Modèle de Debye--Hückel}{3}{Spé}
+{\'Electromagnétisme,\'Electrostatique,Statique des fluides}{bermu}
+
+\begin{questions}
+    \questioncours \'Electrostatique, théorème de Gauss et équation de Poisson.
+\begin{EnvUplevel}
+Afin de modéliser le champ électrique dans une solution ionique, Debye et Hückel ont considéré que la solution était un gaz d'ions $j$ de charge $z_j e$ ($z_j$ étant la valence de l'ion $j$) et de densité $n_j(\vr)$.
+\end{EnvUplevel}
+    \question Considérant que le gaz est à l'équilibre canonique à la température $T$, donner une relation entre la densité des ions $j$ du gaz $n_j(\vr)$, le potentiel électrique $V(r)$ et la température $T$. On utilisera la densité caractéristique $n_j^0$ (c'est la concentration totale en ion $j$).
+\uplevel{\'Etutions l'impact des ions en solution sur une charge test $q$, placée à l’origine d’un système de coordonnées sphériques.}
+    \question Expliquer qualitativement l'effet de l'introduction de $q$ dans le nuage ionique.
+    \question Quel est le lien entre la densité des ions $n_j$ et le potentiel $V(\vr)$ ? En déduire l'équation suivante, dite de Poisson--Boltzmann : \vspace{-1em}
+    $$\grad^2 V + \dfrac{1}{\varepsilon_0} \sum_j z_j e n_j^0 e^{-\dfrac{z_j e V}{k_\textsc{b}T}}  = 0.$$
+    \question Cette équation n'étant pas solvable analytiquement dans le cas le plus général, Debye et Hückel eurent l'idée de considérer des concentrations faibles. Interpréter qualitativement ce que cela signifie et linéariser la relation précédente sous la forme
+    $$\qty(\grad^2 - {\ell_\textsc{d}}^{-2})V = 0,$$
+    en exprimant la longueur de Debyde $\ell_\textsc{d}$ en fonction des données du problème et de la force ionique\vspace{-.5em}
+    $$I = \dfrac{1}{2}\sum_j n_j^0 {z_j}^2.$$
+    \question Résoudre cette équation en 1D et comparer au champ qu'aurait une charge suele dans le vide. Interpréter la notion d'\emph{écrantage ionique} et le sens physique de $\ell_\textsc{d}$ dans ce cas. Dans quel cas peut-on ainsi négliger la courbure de l'espace ? Est-ce valide si la charge test $q$ est un ion de rayon $R$ (donner un ordre de grandeur de $R$) ?
+    \question Résoudre l'équation pour l'ion de rayon $R$. Quelle est la différence $V'$ entre le potentiel écranté et le potentiel non-écranté.
+    \question Pour quel rayon $R$ le modèle est valide ?
+\end{questions}
+
+\plusloin[Lien avec la chimie]
+L'excès de potentiel chimique $\mu^\textsc{xs}$ occasionné par les interactions électrostatiques de ce gaz s'écrit comme la somme sur toutes les charges de la contribution du potentiel des autres ions et on en en déduit le coefficient de non idéalité $\gamma$
+$$\mu^\textsc{xs} = \sum_j z_j e\ \underset{r\rightarrow 0}{\lim}V'(r) = RT\ln\gamma.$$
+
+\paragraph{Données :}
+\begin{itemize}
+    \item charge élémentaire $e = 1,602\times 10^{-19}$ C,
+    \item constante de Boltzmann $k_\textsc{b} = 1,381\times 10^{-23}$ J$\cdot$K$^{-1}$,
+    \item permittivité du vide $\varepsilon_0 = 8,854\times 10^{-12}$ F$\cdot$m$^{-1}$,
+    \item expression du laplacien en coordonées sphériques
+    $$\grad^2\varphi = \dfrac{1}{r^2}\pdv{}{r}\qty(r^2 \pdv{\varphi}{r}), \qqtext{pour résoudre, poser} \psi(r) = r \varphi(r).$$
+\end{itemize}
+
+\end{exercise}
+
+\begin{solution}
+\begin{questions}
+    \questioncours Formule de Coulomb, équation intégrale du théorème de Gauss, équation de Maxwell--Gauss, équation de Poisson.
+    \question La statique des fluides donne $\grad p = -ez_j n_j\grad{V}$ or $p = n_jk_\textsc{b}T$ donc
+    $$\grad\ln n_j = -\dfrac{ez_j}{k_\textsc{b}T}\grad V.$$
+    et à une constante près donc
+    $$n_j = n_j^0 \exp\qty(-\dfrac{ez_jV}{k_\textsc{b}T}).$$
+    C'est tout simplement la loi de Boltzmann.
+    \question Supposons $q>0$, les charges $-$ vont être attirées vers $q$, les charges $+$ repoussées par $q$, cela créé un potentiel qui compense celui de $q$.
+    
+    En utilisant l'équation de Poisson
+    $$\grad^2 V = -\dfrac{1}{\varepsilon_0}\sum_j e z_j n_j$$
+    on trouve le Poisson--Boltzmann.
+    \question La linérarisation donne
+    $$\grad^2 V = \dfrac{1}{\varepsilon_0 k_\textsc{b} T}\sum_j e^2 {z_j}^2 V$$
+    et donc on identifie
+    $$\ell_\textsc{d} = \sqrt{\dfrac{\varepsilon_0k_\textsc{b}T}{2I e^2}}.$$
+    $\ell_\textsc{d}$ est la longueur au delà de laquelle toute contribution au potentiel est écrantée. $I$ est l'équivalent d'une énergie liée à la valence des ions.
+    \question On obtient
+\end{questions}
+\end{solution}

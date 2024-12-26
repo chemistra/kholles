@@ -1,0 +1,51 @@
+% Niveau :      PCSI
+% Discipline :  Mécanique céleste
+%Mots clés :    Astronaute
+
+\begin{exercise}{Équilibre d'un jerrican}{2}{Sup}
+{Statique des fluides}{lelay}
+
+In étudie ici un l'équilibre d'un jerrican d'eau, c'est à dire un conteneur parallélépipèdique de hauteur $H$ et de section $A$ muni d'un petit robinet en bas et d'une grosse ouverture munie d'un bouchon en haut.
+\begin{questions}
+    \question On remplit le jerrican par l'ouverture du haut et on le vide par le robinet. Pourquoi est-il important de laisser le bouchon ouvert ?
+    \question On suppose dans un premier temps que le jerrican est complètement rempli en eau par le bouchon, et qu'il n'y a pas d'air à l'intérieur. On ferme ensuite le bouchon.
+    \begin{parts}
+        \part Montrer que l'eau va couler du robinet si et seulement si la hauteur du jerrican dépasse une certaine hauteur notée $L$.
+        \part Représenter le profil de pression dans le jerrican est fonction de la hauteur en considérant $H > L$
+        \part Qu'y a-t-il au dessus de l'eau lorsque $H > L$ ? Quel phénomène a été négligé ?
+    \end{parts}
+    \question On considère maintenant que le jerrican a été rempli partiellement, et qu'un volume $V_0$ d'air se trouve à l'intérieur. On referme le bouchon et on ouvre le robinet.
+    \begin{parts}
+        \part Que va-t-il se passer ?
+        \part À un instant quelconque $t$ il y a un volume $V_t$ d'air dans le jerrican. Quelle est la pression $P_t$ de l'air dans le jerrican ?
+        \part Au bout d'un certain temps l'écoulement s'arrête. Le volume d'air est alors $V_f$ et la pression de l'air $P_f$. Exprimer l'équation d'équilibre statique en fonction de $V_f$, $L$ et de la géométrie du jerrican.
+        \part Résoudre cette équation. Combien y a-t-il de solutions ? Quels sont leurs signes ? Les interpréter physiquement.
+        \part A quelle condition sur $V_0$ le jerrican est-il entièrement vidé à la fin ? 
+        \part Donner $V_f$ dans le cas $H = L$
+    \end{parts}
+\end{questions}
+
+\end{exercise}
+
+\begin{solution}
+
+\begin{questions}
+    \question Sinon ça coule plus au bout d'un moment.
+    \question On suppose dans un premier temps que le jerrican est complètement rempli en eau par le bouchon, et qu'il n'y a pas d'air à l'intérieur. On ferme ensuite le bouchon.
+    \begin{parts}
+        \part Statique des fluides de base, c'est l'expérience de torricelli, $L = P_0/\rho g$
+        \part zéro en haut, et ça croit linéairement de $0$ à $P_0$ avec une pente $\rho g$
+        \part Du vide, mais on a négligé le fait qu'à basse pression l'eau change d'état donc c'est pas strictement du vide.
+    \end{parts}
+    \question On considère maintenant que le jerrican a été rempli partiellement, et qu'un volume $V_0$ d'air se trouve à l'intérieur. On referme le bouchon et on ouvre le robinet.
+    \begin{parts}
+        \part Ca va couler puis s'arrêter
+        \part $P_t = P_0 \frac{V_0}{V_t}$, loi de Boyle-Mariotte
+        \part $\frac{V_f^2}{L} + \qty(1-\frac{H}{L}) V_f - V_0 =0$
+        \part Équation du second degré au déterminant positif : 2 solutions. Une toujours positive : c'est celle qu'on cherche. Une toujours négative : Elle utilise des volumes négatifs et des pressions négatives, elle n'est donc pas physique.
+        \part Jerrican vidé a la fin : $V_f > AH$. On trouve $V_0 > AH$, donc ça n'arrive jamais
+        \part C'est $\sqrt{V_0 A H}$
+    \end{parts}
+\end{questions}
+
+\end{solution}

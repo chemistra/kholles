@@ -1,0 +1,64 @@
+% Niveau :      PCSI - PC
+% Discipline :  Elec
+% Mots clés :   Elec, Ordre 2
+
+\begin{exercise}{Circuit avec interrupteur}{2}{Sup,Spé}
+{\'Electrocinétique, Circuits d'ordre 2}{lelay,mines}
+
+On cherche à décrire le circuit suivant :
+\begin{circuit}
+      \draw
+      node [ground] at (0,0) {}
+      to [short] (0,1)
+      to [vsource, v^>=$E$] (0,3) 
+      to [short] (0,4)
+      to [nos, l=$K$] (2,4)
+      to [C, l_=$C$, *-*] (2,2)
+      to [R, l_=$R$] (2,0)
+      node [ground]{}
+      (2,4) to [short] (5,4)
+      to [R, l^=$R$, -*] (5,2)
+      to [C, l^=$C$] (5,0)
+      node [ground]{}
+      (2,2) to [short, i_=$i$] (3,2) 
+      to [R, l^=$R$] (5,2);
+\end{circuit}
+Initialement, les condensateurs $C$ sont déchargés.
+
+\begin{questions}
+    \questioncours Donne la loi reliant la tension aux bornes d'un condensateur à la charge qu'il contient.
+    \question On considère le circuit ci-dessus. À $t = 0$, on ferme l'interrupteur $K$. 
+    \question Donner le circuit équivalent à $t = 0^+$ et à $t = \infty$.
+    \question En déduire $i(t = 0^+)$ et $i(t = \infty)$. Justifier qu'il y a un instant $t_0$ pour lequel $i(t_0) = 0$.
+    \question Donner l'équation différentielle vérifiée par $i$ et en déduire $i(t)$.
+    \question Donner $t_0$.
+\end{questions}
+\end{exercise}
+
+
+\begin{solution}
+
+
+Par symétrie, la tension aux bornes des deux condensateurs est la même, notée $u$ (si pas convaincu: écrire le système et vérifier que $u_{C_1}-u_{C_2} = 0$).
+
+Du coup (loi des mailles) : la tension aux bornes des deux résistances sur le coté est $u-E$.
+
+On a donc (loi des mailles sur une maille intérieure) : $u + Ri + u-E = 0$ et (loi des noeuds sur un des noeuds) : $i = \frac{u-E}{R} + C\dv{u}{t}$. On en déduit immédiatement que $u = (E-Ri)/2$ et donc que $i$ satisfait $\dv{i}{t} + \frac{3i}{\tau} = \frac{-1}{\tau}\frac{E}{R}$, donc $i(t) = \frac{E}{R}-\frac{4}{3}\frac{E}{R}e^{3t/\tau}$ donc $t_0 = \frac{\tau}{3}\ln\qty(\frac43)$
+\begin{circuit}
+      \draw
+      node [ground] at (0,0) {}
+      to [short] (0,1)
+      to [vsource, v^>=$E$] (0,3) 
+      to [short] (0,4)
+      to [short] (2,4)
+      to [C, v_<=$u$] (2,2)
+      to [R, v_>=$u - E$] (2,0)
+      node [ground]{}
+      (2,4) to [short] (5,4)
+      to [R, v^>=$u - E$] (5,2)
+      to [C, v^<=$u$] (5,0)
+      node [ground]{}
+      (2,2) to [R, v^<=$Ri$] (5,2);
+\end{circuit}
+
+\end{solution}

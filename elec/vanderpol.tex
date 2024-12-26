@@ -1,0 +1,53 @@
+% Niveau :      PCSI - PC
+% Discipline :  Elec
+% Mots clés :   Elec, Ordre 2
+
+\begin{exercise}{Oscillateur de Van Der Pol}{1}{Sup,Spé}
+{\'Electrocinétique, Circuits d'ordre 2}{lelay}
+
+On considère le circuit suivant :
+\begin{circuit}
+      \draw (0,0)
+      to [C, l=$C$] (0,2)
+      to [L, l_=$L$] (3,2)
+      to [short] (3,0)
+      to [vsourcesin, l^=$T$] (.5,0) {}
+      to [short, i^<=$i$] (0,0) ;
+\end{circuit}
+où $T$ est un composant ayant comme loi de courant
+$$u_\textsc{t}(i) = -R_0 i_0 \qty[\dfrac{i}{i_0} - \dfrac{1}{3}\qty(\dfrac{i}{i_0})^3].$$
+
+\begin{questions}
+    \questioncours Donner les conditions nécessaires à vérifier pour pouvoir passer en notation complexe. Est-il possible de le faire ici ?
+    \question Tracer la caractéristique de $T$. Comment qualifier ce composant ?
+    \question Montrer que l'équation différentielle vérifiée par $i$ peut se mettre sous la forme
+    $$\dv[2]{i}{t} + \dfrac{\omega_0}{Q}\qty[\qty(\dfrac{i}{i_0})^2 - 1]\dv{i}{t} + {\omega_0}^2 i = 0$$
+    \question Discuter de l'évolution du système lorsque $i$ est petit / grand devant $i_0$. De façon générale, que va-t-il se passer ?
+    \question Que vaut $\En$, la quantité d'énergie contenue dans la bobine et le condensateur ? A votre avis, est-elle conservée ?
+    \question On définit $\ev{\En} = \dfrac{1}{T} \displaystyle\int_0^T\En(t)\dd{t}$. Que représente cette quantité ?
+    \question On considère une solution périodique $i(t) = \sum_{k=0}^N I_k \cos(k\omega t)$. Montrer qu'alors $\ev{\En}$ est constant (et ne diverge pas à une certaine condition à préciser sur les $I_k$) et donner sa valeur. 
+\end{questions}
+\end{exercise}
+
+\begin{solution}
+
+\begin{questions}
+    \questioncours Faut que tout soit linéaire, $T$ ne l'est aps donc non. 
+    \question La focntion $u = f(i)$ est comme $-i$ au voisinage de 0 et comme $i^3$ à l'infini.
+    \question Il faut faire une loi des mailles et dériver, on tombe direct sur le bon truc.
+    \question POUR LES SUPS : leur dire d'oublier le terme en dérivée seconde pour cette question. POUR LES SPES : faire une analogie avec l'oscillateur harmonique amorti. Quand $i$ est petit (devant $i_0$), on a un terme de frottement négatif, donc $i$ est amplifié et va grandir exponentiellement. Quand $i$ est grand (devant $i_0$), le terme de frottement est positif et augmente avec $\abs{i}$ : $i$ va décroître exponentiellement. Quand $i$ est de l'ordre de $i_0$, on a presque un oscillateur harmonique.
+    \question $E_n = \frac12 Li^2 + \frac12 Cu^2$ et n'a aucune raison particulière d'être conservée (surtout vu la question d'avant, le terme de frottement est important).
+    \question C'est la moyenne temporelle de l'énergie
+    \question L'idée est que si $i$ est périodique on s'en sort avec l'orthogonalité des fonctions trigo.
+    \begin{align*}
+        \ev{i^2} &= \ev{\qty(\sum_{k=0}^N I_k \cos(k\omega t))^2} \\
+            &= \sum_{k=0}^N\sum_{p=0}^N I_k I_p \ev{\cos(k\omega t)\cos(p\omega t)} \\
+         &= \sum_{k=0}^N I_k^2 \ev{\cos^2(k\omega t)} + \sum_{k=0}^N\sum_{p\neq k} I_k I_p \ev{\cos(k\omega t)\cos(p\omega t)} \\
+        &= \frac12\sum_{k=0}^N I_k^2 + 0
+    \end{align*}
+    Ce qui ne diverge pas si $(I_k)$ est de carré sommable. On obtient 
+    \begin{align*}
+        \ev{E_n} &= \frac14 L \sum_k I_k^2 + \frac14 C \sum_k \qty(\frac{I_k}{k})^2
+    \end{align*}
+\end{questions}
+\end{solution}

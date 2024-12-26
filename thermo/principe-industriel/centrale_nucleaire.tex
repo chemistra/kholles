@@ -1,0 +1,42 @@
+\begin{exercise}{Centrale nucléaire du Blayais  }{2}{Sup, spé}
+{Thermodynamique, Machines thermiques, Premier principe industriel}{bermudez,uhl2019-1}
+
+La centrale nucléaire du Blayais, suitée dans l'estuaire de la Gironde, à 50 km en aval de Bordeaux, est constituée de 4 réacteurs à eau pressurisée (REP --- 70 bars, 350$^\circ$ C), refroidis par l'eau de l'estuaire qui est pompée via des canalisations sous-marines.
+
+\textsf{Question ouverte : } \`A l'aide des données suivantes :
+\begin{questions}
+    \question Estimez le rendement de la centrale nucléaire. Commenter.
+    \question Comparez ce rendement avec celui de Carnot ainsi que le rendrement à puissance maximale $\eta_\text{pmax} = 1 - \sqrt{T_\text{f}/T_\text{c}}$.
+    \question Estimez l'échauffement de l'eau de l'estuaire en aval de la centrale. La législation impose un échauffement maximal de $+3^\circ$ C ; est-elle respectée ?
+\end{questions}
+
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+\begin{table}[H]
+\begin{tabularx}{\linewidth}{llCCCrrr}
+\multicolumn{1}{c}{\multirow{2}{*}{\textsfbf{\begin{tabular}[c]{@{}c@{}}Nom du\\ réacteur\end{tabular}}}} & \multicolumn{1}{c}{\multirow{2}{*}{\textsfbf{Modèle}}} & \multicolumn{3}{c}{\textsfbf{Capacité {[}MW{]}}}                                                                                      & \multicolumn{1}{c}{\multirow{2}{*}{\textsfbf{\begin{tabular}[c]{@{}c@{}}Début\\ constr.\end{tabular}}}} & \multicolumn{1}{c}{\multirow{2}{*}{\textsfbf{\begin{tabular}[c]{@{}c@{}}Raccord\\ au réseau\end{tabular}}}} & \multicolumn{1}{c}{\multirow{2}{*}{\textsfbf{\begin{tabular}[c]{@{}c@{}}Mise en\\ service\end{tabular}}}} \\
+\multicolumn{1}{c}{}                                                                                    & \multicolumn{1}{c}{}                                 & \textsfbf{thermique} &\textsfbf{brute} & \textsfbf{nette} & \multicolumn{1}{c}{}                                                                                  & \multicolumn{1}{c}{}                                                                                      & \multicolumn{1}{c}{}                                                                                            \\ \hline
+Blayais-1                                                                                            & CP1                                                  & 2 785                                         & 951                                      & 910                                      & janvier 1977                                                                                          & juin 1981                                                                                                 & déc. 1981                                                                                                   \\
+Blayais-2                                                                                              & CP1                                                  & 2 785                                         & 951                                      & 910                                      & janvier 1977                                                                                          & juillet 1982                                                                                              & fév. 1983                                                                                                    \\
+Blayais-3                                                                                              & CP1                                                  & 2 785                                         & 951                                      & 910                                      & avril 1978                                                                                            & août 1983                                                                                                 & nov. 1983                                                                                                   \\
+Blayais-4                                                                                              & CP1                                                  & 2 785                                         & 951                                      & 910                                      & avril 1978                                                                                            & mai 1983                                                                                                  & oct. 1983                                                                                                      
+\end{tabularx}
+\end{table}
+
+\paragraph{Données :} débit moyen annuel de la Gironde à Blayes $\SI{950}{}$ m$^3\cdot$s$^{-1}$.
+
+\end{exercise}
+
+\begin{solution}
+
+    \begin{questions}
+        \question $\eta = \dfrac{\text{P brute}}{\text{P thermique}} = 35\%$
+        \question Si on prend $T_f = 25^\circ$ C, l'eau de la Gironde en hiver, et $T_c = 350^\circ$ soit un rendement de Carnot de 52\% et de Curzon de 35\%
+        \question La puissance envoyée dans l'eau est environ $P_f = 4\times (2785 - 951) = 7,4$ GW. On a donc
+        $$\delta Q = \dd{m} c_m \Delta T \qqtext{soit} \Delta T = \dfrac{P_f}{D_v \rho c_m}$$
+
+        AN :         $\Delta T = 1,8^\circ$ C.
+
+        On peut donner $c = 4,18$ J/g/K si il y a un trou de mémoire
+    \end{questions}
+\end{solution}

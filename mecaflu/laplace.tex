@@ -1,0 +1,41 @@
+% Niveau :      PC
+% Discipline :  Mécaflu
+%Mots clés :    Viscosité, Couche limite, Equation de Blasius
+
+\begin{exercise}{\'Equation des marées de Laplace}{4}{Spé}
+{Mécanique des fluides, Mécanique en référentiel non galiléen, Fluide géostrophique}{bermu}
+
+Le but de cet exercice est d'aborder le mouvement des océans à la surface de la Terre à l'échelle globale et l'effet des marées. On se place dans le référentiel terrestre en rotation à la vitesse $\vOm = \Omega\ve_z$. On se place en coordonnées sphériques colatitude $\theta\in\qty[0,\pi]$ -- longitude $\varphi\in\qty[0,2\pi]$.
+
+\DeclareNonDimensionalNumber{R}{o} %Rossby
+
+\begin{questions}
+    \questioncours Quelles sont les différences forces volumiques qui s'appliquent à un fluide à la surface de la Terre ? Exprimer notamment le terme de pesanteur sous forme d'un potentiel $\Phi(\vr)$ dont on donnera l'expression.
+    \question En estimant la valeur du nombre de Reynolds $\ReN$ et du nombre de Rossby
+    $$\RoN = \dfrac{v}{2L\Omega\cos\theta},$$
+    justifiez que l'équation de Navier--Stockes puisse se simplifer ainsi
+    $$\pdv{\vv}{t} + 2\vOm\cross\vv = -\grad P, \qquad P = \dfrac{p}{\rho} + \Phi(r) + \varphi(\theta,\phi),$$
+    où $\Phi(r)$ et $\varphi(\theta,\phi)$ sont des potentiels dont on donnera la cause physique.
+\begin{EnvUplevel}
+On considère que la Terre est une sphère de rayon $R$ sur laquelle en l'absence de forces de marées il y a une hauteur $H$ d'océans. On appelle $\zeta(\theta,\phi,t)$ la hauteur de la mer par rapport à l'équilibre telle que
+$$v_r|_{r = R + H} = \pdv{\zeta}{t}.$$ 
+\end{EnvUplevel}
+    \question En justifiant que le terme potentiel vertical est négligeable
+    $\displaystyle\pdv{P}{r} \simeq 0$, montrer que le potentiel de pression puisse s'écrire
+    $$P \simeq \dfrac{p_\text{atm}}{\rho} + g\zeta + \varphi.$$
+    \question En utilisant l'incompressibilité du fluide (pour l'éq.~\ref{eq:laplace1}) et en justifiant les approximations qui vous sembleront pertinentes, déduire le système d'équation suivant, dit équations des marées de Laplace
+    \begin{align}
+    \pdv{\zeta}{t} &= -\dfrac{H}{R\sin\theta}\qty[\pdv{}{\theta}\qty(\sin\theta v_\theta) + \pdv{v_\phi}{\phi}] \label{eq:laplace1} \\
+    \pdv{v_\theta}{t} - 2\Omega\cos\theta v_\phi &= -\dfrac{1}{R}\qty[g\pdv{\zeta}{\theta} +\pdv{\varphi}{\theta}], \\
+    \pdv{v_\phi}{t} + 2\Omega\cos\theta v_\theta &= -\dfrac{1}{R\sin\theta}\qty[g\pdv{\zeta}{\phi}+\pdv{\varphi}{\phi}].
+\end{align}
+\end{questions}
+
+\paragraph{Données :} en coordonées sphériques
+\begin{align*}
+    \vr = r\ve_r &= r\cos\theta\ve_z + r\sin\theta\sin\phi\ve_x + r\sin\theta\cos\phi\ve_y \\
+    \grad P &= \pdv{P}{r}\ve_r + \dfrac{1}{r}\pdv{P}{\theta}\ve_\theta + \dfrac{1}{r\sin\theta}\pdv{P}{\phi}\ve_\varphi \\
+    \div\vv &= \dfrac{1}{r^2}\pdv{r^2 v_r}{r} +  \dfrac{1}{r\sin\theta}\pdv{}{\theta}\qty(\sin\theta v_\theta) + \dfrac{1}{r\sin\theta} \pdv{v_\phi}{\phi},
+\end{align*}
+
+\end{exercise}

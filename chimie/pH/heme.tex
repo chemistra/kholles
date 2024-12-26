@@ -1,0 +1,109 @@
+% Niveau :      PCSI *
+% Discipline :  Chimie Orga I
+% Mots clés :   Spectrométrie UV-visible, Réactions acidobasiques
+
+\begin{exercise}{Influence du pH sur l'hémoglobine}{2}{PCSI}
+{Chimie générale,Réactions acidobasiques,Réactions de complexation}{bermu}
+
+L'hémoglobine est une protéine globulaire qui permet de transporter le dioxygène $\mathrm{O_2}$ dans le sang des poumons vers les autres organes. Elle est constituée de 4 complexes du fer, appelés hèmes et notés $\mathrm{HmNH_2}$ qui se lient aux molécules de $\mathrm{O_2}$ dissoutes dans le sang.
+
+Nous nous intéressons dans cet exercice à l'influence du pH sur la ligation du $\mathrm{O_2}$ sur les hèmes.
+
+\begin{questions}
+\questioncours Théorie de Brönsted des acides et des bases. On précisera la définition du pK$_a$ et du pK$_e$.
+
+\begin{EnvUplevel}
+    Le mécanisme de ligation de l'hème avec le O$_2$ est le suivant :
+    \begin{center}\schemestart[][-6]
+        \chemfig{HmNH_2}
+        \arrow{<=>[O$_{2\text{ (aq)}}$][$K_d$]}[0,1.5]
+        \chemfig{O_2-HmNH_2}
+        \arrow{<=>[H$^+_\text{ (aq)}$][?]}[-90,1.5]
+        \chemfig{O_2-HmNH_3^+}
+        \arrow{<=>[O$_{2\text{ (aq)}}$][$\gamma K_d$]}[-180,1.5]
+        \chemfig{HmNH_3^+}
+        \arrow{<=>[\rotatebox{180}{$K_a$}][\rotatebox{180}{H$^+_\text{ (aq)}$}]}[90,1.5]
+    \schemestop\chemnameinit{}
+    \end{center}
+    
+    $K_a = 2,6 \times 10^{-8}$ étant la constante d'acidité du groupe amine de l'hème, \\
+    $K_d = 4,9 \times 10^{-6}$ la constante de dissociation de l'hème et du O$_2$, \\
+    $\gamma = 0,73$ un facteur sans dimension.
+\end{EnvUplevel}
+
+\question Quel est le p$K_a$ de l'hème ? Sa valeur est-elle cohérente avec celle d'autres amines ? Expliciter la relation entre $K_a$, le pH et les concentrations des espèces en solutions.
+
+\question Par analogie entre H$^+$ et O$_2$, donner la relation entre le $K_d$ et les concentrations des espèces.
+
+\question Expliciter la constante de la réaction entre \chemfig{O_2-HmNH_2} et \chemfig{O_2-HmNH_3^+}. Quelle est la signification de $\gamma$ ?
+
+\uplevel{On s'intéresse à la constante effective de dissociation $K_\text{eff}$ de l'hème qui prend en compte les formes acides et basiques de l'hème
+$$K_\text{eff} = \mathrm{[O_2]} \times \dfrac{\Sigma \text{ espèces non liées}}{\Sigma \text{ espèces liées}}$$}
+
+\question Expliciter l'expression de $K_\text{eff}$ en fonction des concentrations des espèces en solution puis en fonction uniquement du pH, $K_a$, $K_d$ et $\gamma$.
+
+\uplevel{On appelle saturation S$_{\text{O}_2}$ la proportion de hèmes liés au dioxygène.}
+
+\question Quel est le sens biologique de S$_{\text{O}_2}$ ?
+
+\question Sachant que la pression partielle $P_{\text{O}_2}$ est proportionnelle à la concentration en $[\text{O}_2]$, montrer que S$_{\text{O}_2}$ peut s'écrire
+$$\text{S}_{\text{O}_2} = \dfrac{P_{\text{O}_2}/P_{50}}{1 + P_{\text{O}_2}/P_{50}},$$
+et expliciter l'expression et la signification de $P_{50}$.
+
+\question Quel serait l'effet du CO$_2$ sur la S$_{\text{O}_2}$.
+
+\end{questions}
+
+\plusloin
+Dash, R.K. \emph{et al, Ann Biomed Eng} \textbf{32}, 1676--1693 (2004).
+
+\end{exercise}
+
+\begin{solution}
+\begin{questions}
+    \questioncours
+    \begin{itemize}
+        \item Un acide de Brönsted est un donneur de H$^+$, une base de Brönsted est un accepteur de H$^+$ ;
+        \item Le $K_a$ est la constante d'équilibre de la réaction
+        \begin{center}\schemestart
+        AH
+        \arrow{<=>}[,1]
+        A$^-$
+        \+
+        H$^+$
+        \schemestop\chemnameinit{},\end{center}
+        dont on déduit la relation de Henderson--Hasselbalch
+        $$K_a = \mathrm{\dfrac{[A^-][H^+]}{[AH]}} \quad \Longleftrightarrow \quad \text{p}K_a = -\log K_a = \text{pH} - \log\mathrm{\dfrac{[A^-]}{[AH]}}.$$
+        \item Le $K_e = 10^{-14}$ à 25$^\circ$C est la constante d'équilibre de la réaction d'autoprotolyse de l'eau
+        \begin{center}\schemestart
+        H$_2$O
+        \arrow{<=>}[,1]
+        H$^+$
+        \+
+        HO$^-$
+        \schemestop\chemnameinit{},\end{center}
+        dont on déduit la relation du produit ionique de l'eau
+        $$K_e = \mathrm{[H^+][OH^-]}.$$
+    \end{itemize}
+    
+    \question $\text{p}K_a = -\log K_a = 5,6$, ce qui est beaucoup plus bas que les amines ($\sim$ 9). La relation d'Henderson--Hasselbalch donne :
+    \hfill $K_a = \mathrm{\dfrac{[HmNH_2][H^+]}{[HmNH_3^+]}}.$ \hfill ~
+    
+    \question Par analogie : \hfill $K_d = \mathrm{\dfrac{[HmNH_2][O_2]}{[O_2\cdot HmNH_2]}}.$ \hfill ~
+    
+    \question La constante de la réaction $\mathrm{HmNH_2 \longrightarrow O_2\cdot HmNH_3^+}$ étant $\gamma K_a K_d$, la constante de la réaction $\mathrm{HmNH_3^+ \longrightarrow O_2\cdot HmNH_3^+}$ est $\gamma K_a K_d$ est $\gamma K_a$.
+    
+    \question $K_\text{eff} = \mathrm{[O_2] \times \dfrac{[HmNH_2] + [HmNH_3^+]}{[O_2\cdot HmNH_2] + [O_2\cdot HmNH_3^+]}}
+    = K_d \times \mathrm{\dfrac{[O_2\cdot HmNH_2] + \gamma [O_2\cdot HmNH_3^+]}{[O_2\cdot HmNH_2] + [O_2\cdot HmNH_3^+]}}$
+    $$\text{d'où} \qquad K_\text{eff} = K_d \dfrac{1 + \dfrac{[H^+]}{K_a}}{1 + \dfrac{1}{\gamma}\,\dfrac{[H^+]}{K_a}}$$
+    
+    \question La S$_{\text{O}_2}$ représente la fraction d'hémoglobine qui transporte effectivement du O$_2$. C'est le marqueur biologique de l'efficacité de la respiration.
+    
+    \question Si $P_{\text{O}_2} = \kappa_\textsc{h} \mathrm{[O_2]}$, avec $\kappa_\textsc{h}$ appelé la constante de Henry du O$_2$, alors :
+    $$\mathrm{S_{O_2}} = \dfrac{\mathrm{[O_2]}/K_\text{eff}}{1 + \mathrm{[O_2]}/K_\text{eff}} = \dfrac{P_{\text{O}_2}/P_{50}}{1 + P_{\text{O}_2}/P_{50}},$$
+    avec $P_{50} = \kappa_\textsc{h}K_\text{eff}$, la pression partielle en O$_2$ nécessaire à avoir une S$_{\text{O}_2}$ à 50\%.
+    
+    \question L'hème peut également complexer le CO$_2$ et va donc faire diminuer la S$_{\text{O}_2}$.
+    
+\end{questions}
+\end{solution}

@@ -1,0 +1,65 @@
+\begin{exercise}{Ailette de refroidissement}{3}{Spé}
+{Diffusion thermique}{lelay}
+
+On veut refroidir un composant à la température $T_i$ à l'aide de l'air extérieur à la température $T_e$. Pour cela, on installe sur une paroi extérieure de ce composant une ailette de refroidissement consistant en un cylindre de métal ($c = 9\cdot10^2$~J.kg$^{-1}$.K$^{-1}$, $\lambda = 80$ W.m$^{-1}$.K$^{-1}$) de rayon $r$ et de longueur $L$. On considère que les échanges thermiques entre l'air et le cylindre se font par flux conducto-convectif, c'est à dire que le flux de chaleur passant du cylindre à l'air ambiant à travers une surface $\delta S$ est donné par la loi de Newton $\phi = h \delta S (T - T_e)$ où $T$ est la température locale de l'ailette, avec $h = 20$ W.m$^{-2}$.K$^{-1}$. On se place en régime permanent et on suppose que la température locale de l'ailette ne dépend que de $x$ la distance à la paroi.
+
+\begin{questions}
+    \questioncours Flux conducto-convectif : modèle, limites.
+    \question Proposer une justification à la dernière hypothèse formulée dans l'énoncé.
+    \question Effectuer un bilan d'énergie sur une tranche du cylindre de longueur $\dd{x}$.
+    \question En déduire l'équation différentielle vérifiée par $T$. Préciser quelles sont les conditions aux limites du problème
+    \question Donner $T(x)$ en supposant la longueur $L$ de l'ailette infinie.
+    \question Quel est le flux de chaleur en $x=0$ ? Que serait-il si il n'y avait pas d'ailette ? En déduire l'efficacité de l'ailette, qui est le rapport du flux en $x = 0$ avec et sans ailette.
+    \question Donner la valeur de l'efficacité pour $r = 1$ mm.
+    \question À quelle condition l'approximation $L \approx \infty$ justifiée ? Est-elle légitime si on prend $L = 20$ cm ?
+\end{questions}
+
+
+\end{exercise}
+
+\begin{solution}
+
+\begin{questions}
+    \questioncours $h = \lambda/e$
+    \question Rayon faible devant la longueur, pas de variation radiale de température.
+    \question Il faut faire le raisonnement du cours pour retrouver l'équation de la diffusion en 1D avec cette fois ci le terme d'échange avec l'extérieur. Bilan d'énergie
+    \begin{itemize}
+        \item Variation d'énergie interne pendant $\dd{t}$ (volume constant) : $\dd{U} = \rho \, \delta V \, c \dd{T}$
+        \item Apport d'énergie depuis la gauche : $\lambda j_x \pi r^2 \dd{t}$
+        \item Apport d'énergie depuis la droite : $-\lambda j_{x+\dd{x}}\pi r^2 \dd{t}$
+        \item Perte d'énergie sur les cotés : $- h \dd{x} 2 \pi r (T-T_e) \dd{t}$
+    \end{itemize}
+    d'où
+    \begin{align*}
+    \pi r^2 \dd{x} \rho c \pdv{T}{t} &= \lambda j_x \pi r^2 - \lambda j_{x+\dd{x}}\pi r^2 - h \dd{x} 2 \pi r (T-T_e) \\
+    \pdv{T}{t} &= \frac{\lambda}{\rho c} \pdv[2]{T}{x} - \frac{2h}{\rho c r}(T-T_e)
+    \end{align*}
+    
+    \question  On trouve 
+    $$\pdv{T}{t} = \frac{\lambda}{\rho c} \pdv[2]{T}{x} - \frac{2h}{\rho c r}(T-T_e)$$
+    On peut se mettre en régime permanent (en combien de temps est-il atteint ? $\tau \sim L^2/D_\text{th}$) et on a alors
+    $$ \pdv[2]{T}{x} - \frac{2h}{\lambda r}(T-T_e) = 0$$
+    dont les solutions sont de la forme
+    $$
+    T(x) = T_e + A e^{-x/\ell} + B e^{x/\ell}
+    $$
+    avec $\ell = \sqrt{\lambda r/2h}$.
+    
+    Les conditions aux limites sont $$T(x = 0) = T_i \qqtext{(continuité de la température)}$$  et $$\pdv{T}{x}(x = L) = \frac{h}{\lambda}(T(x=L) - T_e) \qqtext{(continuité du flux thermique)}$$  (attention, on n'a PAS $T(x = L) = T_e$)
+    
+    \question Pour des raisons physiques on a $B = 0$ et alors $A = T_i - T_e$ soit $$
+    T(x) = T_e + (T_i - T_e) e^{-x/\ell}
+    $$
+    
+    \question En x = 0, le jlux est 
+    $$ \pi r^2 \lambda \pdv{T}{x}(x = 0) = \pi r^2 \lambda\frac{1}{\ell} (T-T_e)$$
+    et si il n'y avait pas la barre ce serait simplement 
+    $$\pi r^2 h (T-T_e)$$
+    
+    \question $$ \eta = \frac{\lambda}{\ell h} = \sqrt{\lambda}{h r}$$
+    on trouve 88.
+    
+    
+    \question $L \gg \ell$. On a $\ell \sim 4$ cm et donc bof.
+\end{questions}
+\end{solution}

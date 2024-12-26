@@ -1,0 +1,118 @@
+\begin{exercise}{Fil électrique}{2}{Spé}
+{Diffusion thermique}{bermu}
+
+Considérons un fil cylindrique (infini) constitué d'une âme en cuivre de rayon $R$, conducteur thermique et électrique, et d'une gaine d'épaisseur $h$ constituée d'un isolant électrique et léger conducteur thermique.
+
+Le fil est parcouru d'un courant $I$ dans la direction $\ve_z$. On appelle $\lambda$ sa conductivité thermique, et $\rho$ sa résistivité électrique.
+
+On suppose que le fil est refroidi par ventilation.
+
+\begin{questions}
+    \questioncours Transfert convecto-conductif pariétal (transfert de chaleur sur une surface lié d'un coté à la convection et de l'autre à la conduction).
+    
+    \question Effectuer un bilan thermique sur un élément de volume de l'âme prenant en considération la résistivité électrique et la conductivité thermique du métal. En déduire une équation  de la chaleur que l'on commentera.
+    
+    \question Par analogie, établir l'équation de la chaleur dans la gaine.
+    
+    \question Établir les conditions aux limites entre chaque domaine.
+    
+    \question \`A l'aide de ces données, établir la température à l'intérieur de l'âme et à la limite entre l'âme et la gaine. \\
+    Quel courant peut mettre au maximum dans un tel câble ?
+\end{questions}
+
+\paragraph{Données :}
+
+\begin{center}
+    \begin{tabular}{r|ll}
+       &  Cuivre      & Polyéthylène  \\ \hline
+    Capacité thermique volumique ($\times 10^6$ J$\cdot$K$^{-1}\cdot$m$^{-3}$) &
+    3,4 & 1,8 \\
+    Conductivité thermique (W$\cdot$m$^{-1}\cdot$K$^{-1}$) &
+    380 & 0,4 \\
+    Résistivité électrique ($\Omega\cdot$m) &
+    $1,7\times 10^{-8}$ & $6,1\times 10^{5}$ \\
+    Température de fusion ($^\circ$C) &
+    1085 & 110 \\ \hline
+    \end{tabular}
+\end{center}
+
+Coefficient de convection thermique de l'air : $H = 10$ W$\cdot$K$^{-1}\cdot$m$^{-2}$.
+
+\end{exercise}
+
+\begin{solution}
+
+\begin{questions}
+    \questioncours $j_\text{th} = H(T_s - T_\infty)$ : analogie avec une résistance thermique, valide donc que dans l'ARQS thermique.
+    
+    \question Au vu de la gémoétrie du problème et de la symétrie axiale, prenons comme système élémentaire la coque cylindrique de petit rayon $r < R$, d'épaisseur $\dd{r}$ et de hauteur $\dd{h}$. Son volume est $\dd{\tau} = 2\pi r \dd{r}\dd{h}$. Le bilan thermique donne donc
+    $$\dd{U} = \delta Q(r) - \delta Q(r+\dd{r}) - P_{\text{Joule, vol}}\dd{\tau} = c_v \pdv{T}{t}\dd{t}\dd{\tau},$$
+    avec
+    $\delta Q_r = j_\text{th} \dd{t} \times 2\pi r \dd{h} = -2\pi\lambda \pdv{T}{r}  r \dd{h}\dd{t}$ et $P_{\text{Joule, vol}} = \rho j^2 = \dfrac{I^2}{\pi^2 R^4}$.
+    
+    Ainsi on obtient
+    $$c_\text{Cu,v}\pdv{T}{t} = \lambda_\text{Cu} \dfrac{1}{r}\pdv{r}\qty(r\pdv{T}{r}) + \dfrac{j_\textsc{j}}{\pi R^2},$$
+    où $j_\textsc{j} = \rho_\text{Cu} \dfrac{I^2}{\pi R^2}$ est la puissance Joule totale par unité de longueur et de surface émise par l'âme.
+    
+    Commentaire : on retrouve bien une équation de diffusion avec un terme source lié à l'effet Joule.
+    
+    \question Dans la gaine, il n'y a pas de terme de puissance Joule, on a donc l'équation de diffusion classique
+    $$\pdv{T}{t} = \kappa_\textsc{pe} \dfrac{1}{r}\pdv{r}\qty(r\pdv{T}{r}).$$
+    
+    \question (i) Sur le bord extérieur, la loi de Newton impose $j_\text{th}(R+h) = H\qty\big(T(R+h) - T_\infty)$.
+    
+    Entre l'âme et la gaine nous avons pour condition mixte :
+    $$\text{(ii)\quad} T(R^+) = T(R^-), \qquad \text{(iii)\quad } j_\text{th}(R^+) = j_\text{th}(R^-) = j_\textsc{J}.$$
+    
+    \question On peut répondre à cette question de deux manières, soit en utilisant les résistances thermiques, soit en résolvant les équations. Ici on utilise la seconde.
+    
+    On cherche trois inconnues : $T(R+h)$, $T(R)$ et $T(0)$ à raccorder à nos trois conditions précédentes (i--iii).
+    
+    En statique on a :
+    \begin{itemize}
+        \item dans la gaine $R < r < R + h$,
+        
+        $$\dfrac{1}{r}\pdv{r}\qty(r\pdv{T}{r}) = 0$$
+        
+        soit par intégration entre $R + h$ et $r$ avec la condition (i)
+        
+        $$r\pdv{T}{r} = (R + h) \dfrac{H}{\lambda_\textsc{pe}}\qty\big(T(R+h) - T_\infty)$$
+        
+        puis on obtient avec la condition (iii)
+        
+        $$\eval{\pdv{T}{r}}_{r = R} = \dfrac{j_\textsc{j}}{\lambda_\textsc{pe}} = \dfrac{R + h}{R} \dfrac{H}{\lambda_\textsc{pe}}\qty\big(T(R+h) - T_\infty),$$
+        
+        dont on déduit
+        
+        $$T(R+h) = T_\infty + \dfrac{R}{R + h}\dfrac{j_\textsc{j}}{H}.$$
+        
+        Maintenant on intègre encore
+        $$\pdv{T}{r} = \dfrac{R}{r} \dfrac{j_\textsc{j}}{\lambda_\textsc{pe}},$$
+        entre $R$ et $r$ et on obtient
+        $$T(r) = T(R) - R \dfrac{j_\textsc{j}}{\lambda_\textsc{pe}},$$
+        soit donc
+        $$T(R) - T_\infty = T(R) - T(R+h) + T(R+h) - T_\infty = j_\textsc{j}\qty[\dfrac{R}{\lambda_\textsc{pe}}\ln\qty(1 + \dfrac{h}{R}) + \dfrac{1}{H}\dfrac{R}{R + h}].$$
+        
+        \item dans l'âme $r < R$,
+        
+        $$\dfrac{1}{r}\pdv{r}\qty(r\pdv{T}{r}) = -\dfrac{j_\textsc{j}}{\pi R^2 \lambda_\text{Cu}},$$
+        
+        par intégration successives on a
+        
+        $$T(r) = T(R) + \dfrac{j_\textsc{j}}{4 \pi \lambda_\text{Cu}}\qty(1 - \dfrac{r^2}{R^2}),$$
+        
+        et ainsi en utilisant (ii)
+        
+        $$T(0) = T_\infty + R j_\textsc{j}\qty[\dfrac{1}{\lambda_\textsc{pe}}\ln\qty(1 + \dfrac{h}{R}) + \dfrac{1}{H(R + h)} + \dfrac{1}{4 \pi \lambda_\text{Cu}}] = \alpha\dfrac{I^2}{R^3},$$
+        
+        avec $\alpha$ un coefficient donné qui dépend de la géométrie et des matériaux.
+        
+        Ainsi le courant maximum sera pour $T(R) = T_\text{fus, PE}$, soit
+        
+        $$I_\text{max} = \alpha^{-1/2}\sqrt{T_\text{fus, PE} - T_\infty} R^{3/2}.$$
+        
+    \end{itemize}
+    
+\end{questions}
+
+\end{solution}

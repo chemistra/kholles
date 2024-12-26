@@ -1,0 +1,93 @@
+% Niveau :      PCSI *
+% Discipline :  Chimie Orga I
+% Mots clés :   Spectrométrie UV-visible, Réactions acidobasiques
+
+\begin{exercise}{Pile à combustible au méthanol}{2}{PCSI}
+{Chimie générale,\'Electrochimie,Oxydoréduction,Pile à combustible}{bermu}
+
+\noindent\textsl{Cet exercice étant proche du cours, une large autonomie et des remarques critiques sont attendues.}
+
+On constitue une pile en solution aqueuse dans laquelle le méthanol liquide est dissous dans l’eau. Il est oxydé en dioxyde de carbone gazeux à l’une des électrodes, tandis que le dioxygène gazeux est réduit en eau à l’autre. L’électrolyte est une solution aqueuse d’acide sulfurique.Les deux électrodes sont séparées par une membrane poreuse, que l’on supposera imperméable au méthanol mais perméable à l’acide sulfurique.
+
+\begin{questions}
+\questioncours Détailler le fonctionnement de cette pile à combustible :
+\begin{parts}
+    \part faire un schéma conventionnel de la pile (le méthanol sera placé à gauche) ;
+    \part détailler les demi-réactions qui ont lieu à chaque électrode ainsi que l'équation bilan ;
+    \part justifier la polarité des électrodes, les nommer, et donner le sens conventionnel du courant ;
+    \part proposer un matériau pour les électrodes en argumentant ;
+\end{parts}
+
+\question Donner l’expression littérale du potentiel de chaque électrode.
+
+\question Exprimer la constante d’équilibre $K^\circ$ de la réaction de fonctionnement de la pile en fonction des potentiels standard des couples (relation à démontrer).
+
+\question La pile débite un courant $I = 50$ mA pendant $t = 2$ heures. Quelle masse de méthanol a été consommée?
+
+\question Un des problèmes techniques actuels est l’oxydation incomplète du méthanol en acide méthanoïque. Écrire cette demi-réaction d’oxydoréduction. \\
+Comment modifie-t-elle la quantité d’électricité produite par une quantité donnée de méthanol consommée?
+
+\question Un second problème est le passage du méthanol à travers la membrane qui sépare les deux compartiments de la pile. En quoi ce passage est-il gênant?
+
+\end{questions}
+
+\paragraph{Données} dans les CNTP :
+\begin{itemize}
+    \item Masses molaires en g$\cdot$mol$^{-1}$ : H 1 ; C 12; O 16 ;
+    \item Constante de Faraday : $\scr{F} = 9,65 \times 10^4$ SI ;
+    \item On note: $e^\circ = \dfrac{RT}{\scr{F}} \ln10 = 59$ mV.
+\end{itemize}
+
+
+\end{exercise}
+
+\newpage
+
+\begin{solution}
+\begin{questions}
+\questioncours $\mathrm{M_{(s)}}$ étant le métal de la pile, le schéma conventionel est donné ci dessous :
+\begin{parts}
+    \part\hspace{-.6em}{\bfseries\sffamily -- Q\,1.3}
+\begin{EnvUplevel}
+    %\setlength{\dashlinegap}{2pt}
+    \centering
+    \begin{tabularx}{.98\linewidth}{c|CC|c}
+        $\Big.\mathrm{M_{(s)}}$ & $\mathrm{MeOH_{(aq)}, H^+_{(aq)}, {SO_4^{2-}}_{(aq)}}$ & $\mathrm{H^+_{(aq)}, {SO_4^{2-}}_{(aq)}}$ & $\mathrm{M_{(s)}}$  \\
+        Anode & \'Ectrolyte & \'Electrolyte & Cathode \\
+        $(-)$ & \multicolumn{2}{c|}{$\underset{\text{H}^+\text{, courant}}{\longrightarrow}$} & $(+)$ \\
+        \multicolumn{2}{l}{$\mathrm{MeOH_{(aq)} + H_2O \longrightarrow {CO_2}_{(g)} + 6 {H^+}_{(aq)} + 6 e^-}$} &
+        \multicolumn{2}{r}{$\mathrm{\dfrac{1}{2} {O_2}_{(g)}  + 2 {H^+}_{(aq)} + 2e^- \longrightarrow {H_2O}_{(\ell)}}$} \\
+        \multicolumn{4}{c}{$\text{Bilan :} \quad \mathrm{MeOH_{(aq)} + \dfrac{3}{2} {O_2}_{(g)} \longrightarrow {CO_2}_{(g)} + 2 {H_2O}_{(\ell)} }$}
+    \end{tabularx}
+\end{EnvUplevel}
+    \stepcounter{partno}
+    \part L’électrode de gauche est le siège de l’oxydation du méthanol : c’est donc l’anode. Puisqu’une oxydation a lieu, le méthanol cède des électrons dans le circuit extérieur et c'est donc le pôle négatif de la pile. Et inversement.
+    
+    Lorsque la pile fonctionne, la réaction évolue dans le sens direct. Il s’agit donc bien d’une oxydation du méthanol par le dioxygène. Les ions H$^+$ créés dans la solution à l’électrode de gauche circulent ensuite dans l’électrolyte où ils sont consommés à l’électrode de droite.
+    \part Les espèces intervenant ici sont soit des espèces dissoutes soit des gaz. Il faut donc utiliser des électrodes inattaquables en métal noble permettant comme le platine.
+\end{parts}
+
+\question En supposant que l'on soit à l'équilibre (faibles courants) :
+\begin{align*}
+    E_a &= E^\circ\qty\big(\mathrm{CO_2 / CH_3OH}) + \dfrac{1}{6}e^\circ \log(\dfrac{p_\mathrm{CO_2} \mathrm{[H^+]^6}}{\mathrm{[CH_3OH]}}) &
+    E_c &= E^\circ\qty\big(\mathrm{O_2 / H_2O}) + \dfrac{1}{4}e^\circ \log\qty\big(\mathrm{p_\mathrm{O_2} [H^+]^4})
+\end{align*}
+
+\question \`A l'équilibre $\Delta E = E_c - E_a = 0$. On a donc
+\begin{align*}
+    E^\circ\qty\big(\mathrm{O_2 / H_2O}) - E^\circ\qty\big(\mathrm{CO_2 / CH_3OH})
+    &= \dfrac{1}{6}e^\circ \log(\dfrac{p_\mathrm{CO_2} \mathrm{[H^+]^6}}{\mathrm{[CH_3OH]}}) - \dfrac{1}{4}e^\circ \log\qty\big(\mathrm{p_\mathrm{O_2} [H^+]^4}), \\
+    6 \times \dfrac{E^\circ\qty\big(\mathrm{O_2 / H_2O}) - E^\circ\qty\big(\mathrm{CO_2 / CH_3OH})}{e^\circ} 
+    &= \log(\dfrac{p_\mathrm{CO_2} \mathrm{[H^+]^6}}{\mathrm{[CH_3OH]p_\mathrm{O_2} [H^+]^4}}) = \log K^\circ,
+\end{align*}
+$$\text{d'o\`u} \qquad K^\circ = 10^{6 \dfrac{E^\circ\qty\big(\mathrm{O_2 / H_2O}) - E^\circ\qty\big(\mathrm{CO_2 / CH_3OH})}{e^\circ}}.$$
+
+\question $m_\mathrm{MeOH} = M_\mathrm{MeOH} \dfrac{n_{e^-}}{6} = \dfrac{M_\mathrm{MeOH} I t}{6\scr{F}} = 20 \text{ mg}.$
+
+\question $\mathrm{{CH_3OH}_{(aq)} + {H_2O}_{(\ell)} \longrightarrow {COOH}_{(aq)} + 4 {H^+}_{(aq)} + 4 e^-}.$ \\
+Cette réaction ne produit donc que 4 électrons, contre 6 précédement et peut donc faire chuter d'au plus 33 \% le rendement de la pile.
+
+\question Si du méthanol traverse la membrane, il peut se retrouver oxydé directement par le dioxygène au niveau de l’électrode de droite, sans entraîner de passage de courant électrique dans le circuit extérieur. C’est donc une perte nette de méthanol, le rendement de la pile baisse...
+
+\end{questions}
+\end{solution}

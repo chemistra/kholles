@@ -1,0 +1,38 @@
+\begin{exercise}{Gaz quantique d'électrons}{3}{Spé}
+{Quantique,Boltzmann}{lelay}
+
+On considère un puits 1D de taille $L$ dans lequel se trouve un gaz parfait de $N$ particules quantiques de masse $m$.
+
+\begin{questions}
+    \questioncours \'Ecrire l'équation de Schrödinger pour une particule et donner ses énergies quantifiées $\varepsilon_n$, fonction de $m$, $L$, la constante de Planck $h$ et $n\in\mbb{N}^\ast$ l'indice des niveaux d'énergies. \\
+    Quelle est l'énergie minimale $\varepsilon^\ast$ de cette particule ?
+    \question Montrer que dans la situation étudiée, $N$ particules, le résultat se généralise de la manière suivante : l'énergie totale du système est
+    $$\En = \varepsilon^\ast\sum_{i=1}^{N} n_i^2, \qquad n_i\in\mbb{N}^\ast.$$
+    \uplevel{On suppose que le gaz est à l'équilibre à l'équilibre à la température $T$.}
+    \question Donner la probabilité que l'énergie du système soit égale à $\En$ en fonction de $\beta = \frac{1}{k_\textsc{b}T}$ et d'une constante de normalisation $\cal{Z}(\beta)$ dont on donnera l'expression sous forme d'une somme.
+    
+    \question Donner l'expression de l'énergie moyenne $U$ du système sous forme d'une somme fonction de $\beta$ et de $\cal{Z}(\beta)$. En déduire que
+    $$U = \ev{\En} = -\pdv{\ln\cal{Z}}{\beta}.$$
+    
+    \question Montrer qu'en supposant la taille du système $L$ très grande devant une longueur $\Lambda$ que l'on précisera, on peut approximer la somme $\cal{Z}(\beta)$ sous la forme continue suivante :
+    $$\cal{Z} = \qty(\dfrac{L}{\Lambda})^{N}\times \underset{1}{\underbrace{\dfrac{1}{\pi^{N}}\int_{\mbb{R}^{N}} e^{-\norm{\vec{x}}^2} \dd[N]{\vec{x}}}} = \qty(\dfrac{L}{\Lambda})^{N}.$$
+    
+    \uplevel{En réalité, les électrons sont non seulement indiscernables mais en plus ne peuvent pas être deux dans un même état.}
+    
+    \question Quel est le nom de ce principe ?
+    
+    \question Montrer qu'il faut donc modifier l'expression précédente sous la forme
+    $$\cal{Z} = \qty(\dfrac{L}{\Lambda})^{N}\times \dfrac{1}{\pi^{N}}\int_{\mbb{R}^{N}} e^{-\norm{\vec{x}}^2} f(\vx) \dd[N]{\vec{x}},$$
+    où on précisera l'expression de $f$.
+    
+    \question Cas $N=2$. Exprimez $\cal{Z}$.
+    
+    On pourra s'aider des intégrales gaussiennes suivantes :
+    $$\forall k\in\mbb{N}^\ast : \int_0^y \text{Erf }^{k-1}(x) e^{- x^2}\dd{x} = \dfrac{\sqrt{\pi}}{2k}\text{Erf }^k(y), \qqtext{et} \lim_{y\rightarrow\infty}\text{Erf }^k(y) = 1.$$
+    
+    \question Généralisation pour $N$ ?
+
+    
+\end{questions}
+
+\end{exercise}

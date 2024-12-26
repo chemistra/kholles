@@ -1,0 +1,35 @@
+% Niveau :      Spé
+% Discipline :  Méca
+% Mots clés :   Chaine, caténaire
+
+\begin{exercise}{Analogie RMN et pendule en rotation}{2}{Spé}
+{Mécanique,Mécanique en référentiel non galiléen,Pendule}{bermu}
+
+\begin{questions}
+    \questioncours Forces d'inertie d'entraînement et de Coriolis.
+\begin{EnvUplevel}
+Considérons un pendule rigide de longueur $\ell$ et de masse $m$ fixé en $O$ dans un champ de pesanteur $\vg = -g\ve_z$. Le pendule se trouve dans un référentiel $\cal{R}'$ en rotation uniforme à la vitesse $\Omega$ autour de l'axe $\ve_z$. \\
+On se placera dans un système de coordonnées sphériques $(r,\theta,\varphi)$ où $\theta\in\qty[0,\pi]$ est l'angle entre $Oz$ et l'axe du pendule.
+\end{EnvUplevel}
+    \question Chercher les positions d'équilibre du pendule $\theta_\text{eq}$, ainsi que leur stabilité. \\
+    On ne fera intervenir que la fréquence propre du pendule $\omega_0$ et la fréquence de rotation $\Omega$.
+    \question Tracer pour plusieurs valeurs pertinentes de $\Omega$ le profil d'énergie potentielle ainsi que les positions d'équilibre stables et instables. Interpréter les différentes zones de ce graphe.
+    \uplevel{Nous allons maintenant étudier la dynamique locale du pendule proche des positions d'équilibre.}
+    \question Pour chaque position d'équilibre $\theta_{\text{eq}, i}$, en substituant $\theta$ dans l'équation de la dynamique du pendule par
+    $$\theta = \theta_{\text{eq}, i} + \varepsilon_i,$$
+    montrer que pour de faibles variations $\varepsilon_i$ autour de la position d'équilibre, l'équation de la dynamique devient à l'ordre 1 en $\varepsilon_i$
+    \begin{itemize}
+        \item celle d'un oscillateur harmonique classique de pulsation $\omega_i$, si elle est stable,
+        \item celle d'un système exponentiellement divergent avec taux de croissance $\sigma_i$, si elle est instable.
+    \end{itemize}
+    Interpréter physiquement ces deux résultats en discutant notamment des limites du modèle.
+    Tracer $\theta_{\text{eq}, i}$, $\omega_i$ et $\sigma_i$ en fonction de $\Omega$ et interpréter.
+\end{questions}
+\paragraph{Questions facultatives (niveau PC) :}
+\begin{questions}
+    \question Rappeler ce qu'est la précession de Larmor et dresser une analogie avec le système précédent.
+    \question Rappeler ce qu'est une transition de phase, ou changement d'état. \\
+    En quoi peut-on dire que ce système effectue une transition de phase à la pulsation $\omega_c$ ?
+\end{questions}
+
+\end{exercise}

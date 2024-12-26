@@ -1,0 +1,52 @@
+% Niveau :      Spé
+% Discipline :  Méca
+% Mots clés :   Chaine, caténaire
+
+\begin{exercise}{Pendule de Foucault}{3}{Spé}
+{Mécanique,Mécanique en référentiel non galiléen,Pendule,Coriolis}{bermu}
+
+\begin{questions}
+    %\questioncours Caractère galiléen approché des référentiels héliocentrique, de Copernic, géocentrique et terrestre. \\
+    %On appuiera la démonstration d'ordres de grandeur et on estimera la contribution des forces d'inertie dans un problème de dynamique terrestre.
+    \questioncours Forces d'inertie d'entraînement et de Coriolis.
+    %\question Montrer que sur Terre, à une lattitude $\lambda$ donnée, l'accélération d'inertie d'entraînement agit comme une correction sur $\vec{g}_0\mapsto\vec{g}$, dont on donnera l'ordre de grandeur. Quel est l'angle entre $\vec{g}_0$ et $\vec{g}$ ?
+
+\begin{EnvUplevel}
+On se propose d'étudier l'expérience effecutée par Léon Foucault en 1851 à Paris sur les effets du caractère non galiléen du référentiel terrestre sur la dynamique d'un pendule.
+
+Soit un pendule simple, constitué d’une corde de très grande longueur $L$ de masse négligeable, suspendue en un point fixe $B$ du repère terrestre, et au bout de laquelle oscille un point matériel $M$ de masse~$m$. Soit $\lambda$ la latitude du lieu.
+
+On étudie le mouvement du point $M$ dans le référentiel terrestre $\scr{R}$ lié au repère $(A ; x, y,z)$ centré sur la position d’équilibre $A$ du point $M$, $Az$ étant la verticale ascendante du lieu, $Ax$ dirigé vers le nord et $Ay$ vers l'est. On néglige tout frottement.
+\end{EnvUplevel}
+    \questionbonus Culture scientifique : contributions scientifiques de Léon Foucault.
+    \question En précisant bien quels référentiels vous utilisez, effectuer un bilan des forces détaillé sur $M$.
+\uplevel{Dans l’hypothèse de petites oscillations autour de la verticale locale $(Az)$, on a en première approximation que le mouvement s’effectue dans le plan $(A ; x, y)$ et que la composante suivant $Oz$ de la résultante des forces est nulle. On introduit donc $\Big.\vec{\xi} \deq x\ve_x + y\ve_y$, la projection de $M$ dans le plan $(A ; x, y)$.}
+    \question Justifiez cette hypothèse et montrez qu'on a par conséquent que dans le plan $(A ; x, y)$
+    \begin{align*}
+        &\textsf{(a)}& \vec{T} & \propto \vec{AM} \simeq - m\omega_0^2 \vec{\xi}, &&\\
+        &\textsf{(b)}& \vec{F}_\textsc{c} &\simeq -m f \ve_z \cross\dv{\vec{\xi}}{t},&&
+    \end{align*}
+    où $\vT$ est la tension de la corde, $\vec{F}_\textsc{c}$ la force de Coriolis, et $\omega_0$ et $f$ des quantités constantes (le justifier) dont on donnera les expressions, le sens physique et les ordres de grandeur.
+    
+    \question En déduire que l’équation vectorielle du mouvement projeté dans le plan horizontal $(A ; x, y)$ est
+    $$\dv[2]{\vec{\xi}}{t} = -{\omega_0}^2\vec{\xi} - f \ve_z\cross\dv{\vec{\xi}}{t}$$
+    et interpréter chaque terme.
+    \question Montrez que si l'on se place dans un référentiel $\scr{R}'$ en rotation autour de l'axe $Oz$ par rapport à $\scr{R}$ à une pulsation $\omega_\textsc{c}$ bien choisie, on obtient l'équation d'un oscillateur harmonique.
+    %$$\dv[2]{\vec{\xi}'}{t} = -{\omega_0}^2\vec{\xi}'.$$
+    En déduire que le pendule oscille dans un plan tournant à une vitesse angulaire qu'on donnera.
+\end{questions}
+\paragraph{Données historiques :} pendule du Panthéon, $L = 67$ m et $\lambda = 49^\circ$.
+On note $\omega_\textsc{t}$ la pulsation associée à la rotation de la Terre.
+
+\noindent\textsf{Nota :} la latitude $\lambda$ est l'angle depuis l'équateur jusqu'au point étudié.
+\end{exercise}
+
+
+\begin{solution}
+
+\begin{questions}
+    \setcounter{question}{2}
+    \question On se place dans $\scr{R}$, en translation circulaire autour
+\end{questions}
+
+\end{solution}

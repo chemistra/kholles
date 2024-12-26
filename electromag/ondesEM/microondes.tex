@@ -1,0 +1,43 @@
+\begin{exercise}{Protection d'un four à micro-ondes}{2}{Spé}
+{Ondes électromagnétiques,Guide d'ondes,Réflection métallique}{lelay}
+
+On considère une plaque métallique d'épaisseur $d$ et de normale $\ve_z$ dans le vide. Cette plaque est percée d'une ouverture carrée de côté $a$. Un OPPH électromagnétique polarisée selon $\ve_x$ arrive depuis $-\infty$ sur la plaque.
+\begin{questions}
+    \questioncours Propriétés du conducteur parfait, conditions aux limites des champs électriques et magnétiques.
+    \question On cherche à déterminer la champ $\vec{E}$ se propageant dans l'ouverture. Justifier qu'on le cherche sous la forme
+    $$
+    \vec{E}(x, y, z) = E_0 f(x,y) e^{i(\omega t - k z)} \ve_x
+    $$
+    \begin{parts}
+        \part Quelle est la dépendance de $f$ en $x$ ?
+        \part Quelle est l'équation de propagation vérifiée par $\vec{E}$ ? En déduire l'équation différentielle vérifiée par $f$.
+        \part Quelles sont les conditions aux limites pour $\vec{E}$ ?
+        \part En déduire que les fonctions $f$ possibles appartiennent à une famille de fonctions $(f_n)$ indexées par un entier $n$.
+    \end{parts}
+    \uplevel{On considère par la suite le cas $n=1$.}
+    \question Exprimer le champ magnétique dans l'ouverture.
+    \question À quelle condition sur $a$ et $f$ l'onde se propage-t-elle ?
+    \question Que se passe-t-il si cette condition n'est pas respectée ? On introduira une longueur caractéristique pertinente $\delta$.
+    \question Estimer l'épaisseur de la plaque métallique accolée à la fenêtre d'un micro-ondes ($f = 2.45$ GHz).
+\end{questions}
+
+\end{exercise}
+
+\begin{solution}
+
+\begin{questions}
+    \questioncours $E=B=J=\rho=0$ condition de passage, $E_\perp = 0$.
+    \question 
+    \begin{parts}
+        \part $\div\vE=0$ donc $\pdv{f}{x}=0$.
+        \part $\pdv[2]{\vE}{t} = c^2\grad^2\vE$ donc $f'' + (\omega^2/c^2 - k^2)f$.
+        \part $E_\perp = 0$, $f(y=0)=f(y=a)=0$.
+        \part $f_n(y) = f_{n0} \sin(2\pi n y/ a)$
+    \end{parts}
+    \question $\rot\vE = -\pdv{\vB}{t}$ D'où $ \vB = -E_0/\omega \mqty(0 \\ k \sin(2\pi y/a) \\ 2i\pi/a\cos(2\pi y/a))e^{i\omega t -kz}$
+    \question On a $f^2/c^2 = \lambda^{-2} + a^{-2}$, donc il faut $f^2/c^2 > a^{-2}$ soit $a > c/f$.
+    \question Si ce n'est pas respecté, $k^2 = \omega^2/c^2 - 4\pi^2/a^2$ soit donc $k = i\sqrt{4\pi^2/a^2 - \omega^2/c^2} = 1/\delta$...
+    \question $a = 122$ $\mu$m.
+\end{questions}
+
+\end{solution}

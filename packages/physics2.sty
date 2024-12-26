@@ -1,0 +1,423 @@
+\ProvidesPackage{physics2}[Extension contenant des commandes utiles pour la physique
+v 02.03.2024]
+%Version for overleaf without uncertainty-mode
+\RequirePackage{etoolbox}
+
+
+
+%%% LA BASE
+\RequirePackage{amsmath}
+
+
+
+%%% MATH FONTS
+
+%Mathbold
+\newcommand\hmmax{0}
+\newcommand\bmmax{0}
+\RequirePackage{bm}
+\let\boldsymbol\bm
+
+%Mathcal
+\DeclareFontFamily{U}{mathcal}{}%\skewchar \font =45}
+\DeclareFontShape{U}{mathcal}{m}{n}{
+    <-> s*[1.03]  mathc10}{}
+\DeclareMathAlphabet{\mathcal}{U}{mathcal}{m}{n}    % \mathcal
+%\SetMathAlphabet{\mathcal}{bold}{OMS}{cmsy}{b}{n}
+\newcommand{\mathbfcal}[1]{\pmb{\mathcal{#1}}}
+%\DeclareMathAlphabet{\mathbfscr}{OMS}{cmsy}{b}{n}  % \mathbfcal
+\let\cal\mathcal
+
+%Mathscr
+\DeclareFontFamily{U}{mathscr}{\skewchar \font =45}
+\DeclareFontShape{U}{mathscr}{m}{n}{
+    <-> s*[1.05]  BOONDOX-r-cal}{}
+\DeclareFontShape{U}{mathscr}{b}{n}{
+    <-> s*[1.05]  BOONDOX-b-cal}{}
+\DeclareMathAlphabet{\mathscr}{U}{mathscr}{m}{n}    % \mathscr
+\SetMathAlphabet{\mathscr}{bold}{U}{mathscr}{b}{n}
+\newcommand{\mathbfscr}[1]{\bm{\mathscr{#1}}}
+%\DeclareMathAlphabet{\mathbfscr}{U}{mathscr}{b}{n}  % \mathbfscr
+\let\scr\mathscr
+
+%Mathfrak
+\DeclareMathAlphabet{\mathfrak}{U}{euf}{m}{n}       % \mathfrak
+\SetMathAlphabet{\mathfrak}{bold}{U}{euf}{b}{n}
+\newcommand{\mathbffrak}[1]{\bm{\mathfrak{#1}}}
+%\DeclareMathAlphabet{\mathbffrak}{U}{euf}{b}{n}     % \mathbffrak
+\let\frak\mathfrak
+
+%Mathbb (bbm) [bb rm]
+\DeclareMathAlphabet{\mathbb}{U}{bbm}{m}{n}         % \mathbb
+\SetMathAlphabet\mathbb{bold}{U}{bbm}{bx}{n}
+\newcommand{\mathbfbb}[1]{\bm{\mathbb{#1}}}
+%\DeclareMathAlphabet{\mathbfbb}{U}{bbm}{bx}{n}      % \mathbfbb
+\let\mbb\mathbb
+
+%Mathbs (bbold) [bb sf]
+\DeclareFontFamily{U}{bbold}{}
+\DeclareFontShape{U}{bbold}{m}{n}
+   {  <5> <6> <7> <8> <9> gen * bbold
+      <10> <10.95> bbold10
+      <12> <14.4> bbold12
+      <17.28> <20.74> <24.88> bbold17
+   }{}
+\DeclareMathAlphabet{\mathsfbb}{U}{bbold}{m}{n}     % \mathsfbb
+\newcommand{\mathbfsfbb}[1]{\pmb{\mathsfbb{#1}}}      % \mathbfsfbb
+\let\mathbbsf\mathsfbb
+
+%Mathsf
+\DeclareMathAlphabet{\mathsf}{OT1}{cmsmf}{m}{n}    % \mathsf
+\SetMathAlphabet\mathsf{bold}{OT1}{cmsmf}{bx}{n}
+\newcommand{\mathbfsf}[1]{\bm{\mathsf{#1}}}
+%\DeclareMathAlphabet{\mathbfsf}{OT1}{cmsmf}{bx}{n} % \mathbfsf
+\let\msf\mathsf
+
+%Math others
+\newcommand{\mathmd}[1]{#1}
+
+
+
+%%% SYMBOLS LIBRARIES
+\RequirePackage[a]{esvect}
+\RequirePackage{amssymb}
+\RequirePackage{stmaryrd}
+\RequirePackage{pifont}
+\RequirePackage{wasysym}
+\RequirePackage{esint}
+\RequirePackage{mathtools}
+\RequirePackage{textgreek}
+
+
+
+%%% THEOREMS
+\RequirePackage{amsthm}
+
+
+
+%%% PHYSICS
+\RequirePackage{physics}
+
+
+
+%%% UNITS
+\RequirePackage{siunitx}
+\sisetup{inter-unit-product = \text{\hspace{0.06em}\ensuremath{\cdot}\hspace{0.06em}} }
+\sisetup{exponent-product   = \text{\hspace{0.06em}\ensuremath{\times}\hspace{0.06em}} }
+\sisetup{output-decimal-marker = {,}}
+%\sisetup{uncertainty-mode = separate}  %OVERLEAF INCOMPATIBLE
+
+
+
+%%% SUBEQUATIONS
+\patchcmd\subequations
+ {\theparentequation\alph{equation}}
+ {\subequationsformat}
+ {}{}
+\newcommand{\subequationsformat}{\theparentequation.\alph{equation}}
+
+%%% VECTOR NOTATIONS (default bf it)
+%Series (bold)
+\newcommand{\@vecseries}[1]{#1}
+\DeclareOption{rgvec}{%Vecteurs en regular series
+\renewcommand{\@vecseries}[1]{#1}
+}
+\DeclareOption{mdvec}{%Vecteurs en medium weight series
+\renewcommand{\@vecseries}[1]{\mathmd{#1}}
+}
+\DeclareOption{bfvec}{%Vecteurs en bold series
+\renewcommand{\@vecseries}[1]{\boldsymbol{#1}}
+}
+%Shape (it)
+\newcommand{\@vecshape}[1]{#1}
+\DeclareOption{upvec}{%Vecteurs en upright shape
+\renewcommand{\@vecshape}[1]{\mathrm{#1}}
+}
+\DeclareOption{itvec}{%Vecteurs en italic shape
+\renewcommand{\@vecshape}[1]{\mathit{#1}}
+}
+%Arrow
+\let\arrow\vv
+\let\oldarrow\vec
+\newcommand{\@vecarrow}[1]{#1}
+\DeclareOption{noarrowvec}{%Vecteurs sans flèches
+\renewcommand{\@vecarrow}[1]{#1}
+}
+\DeclareOption{arrowvec}{%Vecteurs avec des flèches
+\renewcommand{\@vecarrow}[1]{\arrow{#1}}
+}
+\DeclareOption{oldarrowvec}{%Vecteurs avec des vielles flèches
+\renewcommand{\@vecarrow}[1]{\oldvec{#1}}
+}
+%Setting
+\renewcommand{\vec}[1]{\@vecarrow{\@vecseries{\@vecshape{#1}}}}
+\undef\vectorbold
+\undef\vectorarrow
+\undef\vectorunit
+       %Note to self un jour faire les unit vector
+%Dot and cross products
+\renewcommand{\dotproduct}{\@vecseries{\cdot}}
+\renewcommand{\crossproduct}{\@vecseries{\times}}
+\DeclareOption{wedge}{%Vecteurs avec des flèches
+\renewcommand{\crossproduct}{\@vecseries{\wedge}}
+}
+\newcommand{\bdot}{\raisebox{.3ex}{\,\resizebox{0.7ex}{!}{\textbullet}\,}}
+
+
+%Nabla
+\renewcommand{\vnabla}{\@vecarrow{\@vecseries{\nabla}}}
+\let\rot\curl
+\DeclareOption{textdel}{%rot,div et grad en text
+\DeclareMathOperator{\@grad}{\@vecarrow{\@vecseries{grad}}}
+\DeclareDocumentCommand\gradient{}{\trigbraces{\@grad}}
+\DeclareMathOperator{\@div}{div}
+\DeclareDocumentCommand\divergence{}{\trigbraces{\@div}}
+\DeclareMathOperator{\@curl}{\@vecarrow{\@vecseries{curl}}}
+\DeclareDocumentCommand\curl{}{\trigbraces{\@curl}}
+\DeclareMathOperator{\@rot}{\@vecarrow{\@vecseries{rot}}}
+\DeclareDocumentCommand\rot{}{\trigbraces{\@rot}}
+\DeclareMathOperator{\@lapl}{\Delta}
+\DeclareDocumentCommand\laplacian{}{\trigbraces{\@lapl}}
+}
+
+
+%%% MATRICES AND OPERATORS
+%Series (bold)
+\newcommand{\@matseries}[1]{#1}
+\DeclareOption{rgmat}{%Matrices en regular series
+\renewcommand{\@matseries}[1]{#1}
+}
+\DeclareOption{mdmat}{%Matrices en medium weight series
+\renewcommand{\@matseries}[1]{\mathmd{#1}}
+}
+\DeclareOption{bfmat}{%Matrices en bold series
+\renewcommand{\@matseries}[1]{\boldsymbol{#1}}
+}
+%Shape (it)
+\newcommand{\@matshape}[1]{#1}
+\DeclareOption{upmat}{%Matrices en upright shape
+\renewcommand{\@matshape}[1]{\mathrm{#1}}
+}
+\DeclareOption{itmat}{%Matrices en italic shape
+\renewcommand{\@matshape}[1]{\mathit{#1}}
+}
+\DeclareOption{calmat}{%Matrices en mathcal familly
+\renewcommand{\@matshape}[1]{\mathcal{#1}}
+}
+\DeclareOption{sfmat}{%Matrices en sans serif familly
+\renewcommand{\@matshape}[1]{\mathsf{#1}}
+}
+%Hat
+\newcommand{\@mathat}[1]{#1}
+\DeclareOption{nohatmat}{%Matrices sans chapeau
+\renewcommand{\@mathat}[1]{#1}
+}
+\DeclareOption{hatmat}{%Matrices avec un chapeau
+\renewcommand{\@mathat}[1]{\hat{#1}}
+}
+\DeclareOption{barmat}{%Matrices avec un chapeau
+\renewcommand{\@mathat}[1]{\overline{#1}}
+}
+%Setting
+\newcommand{\mat}[1]{\@mathat{\@matseries{\@matshape{#1}}}}
+
+
+%%Default settings
+\ExecuteOptions{bfvec,noarrowvec,upvec, sfmat, mdmat, nohatmat}
+
+
+%%% DIACRITICS
+%Hats
+\let\what\widehat
+\let\ltilde\tilde
+\let\tilde\widetilde
+\newcommand{\vhat}[1]{\hat{\@vecseries{\@vecshape{#1}}}}
+\let\hvec\vhat
+\newcommand{\wvhat}[1]{\what{\@vecseries{\@vecshape{#1}}}}
+\let\bar\overline
+\let\ubar\underline
+
+%Breves
+\def\breve{\mathpalette\wide@breve}
+\def\wide@breve#1#2{\sbox\z@{$#1#2$}%
+     \mathop{\vbox{\m@th\ialign{##\crcr
+\kern0.08em\brevefill#1{0.8\wd\z@}\crcr\noalign{\nointerlineskip}%
+                    $\hss#1#2\hss$\crcr}}}\limits}
+\def\brevefill#1#2{$\m@th\sbox\tw@{$#1($}%
+  \hss\resizebox{#2}{\wd\tw@}{\rotatebox[origin=c]{90}{\upshape(}}\hss$}
+  
+%Invbreves
+\def\invbreve{\mathpalette\wide@invbreve}
+\def\wide@invbreve#1#2{\sbox\z@{$#1#2$}%
+     \mathop{\vbox{\m@th\ialign{##\crcr
+\kern0.08em\invbrevefill#1{0.8\wd\z@}\crcr\noalign{\nointerlineskip}%
+                    $\hss#1#2\hss$\crcr}}}\limits}
+\def\invbrevefill#1#2{$\m@th\sbox\tw@{$#1($}%
+  \hss\resizebox{#2}{\wd\tw@}{\rotatebox[origin=c]{90}{\upshape)}}\hss$}
+
+%%% DERIVATIVES
+
+%Total derivative
+\DeclareDocumentCommand\totalderivative{ s o m g d() }
+{ % Total derivative
+	% s: star for \flatfrac flat derivative
+	% o: optional n for nth derivative
+	% m: mandatory (g in dF/dg)
+	% g: optional (F in dF/dg)
+	% d: long-form d/dx(...)
+	\IfBooleanTF{#1}
+	{\let\fractype\flatfrac}
+	{\let\fractype\frac}
+	\IfNoValueTF{#4}
+	{
+		\IfNoValueTF{#5}
+		{\fractype{\mathrm{D} \IfNoValueTF{#2}{}{^{#2}}}{\mathrm{D} #3\IfNoValueTF{#2}{}{^{#2}}}}
+		{\fractype{\mathrm{D} \IfNoValueTF{#2}{}{^{#2}}}{\mathrm{D} #3\IfNoValueTF{#2}{}{^{#2}}} \argopen(#5\argclose)}
+	}
+	{\fractype{\mathrm{D} \IfNoValueTF{#2}{}{^{#2}} #3}{\mathrm{D} #4\IfNoValueTF{#2}{}{^{#2}}}}
+}
+\DeclareDocumentCommand\Dv{}{\totalderivative} % Shorthand for \totalderivative
+
+%Thermo partial derivative
+\DeclareDocumentCommand\partialderivativethermo{ s o m g t_ g }
+{ % Partial derivative for thermodynamics
+	% s: star for \flatfrac flat derivative
+	% o: optional n for nth derivative
+	% m: mandatory (g in dF/dg)
+	% g: optional (F in dF/dg)
+	% o : optional fixed variables
+	\IfBooleanTF{#1}
+	{\let\fractype\flatfrac}
+	{\let\fractype\frac}
+	\def\@@ans{
+	\IfNoValueTF{#4}
+	{
+		\fractype{\partial \IfNoValueTF{#2}{}{^{#2}}}{\partial #3\IfNoValueTF{#2}{}{^{#2}}}
+	}
+	{    \fractype{\partial \IfNoValueTF{#2}{}{^{#2}} #3}{\partial #4\IfNoValueTF{#2}{}{^{#2}}}
+	}
+	}
+	\IfBooleanTF{#5}{
+	    % style ()_
+	    \qty(\@@ans)_{#6}
+	    % style |_
+	    %\eval{\@@ans}_{#6}
+	}{
+	    \@@ans
+	}
+}
+
+\DeclareDocumentCommand\pdvth{}{\partialderivativethermo} % Shorthand for \partialderivativethermo
+
+
+%%% OPERATORS
+%Equal by definition
+\newcommand*{\deq}{\mathrel{\widehat=}}
+
+%Equivalence symbols
+\newlength{\@upwidth}
+\newcommand{\xsim}[1]{
+    \settowidth{\@upwidth}{$#1$}
+    \overset{#1}{\resizebox{\@upwidth}{.7ex}{$\sim$}}
+}
+
+%Sine cardinal
+\DeclareMathOperator{\sinecard}{sinc}
+\DeclareDocumentCommand\sinc{}{\trigbraces{\sinecard}}
+
+%Re/Im
+\DeclareDocumentCommand\Re{g}{\IfNoValueTF{#1}{\operatorname{\mathfrak{Re}}}{\fbraces{\lbrace}{\rbrace}{\operatorname{\mathfrak{Re}}}{#1}}}
+\DeclareDocumentCommand\Im{g}{\IfNoValueTF{#1}{\operatorname{\mathfrak{Im}}}{\fbraces{\lbrace}{\rbrace}{\operatorname{\mathfrak{Im}}}{#1}}}
+
+%Trace
+\let\trace\undefined
+\DeclareMathOperator{\trace}{tr}
+\let\Trace\trace
+\DeclareDocumentCommand\Tr{}{\opbraces{\trace}}
+
+%Transpose
+\newcommand{\transpose}[1]{{{#1}^{\scalebox{.5}{\textsf{T}}}}}
+\let\tr\transpose
+\newcommand{\adj}{^{\raisebox{.1ex}{\resizebox{0.9ex}{!}{\ding{66}}}}}
+\newcommand{\dual}{^{\raisebox{.1ex}{\resizebox{0.9ex}{!}{\ding{92}}}}}
+
+%Spectre /!\ conflit avec SI-unitx
+%\let\sp\undefined
+%\DeclareMathOperator{\sp}{\textup{sp}}
+
+%Order
+\DeclareDocumentCommand\order{ l m }{\fbraces#1{\lparen}{\rparen}{\mathscr{o}}{#2}}
+\DeclareDocumentCommand\Order{ l m }{\fbraces#1{\lparen}{\rparen}{\mathcal{O}}{#2}}
+
+%Perp signs
+\let\oldperp\perp
+\newcommand*{\bino}{{\resizebox{0.9ex}{0.9ex}{$\sqcap$}}}
+\renewcommand*{\perp}{{\hspace{-.1ex}\resizebox{0.9ex}{0.9ex}{$\oldperp$}}}
+\newcommand*{\para}{{\resizebox{0.9ex}{0.9ex}{\small //}}}
+\newcommand*{\croix}{{\hspace{-.1ex}\resizebox{1ex}{0.9ex}{$\times$}}}
+
+%Special characters
+\newcommand*\sha{{\amalg\hspace{-3.8pt}\amalg}}
+
+
+
+%%% SHORTCUTS
+
+%Energy
+\newcommand*{\En}{\cal{E}}
+\newcommand*{\ep}{\varepsilon}
+
+%Vector shortcut
+\newcommand*{\vr}{\vec{r}}
+\newcommand*{\vR}{\vec{R}}
+\newcommand*{\vk}{\vec{k}}
+\newcommand*{\vK}{\vec{K}}
+\newcommand*{\vp}{\vec{p}}
+\newcommand*{\vP}{\vec{P}}
+\newcommand*{\vq}{\vec{q}}
+\newcommand*{\vQ}{\vec{Q}}
+\renewcommand*{\vv}{\vec{v}}
+\newcommand*{\vV}{\vec{V}}
+\renewcommand*{\vu}{\vec{u}}
+\newcommand*{\vU}{\vec{U}}
+\newcommand*{\vS}{\vec{S}}
+\newcommand*{\vL}{\vec{L}}
+\newcommand*{\vl}{\vec{\ell}}
+\newcommand*{\vj}{\vec{j}}
+\newcommand*{\vJ}{\vec{J}}
+\newcommand*{\vE}{\vec{E}}
+\newcommand*{\vD}{\vec{D}}
+\newcommand*{\vB}{\vec{B}}
+\newcommand*{\vA}{\vec{A}}
+\renewcommand*{\va}{\vec{a}}
+\renewcommand*{\vb}{\vec{b}}
+\newcommand*{\vH}{\vec{H}}
+\newcommand*{\vM}{\vec{M}}
+\newcommand*{\vm}{\vec{m}}
+\newcommand*{\vf}{\vec{f}}
+\newcommand*{\vg}{\vec{g}}
+\newcommand*{\vF}{\vec{F}}
+\newcommand*{\vn}{\vec{n}}
+\newcommand{\vOm}{\vec{\Omega}}
+\newcommand{\vPsi}{\vec{\Psi}}
+\newcommand{\vka}{\vec{\kappa}}
+\newcommand*{\vT}{\vec{T}}
+\newcommand*{\vC}{\vec{C}}
+\newcommand*{\vx}{\vec{x}}
+\newcommand*{\vy}{\vec{y}}
+\newcommand*{\vz}{\vec{z}}
+\newcommand*{\ve}{\vhat{e}}
+
+
+%%% MECAFLU
+\DeclareOption{mecaflu}{
+%General non-dimensional number
+\newcommand{\DeclareNonDimensionalNumber}[2]{%
+ \@namedef{#1#2N}{\cal{#1#2}}%
+}
+
+%List
+\DeclareNonDimensionalNumber{R}{e} %Reynolds
+}
+
+\ProcessOptions

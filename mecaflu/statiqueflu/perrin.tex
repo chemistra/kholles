@@ -1,0 +1,55 @@
+% Niveau :      PC
+% Discipline :  Mécaflu
+%Mots clés :    Parallèle Equations de Maxwell et gravité
+
+\begin{exercise}{Mesure du nombre d'Avogradro}{2}{Spé}
+{Statique des fluides, Thermodynamique}{bermu}
+
+\begin{questions}
+    \questioncours\label{que:perrin} Redémontrer l'équation de la statique des fluides.
+    \questionbonus Contribution scientifiques de Jean Perrin.
+\begin{EnvUplevel}
+En 1913, Jean Perrin publie \emph{Les Atomes}, ouvrage dans lequel il entend imposer une fois pour toutes par un argumentaire fourni l'hypothèse atomique. Parmi ces preuves, il étudie la répartition à l'équilibre de '\emph{grains}' dans une émulsion, qu'il compte au microscope, afin de calculer le nombre d'Avogadro. Voici ses observations :
+
+\begin{center}\begin{minipage}{155mm}
+    «\itshape On constate que \emph{[peu après l'agitation]} les couches inférieures deviennent  plus  riches  en grains  que  les  couches  supérieures,  mais  que  cet  enrichissement  se ralentit sans cesse, et que l’aspect de l’émulsion finit par ne plus changer. Il se réalise bien un état de régime permanent dans lequel la concentration décroît avec la hauteur. \normalfont »
+\end{minipage}\end{center}
+\end{EnvUplevel}
+    \question Interpréter qualitativement ces observations au regard de la question \ref{que:perrin}.
+    \question Supposant que la grains se comportent à l'équilibre comme un gaz parfait (on pourra discuter de cette hypothèse), donner l'équation vérifiée par la densité $n$ (en m$^{-3}$) des grains. \\
+    On fera apparaître une hauteur caractéristique $H$ qui ne dépend que des données du problème et du nombre d'Avogadro $N_\textsc{a}$.
+    \question Résoudre cette équation sachant que la densité en $z = 0$ est $n_0 = 100$.
+\begin{EnvUplevel}
+Perrin trouve les résultats suivants :
+\begin{center}\begin{minipage}{155mm}
+    «\itshape Une série très soignée a été faite avec des grains de gomme ayant pour rayon 0,212~$\mu$m~\emph{[...]}.
+    Des lectures croisées ont été faites dans une cuve profonde de 100 $\mu$m, en quatre plans horizontaux équidistants traversant la cuve aux niveaux
+    \begin{center}
+        5 $\mu$m, 35 $\mu$m, 65 $\mu$m, 95 $\mu$m.
+    \end{center}
+    Ces lectures ont donné pour ces niveaux \emph{[...]} des concentrations proportionnelles aux nombres :
+    \begin{center}
+        100 $\mu$m, 47 $\mu$m, 22.6 $\mu$m, 12 $\mu$m.
+    \end{center}
+    qui sont en progression géométrique. \normalfont »
+\end{minipage}\end{center}\end{EnvUplevel}
+    \question Le profil expérimental correspond-t-il au modèle ? \`A l'aide d'un tableur ou d'une calculatrice, donner une valeur expérimentale du nombre d'Avogadro $N_\textsc{a}$ et comparer avec la valeur standard
+    $$N_\textsc{a} = 6.022\times 10^{23} \text{ mol}^{-1}.$$
+\end{questions}
+
+\plusloin
+Perrin a répété cette expérience pour plusieurs valeurs de température et plusieurs types de grains, avec succès.
+
+Malheureusement, une démonstration bien plus frappante de l'existence des atomes, les figures de diffraction par les rayons X de cristaux, sera découverte l'année suivante, rendant l'objet de son livre obsolète... 
+
+\paragraph{Données expérimentales : } à $T = 273$ K, telles que mesurées par Perrin
+\begin{itemize}
+    \item masse volumique de l'eau $\rho_\mathrm{H_2O} = 1,003$ kg$\cdot$m$^{-3}$,
+    \item masse volumique des grains $\rho_\text{g} = 1,194$ kg$\cdot$m$^{-3}$
+    \item constante des gaz parfaits$^\dagger$ $R = 8.314$ $\mathrm{J\cdot K^{-1}\cdot mol^{-1}}$,
+\end{itemize}
+\medskip
+$^\dagger$ \small{Elle était déjà connue à l'époque grâce aux travaux antérieurs de Clapeyron.}
+
+\paragraph{Référence :} Jean Perrin, \emph{Les atomes}, Félix Alcan, Nouvelle collection scientifique, Paris, 1913.
+\end{exercise}

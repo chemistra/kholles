@@ -1,0 +1,39 @@
+\begin{exercise}{Pouvoir rotatoire des champs}{2}{Sup}
+{Particuleschargees}{lelay}
+
+On dispose d'un faisceau d'électrons allant à la vitesse $\vec{v_0} = v_0 \vec{e}_x$ et on souhaite le faire tourner d'un angle $\alpha$.
+
+\begin{questions}
+    \questioncours Force de Lorentz
+    \uplevel{On utilise dans un premier temps un champ électrique $\vec{E} = E_0\vec{e}_y$}
+    \question Établir les équations du mouvement d'un électron dans ce champ
+    \question Au bout d'un temps $t$, de quel angle aura tourné l'électron ?
+    \question Donner la distance $D_E$ (en $x$) que doit parcourir l'électron pour tourner d'un angle $\alpha = \frac{\pi}{4}$
+    \uplevel{On se place maintenant dans un champ magnétique $\vec{B} = B_0\vec{e}_z$}
+    \question Établir les équations du mouvement d'un électron dans ce champ
+    \question Au bout d'un temps $t$, de quel angle aura tourné l'électron ?
+    \question Donner la distance $D_B$ (en $x$) que doit parcourir l'électron pour tourner d'un angle $\alpha = \frac{\pi}{4}$
+    \question Est-il plus efficace d'utiliser un champ magnétique ou électrique pour faire tourner un faisceau d'électrons ?
+    
+\end{questions}
+Données : Ordre de grandeur des valeurs atteignable avec du matériel de TP : champ magnétique de 1~T, champ électrique de 300~kV/m, électrons à la vitesse $c/10$]
+
+\end{exercise}
+
+\begin{solution}
+
+\begin{questions}
+    \questioncours $F = q(E + v \cross B)$
+    \uplevel{On utilise dans un premier temps un champ électrique $\vec{E} = E_0\vec{e}_y$}
+    \question $m a_y = -e E_0$, 
+    \question Au bout de $t$, on a $v_y = -e E_0 t/m$ et $v_x = v_0$ d'où $\alpha = \arctan(v_y/v_x) = \arctan(e E_0 t / v_0m$
+    \question $\alpha = \frac{\pi}{4} \Rightarrow e E_0 t = v_0 m$ i.e. $D_E = v_x t = v_0 (v_0 m / e E_0) = m v_0^2 /e E_0$
+    \uplevel{On se place maintenant dans un champ magnétique $\vec{B} = B_0\vec{e}_z$}
+    \question Mouvement cyclotron de pulsation $\omega_c = eB/m$ et de rayon $R_c = v_0/\omega_c$
+    \question Mouvement circulaire, 'angle est $\omega_c t$
+    \question Pour avoir 45 deg, on fait un huitième de cercle en un huitième de période (donc $t = 1/8 2\pi/\omega_c$). Un dessin donne $\sin(\frac{\pi}{4}) = \frac{D_B}{R_c}$ d'où $D_B = R_c/\sqrt{2} = v_0 m/\sqrt{2} eB$
+    \question On a $D_e/D_B =\sqrt{2} B_0 v_0/E_0 \sim 1 \cdot 1 \cdot 3\cdot 10^7/3\cdot 10^5$ donc on met une distance 100 fois moins grande pour faire tourner un électron avec un champ magnétique qu'avec un champ électrique.
+    
+\end{questions}
+
+\end{solution}

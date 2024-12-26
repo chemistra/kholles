@@ -1,0 +1,62 @@
+% Niveau :      PC *
+% Discipline :  Méca
+% Mots clés :   Lune
+
+\begin{exercise}{Palet sur table}{2}{Sup}
+{Mécanique,Forces centrales}{lelay}
+
+Considère deux masses, $m$ et $M$, reliées par un fil de longueur $L$.
+
+La masse $m$ est posée sur une table horizontale, libre de glisser sur sa surface sans frottement. Un trou est percé dans cette table, par lequel passe le fil. On note $r$ la distance entre le trou et $m$. La masse $M$, soumise à son propre poids, se déplace uniquement selon la verticale et son altitude est notée $z$, $z=0$ étant l'altitude de la table.
+
+\begin{questions}
+
+    \questioncours Lois de Kepler, conditions d'application.
+    
+    \question Mettre la situation en équations. En quoi cette situation est-elle assimilable à un problème de type force centrale ?
+    
+    \question Montrer que le problème se réduit à l'étude du mouvement unidimensionnel d'une masse dans un potentiel effectif $E_{\text{p}}^{\text{eff}}$. Expliciter et représenter graphiquement ce potentiel en fonction de $r$. Existe-t-il des états liés ? Des états de diffusion ? Interpréter.
+    
+    \question Existe-t-il une trajectoire circulaire pour la masse $m$ ? Si oui, donner le rayon de cette trajectoire. Quel est alors le mouvement de la masse $M$ ?
+    
+    \question Pour cette trajectoire, peut-on retrouver un équivalent de la troisième loi de Kepler (relation liant la période et le rayon de la trajectoire à des constantes du problème) ?
+    
+    \question Pour cette question on considère qu'à $t = 0$ la masse $m$ est lâchée sans vitesse initiale à une distance $r_0$ du trou. Combien de temps mets-elle à atteindre le trou dans la table ? Interpréter les limites $m \ll M$ et $m \gg M$.
+    
+    \questionbonus Quel est le rôle de la longueur du fil $L$ dans le problème ? Commenter sa présence ou son absence dans les résultats des questions précédentes.
+    
+    \questionbonus Dans le cas non-circulaire, quel est le mouvement de la masse $m$ ? De $M$ ? À votre avis, ce mouvement est-il périodique ?
+ \end{questions}
+
+\end{exercise}
+
+\begin{solution}
+\begin{questions}
+        \questioncours ...
+        \question $z$ est pris opposé à la gravité.
+        \begin{align*}
+            -z + r &= L \\ 
+            r^2\dot\theta &= C \\
+            m \qty(\ddot{r} - r{\dot{\theta}}^2 ) &= -T \\
+            M \ddot{z} &= - M g + T
+        \end{align*}
+        ($T$ est la tension du fil, la même de part et d'autre)
+        
+        La force sur $m$ est bien centrale mais a priori elle dépend de $\ddot{z}$ et donc le problème est complexe. Heureusement la longueur de la corde est constante ce qui nous ramène à un problème 1D : $\ddot{z} = \ddot{r}$ d'où
+        $$ (m+M)\ddot{r} - mr {\dot{\theta}}^2 + Mg = 0$$
+        \question $E_{\text{p}}^{\text{eff}} \propto \frac{mC^2}{2r^2} + Mgr$. Tous les états sont liés, il n'y a pas d'états de diffusion. Interprétation : Des états de diffusions où $m$ part à l'infini signifieraient une énergie infinie, car le poids finit toujours par faire redescendre $M$.
+        \question Oui, minimum d'E pot eff pour $r = \qty(\frac{mC^2}{Mg})^{1/3}$. La masse $M$ est alors stationnaire.
+        \question Pour $r = cste = a$ on a $a^3 = mC^2/Mg $ et on utilise par exemple $C=a^2\frac{2\pi}{T}$ d'où \begin{align}
+            \frac{a}{T^2} = \frac1{4\pi^2}\frac{M}{m} g
+        \end{align}
+        \question On a $C = 0$ d'où $t_\text{chute} \sqrt{2\qty(1 + \frac{m}{M})}\sqrt{\frac{r_0}{g}}$
+        
+        $m \ll M$ : C'est une chute libre (temps de chute independant de la masse)
+        
+        $m \gg M$ : Cette fois le temps dépends de la masse : l'inertie domine.
+    
+    \questionbonus $L$ sert uniquement si $m$ atteint le trou ou $M$ le niveau de la table : Un fil infini ne change pas le problème hors de ces situations extrêmes, d'où le fait qu'il n'intervienne pas dans les résultats (on pouvait donc tout trouver par homogénéité).
+    
+    \questionbonus $m$ tourne autour du centre et $M$ vibre entre une position haute et basse. Le mouvement est intégrable et quasi-périodique : A priori, il n'est périodique que pour une ensemble de conditions initiales de mesure nulle.
+\end{questions}
+\end{solution}

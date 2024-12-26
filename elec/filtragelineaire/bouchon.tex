@@ -1,0 +1,31 @@
+% Niveau :      PCSI - PC
+% Discipline :  Elec
+% Mots clés :   Elec, Ordre 2
+
+\begin{exercise}{Filtre bouchon}{2}{Sup,Spé}
+{\'Electrocinétique, Circuits d'ordre 2}{lelay}
+
+On cherche à décrire le circuit suivant :
+
+\begin{circuit}
+      \draw
+      (0,0) to [short] (5,0)
+      to [open, v_=$s$, *-o] (5,2) 
+      to [short] (2,2)
+      (0,0) to [open, v^=$e$, *-o] (0,2)
+      to [R, l=$R$] (2,2)
+      to [L, l=$L$, *-*] (2,0) 
+      (3.5,0) to [C, l_=$C$, *-*] (3.5,2);
+\end{circuit}
+
+\begin{questions}
+    \questioncours Pour chaque composant du circuit, donner la loi associée et le comportement asymptotique.
+    \question Donner la fonction de transfert de ce filtre et tracer le diagramme de Bode associé.
+    \question Quel est le comportement de ce filtre ?
+    \question \'Etudier les limites $R\longrightarrow 0$ et $R\longrightarrow +\infty$. Pourquoi observe-t-on un tel comportement ?
+\end{questions}
+\end{exercise}
+
+\begin{solution}
+    $$H(\omega) = \dfrac{1}{1 + j Q \qty(\dfrac{\omega}{\omega_0} - \dfrac{\omega_0}{\omega})}, Q=R\sqrt{\dfrac{C}{L}}, \omega_0 = \dfrac{1}{\sqrt{LC}}$$
+\end{solution}

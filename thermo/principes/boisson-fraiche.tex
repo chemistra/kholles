@@ -1,0 +1,54 @@
+\begin{exercise}{Boisson fraîche}{2}{Sup, Spé}
+{Thermodynamique,Premier principe,Enthalpie,Changement d'état}{bermudez,uhl2019-1}
+
+Lors de la canicule cet été, vous arrivez à cours d'eau fraîche dans votre réfrigérateur. Mais heureusement, il vous reste des glaçons dans votre congélateur et quelques rudiments de thermodynamique... 
+
+\begin{questions}
+    \questioncours La fonction d'état enthalpie, $H$. Définition, intérêts et expression du premier principe. On abordera en particulier la question du changement d'état.
+    \uplevel{L'idée va être de mélanger les glaçons et l'eau du robinet dans un seau isotherme (de champagne par exemple) pour obtenir de l'eau fraîche.}
+    \question \textsf{Question ouverte} Combien faut-il de glaçons $N_\text{g}$ et d'eau du robinet $V_\ell$ (en mL) pour obtenir à la fin 1L ($M = 1$ kg) d'eau fraîche ? \\
+    On notera $T_\text{a}$ la température ambiante, $T_\text{g}$ la température de la glace, $T_\text{f}$ la température du frigidaire. \\
+    \textsl{Le raisonnement se basera sur des estimations d'ordres de grandeur et sur les données ci-après.}
+\end{questions}
+
+\paragraph{Données}~(toutes ne sont pas utiles)
+\begin{itemize}
+    \item masse volumique de la glace $\rho_\text{g} = 920 \ \mathrm{kg\cdot m^{-3}}$ ;
+    \item masse d'un galçon $m_\text{g}$ : à estimer ;
+    \item enthalpie massique de fusion de l'eau à $0^\circ$ C, $\Delta_\text{fus}\cal{h} = 330\ \mathrm{kJ\cdot kg^{-1}}$ ;
+    \item enthalpie massique de vaporisation de l'eau à 100$^\circ$ C, $\Delta_\text{vap}\cal{h} = 2300\ \mathrm{kJ\cdot kg^{-1}}$ ;
+    \item capacité thermique massique de l'eau à 300 K, $\cal{c}_\ell$ : définition de la calorie ;
+    \item capacité thermique massique de la glace à $0^\circ$ C, $\cal{c}_\text{g} =  2.1\ \mathrm{kJ\cdot kg^{-1}\cdot K^{-1}}$ ;
+    \item capacité thermique massique de l'inox à 300 K, $\cal{c}_\text{i} =  0.5\ \mathrm{kJ\cdot kg^{-1}\cdot K^{-1}}$ ;
+    \item masse du seau à champagne $m_\text{i} = 500$ g.
+    
+\end{itemize}
+
+\end{exercise}
+
+\begin{solution}
+Le système $\scr{S}$ : $\{$ glace $+$ eau $+$ seau $\}$. On a par hypothèse $\Delta H(\scr{S}) = 0$ ainsi que la conservation de la masse $N_\text{g} m_\text{g} + \rho_\ell V_\ell = M = 1$ kg.
+
+ODG non fournis :
+\begin{itemize}
+    \item $\cal{c}_\ell = 4.18\ \mathrm{kJ\cdot kg^{-1}}$
+    \item $T_\text{f} = 4^\circ$C, $T_\text{g} = -18^\circ$C, $T_\text{a} = 30^\circ$ C.
+    \item $m_\text{g} = 10$ g
+\end{itemize}
+
+Étapes de la réaction :
+\begin{itemize}
+    \item les glaçons se réchauffent à $T_\text{fus}$ ;
+    \item les glaçons fondent ;
+    \item l'eau de glaçon fondue se réchauffe à $T_\text{f}$ ;
+    \item l'inox et l'eau se refroidissent à $T_\text{f}$ ;
+\end{itemize}
+soit
+$$N_\text{g} m_\text{g} \cal{c}_\text{g} (T_\text{fus} - T_\text{g}) + N_\text{g} m_\text{g}\Delta_\text{fus}\cal{h} + N_\text{g} m_\text{g} \cal{c}_e (T_\text{f} - T_\text{fus}) + (\rho_\ell V_\ell \cal{c}_\ell + m_\text{i} \cal{c}_\text{i})(T_\text{f} - T_\text{a}) = 0.$$
+En substituant $V_\ell$ par $(M - N_\text{g} m_\text{g})/\rho_\ell$, on trouve
+
+$$N_\text{g} = -\dfrac{1}{m_\text{g}}\dfrac{(M \cal{c}_\ell + m_\text{i} \cal{c}_\text{i})(T_\text{a} - T_\text{f})}{\cal{c}_\text{g}(T_\text{fus} - T_\text{g}) + \Delta_\text{fus}\cal{h} + \cal{c}_\ell(T_\text{a} - T_\text{fus})} \sim 10 \text{ glaçons}$$
+
+$$V_\ell = 925\text{ mL}$$
+
+\end{solution}

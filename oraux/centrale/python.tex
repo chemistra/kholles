@@ -1,0 +1,89 @@
+\begin{exercise}{Portrait de phase OHA}{-1}{Spé}
+{Méca, Référentiel non galiléen}{centrale}
+
+On considère le référentiel du laboratoire est supposé galiléen. Une boule de masse $m$ de rayon $R$ est reliée à un point fixe $O$ par une tige rigide de longueur $\ell$, de masse négligeable par rapport à $m$, et de dimensions latérales négligeables. La boule est libre de tourner autour de l'axe $Oz$ de telle sorte que sa trajectoire est comprise dans le plan $Oxy$. On considèrera également l'accélération de la pesanteur dirigée suivant $-\ve_y$.
+
+Ce dispositif baigne dans un fluide en rotation solide autour de l'axe $Oz$ avec une vitesse angulaire constante $\Omega$. On note $\gamma$ le coefficient de frottement du fluide et $\rho$ sa masse volumique. On suppose la densité de la boule supérieure, \underline{mais relativement proche} de celle du fluide. Le fluide exerce sur la boule une force de frottement visqueux
+$$\vec{F} = -m\gamma\vv_\text{r},$$
+où $\vv_\text{r}$ est la vitesse relative de la boule par rapport au fluide.
+
+\begin{center}
+    \begin{tikzpicture}
+    
+    \draw[->, black!30] (-2, 0) -- (3, 0);
+    \draw (3,0) node[below=2pt] {$x$};
+    
+    \draw[->, black!30] (0, -2) -- (0, 3);
+    \draw (0,3) node[right=2pt] {$y$};
+    
+    
+    \draw (0, 0) circle (0.15cm) node [below left=2pt, thick, black] {$z$};
+    \filldraw [black] (0,0) circle (0.05cm);
+    
+    \coordinate (O) at (0, 0);
+    \draw (O) node[above left=2pt] {$O$};
+    
+    \coordinate (m) at (1.5, -1.5);
+    \fill[black] (m) circle (0.15);
+    \draw (m) node[below right=2pt] {$R, m$};
+    
+    \draw[thick] (O) -- (m);
+    \path (O) -- node [midway, above right=1pt] {$\ell$} (m);
+    
+    \newcommand\RT{1.5}
+    \draw[->] (0, -\RT) arc(-90:-45:\RT);
+    \draw (0.38*\RT, -0.92*\RT) node[below=2pt] {$\theta$};
+    
+    
+    \newcommand\RO{3}
+    \draw[->, thick] (-0.94*\RO,0.34*\RO) arc(160:200:\RO);
+    \draw (-\RO, 0) node[left=2pt] {$\Omega$};
+
+    
+    \draw[->, thick] (2, 1.5) -- (2, 0.5);
+    \draw (2,1) node[right=2pt] {$\vec{g}$};
+    
+    
+    
+    \end{tikzpicture}
+\end{center}
+
+
+\paragraph{Exercice :}
+\begin{questions}
+    \question Montrez que $\theta(t)$ vérifie l'équation différentielle suivante
+    \begin{equation}
+        \dfrac{1}{\tau}\ddot{\theta} + \dot{\theta} + \alpha\sin\theta = \Omega,
+    \end{equation}
+    avec $\tau$ et $\alpha$ des paramètres dont vous donnerez l'expression. Interprétez cette équation.
+    
+    \question En comparant des échelles de temps que vous introduirez, donner les conditions pour négliger
+    \begin{parts}
+        \part l'accélération de la boule ;
+        \part les frottements ;
+        \part la gravité ;
+        \part la rotation solide du fluide.
+    \end{parts}
+    
+    \question Déterminez les éventuelles positions d'équilibre du système ; précisez les conditions d'existence de telles positions. Étudiez (par la méthode de votre choix) leur stabilité.
+    
+    \uplevel{Vous disposez d'un programme écrit en langage \texttt{python} qui permet de résoudre numériquement l'équation différentielle et de tracer la solution $\theta(t)$.}
+    
+    \question Tracer la trajectoire du système. Modifier le code pour tracer également le portrait de phase du système ($\dot{\theta}$ vs $\theta$) et vérifier la cohérence des résultats précédents.
+    
+    \uplevel{On se place désormais dans la situation 2.1 ou l'accélération de la boule est négligeable. \\
+    On prendra $\tau = 10^{-2}$ et $\alpha = 1$ dans le code.}
+    
+    \question Réécrire l'équation de la dynamique de la boule sous la forme
+    \begin{equation}
+        \dot{\theta} + \alpha\sin\theta = \Omega.
+    \end{equation}
+    
+    \question En fonction des cas que vous avez établis à la question 3, donner le temps de retour à l'équilibre ou la période du système par un calcul. Vérifier la cohérence ensuite avec le programme python.
+    
+\end{questions}
+
+\paragraph{Données :}~\\
+$$\int_0^{2\pi} \dfrac{\dd{u}}{1 - x \sin u} \sim^{x \rightarrow 1^-} \dfrac{\pi\sqrt{2}}{\sqrt{1-x}}.$$
+
+\end{exercise}

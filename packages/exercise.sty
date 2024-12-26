@@ -1,0 +1,238 @@
+\ProvidesPackage{exercise}[Extension donnant l'environnement exercise  v 09.08.20]
+
+\RequirePackage{xpatch}
+\RequirePackage{pgffor}
+\RequirePackage{graphicx}
+\RequirePackage{xcolor}
+\RequirePackage{environ}
+\RequirePackage{multicol}
+\RequirePackage{float}
+\RequirePackage{makeidx}
+\RequirePackage[backend=biber]{biblatex}
+\RequirePackage{usebib}
+\RequirePackage{dashrule}
+\RequirePackage{hyperref}
+
+
+%%%COUNTERS
+
+%% Exercise & Solution
+\newcounter{exercise}
+\renewcommand{\theexercise}{%Numéro
+\arabic{exercise}
+}
+\newcommand{\theexerciseref}{%Numéro pour hyperref
+\arabic{exercise}
+}
+\newcommand{\theexerciselabel}{%Label dans les titres
+Exercice~\theexercise\quad---\quad
+}
+\newcommand{\thesolution}{%Label dans le doc
+Solution~\theexercise\quad---\quad
+}
+\newcommand{\thetocexercise}{%Label dans la toc
+Ex.\hspace{4pt}\theexercise\hspace{4pt}--\hspace{4pt}%
+}
+\newcommand{\exerciselabelformat}[1]{%Format du label dans le header
+\noindent{\normalfont\Large\bfseries\sffamily #1}\vspace{1ex}
+}
+
+%% Question & parts
+\renewcommand{\thequestion}{%Label des questions
+{\bfseries\sffamily Q\,\arabic{question}.}
+}
+\renewcommand{\thepartno}{%Label des subquestions
+{\bfseries\sffamily Q\,\arabic{question}.\arabic{partno}.}
+}
+\renewcommand{\questionlabel}{\thequestion}
+\renewcommand{\partlabel}{\thepartno}
+
+\newcommand{\questionanwser}{question}
+\newcommand{\thequestionlabel}{
+    \theexerciseref{}@\questionanwser{}@\arabic{question}
+}
+\xpatchcmd{\questions}
+    {question@\arabic{question}}
+    {\thequestionlabel}
+    {}{}
+\newcommand{\thepartnolabel}{%
+    \thequestionlabel @\arabic{partno}
+}
+\xpatchcmd{\parts}
+    {part@\arabic{question}@\arabic{partno}}
+    {\thepartnolabel}
+    {}{}
+
+
+%%% DIFFICULTE
+\newcommand{\hibou}{%
+    $\vcenter{\hbox{\includegraphics[height=1.1em]{Maitre-Hibou.png}}}$
+}
+
+\newcommand{\difficulty}[1]{\mbox{%
+    \ifnum#1=0
+        cours%
+    \fi\ifnum#1=1
+        \hibou\hspace{-1ex}%(pas m\'echant)%
+    \fi\ifnum#1=2
+        \hibou  \hibou\hspace{-1ex}%(raisonnable)%
+    \fi\ifnum#1=3
+        \hibou  \hibou  \hibou\hspace{-1ex}%(peu aimable)%
+    \fi\ifnum#1=4
+        \hibou  \hibou  \hibou  \hibou\hspace{-1ex}%(turbomégachaud qui pique)%
+    \fi\ifnum#1=5
+        \hibou  \hibou  \hibou  \hibou  \hibou\hspace{-1ex}%Ulm PC 1976%
+    \fi\ifnum#1=-1
+        oral%
+    \fi%
+}}
+
+\def\tibou{$\ast$}
+
+\newcommand{\difficultystar}[1]{\texorpdfstring{\mbox{%
+    \ifnum#1=0
+        {}
+    \fi\ifnum#1=1
+        (\tibou)
+    \fi\ifnum#1=2
+        (\tibou\,\tibou)
+    \fi\ifnum#1=3
+        (\tibou\,\tibou\,\tibou)
+    \fi\ifnum#1=4
+        (\tibou\,\tibou\,\tibou\,\tibou)
+    \fi\ifnum#1=5
+        (\tibou\,\tibou\,\tibou\,\tibou\,\tibou)
+    \fi%
+    }}{}
+}
+
+\newcommand{\level}[1]{\textbf{Niveau :} #1}
+
+
+%%Biblio & Index
+\newcommand{\bibresource}[1]{%
+    \makeindex
+    \addbibresource{#1.bib}
+    \newbibfield{shorttitle}
+    \bibinput{#1}
+}
+\newcommand*{\tags}[1]{%
+    \foreach \superscript/\entry in {#1} {%
+    [\textit{\entry}]\index{\entry} %
+    }%
+}
+\newcommand{\reflabel}[1]{\footnotesize{(\!
+    \foreach\superscript/\entry in {#1}{%
+    \usebibentry{\entry}{shorttitle}\,%
+    }%
+    )}}
+
+
+%Special questions
+\newcommand{\questioncours}{\question {\sffamily Question de cours :} }
+\newcommand{\questionbonus}{\question (\emph{Question facultative}) } 
+\newcommand{\plusloin}[1][~]{\paragraph{Pour aller plus loin :}\textsf{#1}\\}
+
+
+%Headers / footers
+\newcommand{\printexerciseheader}{}
+\newcommand{\printexercisefooter}{}
+
+
+%%Environement nopagebreak
+\let\nopagebreak\relax
+
+\newenvironment{nopagebreak}{%
+  \nobreak\vfil\penalty0\vfilneg
+  \vtop\bgroup
+}{%
+\par\xdef\tpd{\the\prevdepth}
+  \egroup
+  \prevdepth=\tpd
+}
+
+
+%%Redefining the pagebreak
+\newcommand\@redefpagebreak{
+
+\let\oldpb\pagebreak
+\renewcommand{\pagebreak}{%
+    \newcounter{@currenq}
+    \ifthenelse{\equal{\@currenvir}{questions}}
+    {\setcounter{@currenq}{\value{question}}
+     \end{questions}}
+    {\setcounter{@currenq}{-1}}
+     
+    \vfill
+
+    \begin{center}
+        \itshape --- \quad Suite au verso \quad ---
+    \end{center}
+    
+    \printexercisefooter
+    \end{nopagebreak}
+    \vspace{1cm}
+
+    \pagebreak
+
+    \begin{nopagebreak}
+    \printexerciseheader
+    \@redefpagebreak
+
+    \begin{center}
+        \itshape --- \quad Suite du recto \quad ---
+    \end{center}
+
+    \bigskip
+    
+    \ifthenelse{\value{@currenq} = -1}{}{
+        \begin{questions}
+        \setcounter{question}{\value{@currenq}}
+    }
+
+}
+}
+
+
+%%Environment exercise
+\newenvironment{exercise}[5]
+  {\phantomsection\stepcounter{exercise}
+   \global\def\@currentexercisetitle{#1}
+   \addcontentsline{toc}{subsection}{\thetocexercise#1 \difficultystar{#2}{}}
+   \begin{nopagebreak}
+    \printexerciseheader
+    \exerciselabelformat{\theexerciselabel{#1} \quad (\difficulty{#2})}
+   
+    \noindent\textsf{\level{#3}\qquad\tags{#4}\hfill\reflabel{#5}\vspace{1em}}
+    }
+  {\printexercisefooter
+   \end{nopagebreak}
+   \vspace{1cm}}
+   
+
+
+
+%%Environment solution
+\definecolor{solcolor}{RGB}{0,80,0}
+
+\let\solution\relax
+\let\endsolution\relax
+
+
+\NewEnviron{solution}{\relax}
+
+\ifprintanswers
+\renewenvironment{solution}
+  {\phantomsection
+   \begin{nopagebreak}
+    \printexerciseheader
+    \exerciselabelformat{\color{solcolor}\thesolution\@currentexercisetitle}
+    \renewcommand{\questioncours}{%
+        \question{\sffamily Pistes de réflexion :} }
+    \renewcommand{\questionanwser}{answer}
+    \color{solcolor}
+    }
+  {\printexercisefooter
+   \end{nopagebreak}
+   \vspace{1cm}}
+\fi

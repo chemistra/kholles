@@ -1,0 +1,46 @@
+% Niveau :      PCSI
+% Discipline :  Elec
+% Mots clés :   Elec, Ordre 1
+
+\begin{exercise}{Condensateur avec interrupteur}{1}{Sup}
+{\'Electrocinétique, Circuits d'ordre 1}{lelay}
+
+On cherche à décrire le circuit suivant :
+\begin{circuit}
+      \draw
+      node [ground] at (0,0) {}
+      to [vsource, v^>=$E$] (0,2)
+      to [R, l^=$R$] (2,2)
+      to [nos, l=$K$] (4,2)
+      to [R, l^=$R$] (6,2)
+      to [vsource, v^<=$E$] (6,0)
+      node [ground]{}
+      (2,2) to [R, l_=$R$] (2,0)
+      node [ground]{}
+      (4,2) to [C, l^=$C$] (4,0)
+      node [ground]{};
+\end{circuit}
+
+\begin{questions}
+    \questioncours Donne la loi reliant la tension aux bornes d'un condensateur à la charge qu'il contient. Unité et ordre de grandeur de la capacité d'un condensateur.
+    \question Quelle est la tension aux bornes du condensateur tant que l'interrupteur reste ouvert ? Le courant qui le traverse ?
+    \question À $t = 0$, on ferme l'interrupteur $K$. Donner le circuit équivalent à $t = 0^+$ et à $t = \infty$.
+    \question Donner l'équation différentielle vérifiée par la tension $u$ aux bornes du condensateur.
+    \question Quel est le temps caractéristique d'évolution de $u(t)$ ? Quel nom proposez-vous de lui donner ?
+    \question Écrire $u(t)$ et donner l'allure de sa courbe.
+\end{questions}
+\end{exercise}
+
+
+\begin{solution}
+
+\begin{questions}
+    \questioncours ok
+    \question $E$
+    \question $t = 0$, le condensateur est un fil, $t=\infty$, le condensateur est un interrupteur ouvert
+    \question $RC \dv{u}{t} + 3 u = 2e$
+    \question $\tau = RC/3$
+    \question Une exponentielle saturante pépère.
+\end{questions}
+
+\end{solution}

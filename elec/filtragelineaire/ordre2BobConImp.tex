@@ -1,0 +1,59 @@
+% Niveau :      PCSI
+% Discipline :  Elec
+% Mots clés :   Elec, Ordre 1
+
+\begin{exercise}{Circuit LC réel}{2}{Sup}
+{\'Electrocinétique, Circuits d'ordre 2}{lelay}
+
+\begin{questions}
+    \questioncours Passage en complexe en électrocinétique : conditions, conséquences.
+    \question On considère le circuit $LC$ suivant, avec $L = 2$ mH et $C = 20$ $\mu$F :
+    \begin{circuit}
+          \draw
+          (0,0) to [open, v_=$\underline{e}$, *-o] (0,2)
+          (0,2) to [L, l=$L$] (2,2)
+                to [C, l=$C$] (2,0)
+          (2,2) to [short] (4,2)
+          (4,0) to [open, v_=$\underline{s}$, *-o] (4,2)
+          (0,0) to [short] (4,0);
+    \end{circuit}
+    \question Donne sa fonction de transfert $\underline{H}(x)$, avec $x = \frac{\omega}{\omega_0}$ avec $\omega_0$ une certaine pulsation caractéristique que l'on exprimera en fonction de $L$ et $C$ et dont on donnera la valeur numérique.
+    \question Que vaut l'argument de $\underline{H}$ ? Que se passe-t-il à basse fréquence ? À haute fréquence ?
+    \question Que se passe-t-il lorsque $\omega$ s'approche de $\omega_0$ ? Ceci vous semble-t-il raisonnable ? Comment expliquer qu'on ne l'observe pas dans la vraie vie ?
+    \question On considère maintenant le même circuit $LC$ mais où cette fois on a considéré des dipôles réels (par opposition à des dipôles idéaux). En quoi consistent ces dipôles ? Pourquoi les a-t-on représenté ainsi ? Comment doivent être $R_L$ et $R_C$ si l'on veut se rapprocher le plus possible de dipôles idéaux ?
+    \begin{circuit}
+          \draw
+          (0,0) to [open, v_=$\underline{e}$, *-o] (0,4)
+          (0,4) to [short] (2,4) 
+                to [L, l=$L$] (4,4) 
+                to [R, l=$R_L$] (6,4) 
+                to [short] (8,4)
+                to [short] (8,3)
+          (8,3) to [short] (9,3)
+                to [R, l=$R_C$] (9,1)
+                to [short] (8,1)
+          (8,3) to [short] (7,3)
+                to [C, l=$C$] (7,1)
+                to [short] (8,1)
+          (8,1) to [short] (8,0)
+          (8,4) to [short] (10,4)
+          (10,0) to [open, v_=$\underline{s}$, *-o] (10,4)
+          (0,0) to [short] (10,0);
+    \end{circuit}
+    \question Donner la fonction de transfert $\underline{H}(x)$ de ce nouveau filtre, en utilisant la quantité
+    \begin{align*}
+        Q = \sqrt{\frac{C}{L}}R_L + \sqrt{\frac{L}{C}}\frac{1}{R_C}
+    \end{align*}
+    \question Tracer l'allure du graphe de $\abs{\underline{H}}$ et $\arg(\underline{H})$ en fonction de $x$. Quelle est la différence avec le circuit $LC$ idéal ?
+    \question Si on se place à très basse fréquence, on trouve que le rapport des amplitudes $\frac{\underline{e}}{\underline{s}}$ est de l'ordre de 1.0001. En déduire le rapport $\frac{R_L}{R_C}$. Commenter.
+    \question Exprimer la valeur du module de la fonction de transfert en $\omega = \omega_0$ en fonction de ce rapport et de $Q$.En déduire un protocole pour mesurer $Q$
+    \question En appliquant ce protocole, on a trouvé $Q \approx 1.0001$. En déduire $R_L$ et $R_C$.
+\end{questions}
+\end{exercise}
+
+
+\begin{solution}
+
+$R_L = 10$ $\Omega$ et $R_C = 100$ k$\Omega$
+
+\end{solution}

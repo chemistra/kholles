@@ -1,0 +1,41 @@
+\begin{exercise}{Points de Lagrange}{3}{Sup, Spé}
+{Mécanique,Mécanique céleste,Mécanique en référentiel non galiléen}{lelay}
+
+\begin{questions}
+    \questioncours Position d'équilibre d'un satellite dans un champ gravitationnel et lois de Kepler.
+\uplevel{Nous nous plaçons désormais dans le référentiel héliocentrique $(S ; r,\theta)$ en coordonnées polaires dans lequel la Terre $T$ est fixe en $r = R_\oplus = 1$ U.A. et $\theta=0$.}
+\question Ce référentiel est-il Galiléen ?
+\begin{EnvUplevel}
+Dans ce cas, pour un corps de masse $m$, il faut prendre en compte la force centrifuge d'inertie
+$$\vf_i = m\omega^2\vr,$$
+dans le bilan des forces, avec $\omega$ la période orbitale de la Terre.
+\end{EnvUplevel}
+    \question Quelle est la valeur de $\omega$ ? Donner l'expression de $\omega$ à l'aide de la troisième loi de Kepler.
+\uplevel{On appelle points de Lagrange, les positions d'équilibre d'un satellite de la terre dans le précédent référentiel.}
+    \questionbonus Contributions scientifiques de Joseph-Louis Lagrange.
+    \question Donnez l'équation vectorielle de ce point $\vr$ sans chercher à la résoudre pour le moment. \\
+    Exprimer cette équation uniquement en fonction de
+    $$Q = \dfrac{M_\oplus}{M_\odot} \qqtext{et} \vu = \dfrac{\vr}{R_\oplus}.$$
+    \question Cette équation n'étant pas très simple, nous allons chercher plusieurs solutions particulières :
+    \begin{parts}
+        \part En projetant l'équation sur l'axe $\ve_y$, montrez que l'équation admet que le point de Lagrange se situe sur l'axe Terre--Lune. \\
+        Nous ne regardons pas le second cas.
+        \part Chercher les solutions de cette équation dans l'axe Terre -- Lune, proche de la Terre \emph{i.e.} $u \simeq 1$. \\
+        Discuter de la pertinence de cette approximation.
+        \part Comparer avec la position de la Lune ou d'un satellite en orbite géostationnaire et commenter.
+        \part (\emph{Question facultative}) Ou chercheriez vous d'autres solutions sur l'axe des abscisses ?
+    \end{parts}
+\end{questions}
+
+\plusloin[Les autres points de Lagrange]
+Il y a 5 points de Lagrange, notés L$_1 \ldots$L$_5$. Comme nous l'avons vu en 6(b) L$_1$ et L$_2$ se situent proches de la Terre. L$_4$ et L$_5$ se situent au sommet des deux triangles équilatéraux dont un côté est le segment $ST$. On pourra montrer que ces deux points sont solution de l'équation au premier ordre en $Q$. 
+
+\paragraph{Données :}
+\begin{itemize}
+    \item constante universelle de gravitation $G = 6,674 \times 10^{-11}$ SI, m$\cdot$s$^{-1}$,
+    \item masse du Soleil $M_\odot = 1,989 \times 10^{30}$ kg,
+    \item masse de la Terre $M_\oplus = 5,974 \times 10^{24}$ kg $= 3 \times 10^{-6} M_\odot$,
+    \item distance Terre--Soleil $R_\oplus = 1$ U.A. $ = 1,496 \times 10^{11}$ m,
+    \item distance Terre--Lune $d = 384 400$ km $= 2,6 \times 10^{-3}$ U.A.
+\end{itemize}
+\end{exercise}

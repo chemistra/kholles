@@ -1,0 +1,32 @@
+\begin{exercise}{Effet de peau}{2}{Spé}
+{\'Equations de Maxwell,Diffusion magnétique,Longeur de Kelvin,Plasma résistif,Rélfexion métallique }{bermu}
+
+On considère un plasma conducteur constitué d'un gaz neutre d'ions et d'électrons de densité $n$ et de conductivité électrique $\sigma$. On considérera les ions immobiles. On impose dans une région $x<0$ de ce gaz un champ magnétique homogène oscillant $\vB_0(t) = B_0 \cos{\omega t} \ve_z$. On étudie le régime de relaxation des courants dans $x>0$.
+
+\begin{questions}
+    \question Montrez qu'un champ $\vB$ induit un champ $\vE$. On supposera que $\vB = B(t)\ve_z$ et $\vE = E\ve_y$ (le justifier). Donner la relation (1) entre $E$ et $B$.
+    \question Montrez que par conséquent, un courant $J$ se créé et donner la relation (2) entre la densité de courant $J$ et le champ $E$.
+    \question Montrez que le courant $J$ rétroagit lui-même sur $B$ et donner la relation (3) entre les deux.
+    \question En déduire l'équation vérifiée par $B$. On fera apparaître la quantité $\eta = \dfrac{1}{\mu_0\sigma}$ dont on donnera un sens physique. Quelle est la nature de cette équation ?
+    \question Au vu des conditions aux limites, résoudre l'équation pour $B$, puis $E$, puis $J$. On fera apparaître une longueur caractéristique $\ell_\textsc{k}$, la longueur de Kelvin, dont on donnera une interprétation.
+    \question \`A quelle condition peut-on considérer que les courants dans un circuit de taille $L$ sont tous relaxés ?
+\end{questions}
+
+\paragraph{Données :}
+\begin{itemize}
+    \item charge élémentaire $e = 1,602\times 10^{-19}$ C,
+    \item masse le l'électron $m_e = 9,109\times 10^{-31}$ kg,
+    \item permeabilité du vide $\mu_0 = 1,26 \times 10^{-6}$ $H\cdot$m$^{-1}$,
+    \item conductivité du cuivre $\sigma = 6\times 10^8$ $\omega^{-1}\cdot\text{m}^{-1}$.
+\end{itemize}
+\end{exercise}
+
+\begin{solution}
+\begin{questions}
+    \question Maxwell Faraday (1) $\pdv{E}{x} = -\pdv{B}{t}$
+    \question Loi d'Ohm (2) $J = \sigma E$
+    \question Maxwell Ampère (3) $\pdv{B}{x} = -\mu_0 J$ (on vire le courant de déplacement de l'ordre de $v/c$).
+    \question D'où $\pdv[2]{E}{xt} = \ell_\text{p}^{-2}E$, $\ell_\text{p} = \dfrac{m_e}{\mu_0 e^2} = \dfrac{c}{\omega_\text{p}}$.
+    \question $B(x,t) = B_0(t) e^{-x/\ell_\text{p}}$, $E(x,t) = \ell_\text{p} B'_0(t) e^{-x/\ell_\text{p}}$, $J = J_0 e^{-x/\ell_\text{p}}$.
+\end{questions}
+\end{solution}

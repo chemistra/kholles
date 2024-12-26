@@ -1,0 +1,92 @@
+% Niveau :      PC
+% Discipline :  Electromagnétisme
+%Mots clés :    Equations de Maxwell, Debye-Hückel
+
+
+\begin{exercise}{Loi des gaz parfaits}{2}{Spé}
+{Physique statistique,\'Electromagnétisme,Dipole électrostatique}{bermu}
+
+On considère un gaz parfait de molécules de masse $m$ et de densité particulaire $n$ (en m$^{-3}$).
+
+\begin{questions}
+    \questioncours Loi de distribution des vitesses de Maxwell--Boltzmann. On notera $\ev{-}$ la moyenne associée.
+    \question On considère une paroi, supposée immobile, de surface $\vec{S}$ et de normale $\vec{e}$ dans le gaz. Calculer quantité de mouvement $\delta\vec{p}_\text{paroi}$ communiquée par une particule de gaz de vitesse $\vec{v}$ sur cette paroi.
+    \question En déduire la pression moyenne $P$ exercée par les particules du gaz $n$, $m$, $\vec{v}$ et $\vec{e}$ et $\ev{-}$.
+    \question Retrouver la loi des gaz parfaits en calculant explicitement $\ev{-}$.
+\end{questions}
+
+
+\end{exercise}
+
+\begin{solution}
+\begin{questions}
+    \questioncours $\mathbb{P}(v)\dd{v} \propto e^{-\frac{m v^2}{2 k_\textsc{b} T}}$
+    \question Modèle simple : $\delta \vec{p}_\text{particule} = -\delta \vec{p}_\text{paroi}$.
+
+    La paroi est immobile et collision élastique : $\delta \vec{p}_\text{paroi} = -2(m\vv\vdot\vec{e})\vec{e}$.
+    \question Le bilan avec $\dd{N}$ particules qui collisionnent la paroi donne
+    $\dd{\vec{p}} = \delta\vec{p}_\text{paroi}\dd{N}$, avec $\dd{N} = n \vec{S}\vdot\vv\dd{t}$.
+
+    Modèle simplifié : 1/6 de particules dans chaque direction : $\dd{N} = n S v\dd{t}$, $\delta p_\text{paroi} = 2 m v$.
+
+    Donc $\dv{p}{t} = P\times S =  2 m v \times \dfrac{1}{6} n v S = \dfrac{1}{3} n m v^2 S$.
+
+    Ainsi $\ev{P} = \dfrac{1}{3} n m \ev{v^2}$ (sinon c'est sans l'hyopthèse $\ev{P} = 2 n m \ev{\qty(\vv\vdot\ve)^2}$).
+    
+    \question Or, $1/2 m\ev{v^2} = \#\text{ degré de libertés} \times \dfrac{1}{2} k_\textsc{b}T$.
+
+    Donc $P = n k_\text{b}T$.
+\end{questions}
+\end{solution}
+
+\begin{exercise}{Forces de Van der Waals}{2}{Spé}
+{Physique statistique,\'Electromagnétisme,Dipole électrostatique}{bermu}
+
+\begin{questions}
+    \questioncours Distribution de Boltzmann.
+    \question Quelle est l'expression du potentiel $V(\vr)$ et du champ $\vE(\vr)$ électriques
+    \begin{parts}
+        \part d'une charge ponctuelle $q$ ?
+        \part d'un dipôle électrostatique permanent $\vec{p}$ ?
+    \end{parts}
+    \question Quelle est l'expression de l'énergie potentielle $\En_\text{p}$ exercée sur un dipôle par un champ électrique extérieur $\vE_\text{ext}$ ?
+    \question Donner l'énergie potentielle $\En_\text{p}(r,\theta)$ exercée par une charge $q$ sur un dipôle permanent $\vec{p}$.
+    \question Qu'en est-il si le dipôle $\vec{p}$ est induit ?
+    \question $\norm{\vec{p}}$ et $\norm{\vec{r}}$ étant fixés, mais pas l'orientation du dipôle, qui fluctue dans le milieu, justifiez que le potentiel d'interaction effectif moyen $u_\text{eff}(r)$ puisse s'écrire :
+    $$e^{-\beta u_\text{eff}(r)} = \dfrac{1}{2}\int_{\theta=0}^\pi e^{-\beta \En_\text{p}(r,\theta)} \sin\theta\dd{\theta}.$$
+    \question Montrez à haute température (que cela veut-il dire ?) que $u_\text{eff}(r) \sim 1/r^4$, comme dans le cas du dipole induit.
+
+    \plusloin
+
+    \question Montrer que le potentiel d'interaction effectif entre deux dipôles(force de Keesom) est en $u_\text{eff}(r) \sim 1/r^6$. Interpréter.
+\end{questions}
+
+
+\end{exercise}
+
+\begin{solution}
+    \begin{questions}
+        \question $\mathbb{P} \propto e^{-\cal{E}_\text{p}/k_\textsc{b}T}$
+        \question \begin{align*}
+            V_q(\vr) &= \dfrac{q}{4\pi\ep_0r} & \vec{E}_q(\vr) &= \dfrac{q\vec{e}_r}{4\pi\ep_0r^2} \\
+            V_{\vec{p}}(\vr) &= \dfrac{\vec{p}\vdot\vec{e}_r}{4\pi\ep_0r^2} & \vec{E}_q(\vr) &= \dfrac{\qty(\vec{p}\vdot\vec{e}_r)\vec{e}_r - \vec{p}}{4\pi\ep_0r^3}
+        \end{align*}
+        \question \begin{align*}
+           \vec{F}_{\vec{E}_\text{ext}/\vec{p}} &= -(\vec{p}\vdot\grad)\vec{E}_\text{ext} &
+           \cal{E}_\text{p} &= -\vec{p}\vdot\vec{E}_\text{ext}
+        \end{align*}
+        \question $$\cal{E}_{\vec{p},q}(r,\theta) = \dfrac{q p \cos\theta}{4\pi\ep_0 r^2}$$
+        \question Dans le cas du dipole induit $\vec{p} = \alpha \vec{E}$, donc on aurait :
+        $$\cal{E}_{\vec{p},q}(r,\theta) = \dfrac{\alpha q^2}{(4\pi)^2\ep_0 r^4}$$
+        \question Interprétation : on moyenne sur $\theta$ l'énergie d'intéraction.
+        \question A haute température $T \gg T^\ast = \dfrac{q p}{4\pi\ep_0 r^2 k_\textsc{b}}$ :
+        $$1-\beta u_\text{eff}(r) \simeq \dfrac{1}{2}\int_{\theta=0}^\pi \qty(1 - \beta k_\textsc{b} T^\ast \cos\theta + \beta^2 k_\textsc{b}^2 {T^\ast}^2 \cos^2\theta ) \sin\theta\dd{\theta} \simeq \dfrac{1}{6}\beta^2 k_\textsc{b}^2 {T^\ast}^2.$$
+        Donc $$u_\text{eff} = \dfrac{q^2 p^2}{96\pi^2\ep_0^2 r^4 k_\textsc{b} T}$$
+        On pourra donner que $\ev{\sin\theta\cos^2\theta} = \frac{2}{3}$.
+        \question Dans le cas ou on a deux dipoles :
+        $$\cal{E}_{\vec{p},q}(r,\theta) = \dfrac{(\vec{p}_1\vdot\vec{e}_r)(\vec{p}_1\vdot\vec{e}_r) - \vec{p}_1\vdot\vec{p}_2}{4\pi\ep_0 r^3}$$
+        On aurait donc :
+        $$e^{-\beta u_\text{eff}(r)} = \dfrac{1}{8\pi}\int_{\theta=0}^\pi e^{-\beta u(r)\cos\varphi\sin\theta_1\sin\theta_2} \sin\theta_1\dd{\theta_1}\sin\theta_2\dd{\theta_2}\dd{\varphi}.$$
+        et donc $u_\text{eff} \sim 1/r^6$ : VdW !!
+    \end{questions}
+\end{solution}

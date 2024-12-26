@@ -1,0 +1,134 @@
+\begin{exercise}{Glycine}{1}{PCSI}
+{Acides et bases,Equilibres chimiques}{lelay}
+
+La glycine (ou glycocolle) est un acide aminé de structure H$_2$N--CH$_2$--COOH.  C'est un ampholyte : en effet, dans l'eau, la glycine est engagée dans deux couples acido-basiques de $\text{p}K_\text{a}$ 2.4 et 9.6.
+
+\begin{questions}
+    \question Dans l'eau, la glycite est un zwitterion (ou amphion), c'est à dire qu'elle possède à la fois une charge positive et une charge négative. Donner la représentation de Lewis de la glycine dans l'eau.
+
+    \question Écrire les équilibres acido-basiques faisant intervenir la glycine dans l'eau.
+
+    \question Tracer le diagramme de prédominance des espèces de la glycine en fonction du pH de la solution
+
+    \question En solution neutre, quelle est l'espèce majoritaire ?
+    
+    \question Quel est le pH approché d'une solution de glycine à 10$^{-1}$~M ?
+    
+    \question L'électrophorèse est une technique permettant de faire migrer les ions d’une solution, sur un support solide, sous l’action d’un champ électrique. À quel pH faut-il opérer l’électrophorèse d’une solution de glycocolle de concentration 10$^{-1}$~M pour que 99\% des ions migrent vers le pôle positif ?
+    
+\end{questions}
+\end{exercise}
+
+\begin{solution}
+\begin{questions}
+
+    \question ion glycinium NH$_3^+$ COOH et ion glycinate NH$_2$ COO$^-$
+    
+    \question ion glycinium - pH 2.4 - glycine - pH 9.6 - ion glycinate
+    
+    \question À pH = 7 c'est la glycine, l'amphion.
+    
+    \question On part d'une concentration $C_0 = 0.1$~mol/L en glycine qui réagit selon 2~glycine~=~glycinium~+~glycinate (réaction prépondérante en solution neutre).
+    
+    On a $K = Ka_2 / Ka_1 = 10^{-7.2}$ c'est bien l'équilibre de contrôle.
+    
+    Donc d'après le tableau d'avancement [glycinium] = [glycinate] = $x$ et il se trouve que [H$^+$]$^2$ = $Ka_1 \, Ka_2$ d'où $pH = \frac12(pKa_1 + pKa_2) = 6.2$.
+    
+    \question On veut [glycinate] = 0.99 $c_0$, on ne prend en compte que l'équilibre glycine - glycinate car l'autre est negligeable. 
+    
+    On utilise la relation de Henderson : $pH = pKa_2 + log([glycinate][glycine]) = 10.6$.
+    
+\end{questions}
+\end{solution}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{exercise}{Imidazole}{1}{PCSI}
+{Acides et bases,Equilibres chimiques}{lelay}
+
+L’imidazole, que l’on notera L pour simplifier est une molécule organique de formule C$_3$N$_2$H$_4$. En solution aqueuse, l’imidazole L se comporte comme une monobase faible, le couple LH$^+$/L ayant un $pK_a$ égal à 6.95.
+
+\begin{questions}
+
+    \question On dispose de 50~mL d'une solution acqueuse d'imidazole de concentration 0.02~mol/L. Quel est le pH de cette solution ?
+
+    \question On ajoute à la solution précédente un volume $V$ d’une solution aqueuse d’acide chlorhydrique de concentration 0,50 mol.L$^{-1}$. Calculer, de manière simplifiée, le pH de la solution obtenue correspondant aux valeurs suivantes de $V$ : 0,5 ; 1,0 ; 1,5 ; 2,0 et 2,5 mL.
+
+    \question Représenter l'allure de la courbe $pH = f(V)$
+    
+\end{questions}
+\end{exercise}
+
+\begin{solution}
+\begin{questions}
+
+    \question Reaction L = LH+ + HO-, en la supposant peu avancée $K = x^2 / C_0$, on en déduit 
+    $$ pH = \frac12\qty( pK_e + pK_a +\log C_0) = 9.6 $$. On a bien pH > pKa + 1 donc L ets majoritaire et pH > 7.5 donc l'autoprotolyse de l'eau est négligeable.
+    
+    \question La réaction prépondérante est H+ + L = LH+ de constante 10$^{6.95}$ $\gg 1$ donc quantitative.
+    \begin{itemize}
+        \item Pour V= 0.5, 1.0 et 1.5 mL, on applique juste henderson en supposant que la réaction est totale et pH = 7.4, 6.95, 6.5
+        \item Pour V = 2.0 mL tout l'acide a été consommé, la solution est équivalent a une solution d'acide faible LH+ dans 52 mL de solution, d'où $pH = \frac12(pK_a - \log C) = 4.3$
+        
+        \item Pour V = 2.5 mL on a un excès de 0.25 mmol de H+ pour 52.5 mL de solution. C'est un mélange d'acide faible et d'acide fort. L'acide fort impose le pH d'où $pH = -log [H30+] = 2.3$
+    \end{itemize}
+    
+    \question Typique titrage de baise faible par acide fort.
+    
+\end{questions}
+\end{solution}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{exercise}{Pluies acides}{1}{Sup}
+{Acides et bases,Equilibres chimiques}{bermu}
+
+L’eau de pluie est naturellement acide (pH voisin de 6), en raison du dioxyde de carbone qu’elle
+dissout. Cette acidification est très nettement augmentée dans les zones à forte activité industrielle. La
+pollution par les oxydes de soufre constitue l’une des hypothèses avancées pour expliquer ce
+phénomène.
+
+Pour modéliser l’effet de SO$_2$ sur l’acidité de l’eau, on place de l’eau initialement pure dans un récipient
+à l’intérieur duquel est maintenue une pression constante de dioxyde de soufre gazeux égale à $\SI{8e-8}{bar}$ à $T = \SI{298}{K}$.
+
+Pour la commodité des calculs, on considère comme négligeable la concentration de SO$_{2\text{(aq)}}$.
+
+\begin{questions}
+
+    \question Tracer le diagramme de prédominance des espèces acido-basiques du soufre intervenant dans la
+solution aqueuse.
+
+    \question Sachant que la solution à l’équilibre est plus acide que l’eau de pluie naturelle, quelle espèce du
+diagramme de prédominance précédent est assurément en concentration négligeable ?
+
+    \question En déduire l’équation chimique responsable majoritairement de l’acidification de l’eau.
+
+    \question Calculer alors le pH de la solution
+    
+    \plusloin Vérifier l’hypothèse formulée en \textsfbf{Q2}.
+    
+\end{questions}
+
+\paragraph{Données :}
+$$\text{p}K_\text{a1}(\mathrm{H_2SO_3/HSO_3^-}) = 1,8  \qquad \text{p}K_\text{a2}(\mathrm{HSO_3^-/SO_{3}^{2-}}) = 7,2.$$
+Dissolution de SO$_{2\text{(g)}}$ :
+
+$$\mathrm{SO_{2(g)} + H_2O \longrightarrow H_2SO_3} \qquad K_\textsc{h} = \SI{1,25}{}$$
+
+\end{exercise}
+
+\begin{solution}
+\begin{questions}
+
+    \question $\mathrm{H_2SO_3/HSO_3^-/SO_{2}}$
+    
+    \question $\mathrm{SO_{3}^{2-}}$ négligeable
+
+    \question $\mathrm{SO_{2(g)} + 2 H_2O \longrightarrow HSO_3^- + H_3O^+} \qquad K^\circ = K_\textsc{h} 10^{-\text{p}K_\text{a1}} = 0.02$
+    
+    \question $K^\circ = \dfrac{\mathrm{[H_3O^+][HSO_3^{-}]}}{P_\mathrm{SO_2}}$ or $\mathrm{[H_3O^+] = [HSO_3^{-}] = 10^{-pH}}$
+
+    $\text{pH} = 4.4$.
+    
+\end{questions}
+\end{solution}

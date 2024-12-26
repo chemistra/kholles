@@ -1,0 +1,56 @@
+\begin{exercise}{Effet tunnel}{2}{Spé}
+{Quantique}{lelay}
+
+On considère une particule dans le potentiel suivant (potentiel `barrière' de hauteur $V$)
+
+\begin{center}
+    \begin{tikzpicture}
+    
+    \draw (0,0) node[below=2pt] {$0$};
+    \draw[->] (0, 0) -- (5, 0);
+    \draw (5,0) node[below=2pt] {$x$};
+    \draw[->] (0, 0) -- (0, 3);
+    \draw (0,3) node[left=2pt] {$y$};
+    \draw (0,2) node[left=2pt] {$V$};
+    
+    \draw[thick] (-5, 0) -- (0, 0);
+    \draw[thick] (0 , 0) -- (0, 2);
+    \draw[thick] (0 , 2) -- (5, 2);
+    
+    \end{tikzpicture}
+\end{center}
+
+\begin{questions}
+    \questioncours Barrière de potentiel, effet tunnel.
+    \question Qualitativement, discuter de l'allure de la fonction d'onde en fonction de l'énergie $E$ de la particule.
+    \question Sans calculs, sur quelle distance caractéristique la probabilité de présence est-elle atténuée ?
+    \uplevel{On considère maintenant un potentiel `porte' de taille finie $a$}
+    
+\begin{center}
+    \begin{tikzpicture}
+    
+    \draw (0,0) node[below=2pt] {$0$};
+    \draw[->] (0, 0) -- (5, 0);
+    \draw (5,0) node[below=2pt] {$x$};
+    \draw[->] (0, 0) -- (0, 3);
+    \draw (0,3) node[left=2pt] {$y$};
+    \draw (0,2) node[left=2pt] {$V$};
+    \draw (1,0) node[below=2pt] {$a$};
+    
+    \draw[thick] (-5, 0) -- (0, 0);
+    \draw[thick] (0 , 0) -- (0, 2);
+    \draw[thick] (0 , 2) -- (1, 2);
+    \draw[thick] (1 , 2) -- (1, 0);
+    \draw[thick] (1 , 0) -- (5, 0);
+    
+    \end{tikzpicture}
+\end{center}
+    \question Donner la forme de l'équation de Schrödinger dans trois zones I, II et III que l'on précisera et en donner les solutions. Dans le cas d'une onde incidente venant de $-\infty$, quelle solution n'est pas physique ?
+    \question Donner les conditions aux limites s'appliquant à ce système.
+    \question Résoudre le système et donner $\phi(x)$.
+    \question Quelle solution devient négligeable dans la limite $V \gg E$ ? Que vaut alors le coefficient de transmission ?
+    \question Retrouver le résultat de la question 2.
+
+\end{questions}
+
+\end{exercise}
