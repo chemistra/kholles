@@ -1,5 +1,5 @@
 \documentclass[
- nopagenumber, exercisesheet, %% L'un
+ %nopagenumber, exercisesheet, %% L'un
  answers,                     %% Ou l'autre 
  %noexercisenumber,
 ]
@@ -24,7 +24,7 @@
 %%%%% EXERCICES %%%%%
 \begin{document}
 
-\setcounter{part}{33} %\part{Mécanique}
+\setcounter{part}{28} %\part{Mécanique}
 \setcounter{section}{4} %\section{Mécanique RNG}
 \setcounter{exercise}{0} %numexo
 
@@ -32,7 +32,17 @@
              %%%%  ATTENTION DE BIEN METTRE LES NOUVEAUX EXOS DANS MAIN.TEX EGALEMENT  %%%%
              %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\input{elec/_elec}
+
+\section{Filtrage linéaire --- Second ordre et plus...}
+\input{elec/filtragelineaire/filtres_2nd_ordre}
+\input{elec/filtragelineaire/passebas}
+\input{elec/filtragelineaire/bouchon}
+\input{elec/filtragelineaire/passepas}
+\input{elec/filtragelineaire/mutuelle_inductance}
+\input{elec/filtragelineaire/laser}
+\input{elec/filtragelineaire/cascade}
+\input{elec/filtragelineaire/butterworth}
+\input{elec/filtragelineaire/dephaseur}
 %\input{elec/filtragelineaire/filtres_1er_ordre} % AJOUTE
 %\input{elec/filtragelineaire/filtres_2nd_ordre} % AJOUTE
 %\input{elec/filtragelineaire/filtres_2nd_ordre_2} % AJOUTE
